@@ -13,19 +13,49 @@ export default function Icon() {
       <div
         style={{
           alignItems: "center",
-          background: "#085041",
-          clipPath: "polygon(50% 0%, 88% 13%, 84% 62%, 50% 100%, 16% 62%, 12% 13%)",
-          color: "#9FE1CB",
+          background: "#1D9E75",
+          borderRadius: 9,
           display: "flex",
-          fontSize: 11,
-          fontWeight: 600,
           height: "32px",
           justifyContent: "center",
-          letterSpacing: "-0.02em",
+          position: "relative",
           width: "32px",
         }}
       >
-        JO
+        <div
+          style={{
+            background: "white",
+            clipPath:
+              "polygon(50% 0%, 83% 12%, 83% 45%, 78% 60%, 66% 76%, 50% 91%, 34% 76%, 22% 60%, 17% 45%, 17% 12%)",
+            height: 22,
+            position: "absolute",
+            width: 18,
+          }}
+        />
+        <div
+          style={{
+            background: "#1D9E75",
+            clipPath:
+              "polygon(50% 0%, 83% 12%, 83% 45%, 78% 60%, 66% 76%, 50% 91%, 34% 76%, 22% 60%, 17% 45%, 17% 12%)",
+            height: 17,
+            position: "absolute",
+            width: 13,
+          }}
+        />
+        <div
+          style={{
+            color: "white",
+            fontFamily: "Arial, sans-serif",
+            fontSize: 4.8,
+            fontWeight: 700,
+            letterSpacing: "-0.1px",
+            lineHeight: 1,
+            marginTop: -2,
+            position: "absolute",
+          }}
+        >
+          JO
+        </div>
       </div>
     ),
     {
