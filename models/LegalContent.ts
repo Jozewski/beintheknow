@@ -42,6 +42,20 @@ const legalContentSchema = new Schema(
       type: [resourceSchema],
       default: [],
     },
+    sourceBillIds: {
+      type: [Number],
+      default: [],
+      index: true,
+    },
+    sourceAttribution: {
+      type: String,
+      default:
+        "Legislative data provided by LegiScan under Creative Commons Attribution 4.0.",
+      trim: true,
+    },
+    sourceUpdatedAt: {
+      type: Date,
+    },
     reviewStatus: {
       type: String,
       enum: ["draft", "legal-review", "approved", "expired"],

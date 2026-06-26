@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { MessageCircle, Send } from "lucide-react";
 
@@ -13,7 +13,16 @@ import { StateFlagGrid } from "@/components/states/StateFlagGrid";
 import { StateSelectedSummary } from "@/components/states/StateSelectedSummary";
 import { JurisdictionToggle } from "@/components/topics/JurisdictionToggle";
 import { TopicsSection } from "@/components/topics/TopicsSection";
-import { states, topics, type Jurisdiction, type TopicId } from "@/data/content-data";
+import {
+  states,
+  topicMetadataById,
+  topicOrder,
+  topics,
+  type Jurisdiction,
+  type TopicEntry,
+  type TopicId,
+} from "@/data/content-data";
+import type { ApprovedContentEntry } from "@/lib/content";
 
 const suggestions = [
   "Can I vote after a felony conviction?",
@@ -21,6 +30,42 @@ const suggestions = [
   "Can a landlord reject my application?",
   "Rights during a police stop",
 ];
+
+type ContentApiResponse = {
+  entries: ApprovedContentEntry[];
+  error?: string;
+};
+
+function isTopicId(value: string): value is TopicId {
+  return topicOrder.includes(value as TopicId);
+}
+
+function contentToTopicEntry(content: ApprovedContentEntry): TopicEntry | null {
+  if (!isTopicId(content.topicId)) return null;
+
+  const metadata = topicMetadataById[content.topicId];
+
+  return {
+    id: content.topicId,
+    title: metadata.title,
+    badge:
+      content.jurisdiction === "state"
+        ? content.topicId === "supervision"
+          ? "STATE SUPERVISION LAW"
+          : "STATE LAW"
+        : "FEDERAL RIGHTS",
+    summary: content.summary,
+    jurisdiction: content.jurisdiction,
+    stateCode: content.stateCode,
+    resources: content.resources,
+    learnMoreUrl: content.resources[0]?.url ?? metadata.learnMoreUrl,
+    icon: metadata.icon,
+  };
+}
+
+function isTopicEntry(value: TopicEntry | null): value is TopicEntry {
+  return value !== null;
+}
 
 export default function Home() {
   const [jurisdiction, setJurisdiction] = useState<Jurisdiction>("federal");
@@ -32,14 +77,53 @@ export default function Home() {
   const [isSelectingState, setIsSelectingState] = useState(true);
   const [activeTopicId, setActiveTopicId] = useState<TopicId | undefined>();
   const [highlightedTopicId, setHighlightedTopicId] = useState<TopicId | undefined>();
+  const [contentEntries, setContentEntries] = useState<TopicEntry[]>([]);
+  const [contentError, setContentError] = useState<string | undefined>();
 
   const selectedState = states.find((state) => state.code === stateCode);
   const selectedStateName = selectedState?.name ?? "State";
+  const contentRequestKey = `${jurisdiction}:${jurisdiction === "state" ? stateCode : ""}`;
+  const [loadedContentKey, setLoadedContentKey] = useState("");
+  const contentLoading = loadedContentKey !== contentRequestKey;
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const params = new URLSearchParams({ jurisdiction });
+
+    if (jurisdiction === "state" && stateCode) {
+      params.set("stateCode", stateCode);
+    }
+
+    fetch(`/api/content?${params.toString()}`, { signal: controller.signal })
+      .then(async (response) => {
+        const payload = (await response.json()) as ContentApiResponse;
+
+        if (!response.ok) {
+          throw new Error(payload.error ?? "Unable to load legal content.");
+        }
+
+        setContentEntries(payload.entries.map(contentToTopicEntry).filter(isTopicEntry));
+        setContentError(undefined);
+        setLoadedContentKey(contentRequestKey);
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+
+        console.error("Failed to load legal content", error);
+        setContentEntries([]);
+        setContentError("Unable to load approved topics right now.");
+        setLoadedContentKey(contentRequestKey);
+      })
+
+    return () => controller.abort();
+  }, [contentRequestKey, jurisdiction, stateCode]);
+
+  const visibleTopicSource = contentEntries.length > 0 ? contentEntries : topics;
 
   const filteredEntries = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();
 
-    return topics.filter((topic) => {
+    return visibleTopicSource.filter((topic) => {
       if (topic.jurisdiction !== jurisdiction) return false;
       if (jurisdiction === "state" && topic.stateCode && stateCode && topic.stateCode !== stateCode) {
         return false;
@@ -58,7 +142,7 @@ export default function Home() {
 
       return searchable.includes(normalizedQuery);
     });
-  }, [activeTopicId, jurisdiction, searchQuery, stateCode]);
+  }, [activeTopicId, jurisdiction, searchQuery, stateCode, visibleTopicSource]);
 
   function openJo(question?: string) {
     setInitialTopic(question);
@@ -197,6 +281,9 @@ export default function Home() {
             onTopicChipSelect={selectTopicChip}
             highlightedTopicId={highlightedTopicId}
             entries={filteredEntries}
+            loading={contentLoading}
+            error={contentError}
+            usingFallbackContent={contentEntries.length === 0}
             onAskJo={openJo}
           />
 

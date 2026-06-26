@@ -1,6 +1,4 @@
-import { topicLabels, type TopicId } from "@/data/content-data";
-
-const topicOrder = Object.keys(topicLabels) as TopicId[];
+import { topicLabels, topicOrder, type TopicId } from "@/data/content-data";
 
 type TopicFilterChipsProps = {
   activeTopicId?: TopicId;

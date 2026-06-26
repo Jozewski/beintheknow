@@ -14,6 +14,9 @@ type TopicsSectionProps = {
   onTopicChipSelect: (topicId: TopicId) => void;
   highlightedTopicId?: TopicId;
   entries: TopicEntry[];
+  loading: boolean;
+  error?: string;
+  usingFallbackContent: boolean;
   onAskJo: (question?: string) => void;
 };
 
@@ -27,8 +30,15 @@ export function TopicsSection({
   onTopicChipSelect,
   highlightedTopicId,
   entries,
+  loading,
+  error,
+  usingFallbackContent,
   onAskJo,
 }: TopicsSectionProps) {
+  const emptyMessage = usingFallbackContent
+    ? "No topics match that search yet."
+    : "No approved topics are available for this selection yet.";
+
   return (
     <section id="topics" className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -61,8 +71,20 @@ export function TopicsSection({
 
       <GuestBanner remaining={5} />
 
+      {error ? (
+        <div className="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+          {error}
+        </div>
+      ) : null}
+
+      {loading ? (
+        <div className="mt-5 rounded-lg border border-gray-200 bg-white p-6 text-center text-sm text-gray-500">
+          Loading approved topics...
+        </div>
+      ) : null}
+
       <div className="mt-5 grid grid-cols-1 gap-3.5 md:grid-cols-2 xl:grid-cols-3">
-        {entries.map((topic, index) => (
+        {!loading && entries.map((topic, index) => (
           <TopicCard
             key={`${topic.jurisdiction}-${topic.stateCode ?? "all"}-${topic.id}`}
             topic={topic}
@@ -73,9 +95,9 @@ export function TopicsSection({
         ))}
       </div>
 
-      {entries.length === 0 ? (
+      {!loading && entries.length === 0 ? (
         <div className="mt-6 rounded-lg border border-gray-200 bg-white p-6 text-center text-sm text-gray-500">
-          No topics match that search yet.
+          {emptyMessage}
         </div>
       ) : null}
     </section>
