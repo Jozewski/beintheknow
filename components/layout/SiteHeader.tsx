@@ -27,7 +27,7 @@ export function SiteHeader() {
           </Link>
           <a
             href="https://www.lawhelp.org"
-            className="rounded-full bg-[#1D9E75] px-3 py-1.5 font-semibold text-white hover:bg-[#0F6E56] sm:px-3.5"
+            className="hidden text-gray-500 hover:text-gray-900 sm:inline"
           >
             Find Legal Aid
           </a>

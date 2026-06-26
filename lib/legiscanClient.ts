@@ -62,6 +62,35 @@ export type LegiScanBillPayload = {
   };
 };
 
+export type LegiScanBillTextPayload = {
+  status: LegiScanStatus;
+  text?: {
+    doc_id?: number;
+    bill_id?: number;
+    date?: string;
+    type?: string;
+    type_id?: number;
+    mime?: string;
+    mime_id?: number;
+    url?: string;
+    state_link?: string;
+    text_size?: number;
+    text_hash?: string;
+    doc?: string;
+    alt_bill_text?: number;
+    alt_mime?: string;
+    alt_mime_id?: number;
+    alt_state_link?: string;
+    alt_text_size?: number;
+    alt_text_hash?: string;
+    alt_doc?: string;
+    [key: string]: unknown;
+  };
+  alert?: {
+    message?: string;
+  };
+};
+
 export class LegiScanApiError extends Error {
   constructor(
     message: string,
@@ -140,6 +169,13 @@ export async function getLegiScanBill(billId: number) {
   return requestLegiScan<LegiScanBillPayload>({
     op: "getBill",
     id: billId,
+  });
+}
+
+export async function getLegiScanBillText(docId: number) {
+  return requestLegiScan<LegiScanBillTextPayload>({
+    op: "getBillText",
+    id: docId,
   });
 }
 

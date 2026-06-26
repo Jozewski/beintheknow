@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Sparkles, X } from "lucide-react";
+import { X } from "lucide-react";
 
 import { ChatInput } from "@/components/chat/ChatInput";
 import { ChatMessage } from "@/components/chat/ChatMessage";
 import { ChatSuggestions } from "@/components/chat/ChatSuggestions";
+import { JoLogo } from "@/components/layout/JoLogo";
 import type { Jurisdiction } from "@/data/content-data";
 
 type ChatPanelProps = {
@@ -38,9 +39,7 @@ export function ChatPanel({
     <aside className="fixed inset-x-0 bottom-0 z-40 flex h-[calc(100vh-52px)] flex-col border-l border-gray-200 bg-white shadow-2xl shadow-gray-900/10 lg:sticky lg:top-[52px] lg:h-[calc(100vh-52px)] lg:w-[320px] lg:shrink-0 lg:shadow-none xl:w-[360px]">
       <div className="flex items-center justify-between bg-gray-900 px-4 py-3 text-white">
         <div className="flex items-center gap-2.5">
-          <span className="flex size-8 items-center justify-center rounded-full bg-[#085041] text-[#9FE1CB]">
-            <Sparkles className="size-4" aria-hidden="true" />
-          </span>
+          <JoLogo />
           <div>
             <h2 className="text-sm font-semibold">Just Ask JO</h2>
             <p className="text-[11px] text-white/55">

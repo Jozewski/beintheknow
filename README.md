@@ -184,6 +184,22 @@ curl "http://localhost:3000/api/cron/legiscan-sync?run=full&searchOffset=0&maxSe
 
 Increase `searchOffset` by `25` until the final partial batch completes. `maxBillFetches=0` means fetch every new or changed bill found in that batch.
 
+Ingest full LegiScan bill text in resumable batches:
+
+```bash
+curl "http://localhost:3000/api/cron/legiscan-text?run=batch&billOffset=0&limit=100"
+```
+
+Increase `billOffset` by `100` until batches return `scannedBills: 0`. Text documents are skipped when the stored `textHash` is unchanged.
+
+Create legal text chunks from extracted bill text:
+
+```bash
+curl "http://localhost:3000/api/cron/legal-chunks?run=batch&offset=0&limit=100"
+```
+
+Increase `offset` by `100` until batches return `scannedSources: 0`. Only `LegiScanBillText` records with `textExtractionStatus: "extracted"` are chunked; PDF records stay pending until PDF extraction is added.
+
 Future behavior:
 
 - Relevance-check candidate bills.
