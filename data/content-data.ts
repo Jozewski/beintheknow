@@ -126,6 +126,12 @@ const baseTopics = [
   },
 ] satisfies Omit<TopicEntry, "jurisdiction" | "badge" | "stateCode">[];
 
+export const topicOrder = baseTopics.map((topic) => topic.id);
+
+export const topicMetadataById = Object.fromEntries(
+  baseTopics.map((topic) => [topic.id, topic]),
+) as Record<TopicId, (typeof baseTopics)[number]>;
+
 export const topics: TopicEntry[] = [
   ...baseTopics.map((topic) => ({
     ...topic,

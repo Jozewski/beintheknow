@@ -44,7 +44,7 @@ export function TopicCard({ topic, index, highlighted, onAskJo }: TopicCardProps
 
       <div className="mt-4">
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.1em] text-gray-500">
-          State Resources
+          {topic.jurisdiction === "state" ? "State Resources" : "Federal Resources"}
         </p>
         <div className="space-y-1.5">
           {topic.resources.map((resource) => (
