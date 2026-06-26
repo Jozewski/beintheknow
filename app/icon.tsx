@@ -22,40 +22,23 @@ export default function Icon() {
           width: "32px",
         }}
       >
-        <div
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 32 32"
           style={{
-            background: "white",
-            clipPath:
-              "polygon(50% 0%, 83% 12%, 83% 45%, 78% 60%, 66% 76%, 50% 91%, 34% 76%, 22% 60%, 17% 45%, 17% 12%)",
-            height: 22,
-            position: "absolute",
-            width: 18,
-          }}
-        />
-        <div
-          style={{
-            background: "#1D9E75",
-            clipPath:
-              "polygon(50% 0%, 83% 12%, 83% 45%, 78% 60%, 66% 76%, 50% 91%, 34% 76%, 22% 60%, 17% 45%, 17% 12%)",
-            height: 17,
-            position: "absolute",
-            width: 13,
-          }}
-        />
-        <div
-          style={{
-            color: "white",
-            fontFamily: "Arial, sans-serif",
-            fontSize: 4.8,
-            fontWeight: 700,
-            letterSpacing: "-0.1px",
-            lineHeight: 1,
-            marginTop: -2,
             position: "absolute",
           }}
         >
-          JO
-        </div>
+          <path
+            d="M16 4.1 26.5 7.8v7.2c0 5.3-4.2 9.9-10.5 13-6.3-3.1-10.5-7.7-10.5-13V7.8L16 4.1Z"
+            fill="none"
+            stroke="white"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2.4"
+          />
+        </svg>
       </div>
     ),
     {

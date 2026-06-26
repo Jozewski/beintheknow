@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import type { Jurisdiction } from "@/data/content-data";
 
 type JurisdictionToggleProps = {
@@ -18,9 +20,18 @@ export function JurisdictionToggle({ value, onChange }: JurisdictionToggleProps)
           type="button"
           aria-pressed={value === option}
           onClick={() => onChange(option)}
-          className="rounded-full px-4 py-1.5 text-xs font-semibold capitalize text-white/70 transition hover:text-white aria-pressed:bg-white aria-pressed:text-[#085041]"
+          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold capitalize text-white/70 transition hover:text-white aria-pressed:bg-white aria-pressed:text-[#085041]"
         >
-          {option}
+          {option === "federal" ? (
+            <Image
+              src="https://flagcdn.com/w40/us.png"
+              alt=""
+              width={20}
+              height={14}
+              className="rounded-[2px]"
+            />
+          ) : null}
+          <span>{option}</span>
         </button>
       ))}
     </div>
