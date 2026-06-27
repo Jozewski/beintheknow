@@ -1,3 +1,7 @@
+import {
+  chunkCuratedSummaryCandidates,
+  chunkLegalAuthorities,
+} from "@/lib/authorityChunkIngest";
 import { ingestLegalTextChunks } from "@/lib/legalTextChunkIngest";
 import { connectDB } from "@/lib/mongodb";
 import { LegiScanSyncRunModel } from "@/models/LegiScanSyncRun";
@@ -29,13 +33,19 @@ export async function GET(request: Request) {
 
   const url = new URL(request.url);
   const runMode = url.searchParams.get("run");
-  const shouldIngest = runMode === "sample" || runMode === "batch";
+  const shouldIngest =
+    runMode === "sample" ||
+    runMode === "batch" ||
+    runMode === "authorities" ||
+    runMode === "curated-summaries";
   const offset = Number(url.searchParams.get("offset") ?? "0");
   const limit = Number(
     url.searchParams.get("limit") ?? (runMode === "sample" ? "10" : "100"),
   );
   const force = url.searchParams.get("force") === "true";
   const missingOnly = url.searchParams.get("missingOnly") === "true";
+  const reviewStatus = url.searchParams.get("reviewStatus");
+  const sourceName = url.searchParams.get("sourceName") ?? undefined;
 
   await connectDB();
 
@@ -51,17 +61,38 @@ export async function GET(request: Request) {
     return Response.json({
       status: "planned",
       syncRunId: syncRun._id.toString(),
-      note: "Add ?run=sample&limit=10 or ?run=batch&offset=0&limit=100 to chunk extracted legal text.",
+      note: "Add ?run=sample, ?run=batch, ?run=authorities, or ?run=curated-summaries to chunk legal text.",
     });
   }
 
   try {
-    const result = await ingestLegalTextChunks({
-      offset,
-      limit,
-      force,
-      missingOnly,
-    });
+    const result =
+      runMode === "authorities"
+        ? await chunkLegalAuthorities({
+            offset,
+            limit,
+            force,
+            reviewStatus:
+              reviewStatus === "draft" ||
+              reviewStatus === "legal-review" ||
+              reviewStatus === "approved" ||
+              reviewStatus === "expired"
+                ? reviewStatus
+                : undefined,
+          })
+        : runMode === "curated-summaries"
+          ? await chunkCuratedSummaryCandidates({
+              offset,
+              limit,
+              force,
+              sourceName,
+            })
+          : await ingestLegalTextChunks({
+              offset,
+              limit,
+              force,
+              missingOnly,
+            });
 
     await LegiScanSyncRunModel.updateOne(
       { _id: syncRun._id },

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { motion } from "motion/react";
 
 import type { StateEntry } from "@/data/content-data";
@@ -30,12 +29,14 @@ export function StateFlagGrid({ states, selectedStateCode, onSelect }: StateFlag
           onClick={() => onSelect(state.code)}
           className="flex h-9 items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 text-[11px] font-semibold text-white/85 transition hover:bg-white/20 aria-pressed:border-[#5DCAA5] aria-pressed:bg-[#E1F5EE] aria-pressed:text-[#085041]"
         >
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={`https://flagcdn.com/w40/us-${state.code.toLowerCase()}.png`}
             alt=""
             width={20}
             height={14}
             className="rounded-[2px]"
+            style={{ width: 20, height: "auto" }}
           />
           <span className="truncate">{state.name}</span>
         </button>

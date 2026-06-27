@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import type { Jurisdiction } from "@/data/content-data";
 
 type JurisdictionToggleProps = {
@@ -23,12 +21,14 @@ export function JurisdictionToggle({ value, onChange }: JurisdictionToggleProps)
           className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold capitalize text-white/70 transition hover:text-white aria-pressed:bg-white aria-pressed:text-[#085041]"
         >
           {option === "federal" ? (
-            <Image
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               src="https://flagcdn.com/w40/us.png"
               alt=""
               width={20}
               height={14}
               className="rounded-[2px]"
+              style={{ width: 20, height: "auto" }}
             />
           ) : null}
           <span>{option}</span>

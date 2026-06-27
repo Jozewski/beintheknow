@@ -9,6 +9,21 @@ import { ChatSuggestions } from "@/components/chat/ChatSuggestions";
 import { JoLogo } from "@/components/layout/JoLogo";
 import type { Jurisdiction } from "@/data/content-data";
 
+type ChatCitation = {
+  sourceName?: string;
+  sourceUrl?: string;
+  citation?: string;
+  title?: string;
+  currentAsOfLabel?: string;
+};
+
+type PanelMessage = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  citations?: ChatCitation[];
+};
+
 type ChatPanelProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -25,13 +40,89 @@ export function ChatPanel({
   initialTopic,
 }: ChatPanelProps) {
   const [draft, setDraft] = useState(initialTopic ?? "");
+  const [messages, setMessages] = useState<PanelMessage[]>([
+    {
+      id: "welcome",
+      role: "assistant",
+      content:
+        "Hi, I'm JO. Ask me a rights question and I'll keep it plain English, educational, and source-aware.",
+    },
+  ]);
+  const [sessionId, setSessionId] = useState<string>();
+  const [guestToken, setGuestToken] = useState<string>();
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState<string>();
   const inputRef = useRef<HTMLInputElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isOpen) return;
 
     window.setTimeout(() => inputRef.current?.focus(), 80);
   }, [isOpen]);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({
+      top: scrollRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [messages, isSending]);
+
+  async function sendMessage() {
+    const message = draft.trim();
+    if (!message || isSending) return;
+
+    const userMessage: PanelMessage = {
+      id: crypto.randomUUID(),
+      role: "user",
+      content: message,
+    };
+
+    setMessages((current) => [...current, userMessage]);
+    setDraft("");
+    setError(undefined);
+    setIsSending(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message,
+          sessionId,
+          guestToken,
+          jurisdiction,
+          stateCode: jurisdiction === "state" ? stateCode : undefined,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error ?? "JO could not answer right now.");
+      }
+
+      setSessionId(data.sessionId);
+      setGuestToken(data.guestToken);
+      setMessages((current) => [
+        ...current,
+        {
+          id: crypto.randomUUID(),
+          role: "assistant",
+          content: data.message.content,
+          citations: data.message.citations,
+        },
+      ]);
+    } catch (sendError) {
+      setError(
+        sendError instanceof Error
+          ? sendError.message
+          : "JO could not answer right now.",
+      );
+    } finally {
+      setIsSending(false);
+    }
+  }
 
   if (!isOpen) return null;
 
@@ -66,20 +157,44 @@ export function ChatPanel({
         </p>
       </div>
 
-      <div className="flex-1 space-y-3 overflow-auto px-4 py-4" role="log" aria-live="polite">
-        <ChatMessage
-          role="assistant"
-          content="Hi, I'm JO. Ask me a rights question and I'll keep it plain English, educational, and source-aware."
-        />
-        {draft ? <ChatMessage role="user" content={draft} /> : null}
-        {!draft ? <ChatSuggestions onSelect={setDraft} /> : null}
+      <div
+        ref={scrollRef}
+        className="flex-1 space-y-3 overflow-auto px-4 py-4"
+        role="log"
+        aria-live="polite"
+      >
+        {messages.map((message) => (
+          <ChatMessage
+            key={message.id}
+            role={message.role}
+            content={message.content}
+            citations={message.citations}
+          />
+        ))}
+        {isSending ? (
+          <ChatMessage role="assistant" content="JO is checking the source database..." />
+        ) : null}
+        {error ? (
+          <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[11px] leading-4 text-red-700">
+            {error}
+          </p>
+        ) : null}
+        {messages.length === 1 && !draft ? (
+          <ChatSuggestions onSelect={setDraft} />
+        ) : null}
       </div>
 
       <div className="border-t border-gray-200 p-3">
         <p className="mb-2 text-[10px] leading-4 text-gray-500">
           Educational information only. JO is not a lawyer and does not provide legal advice.
         </p>
-        <ChatInput value={draft} onChange={setDraft} inputRef={inputRef} />
+        <ChatInput
+          value={draft}
+          onChange={setDraft}
+          onSubmit={sendMessage}
+          inputRef={inputRef}
+          disabled={isSending}
+        />
         <button
           type="button"
           onClick={onClose}

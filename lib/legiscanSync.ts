@@ -48,6 +48,7 @@ export type LegiScanIngestOptions = {
   maxPagesPerSearch?: number;
   maxBillFetches?: number;
   year?: number;
+  storeRawPayloads?: boolean;
 };
 
 export type LegiScanIngestResult = {
@@ -180,6 +181,7 @@ export async function ingestLegiScanBills({
   maxPagesPerSearch = 1,
   maxBillFetches = 25,
   year,
+  storeRawPayloads = false,
 }: LegiScanIngestOptions = {}): Promise<LegiScanIngestResult> {
   const selectedStates = stateCodes?.length
     ? states.filter((state) => stateCodes.includes(state.code))
@@ -245,39 +247,52 @@ export async function ingestLegiScanBills({
 
     if (!bill?.bill_id || !bill.change_hash) continue;
 
-    await LegiScanBillModel.updateOne(
-      { billId: bill.bill_id },
-      {
-        $set: {
-          billId: bill.bill_id,
-          changeHash: bill.change_hash,
-          stateCode: (bill.state ?? candidate.stateCode).toUpperCase(),
-          sessionId: bill.session_id,
-          billNumber: bill.bill_number,
-          title: bill.title,
-          description: bill.description,
-          status: bill.status,
-          statusDate: normalizeDate(bill.status_date),
-          url: bill.url,
-          stateLink: bill.state_link,
-          rawBill: bill,
-          lastSeenAt: new Date(),
-          lastFetchedAt: new Date(),
-          topicMatches: buildTopicMatches(candidate),
-          texts:
-            bill.texts?.map((text) => ({
-              docId: text.doc_id,
-              mime: text.mime,
-              url: text.url,
-              textHash: text.text_hash,
-            })) ?? [],
-        },
-        $setOnInsert: {
-          firstSeenAt: new Date(),
-        },
+    const update = {
+      $set: {
+        billId: bill.bill_id,
+        changeHash: bill.change_hash,
+        stateCode: (bill.state ?? candidate.stateCode).toUpperCase(),
+        sessionId: bill.session_id,
+        billNumber: bill.bill_number,
+        title: bill.title,
+        description: bill.description,
+        status: bill.status,
+        statusDate: normalizeDate(bill.status_date),
+        url: bill.url,
+        stateLink: bill.state_link,
+        lastSeenAt: new Date(),
+        lastFetchedAt: new Date(),
+        topicMatches: buildTopicMatches(candidate),
+        ...(storeRawPayloads
+          ? {
+              rawBill: bill,
+              texts:
+                bill.texts?.map((text) => ({
+                  docId: text.doc_id,
+                  mime: text.mime,
+                  url: text.url,
+                  textHash: text.text_hash,
+                })) ?? [],
+            }
+          : {}),
       },
-      { upsert: true },
-    );
+      $setOnInsert: {
+        firstSeenAt: new Date(),
+      },
+      ...(storeRawPayloads
+        ? {}
+        : {
+            $unset: {
+              rawBill: "",
+              rawSearchResult: "",
+              texts: "",
+            },
+          }),
+    };
+
+    await LegiScanBillModel.updateOne({ billId: bill.bill_id }, update, {
+      upsert: true,
+    });
 
     upsertedBills += 1;
   }

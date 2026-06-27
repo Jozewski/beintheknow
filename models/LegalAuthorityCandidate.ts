@@ -157,6 +157,10 @@ legalAuthorityCandidateSchema.index({
   normalizedCitation: 1,
   topicId: 1,
 });
+legalAuthorityCandidateSchema.index({
+  candidateType: 1,
+  occurrenceCount: -1,
+});
 
 export type LegalAuthorityCandidate = InferSchemaType<
   typeof legalAuthorityCandidateSchema

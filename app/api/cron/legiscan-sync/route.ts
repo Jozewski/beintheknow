@@ -51,6 +51,7 @@ export async function GET(request: Request) {
   const maxBillFetches = Number(
     url.searchParams.get("maxBillFetches") ?? (runMode === "full" ? "0" : "25"),
   );
+  const storeRawPayloads = url.searchParams.get("storeRawPayloads") === "true";
   const topicIds = url.searchParams
     .get("topics")
     ?.split(",")
@@ -79,6 +80,7 @@ export async function GET(request: Request) {
           maxSearchQueries,
           maxPagesPerSearch,
           maxBillFetches,
+          storeRawPayloads,
         });
 
         await LegiScanSyncRunModel.updateOne(
@@ -108,6 +110,9 @@ export async function GET(request: Request) {
           searchOffset,
           counts: result,
           updatePolicy: plan.updatePolicy,
+          storagePolicy: storeRawPayloads
+            ? "raw_payloads_enabled"
+            : "metadata_only",
         });
       } catch (error) {
         await LegiScanSyncRunModel.updateOne(
@@ -132,6 +137,7 @@ export async function GET(request: Request) {
     schedule: request.headers.get("x-vercel-cron-schedule") ?? null,
     plannedSearchQueryCount: plan.plannedSearchQueryCount,
     updatePolicy: plan.updatePolicy,
-    note: "Add ?run=sample&states=AZ&maxSearchQueries=2&maxBillFetches=5 for a limited live ingestion run.",
+    storagePolicy: "metadata_only",
+    note: "Add ?run=sample&states=AZ&maxSearchQueries=2&maxBillFetches=5 for a limited metadata-only live run. Add storeRawPayloads=true only for a one-off diagnostic pull.",
   });
 }

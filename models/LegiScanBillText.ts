@@ -141,6 +141,17 @@ const legiScanBillTextSchema = new Schema(
 
 legiScanBillTextSchema.index({ stateCode: 1, billId: 1 });
 legiScanBillTextSchema.index({ stateCode: 1, topicIds: 1 });
+legiScanBillTextSchema.index({
+  textExtractionStatus: 1,
+  docId: 1,
+  normalizedText: 1,
+  statuteCitationExtractionVersion: 1,
+});
+legiScanBillTextSchema.index({
+  mime: 1,
+  textExtractionStatus: 1,
+  docId: 1,
+});
 
 export type LegiScanBillText = InferSchemaType<typeof legiScanBillTextSchema>;
 

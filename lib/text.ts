@@ -4,11 +4,8 @@ export function decodeBase64Text(value?: string) {
   return Buffer.from(value, "base64").toString("utf8");
 }
 
-export function normalizeLegalText(value: string) {
+function decodeHtmlEntities(value: string) {
   return value
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
@@ -20,7 +17,18 @@ export function normalizeLegalText(value: string) {
     )
     .replace(/&#(\d+);/g, (_, decimalValue: string) =>
       String.fromCodePoint(Number.parseInt(decimalValue, 10)),
-    )
+    );
+}
+
+function stripHtml(value: string) {
+  return value
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ");
+}
+
+export function normalizeLegalText(value: string) {
+  return stripHtml(decodeHtmlEntities(value))
     .replace(/\u00a0/g, " ")
     .replace(/\r\n/g, "\n")
     .replace(/[ \t]+/g, " ")
