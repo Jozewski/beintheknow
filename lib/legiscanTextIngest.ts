@@ -137,6 +137,30 @@ export async function ingestLegiScanBillTexts({
     fetchedTexts += 1;
 
     if (!text?.doc_id || !text.bill_id || !text.text_hash || !text.doc) {
+      failedTexts += 1;
+      await LegiScanBillTextModel.updateOne(
+        { docId: candidate.text.docId },
+        {
+          $set: {
+            docId: candidate.text.docId,
+            billId: candidate.bill.billId,
+            stateCode: candidate.bill.stateCode,
+            billNumber: candidate.bill.billNumber,
+            topicIds: getTopicIds(candidate.bill),
+            mime: candidate.text.mime,
+            url: candidate.text.url,
+            textHash: candidate.text.textHash,
+            rawText: "",
+            normalizedText: "",
+            contentEncoding: "external",
+            textExtractionStatus: "failed",
+            textExtractionError:
+              "LegiScan getBillText response was missing required document fields.",
+            fetchedAt: new Date(),
+          },
+        },
+        { upsert: true },
+      );
       continue;
     }
 

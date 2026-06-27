@@ -107,6 +107,34 @@ const legalTextChunkSchema = new Schema(
 
 legalTextChunkSchema.index({ sourceType: 1, sourceId: 1, chunkIndex: 1 }, { unique: true });
 legalTextChunkSchema.index({ jurisdiction: 1, stateCode: 1, topicIds: 1, reviewStatus: 1 });
+legalTextChunkSchema.index({
+  reviewStatus: 1,
+  sourceType: 1,
+  updatedAt: 1,
+  embeddingModel: 1,
+});
+legalTextChunkSchema.index({
+  reviewStatus: 1,
+  sourceType: 1,
+  stateCode: 1,
+  topicIds: 1,
+  updatedAt: 1,
+  embeddingModel: 1,
+});
+legalTextChunkSchema.index({
+  sourceType: 1,
+  reviewStatus: 1,
+  embeddingModel: 1,
+  updatedAt: 1,
+});
+legalTextChunkSchema.index({
+  sourceType: 1,
+  reviewStatus: 1,
+  stateCode: 1,
+  topicIds: 1,
+  embeddingModel: 1,
+  updatedAt: 1,
+});
 
 export type LegalTextChunk = InferSchemaType<typeof legalTextChunkSchema>;
 

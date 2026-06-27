@@ -39,7 +39,7 @@ export async function extractPendingLegiScanPdfTexts({
   let fetchedTexts = 0;
   let extractedTexts = 0;
   let failedTexts = 0;
-  let skippedTexts = 0;
+  const skippedTexts = 0;
 
   for (const pendingText of pendingTexts) {
     try {
@@ -64,7 +64,7 @@ export async function extractPendingLegiScanPdfTexts({
       }
 
       if (!force && pendingText.textHash && pendingText.textHash !== text.text_hash) {
-        skippedTexts += 1;
+        failedTexts += 1;
         await LegiScanBillTextModel.updateOne(
           { docId: pendingText.docId },
           {

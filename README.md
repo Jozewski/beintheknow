@@ -9,21 +9,23 @@ The app is built with Next.js App Router, MongoDB Atlas, Mongoose, Vercel Cron, 
 Implemented:
 
 - Root-level Next.js App Router structure.
-- Homepage UI with hero, jurisdiction toggle, state selector, topic search, topic cards, guest banner, disclaimer, footer, and JO chat panel shell.
+- Homepage UI with hero, jurisdiction toggle, state selector, topic search, topic cards, guest banner, disclaimer, footer, and working JO chat panel.
 - MongoDB connection singleton for serverless reuse.
-- Mongoose models for users, chat sessions, chat messages, reviewed legal content, LegiScan source bills, and LegiScan sync runs.
+- Mongoose models for users, chat sessions, chat messages, reviewed legal content, LegiScan source bills, bill text, legal text chunks, authority candidates, authorities, and sync runs.
 - LegiScan topic query source-of-truth scaffold.
 - Monday Vercel Cron route with LegiScan search, changed-hash comparison, and capped bill ingestion.
+- LegiScan bill text extraction, PDF text extraction, legal text chunking, source candidate discovery, curated source ingestion, and Gemini embedding batches.
+- RAG chat route that embeds user questions, retrieves legal chunks, generates plain-English JO responses, stores chat history, and returns citations.
 - Sample MongoDB seed data for development.
 
 Not implemented yet:
 
 - LegiScan relevance review and draft legal content generation.
-- Gemini streaming chat route.
+- Streaming chat response UI.
 - Auth route and auth UI.
 - Guest daily limit enforcement.
 - Legal review workflow UI.
-- Vector search / embeddings.
+- Atlas vector index automation and full-corpus embedding backfill.
 
 ## Tech Stack
 
@@ -42,7 +44,7 @@ Not implemented yet:
 
 ```text
 app/                  Next.js routes, layout, generated app icon
-app/api/cron/         Scheduled LegiScan sync route
+app/api/cron/         Scheduled ingestion, chunking, candidate, and embedding routes
 components/           UI components grouped by feature
 data/                 Temporary typed topic and state data
 docs/                 Project reference docs
@@ -67,6 +69,11 @@ MONGODB_URI=
 MONGODB_DIRECT_URI=
 JWT_SECRET=
 GEMINI_API_KEY=
+EMBEDDING_PROVIDER=gemini
+GEMINI_EMBEDDING_MODEL=gemini-embedding-001
+LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
+LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+VECTOR_SEARCH_INDEX=legal_text_chunk_embedding
 LEGISCAN_API_KEY=
 CRON_SECRET=
 NEXT_PUBLIC_APP_URL=http://localhost:3000
@@ -198,7 +205,117 @@ Create legal text chunks from extracted bill text:
 curl "http://localhost:3000/api/cron/legal-chunks?run=batch&offset=0&limit=100"
 ```
 
-Increase `offset` by `100` until batches return `scannedSources: 0`. Only `LegiScanBillText` records with `textExtractionStatus: "extracted"` are chunked; PDF records stay pending until PDF extraction is added.
+Increase `offset` by `100` until batches return `scannedSources: 0`. Only `LegiScanBillText` records with `textExtractionStatus: "extracted"` are chunked.
+
+Generate Gemini embeddings for legal text chunks:
+
+```bash
+curl "http://localhost:3000/api/cron/embeddings?limit=25&reviewStatus=draft&sourceType=legiscan-bill-text"
+```
+
+Run this in batches until `scannedChunks: 0`. Local development retrieval can use draft chunks; production retrieval is gated to `reviewStatus: "approved"` by default.
+
+Local/open embedding option:
+
+Gemini is still used for chat answers, but embeddings can be generated locally to avoid API rate limits. Install the local embedding dependency in your Python environment:
+
+```bash
+pip install -r requirements-local-embeddings.txt
+```
+
+Start the local embedding server:
+
+```bash
+npm run embeddings:local -- --model BAAI/bge-small-en-v1.5
+```
+
+Set these values in `.env.local` before starting Next.js:
+
+```bash
+EMBEDDING_PROVIDER=local
+LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
+LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_bge_small
+```
+
+Then restart the Next.js dev server and run batches:
+
+```bash
+npm run embeddings:batch -- --limit=100 --batches=20 --waitMs=500
+```
+
+Do not mix Gemini chunk embeddings with local query embeddings. The app uses `embeddingModel` to find chunks that match the active embedding model, and chat uses the same provider for the user question.
+
+Chat endpoint:
+
+```text
+POST /api/chat
+```
+
+Request body:
+
+```json
+{
+  "message": "What is expungement?",
+  "jurisdiction": "state",
+  "stateCode": "AZ"
+}
+```
+
+The chat route embeds the question with Gemini, retrieves legal text chunks, asks Gemini to answer only from retrieved context, stores `ChatMessage` records, and returns citations. If no relevant embedded source text exists, JO refuses to answer instead of guessing.
+
+Atlas vector search:
+
+The retrieval layer looks for an Atlas Vector Search index named:
+
+```text
+legal_text_chunk_embedding
+```
+
+Index path:
+
+```text
+embedding
+```
+
+Until that index exists, local/dev retrieval falls back to cosine scoring over a capped set of embedded chunks.
+
+If using `BAAI/bge-small-en-v1.5`, create a separate Atlas Vector Search index:
+
+```text
+legal_text_chunk_embedding_bge_small
+```
+
+Use this JSON:
+
+```json
+{
+  "fields": [
+    {
+      "type": "vector",
+      "path": "embedding",
+      "numDimensions": 384,
+      "similarity": "cosine"
+    },
+    {
+      "type": "filter",
+      "path": "jurisdiction"
+    },
+    {
+      "type": "filter",
+      "path": "stateCode"
+    },
+    {
+      "type": "filter",
+      "path": "topicIds"
+    },
+    {
+      "type": "filter",
+      "path": "reviewStatus"
+    }
+  ]
+}
+```
 
 Future behavior:
 

@@ -19,9 +19,10 @@ function estimateTokens(value: string) {
 function findChunkEnd(text: string, start: number, maxEnd: number) {
   if (maxEnd >= text.length) return text.length;
 
+  const minimumBreak = start + Math.floor((maxEnd - start) / 4);
   const paragraphBreak = text.lastIndexOf("\n\n", maxEnd);
 
-  if (paragraphBreak > start + maxEnd / 4) {
+  if (paragraphBreak > minimumBreak) {
     return paragraphBreak;
   }
 
@@ -31,7 +32,7 @@ function findChunkEnd(text: string, start: number, maxEnd: number) {
     text.lastIndexOf(": ", maxEnd),
   );
 
-  if (sentenceBreak > start + maxEnd / 4) {
+  if (sentenceBreak > minimumBreak) {
     return sentenceBreak + 1;
   }
 

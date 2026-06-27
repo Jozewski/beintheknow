@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed:sample": "node scripts/seed-sample-data.mjs"
+    "seed:sample": "node scripts/seed-sample-data.mjs",
+    "embeddings:batch": "node scripts/run-embedding-batches.mjs",
+    "embeddings:stats": "node scripts/embedding-stats.mjs",
+    "embeddings:local": "python scripts/local-embedding-server.py"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.0",
