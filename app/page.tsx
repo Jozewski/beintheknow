@@ -22,6 +22,7 @@ import {
   type TopicEntry,
   type TopicId,
 } from "@/data/content-data";
+import { getStateStatuteSource } from "@/data/legal-sources";
 import type { ApprovedContentEntry } from "@/lib/content";
 
 const suggestions = [
@@ -65,6 +66,32 @@ function contentToTopicEntry(content: ApprovedContentEntry): TopicEntry | null {
 
 function isTopicEntry(value: TopicEntry | null): value is TopicEntry {
   return value !== null;
+}
+
+function buildFallbackTopicEntries(jurisdiction: Jurisdiction, stateCode: string): TopicEntry[] {
+  if (jurisdiction === "federal") {
+    return topics.filter((topic) => topic.jurisdiction === "federal");
+  }
+
+  const statuteSource = stateCode ? getStateStatuteSource(stateCode) : undefined;
+
+  return topicOrder.map((topicId) => {
+    const metadata = topicMetadataById[topicId];
+
+    return {
+      id: topicId,
+      title: metadata.title,
+      badge: topicId === "supervision" ? "STATE SUPERVISION LAW" : "STATE LAW",
+      summary: metadata.summary,
+      jurisdiction: "state",
+      stateCode,
+      resources: statuteSource
+        ? [{ label: statuteSource.label, url: statuteSource.url }]
+        : metadata.resources,
+      learnMoreUrl: statuteSource?.url ?? metadata.learnMoreUrl,
+      icon: metadata.icon,
+    };
+  });
 }
 
 export default function Home() {
@@ -118,7 +145,10 @@ export default function Home() {
     return () => controller.abort();
   }, [contentRequestKey, jurisdiction, stateCode]);
 
-  const visibleTopicSource = contentEntries.length > 0 ? contentEntries : topics;
+  const visibleTopicSource =
+    contentEntries.length > 0
+      ? contentEntries
+      : buildFallbackTopicEntries(jurisdiction, stateCode);
 
   const filteredEntries = useMemo(() => {
     const normalizedQuery = searchQuery.trim().toLowerCase();

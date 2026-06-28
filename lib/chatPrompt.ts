@@ -35,10 +35,39 @@ function getLikelyTopicSummary(question: string) {
   const normalized = question.toLowerCase();
 
   if (
+    normalized.includes("police") ||
+    normalized.includes("officer") ||
+    normalized.includes("record police") ||
+    normalized.includes("film police")
+  ) {
+    return "Police-recording questions depend on state recording law, privacy rules, and the facts of the encounter. The official sources below give the state-law pieces JO found.";
+  }
+
+  if (
+    normalized.includes("vote") ||
+    normalized.includes("voting") ||
+    normalized.includes("felony in texas") ||
+    normalized.includes("felony conviction")
+  ) {
+    return "Voting after a felony conviction depends on the state and whether the sentence is fully finished. The official sources below give the state rule JO found.";
+  }
+
+  if (
+    normalized.includes("landlord") ||
+    normalized.includes("tenant") ||
+    normalized.includes("housing") ||
+    normalized.includes("rental")
+  ) {
+    return "Housing answers depend on the exact question. The sources below cover state landlord rules and record-clearing rules that may affect housing screening.";
+  }
+
+  if (
     normalized.includes("expunge") ||
     normalized.includes("expungement") ||
     normalized.includes("seal") ||
-    normalized.includes("record")
+    normalized.includes("criminal record") ||
+    normalized.includes("my record") ||
+    normalized.includes("a record")
   ) {
     return "Expungement is a court process that can clear, seal, or limit access to a criminal record. Some states use a different name for this, like sealing, set aside, or record clearance.";
   }
@@ -55,6 +84,29 @@ function getPlainSourceSummary(item: RetrievedLegalContext) {
 
   if (title.includes("sealing")) {
     return "This source says a person may ask a court to seal arrest, conviction, or sentencing records when the law's conditions are met.";
+  }
+
+  if (title.includes("qualified voter")) {
+    return "This source says Texas bars voting while a person is finally convicted of a felony unless the sentence is fully discharged, including incarceration, parole, or supervision.";
+  }
+
+  if (title.includes("eligibility for registration")) {
+    return "This source says Texas voter registration depends on being a qualified voter. For a felony conviction, that points back to the felony voting rule.";
+  }
+
+  if (
+    title.includes("tenant noncompliance") ||
+    title.includes("material falsification")
+  ) {
+    return "This source says a landlord may act when a tenant materially falsifies information on a rental application. It does not give a broad rule that every criminal record can be used to reject housing.";
+  }
+
+  if (title.includes("interception") || title.includes("communications")) {
+    return "This source says Arizona limits intercepting wire, electronic, or oral communications. Recording questions depend on whether you are part of the conversation and on the exact facts.";
+  }
+
+  if (title.includes("truthful name") || title.includes("lawfully detained")) {
+    return "This source says a person who is lawfully detained may have to give their true full name after being told refusal is unlawful.";
   }
 
   return getShortSourceText(item.text);
@@ -85,7 +137,7 @@ export function buildLegalContextBlock(retrievedContext: RetrievedLegalContext[]
       const sourceLabel =
         item.citation ?? item.title ?? item.sourceName ?? item.sourceId;
 
-      return [
+      const parts = [
         `[${index + 1}] ${sourceLabel}`,
         item.title ? `Title: ${item.title}` : undefined,
         item.sourceName ? `Source: ${item.sourceName}` : undefined,
@@ -95,9 +147,17 @@ export function buildLegalContextBlock(retrievedContext: RetrievedLegalContext[]
           ? `Current as of: ${item.currentAsOfLabel}`
           : undefined,
         item.text,
-      ]
-        .filter(Boolean)
-        .join("\n");
+      ];
+
+      // Add resources for legal-content sources
+      if (item.sourceType === "legal-content" && item.resources && item.resources.length > 0) {
+        parts.push("\nAdditional resources:");
+        for (const resource of item.resources) {
+          parts.push(`- ${resource.label}: ${resource.url}`);
+        }
+      }
+
+      return parts.filter(Boolean).join("\n");
     })
     .join("\n\n");
 }
@@ -122,6 +182,7 @@ export function buildJoPrompt({
       "Do not cite any source that is not included in the legal authority context.",
       "Use inline citations exactly as bracket numbers, like [1] and [2].",
       "Always finish citation brackets. Write [1], not [1 or [1.",
+      "When a source includes additional resources (like LawHelp.org or state agencies), you may mention these resources to help the user find more detailed help.",
       "Mention the current-as-of label when it affects confidence or when the source text says verification is needed.",
       "Write for a sixth-grade reading level.",
       "Use short words and short sentences. Aim for 15 words or fewer per sentence.",

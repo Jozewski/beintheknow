@@ -1,86 +1,140 @@
+<p align="center">
+  <img src="public/jo-logo.svg" alt="JO shield logo" width="96" height="96" />
+</p>
+
 # Be In The Know - Just Ask JO
 
-Plain-language rights education for people navigating reentry, supervision, housing, employment, voting rights, expungement, and police interactions.
+Be In The Know is a legal rights education platform built to make complex federal and state rights information easier to understand, verify, and act on. Its assistant, JO, translates approved legal source material into plain-English guidance for people navigating reentry, supervision, housing, employment, voting rights, record clearing, and police interactions.
 
-The app is built with Next.js App Router, MongoDB Atlas, Mongoose, Vercel Cron, and a LegiScan-first source data strategy. JO is designed to provide educational information only, not legal advice.
+The project is designed around a simple principle: people should not have to read legal code alone to understand the basic rights and barriers that may affect their future. JO gives users a more approachable starting point while keeping citations, source boundaries, and legal disclaimers visible.
 
-## Current Status
+## Product Purpose
 
-Implemented:
+Be In The Know focuses on the gap between raw legal information and real user comprehension. Statutes, agency pages, and public resources are often scattered across different websites, written at a high reading level, and difficult to compare across states. This app brings that information into a structured experience where users can:
 
-- Root-level Next.js App Router structure.
-- Homepage UI with hero, jurisdiction toggle, state selector, topic search, topic cards, guest banner, disclaimer, footer, and working JO chat panel.
-- MongoDB connection singleton for serverless reuse.
-- Mongoose models for users, chat sessions, chat messages, reviewed legal content, LegiScan source bills, bill text, legal text chunks, authority candidates, authorities, and sync runs.
-- LegiScan topic query source-of-truth scaffold.
-- Monday Vercel Cron route with LegiScan search, changed-hash comparison, and capped bill ingestion.
-- LegiScan bill text extraction, PDF text extraction, legal text chunking, source candidate discovery, curated source ingestion, and Gemini embedding batches.
-- RAG chat route with a prompt/tool boundary that embeds user questions, retrieves legal-authority chunks only, generates plain-English JO responses, stores chat history, and returns citations.
-- Sample MongoDB seed data for development.
+- choose federal or state-specific rights information,
+- browse topic cards with state-relevant resources,
+- ask JO plain-language questions,
+- receive cited educational answers, and
+- verify answers against official source links.
 
-Not implemented yet:
+JO is intentionally conservative. It answers from approved legal authority records, returns citations with each response, and avoids guessing when source text is missing. The primary answer corpus is official statute and authority text that has been normalized, chunked, embedded, and marked approved. Legislative tracking data from LegiScan is maintained separately as supplemental change-monitoring data.
 
-- LegiScan relevance review and draft legal content generation.
-- Streaming chat response UI.
-- Auth route and auth UI.
-- Guest daily limit enforcement.
-- Legal review workflow UI.
-- Atlas vector index automation and full-corpus embedding backfill.
+JO is an educational tool only. It does not provide legal advice, does not predict outcomes, and does not create an attorney-client relationship.
+
+## What Makes It Different
+
+Be In The Know is not a generic chatbot placed on top of legal content. The system is built around source discipline, jurisdiction awareness, and plain-language delivery.
+
+- Source-grounded answers: JO retrieves approved legal authority before answering and returns citations users can inspect.
+- State-aware experience: topic cards and chat retrieval respond to the state selected by the user.
+- Separate monitoring layer: LegiScan data helps track legal changes without being treated as final authority.
+- Plain-language guardrails: JO is prompted to explain rights at about a sixth-grade reading level and avoid unsupported promises.
+- Operational transparency: source type, review status, current-as-of labels, embedding model, and citation metadata are preserved with the corpus.
+
+## Core Topics
+
+- Voting rights restoration
+- Expungement, sealing, set-aside, and record clearing
+- Housing rights
+- Employment and occupational licensing
+- Police interactions
+- Probation, parole, and supervision
 
 ## Tech Stack
 
 - Framework: Next.js 16 App Router
 - Language: TypeScript
-- Styling: Tailwind CSS
-- UI primitives: shadcn-style components
-- Icons: Lucide React
-- Animation: Motion
+- UI: React, Tailwind CSS, Lucide React, Motion
 - Database: MongoDB Atlas with Mongoose
+- AI: Gemini through the Vercel AI SDK
+- Embeddings: Gemini or local embedding server
+- Vector search: MongoDB Atlas Vector Search
 - Scheduled jobs: Vercel Cron
-- Legislative source: LegiScan
-- AI model target: Gemini Flash through Vercel AI SDK
+- Legislative monitoring: LegiScan Public API
 
-## Project Structure
+## Application Structure
 
 ```text
-app/                  Next.js routes, layout, generated app icon
-app/api/cron/         Scheduled ingestion, chunking, candidate, and embedding routes
+app/                  Next.js app routes, API routes, layout, and generated icon
+app/api/chat/         JO chat endpoint
+app/api/content/      Topic-card content endpoint
+app/api/cron/         Scheduled and manual ingestion/maintenance endpoints
 components/           UI components grouped by feature
-data/                 Temporary typed topic and state data
-docs/                 Project reference docs
-lib/                  Shared server/client helpers
+data/                 Typed topic, state, legal source, and resource data
+docs/                 Project reference documentation
+lib/                  Server/client helpers, retrieval, prompt, ingestion, and embedding logic
 models/               Mongoose models
-prompts/              Prompt category folders for system, safety, citation, escalation, jurisdiction, and tone rules
-scripts/              Local utility and seed scripts
+scripts/              Local utility scripts
 ```
 
-Important docs:
+Reference documentation:
 
 - `docs/LegiScan-Query-Reference-Guide.md`
+
+## Data Architecture
+
+The application uses a layered legal information architecture so user-facing answers remain grounded in approved authority rather than raw legislative noise.
+
+Primary answer corpus:
+
+- `LegalAuthority`
+- `LegalTextChunk` with `sourceType: "legal-authority"`
+- `reviewStatus: "approved"`
+- active embedding model metadata
+- official source URL, citation, jurisdiction, state code, topic IDs, and current-as-of metadata
+
+Supplemental monitoring data:
+
+- `LegiScanBill`
+- `LegiScanBillText`
+- `LegalAuthorityCandidate`
+- `LegiScanSyncRun`
+
+JO's chat retrieval is scoped to approved legal-authority chunks. LegiScan bill text is not used as the primary answer source.
+
+This separation matters. Legislative bills can signal what may be changing, but enacted statutes and official authority records are the stronger foundation for user-facing education. Be In The Know treats LegiScan as a monitoring layer and official authority as the answer layer.
+
+## Chat Flow
+
+JO uses a retrieval-first workflow. The model does not independently decide what the law is, search the database directly, or cite sources that were not retrieved.
+
+1. The user submits a question with jurisdiction and optional state code.
+2. The chat route detects the supported legal topic.
+3. The retrieval tool embeds the question using the active embedding provider.
+4. MongoDB Atlas Vector Search retrieves approved legal-authority chunks.
+5. `lib/chatPrompt.ts` builds JO's prompt with source context and safety rules.
+6. Gemini writes a plain-English response with citations.
+7. The app stores the user and assistant messages in MongoDB.
+
+If Gemini generation fails but approved source context exists, JO returns a source-based fallback response grounded in the retrieved citations.
+
+The prompt is tuned for plain language. JO is instructed to write at about a sixth-grade reading level, use short sentences, explain legal terms when needed, and avoid making eligibility or deadline promises unless the retrieved source text supports them.
 
 ## Environment Variables
 
 Create `.env.local` in the project root.
-
-Required for current MongoDB work:
 
 ```bash
 MONGODB_URI=
 MONGODB_DIRECT_URI=
 JWT_SECRET=
 GEMINI_API_KEY=
-EMBEDDING_PROVIDER=gemini
-GEMINI_EMBEDDING_MODEL=gemini-embedding-001
-LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
-LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
-VECTOR_SEARCH_INDEX=legal_text_chunk_embedding
 LEGISCAN_API_KEY=
 CRON_SECRET=
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 GUEST_DAILY_LIMIT=5
+
+EMBEDDING_PROVIDER=local
+LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
+LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+GEMINI_EMBEDDING_MODEL=gemini-embedding-001
+VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_bge_small
 ```
 
-Track 2 placeholders:
+`MONGODB_DIRECT_URI` is optional but useful locally when `mongodb+srv` DNS resolution is unreliable. `lib/mongodb.ts` prefers `MONGODB_DIRECT_URI` when present and falls back to `MONGODB_URI`.
+
+Optional integrations:
 
 ```bash
 UPSTASH_REDIS_REST_URL=
@@ -91,9 +145,7 @@ NEXT_PUBLIC_POSTHOG_KEY=
 NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 ```
 
-`MONGODB_DIRECT_URI` is used locally because Node had trouble resolving the Atlas `mongodb+srv` DNS record in this environment. `lib/mongodb.ts` prefers `MONGODB_DIRECT_URI` when present and falls back to `MONGODB_URI`.
-
-## Development
+## Local Development
 
 Install dependencies:
 
@@ -101,7 +153,7 @@ Install dependencies:
 npm install
 ```
 
-Run the app:
+Run the development server:
 
 ```bash
 npm run dev
@@ -113,7 +165,7 @@ Open:
 http://localhost:3000
 ```
 
-Run checks:
+Run validation:
 
 ```bash
 npm run lint
@@ -121,38 +173,86 @@ npx tsc --noEmit
 npm run build
 ```
 
-## Sample Data
-
-Seed development sample data into MongoDB:
+## Scripts
 
 ```bash
 npm run seed:sample
 ```
 
-The seed creates or updates:
+Seeds sample development records into MongoDB.
 
-- 3 `LegiScanBill` source records
-- 3 approved `LegalContent` records
-- 1 `LegiScanSyncRun` audit record each time the seed runs
-
-Bill and legal content records use upserts, so rerunning the seed does not duplicate those records. Sync runs are appended intentionally as audit history.
-
-## LegiScan Strategy
-
-LegiScan is the source of truth for legislative data.
-
-Current query scaffolding lives in:
-
-- `lib/legiscan.ts`
-- `lib/legiscanSync.ts`
-
-The weekly cron route lives at:
-
-```text
-GET /api/cron/legiscan-sync
+```bash
+npm run embeddings:local -- --model BAAI/bge-small-en-v1.5
 ```
 
-Vercel cron config:
+Starts the local embedding server.
+
+```bash
+npm run embeddings:batch -- --limit=100 --batches=20 --waitMs=500
+```
+
+Runs embedding batches against the configured embedding provider.
+
+```bash
+npm run embeddings:stats -- --sourceType=legal-authority --reviewStatus=approved
+```
+
+Reports embedding coverage for matching chunks.
+
+```bash
+npm run chat:smoke -- --state=AZ
+```
+
+Checks approved legal-authority coverage for a selected state and runs core chat questions through the local API.
+
+## API Routes
+
+```text
+POST /api/chat
+```
+
+Runs JO chat retrieval, prompt construction, Gemini response generation, message persistence, and citation return.
+
+Example body:
+
+```json
+{
+  "message": "What is expungement?",
+  "jurisdiction": "state",
+  "stateCode": "AZ"
+}
+```
+
+```text
+GET /api/content
+```
+
+Returns approved topic-card content for federal or state mode.
+
+Example:
+
+```text
+/api/content?jurisdiction=state&stateCode=TX
+```
+
+The response merges approved content, official legal authority links, and curated state resource links from `data/state-topic-resources.ts`.
+
+## Cron and Maintenance Routes
+
+Cron routes live under `app/api/cron/`. They can be called manually in development and protected with `CRON_SECRET` in deployed environments.
+
+Key routes:
+
+- `/api/cron/legiscan-sync`
+- `/api/cron/legiscan-text`
+- `/api/cron/legiscan-pdf-text`
+- `/api/cron/legal-chunks`
+- `/api/cron/legal-authorities`
+- `/api/cron/statute-candidates`
+- `/api/cron/embeddings`
+- `/api/cron/legiscan-cleanup`
+
+Vercel cron configuration:
 
 ```json
 {
@@ -165,187 +265,45 @@ Vercel cron config:
 }
 ```
 
-This runs Mondays at 9:00 UTC.
+This runs the LegiScan monitoring sync every Monday at 9:00 UTC.
 
-Current behavior:
+## Embeddings and Vector Search
 
-- Builds the weekly state/topic query plan.
-- Records a sync run when MongoDB is configured.
-- Supports a limited live ingestion mode for testing.
-- Calls `getSearchRaw` to collect `bill_id` and `change_hash` candidates.
-- Compares stored `changeHash` values.
-- Fetches only new or changed bills with `getBill`.
-- Stores fetched source records in `LegiScanBill` with `relevanceStatus: "pending"`.
+The app supports both Gemini embeddings and a local embedding pipeline. The active provider is controlled by `EMBEDDING_PROVIDER`.
 
-Run a small local ingestion:
+Do not mix embedding providers for the same search path. Stored chunks include `embeddingModel`, and retrieval only searches chunks that match the active embedding model.
 
-```bash
-curl "http://localhost:3000/api/cron/legiscan-sync?run=sample&states=AZ&topics=expungement&maxSearchQueries=1&maxBillFetches=2"
-```
+For `BAAI/bge-small-en-v1.5`, create an Atlas Vector Search index with:
 
-Run a full ingestion in resumable batches:
+- index name: `legal_text_chunk_embedding_bge_small`
+- vector path: `embedding`
+- dimensions: `384`
+- similarity: `cosine`
 
-```bash
-curl "http://localhost:3000/api/cron/legiscan-sync?run=full&searchOffset=0&maxSearchQueries=25&maxPagesPerSearch=100&maxBillFetches=0"
-```
+Recommended filter fields:
 
-Increase `searchOffset` by `25` until the final partial batch completes. `maxBillFetches=0` means fetch every new or changed bill found in that batch.
+- `jurisdiction`
+- `stateCode`
+- `topicIds`
+- `reviewStatus`
+- `sourceType`
+- `embeddingModel`
 
-Ingest full LegiScan bill text in resumable batches:
+## Source Policy
 
-```bash
-curl "http://localhost:3000/api/cron/legiscan-text?run=batch&billOffset=0&limit=100"
-```
+JO's primary answers should be grounded in approved legal authority records. Each chunk should include:
 
-Increase `billOffset` by `100` until batches return `scannedBills: 0`. Text documents are skipped when the stored `textHash` is unchanged.
+- jurisdiction
+- state code when applicable
+- topic ID
+- citation
+- official source URL
+- current-as-of metadata
+- review status
+- embedding model
 
-Create legal text chunks from extracted bill text:
-
-```bash
-curl "http://localhost:3000/api/cron/legal-chunks?run=batch&offset=0&limit=100"
-```
-
-Increase `offset` by `100` until batches return `scannedSources: 0`. Only `LegiScanBillText` records with `textExtractionStatus: "extracted"` are chunked.
-
-Generate Gemini embeddings for legal text chunks:
-
-```bash
-curl "http://localhost:3000/api/cron/embeddings?limit=25&reviewStatus=draft&sourceType=legiscan-bill-text"
-```
-
-Run this in batches until `scannedChunks: 0`. Local development retrieval can use draft chunks; production retrieval is gated to `reviewStatus: "approved"` by default.
-
-Local/open embedding option:
-
-Gemini is still used for chat answers, but embeddings can be generated locally to avoid API rate limits. Install the local embedding dependency in your Python environment:
-
-```bash
-pip install -r requirements-local-embeddings.txt
-```
-
-Start the local embedding server:
-
-```bash
-npm run embeddings:local -- --model BAAI/bge-small-en-v1.5
-```
-
-Set these values in `.env.local` before starting Next.js:
-
-```bash
-EMBEDDING_PROVIDER=local
-LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
-LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
-VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_bge_small
-```
-
-Then restart the Next.js dev server and run batches:
-
-```bash
-npm run embeddings:batch -- --limit=100 --batches=20 --waitMs=500
-```
-
-Do not mix Gemini chunk embeddings with local query embeddings. The app uses `embeddingModel` to find chunks that match the active embedding model, and chat uses the same provider for the user question.
-
-Chat endpoint:
-
-```text
-POST /api/chat
-```
-
-Request body:
-
-```json
-{
-  "message": "What is expungement?",
-  "jurisdiction": "state",
-  "stateCode": "AZ"
-}
-```
-
-The chat route uses a prompt/tool boundary:
-
-- `lib/mcp/legalAuthorityTools.ts` exposes the MCP-shaped `retrieveLegalAuthority()` tool wrapper.
-- `lib/chatPrompt.ts` assembles JO's system instructions, user prompt, legal context block, and no-authority fallback.
-- The tool retrieves only `sourceType: "legal-authority"` chunks with `reviewStatus` of `approved`.
-- LegiScan bill text is excluded from JO's primary chat answers by default. It remains supplemental change-tracking data.
-- Questions must match one of JO's supported topic buckets before retrieval runs: voting, expungement, housing, employment, police, or supervision.
-- If no matching legal authority exists, JO refuses to answer instead of guessing.
-
-The model is only responsible for explaining retrieved authority in plain English. It should not decide which law exists, search Atlas directly, or cite anything that was not returned by the retrieval tool.
-
-Atlas vector search:
-
-The retrieval layer looks for an Atlas Vector Search index named:
-
-```text
-legal_text_chunk_embedding
-```
-
-Index path:
-
-```text
-embedding
-```
-
-Until that index exists, local/dev retrieval falls back to cosine scoring over a capped set of embedded chunks.
-
-If using `BAAI/bge-small-en-v1.5`, create a separate Atlas Vector Search index:
-
-```text
-legal_text_chunk_embedding_bge_small
-```
-
-Use this JSON:
-
-```json
-{
-  "fields": [
-    {
-      "type": "vector",
-      "path": "embedding",
-      "numDimensions": 384,
-      "similarity": "cosine"
-    },
-    {
-      "type": "filter",
-      "path": "jurisdiction"
-    },
-    {
-      "type": "filter",
-      "path": "stateCode"
-    },
-    {
-      "type": "filter",
-      "path": "topicIds"
-    },
-    {
-      "type": "filter",
-      "path": "reviewStatus"
-    }
-  ]
-}
-```
-
-Future behavior:
-
-- Relevance-check candidate bills.
-- Generate draft `LegalContent` from relevant source bills.
-- Store raw source data separately from reviewed user-facing content.
-- Replace only changed source records.
-
-## Data Model Notes
-
-Raw source layer:
-
-- `LegiScanBill`
-- `LegiScanSyncRun`
-
-Reviewed user-facing layer:
-
-- `LegalContent`
-
-JO should eventually answer from reviewed, normalized `LegalContent`, not directly from raw LegiScan bill records.
+LegiScan is used to monitor legislative changes and identify candidate authority updates. It is not treated as final legal authority for user-facing answers.
 
 ## Legal Disclaimer
 
-Be In The Know and Just Ask JO provide general educational information. They do not provide legal advice and do not create an attorney-client relationship. Users needing personal legal guidance should contact a qualified legal aid organization or attorney.
+Be In The Know and Just Ask JO provide general educational information. They are not a law firm, do not provide legal advice, and do not create an attorney-client relationship. Users who need help with their own situation should contact a qualified legal aid organization or attorney licensed in their jurisdiction.
