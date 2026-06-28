@@ -73,6 +73,17 @@ function ensureCompleteAnswer(value: string) {
   return `${trimmed}. Check the cited source or ask legal aid before you rely on this.`;
 }
 
+function isBrokenGeneratedAnswer(value: string) {
+  const normalized = value.trim().replace(/\s+/g, " ");
+
+  return (
+    /\b(if|when|because|unless|that|and|or|but|to)\.\s*$/i.test(normalized) ||
+    /\b(if|when|because|unless|that|and|or|but|to)\.\s*Check the cited source/i.test(
+      normalized,
+    )
+  );
+}
+
 async function findOrCreateSession({
   sessionId,
   guestToken,
@@ -164,6 +175,15 @@ export async function POST(request: Request) {
       });
 
       content = ensureCompleteAnswer(result.text);
+
+      if (isBrokenGeneratedAnswer(content)) {
+        content = buildSourceBasedFallbackResponse({
+          question: message,
+          jurisdiction,
+          stateCode,
+          retrievedContext,
+        });
+      }
     } catch (error) {
       console.error("JO chat generation failed", error);
       if (retrievedContext.length > 0) {

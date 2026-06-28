@@ -1,6 +1,12 @@
 import type { TopicId } from "@/data/content-data";
 import { getActiveEmbeddingModel } from "@/lib/embeddings";
+import { LegalContentModel } from "@/models/LegalContent";
 import { LegalTextChunkModel } from "@/models/LegalTextChunk";
+
+export type ResourceLink = {
+  label: string;
+  url: string;
+};
 
 export type LegalRetrievalCitation = {
   chunkId: string;
@@ -13,6 +19,7 @@ export type LegalRetrievalCitation = {
   sourceUrl?: string;
   currentAsOfLabel?: string;
   score?: number;
+  resources?: ResourceLink[];
 };
 
 export type RetrievedLegalContext = LegalRetrievalCitation & {
@@ -68,8 +75,9 @@ const topicKeywords: Record<TopicId, string[]> = {
     "seal",
     "sealed",
     "sealing",
-    "record",
     "criminal record",
+    "my record",
+    "a record",
     "record clearance",
     "clean slate",
     "background check",
@@ -142,10 +150,18 @@ function getVectorSearchIndexName() {
 
 export function detectLegalTopicIds(query: string): TopicId[] {
   const normalized = query.toLowerCase();
+  const normalizedWords = normalized
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 
   return Object.entries(topicKeywords)
     .filter(([, keywords]) =>
-      keywords.some((keyword) => normalized.includes(keyword)),
+      keywords.some((keyword) => {
+        if (keyword.includes(" ")) return normalized.includes(keyword);
+
+        return new RegExp(`\\b${keyword}\\b`).test(normalizedWords);
+      }),
     )
     .map(([topicId]) => topicId as TopicId);
 }
@@ -228,6 +244,46 @@ function toRetrievedContext(chunk: LegalChunkForRetrieval): RetrievedLegalContex
   };
 }
 
+/**
+ * Enriches legal-content chunks with their resources from the source LegalContent records.
+ * This allows the chat to surface helpful resource links alongside curated summaries.
+ */
+async function enrichWithResources(
+  contexts: RetrievedLegalContext[]
+): Promise<RetrievedLegalContext[]> {
+  // Identify legal-content chunks that need resource enrichment
+  const legalContentSourceIds = contexts
+    .filter(ctx => ctx.sourceType === "legal-content")
+    .map(ctx => ctx.sourceId);
+
+  if (legalContentSourceIds.length === 0) {
+    return contexts;
+  }
+
+  // Fetch resources from LegalContent records in bulk
+  const legalContents = await LegalContentModel.find(
+    { _id: { $in: legalContentSourceIds } },
+    { _id: 1, resources: 1 }
+  ).lean();
+
+  // Create a map of sourceId -> resources
+  const resourcesMap = new Map<string, ResourceLink[]>(
+    legalContents.map(content => [
+      String(content._id),
+      content.resources ?? [],
+    ])
+  );
+
+  // Enrich contexts with resources
+  return contexts.map(ctx => {
+    if (ctx.sourceType === "legal-content") {
+      const resources = resourcesMap.get(ctx.sourceId);
+      return { ...ctx, resources };
+    }
+    return ctx;
+  });
+}
+
 async function retrieveWithAtlasVectorSearch({
   embedding,
   query,
@@ -284,7 +340,8 @@ async function retrieveWithAtlasVectorSearch({
     },
   ]);
 
-  return rows.map(toRetrievedContext);
+  const contexts = rows.map(toRetrievedContext);
+  return enrichWithResources(contexts);
 }
 
 async function retrieveWithCosineFallback({
@@ -319,7 +376,7 @@ async function retrieveWithCosineFallback({
     )
     .lean<LegalChunkForRetrieval[]>();
 
-  return rows
+  const contexts = rows
     .map((row) => ({
       ...row,
       score: row.embedding
@@ -329,6 +386,8 @@ async function retrieveWithCosineFallback({
     .sort((left, right) => (right.score ?? 0) - (left.score ?? 0))
     .slice(0, limit)
     .map(toRetrievedContext);
+
+  return enrichWithResources(contexts);
 }
 
 export async function retrieveLegalContext({
