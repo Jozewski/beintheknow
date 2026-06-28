@@ -26,7 +26,8 @@ JO is an educational tool only. It does not provide legal advice, does not predi
 
 Be In The Know is not a generic chatbot placed on top of legal content. The system is built around source discipline, jurisdiction awareness, and plain-language delivery.
 
-- Source-grounded answers: JO retrieves approved legal authority before answering and returns citations users can inspect.
+- Source-grounded answers: JO retrieves both approved legal authorities (official statutes) and curated summaries (plain-English guidance with resource links) before answering. All responses include citations users can inspect.
+- Intelligent retrieval: Question type detection adapts retrieval strategy—"What is expungement?" gets more summaries, while "Can I vote in Texas?" gets more statutes.
 - State-aware experience: topic cards and chat retrieval respond to the state selected by the user.
 - Separate monitoring layer: LegiScan data helps track legal changes without being treated as final authority.
 - Plain-language guardrails: JO is prompted to explain rights at about a sixth-grade reading level and avoid unsupported promises.
@@ -78,8 +79,9 @@ The application uses a layered legal information architecture so user-facing ans
 
 Primary answer corpus:
 
-- `LegalAuthority`
-- `LegalTextChunk` with `sourceType: "legal-authority"`
+- `LegalAuthority` - Official statutes, regulations, and enacted bills
+- `LegalContent` - Curated plain-English summaries with resource links
+- `LegalTextChunk` with `sourceType: "legal-authority"` OR `"legal-content"`
 - `reviewStatus: "approved"`
 - active embedding model metadata
 - official source URL, citation, jurisdiction, state code, topic IDs, and current-as-of metadata
@@ -91,7 +93,7 @@ Supplemental monitoring data:
 - `LegalAuthorityCandidate`
 - `LegiScanSyncRun`
 
-JO's chat retrieval is scoped to approved legal-authority chunks. LegiScan bill text is not used as the primary answer source.
+JO's chat retrieval uses both legal-authority (official statutes) and legal-content (curated summaries) chunks. The retrieval strategy adapts based on question type: high-level definitional questions prioritize plain-English summaries, while specific factual questions prioritize statute text. LegiScan bill text is not used as the primary answer source.
 
 This separation matters. Legislative bills can signal what may be changing, but enacted statutes and official authority records are the stronger foundation for user-facing education. Be In The Know treats LegiScan as a monitoring layer and official authority as the answer layer.
 
@@ -102,14 +104,34 @@ JO uses a retrieval-first workflow. The model does not independently decide what
 1. The user submits a question with jurisdiction and optional state code.
 2. The chat route detects the supported legal topic.
 3. The retrieval tool embeds the question using the active embedding provider.
-4. MongoDB Atlas Vector Search retrieves approved legal-authority chunks.
-5. `lib/chatPrompt.ts` builds JO's prompt with source context and safety rules.
-6. Gemini writes a plain-English response with citations.
-7. The app stores the user and assistant messages in MongoDB.
+4. MongoDB Atlas Vector Search retrieves approved chunks from both legal-authority (statutes) and legal-content (summaries) sources. High-level questions prioritize summaries; specific questions prioritize statutes. Falls back to any approved content if primary sources are missing.
+5. Legal-content chunks are enriched with their resource links (LawHelp.org, state agencies, etc.).
+6. `lib/chatPrompt.ts` builds JO's prompt with source context, resources, and safety rules.
+7. Gemini writes a plain-English response with citations and resource recommendations.
+8. The app stores the user and assistant messages in MongoDB.
 
 If Gemini generation fails but approved source context exists, JO returns a source-based fallback response grounded in the retrieved citations.
 
 The prompt is tuned for plain language. JO is instructed to write at about a sixth-grade reading level, use short sentences, explain legal terms when needed, and avoid making eligibility or deadline promises unless the retrieved source text supports them.
+
+## Retrieval Strategy
+
+JO uses an intelligent multi-source retrieval strategy to balance authoritative legal citations with accessible plain-English guidance.
+
+**Question Type Detection:**
+
+- **High-level questions** ("What is expungement?", "Explain voting rights"): Retrieves 3 statute chunks + 5 curated summary chunks
+- **Specific questions** ("Can I vote in Texas?", "How do I seal my record?"): Retrieves 5 statute chunks + 2 curated summary chunks
+
+**Three-Tier Fallback:**
+
+1. If no legal-authority chunks exist but legal-content chunks are found, retrieve up to 6 legal-content chunks
+2. If neither source has content, remove sourceType filter and retrieve any approved chunks
+3. Otherwise, combine and sort both sources by relevance score
+
+**Resource Enrichment:**
+
+Legal-content chunks automatically include their resource links (e.g., LawHelp.org, state legal aid, government agencies). JO can reference these in responses to help users find additional support.
 
 ## Environment Variables
 
@@ -203,7 +225,7 @@ Reports embedding coverage for matching chunks.
 npm run chat:smoke -- --state=AZ
 ```
 
-Checks approved legal-authority coverage for a selected state and runs core chat questions through the local API.
+Checks approved legal-authority and legal-content coverage for a selected state and runs core chat questions through the local API to verify multi-source retrieval.
 
 ## API Routes
 
