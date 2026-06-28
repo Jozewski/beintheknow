@@ -8,9 +8,14 @@ import {
   GEMINI_CHAT_MODEL,
   getGoogleProvider,
 } from "@/lib/ai/google";
-import { embedText } from "@/lib/embeddings";
-import { retrieveLegalContext } from "@/lib/legalRetrieval";
+import {
+  buildGenerationFailureResponse,
+  buildJoPrompt,
+  buildNoAuthorityResponse,
+  buildSourceBasedFallbackResponse,
+} from "@/lib/chatPrompt";
 import type { LegalRetrievalCitation } from "@/lib/legalRetrieval";
+import { retrieveLegalAuthority } from "@/lib/mcp/legalAuthorityTools";
 import { connectDB } from "@/lib/mongodb";
 import { ChatMessageModel } from "@/models/ChatMessage";
 import { ChatSessionModel } from "@/models/ChatSession";
@@ -37,34 +42,35 @@ type ChatResponseBody = {
   };
 };
 
-function buildContextBlock(
-  retrievedContext: Awaited<ReturnType<typeof retrieveLegalContext>>,
-) {
-  if (retrievedContext.length === 0) return "";
-
-  return retrievedContext
-    .map((item, index) => {
-      const sourceLabel =
-        item.citation ?? item.title ?? item.sourceName ?? item.sourceId;
-
-      return [
-        `[${index + 1}] ${sourceLabel}`,
-        item.sourceUrl ? `URL: ${item.sourceUrl}` : undefined,
-        item.currentAsOfLabel
-          ? `Current as of: ${item.currentAsOfLabel}`
-          : undefined,
-        item.text,
-      ]
-        .filter(Boolean)
-        .join("\n");
-    })
-    .join("\n\n");
-}
-
 function getConfidence(citationCount: number): "high" | "medium" | "low" {
   if (citationCount >= 3) return "high";
   if (citationCount >= 1) return "medium";
   return "low";
+}
+
+function ensureCompleteAnswer(value: string) {
+  const trimmed = value.trim().replace(/\[(\d+(?:,\s*\d+)*)$/, "[$1]");
+  if (!trimmed) return trimmed;
+  if (/[.!?)]$/.test(trimmed)) return trimmed;
+
+  const lastCompleteSentenceEnd = Math.max(
+    trimmed.lastIndexOf("."),
+    trimmed.lastIndexOf("!"),
+    trimmed.lastIndexOf("?"),
+  );
+  const trailingFragment =
+    lastCompleteSentenceEnd >= 0
+      ? trimmed.slice(lastCompleteSentenceEnd + 1).trim()
+      : "";
+
+  if (
+    lastCompleteSentenceEnd >= 0 &&
+    trailingFragment.split(/\s+/).filter(Boolean).length <= 8
+  ) {
+    return `${trimmed.slice(0, lastCompleteSentenceEnd + 1)} Check the cited source or ask legal aid before you rely on this.`;
+  }
+
+  return `${trimmed}. Check the cited source or ask legal aid before you rely on this.`;
 }
 
 async function findOrCreateSession({
@@ -118,14 +124,13 @@ export async function POST(request: Request) {
     flagged: false,
   });
 
-  const queryEmbedding = await embedText(message);
-  const retrievedContext = await retrieveLegalContext({
-    embedding: queryEmbedding,
-    query: message,
+  const legalAuthorityResult = await retrieveLegalAuthority({
+    question: message,
     jurisdiction,
     stateCode,
     limit: 6,
   });
+  const retrievedContext = legalAuthorityResult.context;
 
   const citations = retrievedContext.map(
     (contextItem) => {
@@ -134,48 +139,46 @@ export async function POST(request: Request) {
       return citation;
     },
   );
-  const confidence = getConfidence(citations.length);
+  let confidence = getConfidence(citations.length);
 
   let content: string;
 
   if (retrievedContext.length === 0) {
-    content =
-      "I do not have enough reviewed source text in the database to answer that accurately yet. JO should only answer from verified, cited legal sources. Try again after we embed and review the relevant state or federal source material.";
+    content = buildNoAuthorityResponse();
   } else {
     const googleProvider = getGoogleProvider();
-    const contextBlock = buildContextBlock(retrievedContext);
-    const draftNotice =
-      process.env.NODE_ENV === "production"
-        ? ""
-        : "The retrieved source chunks may include internal draft corpus data. Say when source material still needs legal review.";
-
-    const result = await generateText({
-      model: googleProvider(GEMINI_CHAT_MODEL),
-      instructions: [
-        "You are JO, a plain-English legal rights education assistant.",
-        "You provide educational information only, not legal advice.",
-        "Answer only from the provided source context. Do not invent statutes, citations, deadlines, agencies, or eligibility rules.",
-        "If the source context is incomplete, say what is missing and suggest verifying with legal aid or the cited official source.",
-        "Keep answers concise, practical, and calm. Use plain English.",
-        "Cite sources inline using bracket numbers like [1] and [2].",
-        draftNotice,
-      ]
-        .filter(Boolean)
-        .join("\n"),
-      prompt: [
-        `Jurisdiction: ${jurisdiction}`,
-        stateCode ? `State: ${stateCode}` : undefined,
-        `Question: ${message}`,
-        "Source context:",
-        contextBlock,
-      ]
-        .filter(Boolean)
-        .join("\n\n"),
-      temperature: 0.2,
-      maxOutputTokens: 700,
+    const { instructions, prompt } = buildJoPrompt({
+      question: message,
+      jurisdiction,
+      stateCode,
+      retrievedContext,
     });
 
-    content = result.text.trim();
+    try {
+      const result = await generateText({
+        model: googleProvider(GEMINI_CHAT_MODEL),
+        instructions,
+        prompt,
+        temperature: 0.2,
+        maxOutputTokens: 700,
+      });
+
+      content = ensureCompleteAnswer(result.text);
+    } catch (error) {
+      console.error("JO chat generation failed", error);
+      if (retrievedContext.length > 0) {
+        confidence = getConfidence(citations.length);
+        content = buildSourceBasedFallbackResponse({
+          question: message,
+          jurisdiction,
+          stateCode,
+          retrievedContext,
+        });
+      } else {
+        confidence = "low";
+        content = buildGenerationFailureResponse();
+      }
+    }
   }
 
   await ChatMessageModel.create({

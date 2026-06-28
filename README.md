@@ -15,7 +15,7 @@ Implemented:
 - LegiScan topic query source-of-truth scaffold.
 - Monday Vercel Cron route with LegiScan search, changed-hash comparison, and capped bill ingestion.
 - LegiScan bill text extraction, PDF text extraction, legal text chunking, source candidate discovery, curated source ingestion, and Gemini embedding batches.
-- RAG chat route that embeds user questions, retrieves legal chunks, generates plain-English JO responses, stores chat history, and returns citations.
+- RAG chat route with a prompt/tool boundary that embeds user questions, retrieves legal-authority chunks only, generates plain-English JO responses, stores chat history, and returns citations.
 - Sample MongoDB seed data for development.
 
 Not implemented yet:
@@ -50,7 +50,7 @@ data/                 Temporary typed topic and state data
 docs/                 Project reference docs
 lib/                  Shared server/client helpers
 models/               Mongoose models
-prompts/              Future prompt modules
+prompts/              Prompt category folders for system, safety, citation, escalation, jurisdiction, and tone rules
 scripts/              Local utility and seed scripts
 ```
 
@@ -262,7 +262,16 @@ Request body:
 }
 ```
 
-The chat route embeds the question with Gemini, retrieves legal text chunks, asks Gemini to answer only from retrieved context, stores `ChatMessage` records, and returns citations. If no relevant embedded source text exists, JO refuses to answer instead of guessing.
+The chat route uses a prompt/tool boundary:
+
+- `lib/mcp/legalAuthorityTools.ts` exposes the MCP-shaped `retrieveLegalAuthority()` tool wrapper.
+- `lib/chatPrompt.ts` assembles JO's system instructions, user prompt, legal context block, and no-authority fallback.
+- The tool retrieves only `sourceType: "legal-authority"` chunks with `reviewStatus` of `approved`.
+- LegiScan bill text is excluded from JO's primary chat answers by default. It remains supplemental change-tracking data.
+- Questions must match one of JO's supported topic buckets before retrieval runs: voting, expungement, housing, employment, police, or supervision.
+- If no matching legal authority exists, JO refuses to answer instead of guessing.
+
+The model is only responsible for explaining retrieved authority in plain English. It should not decide which law exists, search Atlas directly, or cite anything that was not returned by the retrieval tool.
 
 Atlas vector search:
 
