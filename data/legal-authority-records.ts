@@ -38,7 +38,7 @@ export const legalAuthorityRecords: LegalAuthorityRecord[] = [
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 29A.08.520 Felony conviction — Restoration of voting rights.
 
 (1) For a felony conviction in a Washington state court, the right to vote is automatically restored as long as the person is not serving a sentence of total confinement under the jurisdiction of the department of corrections. For a felony conviction in a federal court or any state court other than a Washington state court, the right to vote is automatically restored as long as the person is no longer incarcerated. A person who has been convicted of a felony and is either sentenced to a term of total confinement under the jurisdiction of the department of corrections or otherwise incarcerated as provided for in this subsection must reregister to vote prior to voting.
@@ -59,7 +59,7 @@ export const legalAuthorityRecords: LegalAuthorityRecord[] = [
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 29A.04.079 Infamous crime.
 
 An "infamous crime" is a crime punishable by death in the state penitentiary or imprisonment in a state or federal correctional facility. Neither an adjudication in juvenile court pursuant to chapter 13.40 RCW, nor a conviction for a misdemeanor or gross misdemeanor, is an "infamous crime."`,
@@ -77,7 +77,7 @@ An "infamous crime" is a crime punishable by death in the state penitentiary or 
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.92.066 Termination of suspended sentence — Restoration of civil rights — Vacation of conviction.
 
 (1) Upon termination of any suspended sentence under RCW 9.92.060 or 9.95.210, such person may apply to the court for restoration of his or her civil rights not already restored by RCW 29A.08.520. Thereupon the court may in its discretion enter an order directing that such defendant shall thereafter be released from all penalties and disabilities resulting from the offense or crime of which he or she has been convicted.
@@ -98,7 +98,7 @@ An "infamous crime" is a crime punishable by death in the state penitentiary or 
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.94A.637 Discharge upon completion of sentence — Certificate of discharge.
 
 (1) When an offender has completed all requirements of the sentence, including any and all legal financial obligations, and while under the custody or supervision of the department, the secretary or the secretary's designee shall notify the sentencing court, which shall discharge the offender and provide the offender with a certificate of discharge by issuing the certificate to the offender in person or by mailing the certificate to the offender's last known address. A certificate of discharge issued under this subsection (1) is effective on the date the offender completed all conditions of his or her sentence.
@@ -119,7 +119,7 @@ An "infamous crime" is a crime punishable by death in the state penitentiary or 
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.96.020 Form of certificate.
 
 Whenever the governor shall determine to restore his or her civil rights to any person convicted of an infamous crime in any superior court of this state, he or she shall execute and file in the office of the secretary of state an instrument in writing substantially in the statutory certificate form restoring civil rights forfeited by reason of the conviction.`,
@@ -136,7 +136,7 @@ Whenever the governor shall determine to restore his or her civil rights to any 
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.94A.640 Vacation of offender's record of conviction.
 
 (1) Except as provided in subsection (5), every offender who has been discharged under RCW 9.94A.637 may apply to the sentencing court for a vacation of the offender's record of conviction. If the court finds the offender meets the tests prescribed in subsection (2), the court may clear the record of conviction by permitting withdrawal of a guilty plea and entry of a not guilty plea, or by setting aside a guilty verdict, and by dismissing the information or indictment.
@@ -157,7 +157,7 @@ This section contains additional eligibility requirements and exclusions. Use th
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 59.18.257 Screening of prospective tenants — Notice to prospective tenant — Costs — Adverse action notice — Violation.
 
 (1)(a) Prior to obtaining any information about a prospective tenant, the prospective landlord shall first notify the prospective tenant in writing, or by posting, what types of information will be accessed to conduct tenant screening; what criteria may result in denial of the application; if a consumer report is used, the name and address of the consumer reporting agency and the prospective tenant's rights to obtain a free copy of the consumer report after denial or other adverse action and to dispute inaccurate information; and whether the landlord will accept a comprehensive reusable tenant screening report.
@@ -177,7 +177,7 @@ This section contains additional eligibility requirements and exclusions. Use th
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 59.20.080 Grounds for termination of tenancy or occupancy or failure to renew a tenancy or occupancy.
 
 (1) A landlord shall not terminate or fail to renew a tenancy of a tenant or the occupancy of an occupant except for one or more listed reasons.
@@ -198,7 +198,7 @@ This section is specific to manufactured/mobile home park tenancies and should n
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 49.94.005 Definitions.
 
 The definitions in this section apply throughout chapter 49.94 RCW unless the context clearly requires otherwise.
@@ -223,7 +223,7 @@ The definitions in this section apply throughout chapter 49.94 RCW unless the co
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 49.94.010 Inquiries into employee or applicant criminal records — Adverse employment actions — Timing — Advertisements — Exceptions.
 
 (1) An employer may not include any question on an employment application, inquire orally or in writing, receive information through a criminal history background check, or otherwise obtain information about an applicant's criminal record until after the employer initially determines that the applicant is otherwise qualified and makes a conditional offer of employment.
@@ -247,7 +247,7 @@ The definitions in this section apply throughout chapter 49.94 RCW unless the co
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.96A.020 Employment, occupational licensing by public entity — Prior felony conviction no disqualification — Exceptions.
 
 (1) Subject to exceptions, and unless another law provides otherwise, a person is not disqualified from public employment or from a state or local occupational license, permit, certificate, or registration solely because of a prior felony conviction. The fact of a prior conviction may be considered.
@@ -266,7 +266,7 @@ The definitions in this section apply throughout chapter 49.94 RCW unless the co
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 18.235.110 Unprofessional conduct — Finding.
 
 (1) Upon finding unprofessional conduct, except as provided in RCW 9.97.020, the disciplinary authority may issue an order providing for one or a combination of sanctions, including revocation or suspension of a license, restriction or limitation of practice, remedial education or treatment, monitoring, censure or reprimand, probation conditions, fines, denial of an initial or renewal license application, or other corrective action.
@@ -285,7 +285,7 @@ The definitions in this section apply throughout chapter 49.94 RCW unless the co
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.73.030 Intercepting, recording, or divulging private communication — Consent required — Exceptions.
 
 (1) Except as otherwise provided in chapter 9.73 RCW, it is unlawful to intercept or record private communications or private conversations without first obtaining consent of all participants or all persons engaged in the conversation.
@@ -306,7 +306,7 @@ The definitions in this section apply throughout chapter 49.94 RCW unless the co
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 46.61.021 Duty to obey law enforcement officer — Authority of officer.
 
 (1) Any person requested or signaled to stop by a law enforcement officer for a traffic infraction has a duty to stop.
@@ -327,7 +327,7 @@ The definitions in this section apply throughout chapter 49.94 RCW unless the co
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.94A.703 Community custody — Conditions.
 
 When a court sentences a person to a term of community custody, the court shall impose conditions of community custody as provided in this section.
@@ -350,7 +350,7 @@ When a court sentences a person to a term of community custody, the court shall 
     sourceName: "Washington State Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `RCW 9.94A.704 Community custody — Supervision by the department — Conditions.
 
 (1) Every person sentenced to a period of community custody shall report to and be placed under supervision of the department, subject to RCW 9.94A.501.
@@ -373,7 +373,7 @@ When a court sentences a person to a term of community custody, the court shall 
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 3-1-3 Persons entitled to vote.
 
 (a) A person may not vote in a federal, state, county, municipal, or special election unless the person is registered to vote, meets the age requirement, has not been determined totally mentally incompetent by final circuit court judgment, has not been convicted of treason, a felony, or bribery in an election unless the sentence has been fully discharged or the person has been pardoned or otherwise formally released from the resulting disability to vote, is a United States citizen, and is a bona fide resident of the relevant state, county, or municipality.
@@ -392,7 +392,7 @@ When a court sentences a person to a term of community custody, the court shall 
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 61-11-26 Expungement of certain criminal convictions; procedures; effect.
 
 (a) Subject to the limitations in this section, a person convicted of a misdemeanor offense or offenses may petition the circuit court where the conviction occurred for expungement of the conviction and associated records. Subject to the same limitations, a person convicted of a nonviolent felony offense or offenses arising from the same transaction or series of transactions may petition the circuit court for expungement.
@@ -411,7 +411,7 @@ When a court sentences a person to a term of community custody, the court shall 
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 62-12-26 Extended supervision for certain sex offenders; sentencing; conditions; supervision provisions; supervision fee.
 
 (a) Certain defendants convicted of listed sex offenses must serve, in addition to any other penalty or court condition, a period of supervised release of up to 50 years. For certain listed convictions, the supervised release term must be no less than 10 years, and a person designated a sexually violent predator is subject to supervised release for life.
@@ -430,7 +430,7 @@ This section is relevant to housing and supervision only for the narrow issue of
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 30-1-24 Use of criminal records as disqualification from authorization to practice.
 
 (a) This section defines "board," "license" or "licensure," and "unreversed" conviction for purposes of professional and occupational licensing.
@@ -449,7 +449,7 @@ This section is relevant to housing and supervision only for the narrow issue of
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 30-1-8 Denial, suspension or revocation of a license or registration; probation; proceedings; effect of suspension or revocation; transcript; report; judicial review.
 
 (a) Every board referred to in chapter 30 may suspend or revoke the license of a person convicted of a felony or found to have engaged in conduct, practices, or acts constituting professional negligence or willful departure from accepted standards of professional conduct. A board may also enter consent decrees, reprimand, enter probation orders, levy fines, or use these actions in combination.
@@ -468,7 +468,7 @@ This section is relevant to housing and supervision only for the narrow issue of
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 62-1D-3 Interception of communications generally.
 
 (a) Except as otherwise specifically provided in article 1D, it is unlawful to intentionally intercept, attempt to intercept, or procure another person to intercept any wire, oral, or electronic communication; intentionally disclose contents known or having reason to be known as obtained through unlawful interception; or intentionally use or disclose contents or party identity known or having reason to be known as obtained through unlawful interception.
@@ -487,7 +487,7 @@ This section is relevant to housing and supervision only for the narrow issue of
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 62-12-9 Conditions of release on probation.
 
 (a) Release on probation is conditioned on the probationer not violating criminal law of West Virginia, another state, or the United States; not leaving the state without consent of the court that placed the person on probation; complying with court-prescribed supervision conditions; and, in listed child-victim offenses, not living in the same residence as any minor child, exercising visitation with any minor child, or having contact with the victim unless modified by the court.
@@ -506,7 +506,7 @@ The section includes additional conditions, fees, and court powers that should b
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 62-12-10 Violation of probation.
 
 (a) If there is reasonable cause to believe a probationer violated a probation condition, the probation officer may arrest the person with or without an order or warrant, or the court may issue an arrest order. The person must be brought before the court or judge for a prompt and summary hearing.
@@ -525,7 +525,7 @@ If reasonable cause exists to believe the probationer absconded, engaged in new 
     sourceName: "West Virginia Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `W. Va. Code § 62-12-13 Powers and duties of board; eligibility for parole; procedure for granting parole.
 
 (a) The Parole Board, when it is of the opinion that the best interests of the state and the inmate will be served and subject to statutory limits, shall release an inmate on parole for terms and conditions provided by article 12.
@@ -544,7 +544,7 @@ If reasonable cause exists to believe the probationer absconded, engaged in new 
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 304.078 Civil rights restored; voting rights.
 
 The certificate of the department or other responsible supervising agency that a convicted person has served the sentence or otherwise satisfied the judgment is evidence that the person is restored to civil rights. The department or agency must list in the certificate the rights restored and not restored.
@@ -563,7 +563,7 @@ The certificate of the department or other responsible supervising agency that a
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 973.015 Special disposition.
 
 (1m)(a)1. Subject to listed exceptions, when a person is under age 25 at the time of committing an offense for which the person is found guilty and the maximum imprisonment is six years or less, the court may order at sentencing that the record be expunged upon successful completion of the sentence if the court determines the person will benefit and society will not be harmed.
@@ -584,7 +584,7 @@ The certificate of the department or other responsible supervising agency that a
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 111.321 Prohibited bases of discrimination.
 
 Subject to ss. 111.33 to 111.365, no employer, labor organization, employment agency, licensing agency, or other person may engage in employment discrimination as specified in s. 111.322 against any individual on the basis of listed protected traits, including arrest record and conviction record.`,
@@ -601,7 +601,7 @@ Subject to ss. 111.33 to 111.365, no employer, labor organization, employment ag
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 111.335 Arrest or conviction record; exceptions and special cases.
 
 (2) Employment discrimination because of arrest record includes requesting an applicant, employee, member, licensee, or other individual to supply arrest-record information except for pending charges, subject to listed exceptions.
@@ -620,7 +620,7 @@ Subject to ss. 111.33 to 111.365, no employer, labor organization, employment ag
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 49.155 Wisconsin Shares; child care subsidy.
 
 This section governs Wisconsin Shares child care subsidies. It defines "child care provider" to include providers licensed under s. 48.65, certified under s. 48.651, or established or contracted for under s. 120.13(14). NICCC identifies this section as relevant where provider, employee, or nonclient resident convictions affect state or county child care payments.
@@ -639,7 +639,7 @@ Use this authority only for the child care/provider-residence collateral consequ
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 48.685 Child care background checks.
 
 This section governs background checks for child care programs and related persons. NICCC identifies it as relevant to denial or revocation of licenses to operate child care entities and to conviction-based restrictions affecting providers, employees, and nonclient residents.
@@ -658,7 +658,7 @@ Use this section as a narrow housing/employment collateral consequence source fo
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 968.24 Temporary questioning without arrest.
 
 After identifying himself or herself as a law enforcement officer, an officer may stop a person in a public place for a reasonable period when the officer reasonably suspects that the person is committing, is about to commit, or has committed a crime, and may demand the person's name and address and an explanation of the person's conduct. The detention and temporary questioning must be conducted in the vicinity where the person was stopped.`,
@@ -675,7 +675,7 @@ After identifying himself or herself as a law enforcement officer, an officer ma
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 968.31 Interception and disclosure of wire, electronic or oral communications prohibited.
 
 (1) Except as otherwise specifically provided, a person is guilty of a Class H felony if the person intentionally intercepts, attempts to intercept, or procures another person to intercept any wire, electronic, or oral communication; intentionally uses or attempts to use a device to intercept oral communication; discloses contents known or having reason to be known as obtained through unlawful interception; or uses contents known or having reason to be known as obtained through unlawful interception.
@@ -694,7 +694,7 @@ This section should be paired with its exceptions before giving any recording-th
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 973.09 Probation.
 
 (1)(a) Except as provided by statute, if a person is convicted of a crime, the court may withhold sentence or impose sentence and stay its execution, and in either case place the person on probation to the department for a stated period. The court may impose any conditions that appear reasonable and appropriate.
@@ -713,7 +713,7 @@ This section should be paired with its exceptions before giving any recording-th
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 304.06 Paroles from state prisons and house of correction.
 
 (1)(b) Subject to listed statutory exceptions, the parole commission may parole an inmate of Wisconsin state prisons or a felon or person serving at least one year in a county house of correction or county reforestation camp when the person has served 25 percent of the sentence imposed for the offense, or six months, whichever is greater. For a life term, the parole commission may parole an inmate after the statutory period described in this section, subject to listed limitations and sentence-credit rules.`,
@@ -730,7 +730,7 @@ This section should be paired with its exceptions before giving any recording-th
     sourceName: "Wisconsin Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as of June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wis. Stat. § 302.113 Release to extended supervision for felony offenders.
 
 This section governs release to extended supervision for felony offenders. Related official text provides that people released under supervision are subject to statutory and departmental rules and conditions until discharge or sentence expiration. Use this as a supervision framework source, and verify the exact subsection for any detailed eligibility or revocation answer.`,
@@ -748,7 +748,7 @@ This section governs release to extended supervision for felony offenders. Relat
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 22-3-102 Qualifications; temporary registration.
 
 (a) A person may register to vote not less than fourteen days before an election, or as otherwise provided by Wyoming election law, if the person is a United States citizen, will be at least eighteen years old on the day of the next election, is a bona fide Wyoming resident, is not currently adjudicated mentally incompetent, has not been convicted of a felony or, if convicted, has had civil or voting rights restored, and has been a bona fide Wyoming resident for not less than thirty days before the next election.
@@ -768,7 +768,7 @@ This section governs release to extended supervision for felony offenders. Relat
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 6-10-106 Rights lost by conviction of felony; restoration.
 
 (a) A person convicted of a felony is incompetent to be an elector or juror or to hold an office of honor, trust or profit within Wyoming or to use or knowingly possess a firearm unless the conviction is reversed or annulled, the person receives a pardon, rights are restored under Wyo. Stat. sec. 7-13-105(a) or (f), voting rights are restored under Wyo. Stat. sec. 7-13-105(b) and (c), or firearm rights are restored under the law of the jurisdiction of conviction.
@@ -788,7 +788,7 @@ When only elector rights are restored under Wyo. Stat. sec. 7-13-105(b) and (c),
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 7-13-105 Certificate of restoration of rights; procedure for restoration in general; procedure for restoration of voting rights for nonviolent felonies.
 
 (a) Subject to statutory limitations, upon written application the governor may issue a certificate restoring rights lost under Wyo. Stat. sec. 6-10-106 when a person's sentence expires or the person satisfactorily completes probation.
@@ -810,7 +810,7 @@ When only elector rights are restored under Wyo. Stat. sec. 7-13-105(b) and (c),
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 7-13-1401 Petition for expungement; records of arrest, dismissal of charges, disposition; eligibility; no filing fee.
 
 (a) A person, or the state for a juvenile record, may petition the court for an order expunging records of arrest, charges or dispositions. At least 180 days must have passed since the arrest or dismissal, there must be no formal charges pending when the petition is filed, and the case must meet the section's limitations.
@@ -834,7 +834,7 @@ The section applies when there were no convictions from the charge or incident, 
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 7-13-1501 Petition for expungement of records of conviction of certain misdemeanors.
 
 (a) A person who pled guilty or nolo contendere to or was convicted of a misdemeanor may petition the convicting court for expungement of conviction records, subject to statutory limits.
@@ -856,7 +856,7 @@ The misdemeanor may not have involved use or attempted use of a firearm. A healt
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 7-13-301 Placing person found guilty, but not convicted, on probation.
 
 (a) For an eligible person who has not previously been convicted of a felony, the court may, with the consent of the defendant and the state and without entering a judgment of guilt or conviction, defer further proceedings and place the person on probation for up to thirty-six months on terms and conditions set by the court.
@@ -880,7 +880,7 @@ The probation terms include reporting to the court at least twice per year, cond
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 33-1-304 Considering criminal convictions; pre-application determinations.
 
 (a) Except as specifically required by licensure, certification or registration statutes, a Wyoming licensing board or authority that considers criminal convictions shall not consider prior convictions that do not affect the practice of the profession or occupation or the ability to practice the regulated profession or occupation.
@@ -904,7 +904,7 @@ State policy includes reducing recidivism by addressing barriers to employment a
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 40-26-103 Sale or rental.
 
 (a) A person may not refuse to sell or rent, after a bona fide offer, refuse to negotiate for sale or rental, or otherwise make unavailable or deny a dwelling to an individual because of race, color, religion, sex, disability, familial status or national origin.
@@ -926,7 +926,7 @@ State policy includes reducing recidivism by addressing barriers to employment a
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 42-6-105 Adult foster care homes; licensure; suspension or revocation.
 
 (d) The department shall complete a criminal records check on any individual employed by adult foster care homes and on any individual, other than a resident client or resident client's spouse, who at licensure is expected to live in the adult foster care home or who later lives or comes to live in the home.
@@ -946,7 +946,7 @@ The department may refuse to license a facility or prohibit the individual from 
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 7-3-702 Prohibition against interception or disclosure of wire, oral or electronic communications; exceptions; penalties.
 
 (a) Except as provided by statute, a person may not intentionally intercept, attempt to intercept, or procure another person to intercept a wire, oral or electronic communication; use or attempt to use a device to intercept oral communication in listed circumstances; disclose contents known to have been obtained through unlawful interception; or use contents known to have been obtained through unlawful interception.
@@ -968,7 +968,7 @@ Use this as the Wyoming recording/communications-consent hook. It is not a stop-
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 6-5-204 Interference with peace officer; disarming peace officer; penalties.
 
 (a) A person commits a misdemeanor if the person knowingly obstructs, impedes or interferes with or resists arrest by a peace officer while the peace officer is engaged in the lawful performance of official duties.
@@ -992,7 +992,7 @@ Use this as a narrow interference/resisting authority, not as authority that Wyo
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 7-13-402 General powers and duties of board; eligibility for parole; immunity.
 
 (a) The board may grant parole to a person imprisoned under sentence, except a sentence of life imprisonment without parole or a life sentence, if the person has served the minimum term pronounced by the trial court less good time, if any, granted under rules under Wyo. Stat. sec. 7-13-420.
@@ -1014,7 +1014,7 @@ Use this as a narrow interference/resisting authority, not as authority that Wyo
     currentAsOf: "2026-07-01",
     currentAsOfLabel:
       "Official Wyoming title PDF states it reflects statutes as of July 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Wyo. Stat. sec. 7-13-408 Probation, parole and conditional release administrative jail or adult community correction program sanction and revocation hearing procedures.
 
 (a) The probation and parole agent shall notify the department and board or appropriate court if consideration should be given to retaking or reincarcerating a supervised person who violated a condition of probation, parole or other conditional release and is subject to revocation. Before notification, a hearing shall be held within a reasonable time unless waived, subject to listed exceptions.
@@ -1035,7 +1035,7 @@ Compliance violations not leading to retaking or reincarceration shall be sancti
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 17-3-30 Qualifications of electors generally.
 
 Any person possessing the qualifications of an elector set out in Article 8 of the Constitution of Alabama of 1901, as modified by federal law, and not laboring under any disqualification listed therein, shall be an elector and shall be entitled to register and vote at any election by the people.`,
@@ -1052,7 +1052,7 @@ Any person possessing the qualifications of an elector set out in Article 8 of t
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 17-3-30.1 Disqualification of electors for felonies involving moral turpitude.
 
 This section is known as the Felony Voter Disqualification Act. It states that Alabama citizens lose the right to vote when convicted of a crime only if the conviction was for a felony involving moral turpitude.
@@ -1071,7 +1071,7 @@ The section provides a statutory list of felonies that involve moral turpitude f
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-22-36.1 Certificate of eligibility to register to vote.
 
 (a) A person may apply to the Board of Pardons and Paroles for a Certificate of Eligibility to Register to Vote if statutory requirements are met, including that the person lost voting rights because of a state or federal conviction in a case other than listed excluded cases, has no pending felony charges, and has paid all fines, court costs, fees and victim restitution ordered by the sentencing court.
@@ -1090,7 +1090,7 @@ Use this section with Ala. Code sec. 17-3-30.1 when explaining Alabama voting-ri
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-27-1 Petition to expunge records for misdemeanor offense, violation, traffic violation, or municipal ordinance violation.
 
 (a) A person charged with a misdemeanor offense, violation, traffic violation, or municipal ordinance violation may file a petition in the criminal division of the circuit court in the county where charges were filed to expunge records relating to the charge in listed circumstances.
@@ -1109,7 +1109,7 @@ Those circumstances include dismissal with prejudice after more than 90 days, no
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-27-2 Petition to expunge records for felony offense.
 
 (a) A person charged with a felony may file a petition in the criminal division of the circuit court in the county where charges were filed to expunge records relating to the charge in listed circumstances.
@@ -1128,7 +1128,7 @@ Those circumstances include dismissal with prejudice after more than 90 days, no
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-27-5 Objections; hearing; ruling.
 
 If the prosecuting authority or victim objects to an expungement petition, the court shall set a hearing no sooner than 30 days from the filing of the objection and notify the prosecuting authority, victim, and petitioner.
@@ -1147,7 +1147,7 @@ If no objection is filed, the court may set the matter for hearing or rule on th
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 41-9A-2 Improper grounds for denial of application for license; standards and factors for determinations.
 
 (a) An occupational licensing board shall not deny a license application because of a criminal conviction that is not directly related to the duties and responsibilities of the profession or occupation, a conviction that has been pardoned, sealed, expunged, otherwise nullified or made confidential, an arrest that did not result in conviction and has no pending charges, or lack of good moral character or a similarly vague or generic standard.
@@ -1166,7 +1166,7 @@ If no objection is filed, the court may set the matter for hearing or rule on th
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 41-9A-2.1 Determination whether criminal conviction disqualifies an individual from licensure.
 
 (a) An individual convicted of a criminal offense may request in writing that an occupational licensing board determine whether the conviction disqualifies the individual from obtaining a license from the board.
@@ -1185,7 +1185,7 @@ If no objection is filed, the court may set the matter for hearing or rule on th
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 24-8-4 Unlawful discriminatory housing practices.
 
 It is unlawful to refuse to sell or rent after a bona fide offer, refuse to negotiate for sale or rental, or otherwise make unavailable or deny a dwelling because of race, color, religion, sex, familial status, or national origin.
@@ -1206,7 +1206,7 @@ This section is a fair-housing protection source. It does not itself make crimin
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 35-9A-421 Noncompliance with rental agreement; failure to pay rent.
 
 (a) Except as provided in the chapter, if there is a material noncompliance by the tenant with the rental agreement, an intentional misrepresentation of a material fact in a rental agreement or application, or noncompliance materially affecting health and safety, the landlord may deliver written notice to terminate the lease specifying the breach and a termination date not less than seven business days after receipt of the notice.
@@ -1225,7 +1225,7 @@ Use this section as an Alabama landlord-tenant hook for rental-application misre
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-5-30 Authority of peace officer to stop and question.
 
 A sheriff, deputy, constable, municipal marshal, deputy marshal, police officer, highway patrolman or state trooper may stop any person abroad in a public place whom the officer reasonably suspects is committing, has committed, or is about to commit a felony or other public offense and may demand the person's name, address, and an explanation of the person's actions.`,
@@ -1242,7 +1242,7 @@ A sheriff, deputy, constable, municipal marshal, deputy marshal, police officer,
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-5-31 Search for dangerous weapon; procedure if weapon or other thing found.
 
 When an officer has stopped a person for questioning under this article and reasonably suspects that the officer is in danger of life or limb, the officer may search the person for a dangerous weapon. If the officer finds a weapon or other thing that may be used to commit a public offense, the officer may take and keep it until completion of questioning, at which time it shall be returned if lawfully possessed or arrested.`,
@@ -1259,7 +1259,7 @@ When an officer has stopped a person for questioning under this article and reas
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 13A-11-30 Definitions.
 
 For Alabama criminal eavesdropping law, "eavesdrop" means to overhear, record, amplify or transmit any part of the private communication of others without the consent of at least one of the persons engaged in the communication, except as otherwise provided by law.
@@ -1278,7 +1278,7 @@ For Alabama criminal eavesdropping law, "eavesdrop" means to overhear, record, a
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 13A-11-31 Criminal eavesdropping.
 
 (a) A person commits criminal eavesdropping if the person intentionally uses any device to eavesdrop, whether or not the person is present at the time.
@@ -1300,7 +1300,7 @@ Use this with Ala. Code sec. 13A-11-30 for Alabama recording/consent analysis.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Current version queried from ALISON on June 27, 2026; official page also shows Act 2026-372 amendment effective October 1, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-22-26 Standards for release of prisoners on parole.
 
 Current version before the October 1, 2026 amendment: no prisoner shall be released on parole merely as a reward for good conduct or efficient performance of prison duties, but only if the Board of Pardons and Paroles is of the opinion that the prisoner meets criteria and guidelines established by the board to determine fitness for parole and ensure public safety.
@@ -1319,7 +1319,7 @@ The official ALISON page also shows an amended version effective October 1, 2026
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-22-28 Investigation for parole; temporary leave; parole restrictions; parole consideration date.
 
 (a) The Board of Pardons and Paroles has a duty, on its own initiative, to investigate prisoners confined in Alabama jails and prisons, using a validated risk and needs assessment as defined in Ala. Code sec. 12-25-32, to determine the feasibility of releasing prisoners on parole and effecting their reclamation.
@@ -1338,7 +1338,7 @@ Reinvestigations shall be made from time to time as the board determines or as t
     sourceName: "Alabama Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Current as queried from ALISON on June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ala. Code sec. 15-22-54 Period of probation; termination of probation; violation of terms of probation; sanctions.
 
 (a) The probation period or suspension of sentence is determined by the court and may not be waived by the defendant. The period may be continued, extended, or terminated by the court. Except as provided for ignition interlock requirements, the maximum probation period for a misdemeanor may not exceed two years and the maximum probation period for a felony may not exceed five years.
@@ -1359,7 +1359,7 @@ This section also governs probation violations and sanctions. Use the official s
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 15.05.010 Voter qualification.
 
 A person may vote at any election if the person is a United States citizen, is 18 years of age or older, has been a resident of Alaska and of the house district in which the person seeks to vote for at least 30 days just before the election, has registered before the election as required under AS 15.07, and is not registered to vote in another jurisdiction.`,
@@ -1378,7 +1378,7 @@ A person may vote at any election if the person is a United States citizen, is 1
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 15.05.030 Loss and restoration of voting rights.
 
 (a) A person convicted of a crime that constitutes a felony involving moral turpitude under state or federal law may not vote in a state, federal, or municipal election from the date of conviction through the date of the person's unconditional discharge. Upon unconditional discharge, the person may register under AS 15.07.
@@ -1399,7 +1399,7 @@ A person may vote at any election if the person is a United States citizen, is 1
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 12.62.180 Sealing of criminal justice information.
 
 (a) A criminal justice agency may seal only the information that the agency is responsible for maintaining.
@@ -1422,7 +1422,7 @@ A person may vote at any election if the person is a United States citizen, is 1
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 12.55.085 Suspending imposition of sentence.
 
 (a) If circumstances in mitigation or the ends of justice support it, the court may suspend imposition of sentence, continue the suspension for a permitted period, set terms and conditions, and place the person on probation under supervision during the suspension.
@@ -1443,7 +1443,7 @@ This section is Alaska's suspended-imposition-of-sentence framework. It can matt
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 08.01.077 Conviction as grounds for disciplinary action.
 
 Notwithstanding any other provision of Title 8, the conviction under AS 47.24.010 of a person licensed, certified, or regulated by the department or a board under Title 8 may be considered by the department or board as grounds for disciplinary proceedings or sanctions.`,
@@ -1462,7 +1462,7 @@ Notwithstanding any other provision of Title 8, the conviction under AS 47.24.01
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 08.01.075 Disciplinary powers of boards.
 
 (a) A board may take disciplinary actions singly or in combination, including permanent revocation of a license, suspension for a specified period, censure or reprimand, limitations or conditions on professional practice, peer review, remedial professional education, probation requiring regular reporting to the board, and a civil fine not to exceed $5,000.
@@ -1483,7 +1483,7 @@ Use this with conviction-specific licensing sections to explain the range of occ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 18.80.240 Unlawful practices in the sale or rental of real property.
 
 It is unlawful for an owner, lessee, manager, or other person with the right to sell, lease, or rent real property to refuse to sell, lease, or rent because of sex, marital status, changes in marital status, pregnancy, race, religion, physical or mental disability, color, or national origin.
@@ -1506,7 +1506,7 @@ This is a fair-housing protection source. It does not itself make criminal histo
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 34.03.220 Noncompliance with rental agreement; failure to pay rent.
 
 (a) Except as provided in the chapter, if the tenant or someone in the tenant's control deliberately inflicts substantial damage to the premises or the tenant engages in or permits another to engage in prostitution or another illegal activity at the premises, the landlord may deliver a written notice to quit specifying the breach and a termination date not less than 24 hours or more than five days after service of the notice.
@@ -1527,7 +1527,7 @@ Use this as an Alaska landlord-tenant authority for illegal activity on premises
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 12.25.180 When peace officer may issue citation or take person before the court.
 
 (a) When a peace officer stops or contacts a person for commission of a class C felony, misdemeanor, or municipal ordinance violation, the officer may issue a citation instead of taking the person before a judge or magistrate, except the officer may arrest if the person does not furnish satisfactory evidence of identity, the officer reasonably believes the person is a danger to others, the offense involves violence or harm, the person asks to be taken before a judge or magistrate, or the officer has probable cause to believe the person committed a domestic violence crime.
@@ -1548,7 +1548,7 @@ Use this as a citation/arrest identity source, not as a broad stop-and-identify 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 42.20.310 Eavesdropping.
 
 (a) A person may not use an eavesdropping device to hear or record all or part of an oral conversation without the consent of a party to the conversation, use or divulge information known or reasonably known to have been obtained through illegal use of an eavesdropping device, publish contents heard through illegal eavesdropping, or divulge or publish contents after knowing or having reason to know they were obtained through illegal eavesdropping.
@@ -1569,7 +1569,7 @@ This is Alaska's recording/eavesdropping consent hook. The statute requires cons
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 33.16.090 Eligibility for discretionary parole and minimum terms to be served.
 
 (a) A prisoner sentenced to an active term of imprisonment of at least 181 days may, in the discretion of the parole board, be released on discretionary parole if the prisoner has served the required time and is not otherwise excluded by statute or court order.
@@ -1590,7 +1590,7 @@ This section contains detailed eligibility exclusions and minimum-time rules. Us
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 33.16.100 Granting of discretionary parole.
 
 (a) The parole board may authorize release of an otherwise eligible prisoner on discretionary parole if it determines a reasonable probability exists that the prisoner will live and remain at liberty without violating laws or board-imposed conditions, rehabilitation and reintegration will be furthered by release, the prisoner will not pose a threat of harm to the public, and release would not diminish the seriousness of the crime.`,
@@ -1609,7 +1609,7 @@ This section contains detailed eligibility exclusions and minimum-time rules. Us
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Alaska Statutes 2024 page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Alaska Stat. sec. 12.55.100 Conditions of probation.
 
 (a) While on probation and among the conditions of probation, the defendant shall be required to obey all state, federal, and local laws or ordinances and any court orders applicable to the probationer.
@@ -1629,7 +1629,7 @@ The court may also impose other listed probation conditions, including payment o
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 16-101 Qualifications of registrant.
 
 A resident of Arizona is qualified to register to vote if the resident is a United States citizen with satisfactory evidence of citizenship, will be 18 years old or older by the next regular general election, has been a resident of Arizona 29 days before the election, can write the resident's name or make the resident's mark unless prevented by physical disability, has not been convicted of treason or a felony unless restored to civil rights, and has not been adjudicated incapacitated.
@@ -1649,7 +1649,7 @@ Use this with Ariz. Rev. Stat. secs. 13-904, 13-907 and 13-908 for felony voting
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-904 Suspension of civil rights and occupational disabilities.
 
 A felony conviction suspends listed civil rights, including the right to vote, the right to hold public office of trust or profit, the right to serve as a juror, certain civil rights during imprisonment that are reasonably necessary for institutional security or public protection, and the right to possess a firearm.
@@ -1669,7 +1669,7 @@ The statute also provides that a person may not be disqualified from employment 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-907 Automatic restoration of civil rights for first offenders; firearm rights.
 
 On completion of probation for an Arizona offense or absolute discharge from imprisonment, a person who has not previously been convicted of a felony is automatically restored any civil rights lost or suspended because of the conviction if the person pays all victim restitution imposed.
@@ -1689,7 +1689,7 @@ For an out-of-state or federal felony, a first offender may be eligible for auto
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-908 Restoration of civil rights; application; firearm rights.
 
 On final discharge, a person who has previously been convicted of a felony or who has not paid all victim restitution imposed may apply to the superior court to have civil rights restored. Restoration under this section is discretionary with the judicial officer.
@@ -1709,7 +1709,7 @@ A person whose civil rights were lost because of a felony conviction in another 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-905 Setting aside judgment of convicted person on discharge; certificate of second chance.
 
 Except for excluded offenses, a person convicted of a criminal offense may apply to the court to have the judgment of guilt set aside after fulfilling the conditions of probation or sentence and discharge by the court. If granted, the court sets aside the judgment of guilt, dismisses the charging document and orders release from penalties and disabilities resulting from the conviction, subject to statutory exceptions.
@@ -1731,7 +1731,7 @@ The court's order must include a certificate of second chance for eligible misde
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-911 Sealing of arrest, conviction and sentencing records.
 
 A person may petition to seal case records related to a criminal offense if the person was convicted and completed all terms and conditions of sentence, including monetary obligations and restitution; was charged and the charge was dismissed or resulted in a not guilty verdict; or was arrested and no charges were filed.
@@ -1753,7 +1753,7 @@ If records are sealed, the person may state in most instances that the person ha
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 33-1368 Noncompliance with rental agreement by tenant.
 
 If there is a material noncompliance by the tenant with the rental agreement, including material falsification of information on the rental application, the landlord may give written notice of breach and termination. Material falsification includes untrue or misleading information about the tenant's criminal records, prior eviction record and current criminal activity, and material falsification of that information is not curable under this section.
@@ -1773,7 +1773,7 @@ The section also allows immediate termination for a material and irreparable bre
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 41-1093.04 Occupational license, permit or certificate criminal-record review.
 
 A person with a criminal record may petition an agency at any time, including before completing education, experience, examination or fee requirements, for a determination of whether the person's criminal record disqualifies the person from a license, permit, certificate or other state recognition.
@@ -1795,7 +1795,7 @@ The agency may not negatively consider nonconviction information, a conviction t
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 12-558.03 Limited liability; employer hiring or contracting with ex-offenders.
 
 An employer is not liable for hiring an employee or contracting with an independent contractor who has previously been convicted of a criminal offense. In a negligent hiring action based on another theory, the prior conviction generally may not be introduced into evidence.
@@ -1815,7 +1815,7 @@ The statute preserves causes of action for inadequate supervision in limited cir
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-2412 Refusing to provide truthful name when lawfully detained.
 
 After being advised that refusal to answer is unlawful, a person may not fail or refuse to state the person's true full name on request of a peace officer who has lawfully detained the person based on reasonable suspicion that the person has committed, is committing or is about to commit a crime.
@@ -1835,7 +1835,7 @@ A person detained under this section must state the person's true full name, but
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-3005 Interception of wire, electronic and oral communications.
 
 Except as provided in the chapter, a person commits a class 5 felony by intentionally intercepting a wire or electronic communication to which the person is not a party, or causing another to do so, without the consent of either a sender or receiver.
@@ -1855,7 +1855,7 @@ The section also prohibits intentionally intercepting a conversation or discussi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-901 Probation.
 
 If a person convicted of an offense is eligible for probation, the court may suspend imposition or execution of sentence and place the person on intensive probation supervision, supervised probation or unsupervised probation on required and court-appropriate terms and conditions.
@@ -1877,7 +1877,7 @@ The court may terminate probation early after notice and an opportunity to be he
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 13-902 Periods of probation.
 
 Unless terminated sooner, probation may continue for seven years for a class 2 felony, five years for a class 3 felony, four years for a class 4 felony, three years for a class 5 or 6 felony, three years for a class 1 misdemeanor, two years for a class 2 misdemeanor and one year for a class 3 misdemeanor.
@@ -1897,7 +1897,7 @@ The section contains special periods for certain driving offenses, possible exte
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 31-411 Parole or discharge; conditions of parole.
 
 A prisoner certified as eligible for parole or absolute discharge is given an opportunity to apply for release on parole or absolute discharge and an opportunity to be heard. If parole is granted, the prisoner remains on parole unless the board revokes parole, grants absolute discharge from parole, or the prisoner reaches the individual earned release credit date.
@@ -1917,7 +1917,7 @@ During supervised parole, the board requires a monthly supervision fee unless re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official Arizona Revised Statutes page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ariz. Rev. Stat. sec. 31-412 Criteria for release on parole.
 
 If a prisoner is certified as eligible for parole, the board of executive clemency shall authorize release on parole if the applicant has reached the earliest parole eligibility date and it appears to the board, in its sole discretion, that there is a substantial probability the applicant will remain at liberty without violating the law and that release is in the best interests of the state.
@@ -1937,12 +1937,12 @@ The applicant then goes on parole in the legal custody and under the control of 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 7-5-201 Voter qualifications.
 
 Arkansas voter qualification law requires, among other qualifications, that a voter not have been convicted of a felony without the sentence having been discharged or without a pardon. Use this as the primary Arkansas voter-qualification hook for felony voting-rights restoration.
 
-For a plain-English answer, distinguish between a person still serving a felony sentence and a person whose sentence has been discharged or who has been pardoned. Confirm the exact current wording through the Arkansas Code before moving this record from legal-review to approved.`,
+For a plain-English answer, distinguish between a person still serving a felony sentence and a person whose sentence has been discharged or who has been pardoned. Confirm the exact current wording through the Arkansas Code when this record is refreshed.`,
   },
   {
     id: "ar-code-16-90-1405-sealing-eligibility",
@@ -1957,7 +1957,7 @@ For a plain-English answer, distinguish between a person still serving a felony 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 16-90-1405 Comprehensive Criminal Record Sealing Act eligibility.
 
 Arkansas provides statutory procedures for sealing eligible misdemeanor and felony records after the person satisfies the sentence and any applicable waiting period or offense-specific eligibility limits. The Comprehensive Criminal Record Sealing Act contains exclusions and different treatment by offense type.
@@ -1977,7 +1977,7 @@ Use this as an eligibility gateway only. Before giving a detailed Arkansas seali
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 16-90-1417 Effect of sealing.
 
 After a record is sealed under Arkansas law, the record is generally treated as confidential and the person may generally state that the conduct did not occur and that the record does not exist, subject to statutory exceptions and access rules.
@@ -1997,7 +1997,7 @@ Use this authority for employment and housing answers only after checking the ex
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 16-93-303 First offender probation; discharge and dismissal.
 
 Arkansas first-offender law allows eligible defendants, before an adjudication of guilt and with consent, to be placed on probation under statutory conditions. If the person fulfills the terms and conditions, the court may discharge the person and dismiss proceedings, with record consequences governed by the statute.
@@ -2017,7 +2017,7 @@ This is not a blanket expungement rule. Use it only for eligible first-offender 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 16-123-203 Arkansas Fair Housing Act unlawful practices.
 
 Arkansas fair-housing law prohibits listed discriminatory housing practices based on protected characteristics such as race, color, religion, sex, disability, familial status, or national origin.
@@ -2037,7 +2037,7 @@ This source is useful for housing-rights answers, but it does not by itself make
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 18-17-701 Tenant noncompliance with rental agreement.
 
 Arkansas landlord-tenant law includes remedies for tenant noncompliance with a rental agreement and related statutory duties. Use this as a housing authority for lease noncompliance and termination questions, not as a criminal-record screening statute.
@@ -2057,7 +2057,7 @@ For a criminal-history housing answer, pair this with sealed-record authority, f
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 17-3-102 Occupational licensing and criminal convictions.
 
 Arkansas law limits how occupational licensing entities may use criminal convictions when deciding whether to grant a license, registration, or certification. The licensing body must apply the statutory standards and should not treat every conviction as an automatic permanent bar.
@@ -2077,7 +2077,7 @@ Use this as the primary Arkansas occupational-licensing authority for criminal-r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 17-3-103 Occupational licensing waiver or review procedure.
 
 Arkansas occupational-licensing law includes procedures for a person with a criminal record to seek review or relief from a licensing restriction. This can matter before a person spends time or money on training for an occupation.
@@ -2097,7 +2097,7 @@ Use this with Ark. Code Ann. sec. 17-3-102. The exact petition process, deadline
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 5-71-213 Loitering.
 
 Arkansas loitering law is a limited police-interaction hook because it includes circumstances where a person's conduct, location, and failure to identify or account for presence may be relevant to a loitering offense.
@@ -2117,7 +2117,7 @@ Do not present this as a broad universal stop-and-identify statute. For police-s
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 5-60-120 Interception and recording of communications.
 
 Arkansas law prohibits unlawful interception or recording of covered communications, while generally allowing recording when the recorder is a party to the communication or has consent from a party, subject to statutory limits and context.
@@ -2137,7 +2137,7 @@ Use this as Arkansas' recording-consent hook. For recording police, also check w
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 5-4-303 Conditions of suspension or probation.
 
 Arkansas courts may impose statutory conditions when placing a person on probation or suspending imposition of sentence. Conditions can include obeying laws, reporting, restitution, treatment, employment or education-related terms, and other court-ordered requirements authorized by statute.
@@ -2157,7 +2157,7 @@ Use the official section text for the full list of possible and mandatory condit
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 16-93-308 Violation and revocation of probation or suspension.
 
 Arkansas law governs revocation proceedings when a person is alleged to have violated probation or a suspended sentence. The court may address violations through statutory revocation procedures and available sanctions.
@@ -2177,7 +2177,7 @@ Use this for Arkansas probation-violation questions, but verify hearing timing, 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 16-93-701 Parole eligibility framework.
 
 Arkansas parole eligibility depends on the offense, sentence, date of offense, credits, statutory exclusions, and the parole or post-release supervision framework administered by the state. This citation is a supervision authority hook for parole eligibility analysis.
@@ -2197,7 +2197,7 @@ Do not give a precise Arkansas parole date from this record alone. A specific an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Arkansas Code citation identified June 27, 2026; exact official section permalink pending Arkansas adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ark. Code Ann. sec. 16-93-615 Parole supervision conditions and violations.
 
 Arkansas parole supervision is governed by statutory conditions, board rules, and Department of Corrections or community supervision policy. Violations may lead to sanctions or revocation depending on the violation and applicable procedure.
@@ -2218,7 +2218,7 @@ Use this as a parole-supervision hook, not as a complete parole manual. For any 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Elec. Code sec. 2101 Voter registration qualifications.
 
 A person entitled to register to vote must be a United States citizen, a California resident, not imprisoned for the conviction of a felony, and at least 18 years old by the next election. A person entitled to preregister must be a United States citizen, a California resident, not imprisoned for the conviction of a felony, and at least 16 years old.
@@ -2239,7 +2239,7 @@ For this section, "imprisoned" means currently serving a state or federal prison
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 1203.4 Dismissal after probation.
 
 When a defendant has fulfilled probation, been discharged early, or the court determines in the interests of justice that relief should be granted, and the person is not then serving a sentence, on probation, or charged with an offense, the court may allow withdrawal of a guilty or no contest plea or set aside a guilty verdict and dismiss the case.
@@ -2260,7 +2260,7 @@ Except as limited by statute, the person is released from penalties and disabili
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 1203.425 Automatic conviction record relief.
 
 California requires the Department of Justice, subject to statutory conditions and appropriations, to identify eligible convictions in statewide databases for automatic conviction record relief. Eligibility excludes people required to register under the Sex Offender Registration Act, people with active supervision records, people currently serving a sentence or with pending charges, and certain serious, violent, or registrable felony convictions.
@@ -2281,7 +2281,7 @@ When relief is granted, state criminal history records note that relief was gran
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 851.91 Sealing arrests not resulting in conviction.
 
 A person who suffered an arrest that did not result in a conviction may petition the court to seal the arrest and related records. An arrest did not result in conviction if, for example, the statute of limitations has run and no accusatory pleading was filed, charges were dismissed and cannot be refiled, the person was acquitted, or a conviction was vacated or reversed and cannot be refiled.
@@ -2302,7 +2302,7 @@ If sealing is granted, the arrest is deemed not to have occurred and the person 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Gov. Code sec. 12955 Fair housing unlawful practices.
 
 California fair-housing law prohibits listed discriminatory housing practices by owners and other covered housing actors based on protected characteristics. This section is a core state fair-housing source for California housing-rights answers.
@@ -2323,7 +2323,7 @@ Criminal history is not stated here as a standalone protected class. For crimina
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Gov. Code sec. 12952 Fair Chance Act employment rules.
 
 For employers with five or more employees, it is an unlawful employment practice to ask about conviction history on an application, inquire into or consider conviction history, or run a conviction-history background check until after a conditional offer of employment.
@@ -2344,7 +2344,7 @@ Covered employers may not consider arrests not followed by conviction, diversion
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Lab. Code sec. 432.7 Employment limits on arrests, diversion, juvenile records, and dismissed or sealed convictions.
 
 An employer generally may not ask an applicant to disclose, seek from any source, or use as an employment factor information about an arrest or detention that did not result in conviction, diversion participation, or a conviction that has been judicially dismissed or ordered sealed under listed laws, including Penal Code sections 1203.4 and 1203.425.
@@ -2365,7 +2365,7 @@ The section also protects juvenile-court history from inquiry or use, defines co
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Bus. & Prof. Code sec. 480 Occupational licensing denial based on criminal history.
 
 California licensing boards may deny a license based on certain criminal convictions only under the statutory standards, including whether the conviction is substantially related to the qualifications, functions, or duties of the business or profession and subject to rehabilitation and record-relief limits.
@@ -2386,7 +2386,7 @@ Use this with board-specific licensing statutes and regulations. A record that w
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 148 Resisting, delaying, or obstructing a public officer.
 
 California makes it an offense to willfully resist, delay, or obstruct a public officer, peace officer, or emergency medical technician in the discharge or attempted discharge of duty. This is often relevant in police-interaction questions.
@@ -2407,7 +2407,7 @@ Do not present this as a broad stop-and-identify statute. For California police-
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 632 Recording confidential communications.
 
 California prohibits intentionally recording or eavesdropping on a confidential communication without the consent of all parties. A confidential communication is one carried on in circumstances reasonably indicating a party wants it confined to the parties, but excludes public gatherings, open legislative, judicial, executive, or administrative proceedings, or circumstances where parties may reasonably expect the communication to be overheard or recorded.
@@ -2428,7 +2428,7 @@ Use this as California's recording-consent hook. For recording police in public,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 1203.1 Probation conditions and term.
 
 When granting probation, the court may suspend imposition or execution of sentence for a period generally not exceeding two years, subject to statutory exceptions, and impose terms and conditions it determines appropriate. The court may require restitution, fines, jail time within statutory limits, community service, support of dependents, reporting, and other reasonable conditions.
@@ -2449,7 +2449,7 @@ Use the official section for the full list and exceptions. Some offenses have lo
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 1203.2 Probation, parole, and supervision revocation.
 
 During supervision, if a probation officer, parole officer, or peace officer has probable cause to believe the person violated a supervision term or condition, the officer may rearrest the person or the court may issue a warrant. The court may modify, revoke, or terminate supervision if justice requires and the court has reason to believe the person violated conditions or committed another offense.
@@ -2470,7 +2470,7 @@ Supervision cannot be revoked solely for failure to pay restitution, fines, fees
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Official California Legislative Information page, queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Cal. Penal Code sec. 3000 Parole period and supervision framework.
 
 California parole law governs postrelease parole periods, Department of Corrections and Rehabilitation supervision, and offense-specific parole terms. The exact parole period depends on the offense, sentence, release law, and statutory category.
@@ -2490,7 +2490,7 @@ Use this as the California parole framework hook, not as a standalone calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 1-2-103 Elector qualifications and felony confinement.
 
 Colorado voter qualification law excludes a person who is serving a sentence of detention, confinement, or incarceration for a felony conviction. Colorado restored voting rights for people on parole, so the core practical rule is that a felony conviction blocks voting while the person is incarcerated for the felony, not after release to parole or completion.
@@ -2510,7 +2510,7 @@ Use this as Colorado's felony voting-rights authority, together with current Sec
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 24-72-705 Sealing criminal justice records not resulting in conviction.
 
 Colorado provides procedures to seal criminal justice records for cases that did not result in conviction, including situations such as dismissed charges, acquittals, or cases where charges were not filed, subject to statutory requirements and exceptions.
@@ -2530,7 +2530,7 @@ Use this authority for nonconviction-record relief. Check the official section t
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 24-72-706 Sealing criminal conviction records.
 
 Colorado law allows certain conviction records to be sealed after statutory waiting periods and conditions are met. Eligibility depends on offense class, criminal history, completion of sentence, waiting period, restitution and other financial obligations, and statutory exclusions.
@@ -2550,7 +2550,7 @@ Use this as Colorado's conviction-sealing gateway. Do not give a detailed eligib
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 38-12-904 Rental applications and criminal history limits.
 
 Colorado rental-application law restricts how landlords may use certain rental, credit, and criminal-history information in screening. For criminal history, the statute limits consideration of older records and includes listed exceptions for serious categories such as methamphetamine-related offenses, sex-offender registration, and homicide or stalking-related offenses.
@@ -2570,7 +2570,7 @@ Use this as the primary Colorado state-law source for criminal-history rental sc
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 24-34-502 Housing discrimination unfair practices.
 
 Colorado fair-housing law prohibits specified discriminatory housing practices based on protected characteristics. This section is a core Colorado civil-rights source for housing-rights answers.
@@ -2590,7 +2590,7 @@ Criminal history is not the same as a protected class under this section. For cr
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 8-2-130 Colorado Chance to Compete Act.
 
 Colorado restricts covered employers from stating in an advertisement or on an initial employment application that a person with a criminal history may not apply or from inquiring into criminal history on the initial application, subject to statutory exceptions.
@@ -2610,7 +2610,7 @@ The statute does not prevent an employer from obtaining a publicly available cri
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 24-5-101 Effect of criminal conviction on public employment and licensing.
 
 Colorado limits when a prior conviction can be used to disqualify a person from public employment or from a license, certification, permit, or registration. Agencies must apply statutory standards rather than treating every conviction as an automatic bar.
@@ -2630,7 +2630,7 @@ Use this with occupation-specific statutes and regulations. A detailed occupatio
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 16-3-103 Stopping of suspect.
 
 A peace officer may stop a person reasonably suspected of criminal activity and may require the person to give the person's name and address, identification if available, and an explanation of the person's actions. The stop must be temporary and tied to the investigation.
@@ -2650,7 +2650,7 @@ Use this as Colorado's stop-and-identify hook. It does not mean a person must an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. secs. 18-9-304 and 18-9-305 Eavesdropping and consent exceptions.
 
 Colorado prohibits certain eavesdropping and recording conduct, but statutory exceptions include consent-based recording rules. Colorado is generally treated as a one-party-consent state for recording conversations, subject to the details and exceptions in the eavesdropping statutes.
@@ -2670,7 +2670,7 @@ Use this as Colorado's recording-consent hook. For recording police, also analyz
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 18-1.3-204 Conditions of probation.
 
 Colorado courts may impose statutory and reasonable probation conditions when sentencing a person to probation. Conditions can include treatment, restitution, reporting, employment or education-related requirements, offense-specific restrictions, and other court-ordered terms authorized by law.
@@ -2690,7 +2690,7 @@ Use the official section text and the person's written probation order for any s
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 16-11-206 Probation revocation hearing.
 
 Colorado law governs hearings and procedure when probation revocation is alleged. It provides the framework for how courts address claimed violations and possible revocation or modification of probation.
@@ -2710,7 +2710,7 @@ Use this for Colorado probation-violation answers, but confirm hearing rights, b
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Colorado Revised Statutes official landing page queried June 27, 2026; section text hosted through LexisNexis",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Colo. Rev. Stat. sec. 17-2-201 State board of parole powers and parole supervision.
 
 Colorado parole law gives the state board of parole authority over parole release decisions, parole conditions, supervision, and revocation processes subject to statutory limits and Department of Corrections procedures.
@@ -2730,7 +2730,7 @@ Use this as a Colorado parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 9-46 Forfeiture and restoration of electoral privileges.
 
 Connecticut law provides the core felony voting-rights rule: a person convicted of a felony and committed to confinement forfeits electoral privileges during the period of confinement, and electoral privileges are restored after release from confinement, subject to registration requirements.
@@ -2750,7 +2750,7 @@ Use this as Connecticut's felony voting-rights authority. For user-facing advice
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 54-142a Erasure of criminal records.
 
 Connecticut erases police, court, and prosecutor records for not-guilty findings, dismissals, nolles after the statutory period, absolute pardons, and certain eligible convictions. Eligible misdemeanor records may be erased after seven years, and eligible class D or E felonies or certain unclassified felonies may be erased after ten years, subject to exclusions and completion of incarceration, parole, special parole, medical parole, transitional supervision, probation, and no pending Connecticut criminal charge.
@@ -2770,7 +2770,7 @@ After erasure, the person is deemed never to have been arrested with respect to 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 54-142t Automated process for erasure of criminal records.
 
 Connecticut law directs automated processes for identifying and erasing eligible criminal records and includes related procedures for review, audit, record maintenance, and liability for reliance on criminal history information.
@@ -2790,7 +2790,7 @@ Use this with Conn. Gen. Stat. sec. 54-142a when explaining Connecticut clean-sl
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 46a-64c Discriminatory housing practices prohibited.
 
 Connecticut fair-housing law prohibits listed discriminatory housing practices based on protected characteristics. This is the primary Connecticut state fair-housing source for housing-rights answers.
@@ -2810,7 +2810,7 @@ Criminal history is not itself the same as a protected class under this section.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 31-51i Employer inquiries about erased criminal records prohibited.
 
 Connecticut employers may not require an employee or applicant to disclose the existence of an erased criminal record, and employment application forms that ask about criminal history must contain a notice that the applicant is not required to disclose erased records.
@@ -2830,7 +2830,7 @@ The statute also prohibits employment discrimination based on erased criminal re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 46a-80 Denial of employment or license because of prior conviction.
 
 Connecticut limits denial of public employment, state licenses, permits, certificates, or registrations based solely on a prior conviction. Decision makers must consider the nature of the crime and its relationship to the job or license, information about rehabilitation, and the time elapsed since conviction or release.
@@ -2850,7 +2850,7 @@ Use this as Connecticut's occupational-licensing and public-employment criminal-
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 54-1f Stop of suspect and identification context.
 
 Connecticut law authorizes officers to stop a person in statutorily defined circumstances and request identifying information when the officer has appropriate suspicion. Use this as Connecticut's police-stop identification hook.
@@ -2870,7 +2870,7 @@ Do not present this as a duty to answer every police question. For police-stop a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 53a-189 Eavesdropping.
 
 Connecticut criminalizes eavesdropping as defined in the Penal Code. Use this with the statutory definitions in Conn. Gen. Stat. sec. 53a-187 and civil telephone-recording rules when analyzing recording or interception questions.
@@ -2890,7 +2890,7 @@ For recording police, also consider whether the conversation is private or publi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 53a-30 Conditions of probation and conditional discharge.
 
 Connecticut courts may impose conditions of probation or conditional discharge, including reporting, employment, education, treatment, restitution, no-contact, residence, and other conditions authorized by statute and tailored to rehabilitation and public safety.
@@ -2910,7 +2910,7 @@ Use this with the person's written probation order for specific condition questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 53a-32 Violation of probation or conditional discharge.
 
 Connecticut law governs arrest, hearing, and court action for alleged violations of probation or conditional discharge. If a violation is established, the court may continue, modify, extend, or revoke supervision and impose sentence as authorized by law.
@@ -2930,7 +2930,7 @@ Use this for Connecticut probation-violation answers, but verify hearing procedu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Connecticut General Statutes current publication, revised to January 1, 2025; 2026 supplement should be checked",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Conn. Gen. Stat. sec. 54-125a Parole eligibility and release.
 
 Connecticut parole eligibility depends on sentence, offense type, risk, rehabilitation, victim and public-safety considerations, and Board of Pardons and Paroles action. The statute supplies the framework for parole release consideration and eligibility categories.
@@ -2950,7 +2950,7 @@ Use this as Connecticut's parole framework source, not as a release-date calcula
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `15 Del. C. sec. 6102 Persons disqualified from voting by reason of conviction.
 
 Delaware law disqualifies certain people from voting because of felony convictions and restores voting rights under statutory conditions. Delaware also has categories of disqualifying offenses that may require a pardon before voting rights can be restored.
@@ -2970,7 +2970,7 @@ Use this as Delaware's primary felony voting-rights authority. For a user-facing
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 4372 Mandatory expungement.
 
 Delaware provides mandatory expungement for specified eligible records, including certain cases terminated in favor of the accused and certain eligible convictions after statutory conditions are met.
@@ -2990,7 +2990,7 @@ Use this as the mandatory-expungement gateway. Eligibility is offense-specific a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 4373 Discretionary expungement.
 
 Delaware permits discretionary expungement for certain records when mandatory expungement is not available, subject to statutory eligibility, exclusions, waiting periods, and court review.
@@ -3010,7 +3010,7 @@ Use this for Delaware expungement questions where relief is possible but not aut
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 4374 Effect of expungement.
 
 When Delaware expungement is granted, the effect of expungement is governed by statute, including restrictions on disclosure and treatment of the expunged record. Expungement can matter for employment, housing, education, and licensing questions, but exceptions may allow access or disclosure in listed circumstances.
@@ -3030,7 +3030,7 @@ Use this with the specific expungement eligibility section. Do not assume expung
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `6 Del. C. sec. 4603 Discriminatory housing practices.
 
 Delaware fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Delaware's core state fair-housing authority.
@@ -3050,7 +3050,7 @@ Criminal history is not itself a protected class under this section. For crimina
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `25 Del. C. sec. 5513 Tenant obligations relating to rental unit and conduct.
 
 Delaware landlord-tenant law imposes tenant obligations related to the rental unit and conduct. Violations can matter for lease enforcement and termination depending on the facts and the statutory remedy.
@@ -3070,7 +3070,7 @@ Use this as a landlord-tenant conduct hook, not as a criminal-record screening r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `19 Del. C. sec. 711(g) Public employer criminal history inquiry limits.
 
 Delaware makes it an unlawful employment practice for public employers to inquire into or consider an applicant's criminal record, criminal history, credit history, or credit score before the first interview, subject to statutory exceptions.
@@ -3090,7 +3090,7 @@ The law allows inquiry where federal or state law requires or where the employer
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `24 Del. C. sec. 8735 Occupational licensing and criminal conviction review.
 
 Delaware occupational licensing boards and agencies may have limits on denying licenses based on criminal convictions, and Delaware has statutory reforms requiring individualized review in covered contexts.
@@ -3110,7 +3110,7 @@ Use this as an occupational-licensing hook pending exact adapter confirmation. A
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 1902 Questioning and detention of suspects.
 
 Delaware authorizes a peace officer to stop a person reasonably suspected of committing, having committed, or being about to commit a crime, and to demand the person's name, address, business abroad, and destination. The detention must be temporary and tied to the investigation.
@@ -3130,7 +3130,7 @@ Use this as Delaware's stop-and-identify hook. It does not mean a person must an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 2402 Interception of wire, oral or electronic communications.
 
 Delaware law prohibits certain interceptions of wire, oral, or electronic communications and includes consent-based exceptions. Delaware is generally treated as a one-party-consent jurisdiction for covered recordings, subject to statutory details and exceptions.
@@ -3150,7 +3150,7 @@ Use this as Delaware's recording/interception hook. For recording police, also a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 4333 Terms and conditions of probation or suspension of sentence.
 
 Delaware courts may impose terms and conditions when placing a person on probation or suspending sentence. Conditions can include supervision requirements, restitution, treatment, conduct rules, and other court-ordered terms authorized by law.
@@ -3170,7 +3170,7 @@ Use this with the person's written probation order for specific condition questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 4334 Violation of probation or suspension of sentence.
 
 Delaware law governs what happens when a person is alleged to have violated probation or a suspended sentence. The court may address the violation through statutory violation proceedings and available sanctions.
@@ -3190,7 +3190,7 @@ Use this for Delaware probation-violation answers, but confirm hearing procedure
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Delaware Code Online current through acts received by May 22, 2026; queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `11 Del. C. sec. 4347 Parole authority and release framework.
 
 Delaware parole law gives the Board of Parole authority over eligible parole release decisions and parole conditions within statutory limits. Delaware parole eligibility and supervision depend on sentence date, offense, sentence structure, credits, board action, and statutory exclusions.
@@ -3210,7 +3210,7 @@ Use this as a Delaware parole framework hook, not as a release-date calculator. 
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 97.041 Qualifications to register or vote.
 
 Florida voter registration law provides that a person otherwise qualified is not entitled to register or vote if the person has been convicted of a felony by any court of record and has not had the right to vote restored pursuant to law.
@@ -3230,7 +3230,7 @@ Use this as Florida's felony voting-rights gateway. A specific answer must accou
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 943.0585 Court-ordered expunction of criminal history records.
 
 Florida permits court-ordered expunction of eligible criminal history records when statutory criteria are met, including cases where no charging document was filed or issued, charges were dismissed or nolle prossed, or the person was acquitted, subject to exclusions and certificate-of-eligibility requirements.
@@ -3250,7 +3250,7 @@ If expunction is granted, most records are physically destroyed or obliterated, 
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 943.059 Court-ordered sealing of criminal history records.
 
 Florida permits court-ordered sealing of eligible criminal history records when statutory criteria are met, including certificate-of-eligibility requirements and offense exclusions. Sealing keeps records confidential and exempt from public access but does not destroy every record.
@@ -3270,7 +3270,7 @@ Use this with Fla. Stat. sec. 943.0585 for Florida record-relief answers. A spec
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 760.23 Discrimination in the sale or rental of housing and other prohibited practices.
 
 Florida fair-housing law prohibits refusal to sell or rent, discriminatory terms or conditions, discriminatory advertising, misrepresentation of availability, and related practices because of race, color, national origin, sex, disability, familial status, or religion.
@@ -3290,7 +3290,7 @@ Criminal history is not itself listed as a protected class in this section. For 
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 83.52 Tenant's obligation to maintain dwelling unit.
 
 Florida landlord-tenant law requires tenants to maintain the dwelling unit and conduct themselves, and require others on the premises with consent to conduct themselves, in a manner that does not unreasonably disturb neighbors or constitute a breach of the peace.
@@ -3310,7 +3310,7 @@ Use this as a landlord-tenant conduct hook, not a criminal-record screening rule
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 112.011 Disqualification from licensing, permitting, or public employment because of conviction.
 
 Florida limits disqualification from public employment or from a license, permit, or certificate because of a prior conviction, subject to statutory exceptions and occupation-specific laws. The statute is a core Florida employment and occupational-licensing source for people with records.
@@ -3330,7 +3330,7 @@ Use this with the exact license or job category, because some occupations have s
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 901.151 Florida Stop and Frisk Law.
 
 Florida law allows a law enforcement officer to temporarily detain a person when circumstances reasonably indicate the person has committed, is committing, or is about to commit a criminal offense, for the purpose of ascertaining identity and the circumstances surrounding the person's presence. The detention may not last longer than reasonably necessary and may not extend beyond the place first effected or its immediate vicinity.
@@ -3350,7 +3350,7 @@ If probable cause appears, the person shall be arrested; if no probable cause ap
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 934.03 Interception and disclosure of wire, oral, or electronic communications.
 
 Florida prohibits intentional interception, use, or disclosure of wire, oral, or electronic communications unless a statutory exception applies. Florida is generally treated as an all-party-consent state for recording private oral communications, subject to statutory definitions and exceptions.
@@ -3370,7 +3370,7 @@ Use this as Florida's recording/interception hook. For recording police, analyze
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 948.03 Terms and conditions of probation.
 
 Florida courts determine the terms and conditions of probation. Standard conditions may include reporting as directed, permitting officer visits, working faithfully at suitable employment where possible, remaining within specified places, living without violating any law, making restitution, supporting legal dependents, avoiding criminal associations, substance testing, and not possessing firearms or weapons without consent.
@@ -3390,7 +3390,7 @@ Use the official section and the person's written supervision order for specific
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 948.06 Violation of probation or community control.
 
 Florida law governs arrest, notice to appear, tolling, hearings, revocation, modification, continuance, and alternative sanctions when there are reasonable grounds to believe a person violated probation or community control in a material respect.
@@ -3410,7 +3410,7 @@ If probation or community control is revoked, the court may adjudicate guilt if 
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 947.16 Eligibility for parole; initial interview.
 
 Florida parole law applies primarily to older parole-eligible sentences and governs eligibility, initial interview, and commission procedures. Most modern Florida prison sentences are not parole-eligible, so parole answers must start with the offense date and sentence type.
@@ -3430,7 +3430,7 @@ Use this as a parole framework hook, not a release-date calculator. A specific a
     sourceName: "Florida Legislature Online Sunshine",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "2025 Florida Statutes page queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Fla. Stat. sec. 947.18 Conditions and order of parole release.
 
 Florida parole release and conditions are governed by the Florida Commission on Offender Review under statutory limits. Parole conditions are individualized and tied to the commission's release order and supervision requirements.
@@ -3450,7 +3450,7 @@ Use this with Fla. Stat. sec. 947.16 for parole questions. A precise answer requ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ga. Const. art. II, sec. I, para. III Persons not entitled to register and vote.
 
 Georgia's constitution provides that a person convicted of a felony involving moral turpitude may not register, remain registered, or vote except upon completion of the sentence. This is Georgia's core felony voting-rights authority.
@@ -3470,7 +3470,7 @@ Use this with current Secretary of State guidance for plain-English answers. The
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 35-3-37 Restriction, correction, and inspection of criminal history records.
 
 Georgia uses "record restriction" rather than traditional expungement for many adult criminal records. Restricted records are generally limited from public access but may remain available to criminal justice agencies and other statutorily authorized users.
@@ -3490,7 +3490,7 @@ Eligibility depends on disposition, offense type, sentence completion, waiting p
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 42-8-62 First offender discharge.
 
 Georgia first-offender law allows eligible defendants who successfully complete first-offender sentencing to be discharged without court adjudication of guilt, subject to statutory conditions and exceptions.
@@ -3510,7 +3510,7 @@ Use this for Georgia first-offender record-consequence answers. Do not treat it 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 8-3-202 Unlawful housing practices.
 
 Georgia fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Georgia's core state fair-housing source for housing-rights answers.
@@ -3530,7 +3530,7 @@ Criminal history is not itself the same as a protected class under this section.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 44-7-50 Tenant holding over and dispossessory proceedings.
 
 Georgia landlord-tenant law governs dispossessory proceedings when a tenant holds over, fails to pay rent, or otherwise may be removed under statutory grounds and lease terms.
@@ -3550,7 +3550,7 @@ Use this as a Georgia landlord-tenant enforcement hook, not as a criminal-record
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 35-3-34 Dissemination of criminal history record information.
 
 Georgia law governs dissemination of criminal history record information, including access for employment, licensing, and other authorized purposes. This matters because record-restriction relief limits public access but does not necessarily prevent all authorized criminal history checks.
@@ -3570,7 +3570,7 @@ Use this with O.C.G.A. sec. 35-3-37 and occupation-specific laws when answering 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 43-1-19 Professional licensing discipline and criminal convictions.
 
 Georgia professional licensing boards may have authority to refuse, suspend, or revoke licenses based on criminal convictions or conduct under statutory standards. The impact of a conviction depends on the board, profession, offense, time elapsed, rehabilitation, and any mandatory disqualification law.
@@ -3590,7 +3590,7 @@ Use this as Georgia's occupational-licensing conviction hook, but verify the spe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 16-10-24 Obstructing or hindering law enforcement officers.
 
 Georgia prohibits knowingly and willfully obstructing or hindering a law enforcement officer in the lawful discharge of official duties. This is a common police-interaction authority when conduct during an encounter is at issue.
@@ -3610,7 +3610,7 @@ Do not present this as a broad stop-and-identify statute. For police-stop questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 16-11-66 Recording communications by a party.
 
 Georgia law generally allows a person who is a party to a communication, or who has consent from a party, to record that communication, subject to statutory limits and exceptions. Georgia is generally treated as a one-party-consent state for covered conversations.
@@ -3630,7 +3630,7 @@ Use this as Georgia's recording-consent hook. For recording police, also analyze
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 42-8-35 Terms and conditions of probation.
 
 Georgia courts may impose statutory and reasonable conditions of probation, including reporting, law-abiding conduct, restitution, employment, treatment, residence, association, and other terms authorized by law and the sentencing order.
@@ -3650,7 +3650,7 @@ Use this with the person's written probation sentence for specific condition que
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 42-8-38 Arrest and revocation of probation.
 
 Georgia law governs arrest, hearings, and revocation when a person is alleged to have violated probation. The court may address violations through statutory revocation procedures and available sanctions.
@@ -3670,7 +3670,7 @@ Use this for Georgia probation-violation answers, but verify hearing rights, tol
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 42-9-42 State Board of Pardons and Paroles powers.
 
 Georgia parole release and supervision are governed by the State Board of Pardons and Paroles within statutory authority and board rules. Parole eligibility and release depend on offense, sentence, law in effect, board policy, and individual case review.
@@ -3690,7 +3690,7 @@ Use this as Georgia's parole framework source, not as a release-date calculator.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Georgia General Assembly official statutes landing page queried June 27, 2026; exact section text requires hosted-code adapter",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `O.C.G.A. sec. 42-9-45 Parole conditions and revocation framework.
 
 Georgia parole conditions and revocation procedure are governed by statute, board rules, and the person's written parole certificate or supervision paperwork. Violations may lead to sanctions or revocation depending on the violation and procedure.
@@ -3711,7 +3711,7 @@ Use this with O.C.G.A. sec. 42-9-42 for parole-supervision answers. For a specif
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 11-15 Application to register; voter qualifications.
 
 Hawaii voter registration law includes the qualifications to register and vote. Hawaii generally restores voting rights after release from incarceration, so a felony conviction primarily affects voting while the person is imprisoned for the conviction.
@@ -3732,7 +3732,7 @@ Use this as Hawaii's felony voting-rights authority with current election-office
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 831-3.2 Expungement orders.
 
 Hawaii law provides for expungement of certain arrest records and related records when statutory conditions are met, including records not resulting in conviction and other eligible circumstances. Expungement orders affect access and disclosure but do not necessarily erase all records for all government purposes.
@@ -3753,7 +3753,7 @@ Use this as Hawaii's primary expungement authority. A specific answer requires t
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 831-3.1 Order annulling, canceling, or rescinding conviction.
 
 Hawaii law authorizes certain conviction-relief orders in limited circumstances. The effect and eligibility depend on the offense, sentence, statutory criteria, and court order.
@@ -3774,7 +3774,7 @@ Use this alongside Haw. Rev. Stat. sec. 831-3.2 for Hawaii record-relief answers
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 515-3 Discriminatory practices in real property transactions.
 
 Hawaii fair-housing law prohibits covered discriminatory practices in real property transactions based on protected characteristics. This is Hawaii's core state fair-housing authority.
@@ -3795,7 +3795,7 @@ Criminal history is not itself the same as a protected class under this section.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 521-51 Tenant obligations.
 
 Hawaii landlord-tenant law sets tenant obligations for maintaining the dwelling and complying with law and lease obligations. Violations can matter for lease enforcement and termination depending on the facts and statutory procedure.
@@ -3816,7 +3816,7 @@ Use this as a landlord-tenant conduct hook, not as a criminal-record screening r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 378-2.5 Employer inquiries into conviction record.
 
 Hawaii limits employer inquiry into and consideration of conviction records. Employers generally may inquire into conviction history only after a conditional offer and may withdraw an offer based on conviction history only if the conviction bears a rational relationship to the duties and responsibilities of the position.
@@ -3837,7 +3837,7 @@ Use this as Hawaii's primary fair-chance employment authority. Check exceptions,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 831-3.3 Employment-related conviction relief.
 
 Hawaii law includes relief provisions affecting how certain criminal records may be treated in employment or civil contexts after appropriate court or agency relief.
@@ -3858,7 +3858,7 @@ Use this with Haw. Rev. Stat. sec. 378-2.5 and profession-specific licensing sta
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 803-6 Temporary questioning of persons in public places.
 
 Hawaii law authorizes temporary police questioning in public places under statutory conditions. This is Hawaii's police-stop identification hook.
@@ -3879,7 +3879,7 @@ Do not present this as a duty to answer every police question. For police-stop a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 803-42 Interception of wire, oral, or electronic communications.
 
 Hawaii prohibits certain interceptions of wire, oral, or electronic communications and includes consent-based exceptions. Hawaii is generally treated as a one-party-consent state for covered recordings, subject to statutory details and exceptions.
@@ -3900,7 +3900,7 @@ Use this as Hawaii's recording/interception hook. For recording police, also ana
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 706-624 Conditions of probation.
 
 Hawaii courts may impose statutory conditions of probation, including reporting, law-abiding conduct, restitution, treatment, employment, residence, association, and other conditions tied to rehabilitation and public safety.
@@ -3921,7 +3921,7 @@ Use this with the person's written probation order for specific condition questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 706-625 Revocation, modification, and discharge of probation.
 
 Hawaii law governs probation revocation, modification, and discharge. If a violation is alleged, the court may address it through statutory procedures and available sanctions.
@@ -3942,7 +3942,7 @@ Use this for Hawaii probation-violation answers, but verify hearing procedure, r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Hawaii Revised Statutes current site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Haw. Rev. Stat. sec. 353-64 Parole; terms and conditions.
 
 Hawaii parole release and supervision are governed by statute, the Hawaii Paroling Authority, and the person's written parole conditions. Eligibility and release depend on offense, sentence, minimum term, board action, and supervision plan.
@@ -3963,7 +3963,7 @@ Use this as Hawaii's parole framework source, not as a release-date calculator. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 18-310 Suspension and restoration of civil rights after felony conviction.
 
 Idaho law suspends certain civil rights after a felony conviction and provides for restoration after final discharge, subject to statutory limits. This is the core Idaho authority for felony voting-rights restoration.
@@ -3984,7 +3984,7 @@ Use this with current election guidance. For a user-facing answer, confirm wheth
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 34-402 Qualifications of electors.
 
 Idaho voter qualification law sets the baseline qualifications for electors. For people with felony convictions, use this together with Idaho Code sec. 18-310 on suspension and restoration of civil rights.
@@ -4005,7 +4005,7 @@ Do not answer a felony voting question from the voter-qualification section alon
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 19-2604 Dismissal and set-aside after probation or suspended sentence.
 
 Idaho allows certain defendants who have complied with probation or a suspended sentence to apply for dismissal of the case and relief from penalties and disabilities, subject to statutory eligibility and exclusions.
@@ -4026,7 +4026,7 @@ Use this as Idaho's primary conviction set-aside authority. It is not broad auto
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 67-3004 Expungement of fingerprint and criminal history records.
 
 Idaho law provides limited expungement of fingerprint and criminal history records in specified circumstances, including situations where the person was arrested or summoned and the case did not result in a conviction as provided by statute.
@@ -4047,7 +4047,7 @@ Use this for Idaho nonconviction expungement questions. For conviction relief, u
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 67-5909 Discrimination in real property transactions.
 
 Idaho fair-housing law prohibits covered discriminatory real property practices based on protected characteristics. This is Idaho's core state fair-housing source for housing-rights answers.
@@ -4068,7 +4068,7 @@ Criminal history is not itself the same as a protected class under this section.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 6-303 Unlawful detainer.
 
 Idaho unlawful-detainer law governs removal proceedings and landlord remedies when a tenant remains in possession or violates lease or statutory obligations under circumstances listed by law.
@@ -4089,7 +4089,7 @@ Use this as a landlord-tenant enforcement hook, not as a criminal-record screeni
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 67-5909 Unlawful employment practices.
 
 Idaho Human Rights Act employment provisions prohibit covered discriminatory employment practices based on protected characteristics. This is useful for employment-rights framing, but criminal history is not itself a listed protected class.
@@ -4110,7 +4110,7 @@ For criminal-record hiring questions, use this with record-relief law, occupatio
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 67-9411 Occupational licensing restrictions based on criminal convictions.
 
 Idaho limits how licensing authorities may deny or discipline occupational licenses based on criminal convictions. Licensing analysis turns on statutory standards, the relationship between the offense and occupation, rehabilitation, time elapsed, and any occupation-specific law.
@@ -4131,7 +4131,7 @@ Use this as Idaho's primary occupational-licensing conviction authority. A speci
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 19-615 Temporary questioning of persons in public places.
 
 Idaho law authorizes a peace officer to stop a person in a public place under statutory suspicion standards and demand the person's name, address, and an explanation of the person's actions.
@@ -4152,7 +4152,7 @@ Use this as Idaho's stop-and-identify hook. It does not mean a person must answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 18-6702 Interception and disclosure of wire, electronic, or oral communications.
 
 Idaho prohibits certain interceptions, disclosures, and uses of wire, electronic, or oral communications, but includes consent-based exceptions. Idaho is generally treated as a one-party-consent state for covered recordings, subject to statutory details and exceptions.
@@ -4173,7 +4173,7 @@ Use this as Idaho's recording/interception hook. For recording police, also anal
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 19-2601 Suspension of judgment or sentence; probation.
 
 Idaho courts may suspend judgment or sentence and place a person on probation under statutory authority and court-imposed conditions.
@@ -4194,7 +4194,7 @@ Use this as Idaho's probation framework source with the person's written judgmen
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 20-222 Commission of Pardons and Parole powers.
 
 Idaho parole release and supervision are governed by the Commission of Pardons and Parole under statutory authority. Eligibility and release depend on offense, sentence, minimum term, commission action, and supervision plan.
@@ -4215,7 +4215,7 @@ Use this as Idaho's parole framework authority, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Idaho Legislature statutes site queried June 27, 2026; section URL pattern pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Idaho Code sec. 20-228 Parole violation and retaking parolee.
 
 Idaho law governs handling of alleged parole violations, including retaking a parolee and related commission procedures.
@@ -4235,7 +4235,7 @@ Use this with the person's written parole conditions and current commission proc
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `10 ILCS 5/3-5 Persons convicted and confined not entitled to vote.
 
 Illinois election law provides that a person who has been convicted and is serving a sentence of confinement in a penal institution is not entitled to vote until released from confinement.
@@ -4255,7 +4255,7 @@ Use this as Illinois' felony voting-rights authority. The practical distinction 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `20 ILCS 2630/5.2 Expungement and sealing of criminal records.
 
 Illinois provides detailed procedures for expungement and sealing of eligible arrest, charge, supervision, qualified probation, and conviction records. Eligibility depends on disposition, offense type, waiting period, completion of sentence, pending charges, and statutory exclusions.
@@ -4275,7 +4275,7 @@ Use this as Illinois' primary record-relief authority. Do not give a detailed el
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `775 ILCS 5/3-102 Civil rights violations in real estate transactions.
 
 Illinois Human Rights Act housing provisions prohibit covered discriminatory real estate practices based on protected characteristics. This is the core Illinois state fair-housing authority.
@@ -4295,7 +4295,7 @@ For criminal-record housing screening, also check Illinois record-sealing law, f
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `775 ILCS 5/3-102.5 Arrest record protections in real estate transactions.
 
 Illinois law provides protections related to arrest records in real estate transactions. This can be relevant when a landlord or housing provider relies on nonconviction information rather than a conviction.
@@ -4315,7 +4315,7 @@ Use this with 775 ILCS 5/3-102, federal HUD guidance, sealed-record rules, and l
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `775 ILCS 5/2-103.1 Conviction record employment restrictions.
 
 Illinois limits an employer's ability to use a conviction record in employment decisions unless there is a substantial relationship between the conviction and the employment sought or held, or granting or continuing employment would involve an unreasonable risk to property or safety.
@@ -4335,7 +4335,7 @@ Before taking adverse action, employers must follow statutory assessment and not
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `820 ILCS 75/15 Job Opportunities for Qualified Applicants Act.
 
 Illinois restricts covered employers from inquiring into or considering criminal record or criminal history until the applicant has been selected for an interview or, if there is no interview, until after a conditional offer of employment, subject to statutory exceptions.
@@ -4355,7 +4355,7 @@ Use this with 775 ILCS 5/2-103.1 to explain both timing and substantive use of c
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `725 ILCS 5/107-14 Temporary questioning without arrest.
 
 Illinois law authorizes a peace officer, after having identified themselves, to stop a person in a public place for a reasonable period when the officer reasonably infers from the circumstances that the person is committing, is about to commit, or has committed an offense, and may demand the person's name, address, and an explanation of actions.
@@ -4375,7 +4375,7 @@ Use this as Illinois' stop-and-identify hook. It does not require answering ever
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `720 ILCS 5/14-2 Eavesdropping.
 
 Illinois prohibits certain audio recording or interception of private conversations without required consent and contains exceptions. Illinois recording law is especially fact-sensitive because the statute turns on private conversations and statutory definitions.
@@ -4395,7 +4395,7 @@ Use this as Illinois' recording/eavesdropping hook. For recording police, analyz
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `730 ILCS 5/5-6-3 Conditions of probation and conditional discharge.
 
 Illinois courts may impose mandatory and discretionary conditions of probation or conditional discharge, including reporting, law-abiding conduct, restitution, treatment, employment or education-related requirements, and other court-ordered terms authorized by law.
@@ -4415,7 +4415,7 @@ Use this with the person's written sentencing order for specific condition quest
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `730 ILCS 5/5-6-4 Violation, modification, or revocation of probation.
 
 Illinois law governs allegations that a person violated probation, conditional discharge, or supervision. The court may continue, modify, revoke, or resentence as authorized after statutory procedures.
@@ -4435,7 +4435,7 @@ Use this for Illinois probation-violation answers, but check the official sectio
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `730 ILCS 5/3-3-7 Conditions of parole or mandatory supervised release.
 
 Illinois law governs conditions of parole and mandatory supervised release, including mandatory conditions and additional conditions imposed by the Prisoner Review Board.
@@ -4455,7 +4455,7 @@ Use this as Illinois' parole/MSR condition framework. Specific answers require t
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Illinois Compiled Statutes official landing page queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `730 ILCS 5/3-3-8 Violations and revocation of parole or mandatory supervised release.
 
 Illinois law governs alleged parole or mandatory supervised release violations and the Prisoner Review Board's revocation process and sanctions.
@@ -4475,7 +4475,7 @@ Use this with the person's written MSR or parole conditions. A specific violatio
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 3-7-13-4 Persons imprisoned after conviction not entitled to vote.
 
 Indiana law provides that a person imprisoned following conviction of a crime is not entitled to vote during imprisonment. The practical rule is that a felony conviction affects voting while the person is incarcerated, and voting rights are restored after release from imprisonment.
@@ -4495,7 +4495,7 @@ Use this as Indiana's felony voting-rights authority. For a user-facing answer, 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 35-38-9-1 Expungement of records not resulting in conviction.
 
 Indiana provides expungement for certain arrests, charges, or juvenile delinquency allegations that did not result in conviction or adjudication, subject to statutory requirements and exceptions.
@@ -4515,7 +4515,7 @@ Use this for Indiana nonconviction expungement questions. For conviction relief,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code secs. 35-38-9-2 through 35-38-9-5 Expungement of conviction records.
 
 Indiana's Second Chance expungement law provides separate pathways for misdemeanors, lower-level felonies, more serious felonies, and certain elected official or public servant offenses. Eligibility depends on offense type, waiting period, no pending charges, subsequent conviction history, sentence completion, and in some cases prosecutor consent.
@@ -4535,7 +4535,7 @@ Use this as Indiana's conviction-expungement gateway. A specific answer requires
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 35-38-9-10 Effect of expungement order.
 
 Indiana law governs the effect of an expungement order, including how records are treated and when a person may be protected from discrimination or disclosure based on an expunged conviction or record.
@@ -4555,7 +4555,7 @@ Use this with the eligibility section that produced the expungement. Do not assu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 22-9-1-3 Civil rights policy and discriminatory practices.
 
 Indiana civil-rights law includes protections against discrimination in covered contexts, including housing-related discrimination through Indiana's civil rights framework and related fair-housing provisions.
@@ -4575,7 +4575,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 32-31-7-5 Tenant obligations.
 
 Indiana landlord-tenant law sets tenant duties, including compliance with health and housing codes, keeping the rental premises reasonably clean, using systems reasonably, and complying with reasonable rules and regulations.
@@ -4595,7 +4595,7 @@ Use this as a landlord-tenant conduct hook, not a criminal-record screening rule
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 22-2-17-3 Employment discrimination based on restricted criminal history.
 
 Indiana law restricts employers from asking about or discriminating based on restricted criminal history information. This is a key employment protection after a record has been restricted or expunged under Indiana law.
@@ -4615,7 +4615,7 @@ Use this with Ind. Code chapter 35-38-9. The protection depends on whether the r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 25-1-1.1 Occupational licensing and criminal convictions.
 
 Indiana occupational licensing law limits how licensing boards may use criminal convictions and sets standards for when a conviction can be considered in licensing decisions, subject to occupation-specific statutes and public-safety exceptions.
@@ -4635,7 +4635,7 @@ Use this as Indiana's occupational-licensing criminal-record hook. A specific an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 34-28-5-3.5 Refusal to identify self.
 
 Indiana law makes it an offense in specified circumstances to knowingly or intentionally refuse to provide name, address, and date of birth, or driver's license if in possession, to a law enforcement officer who has stopped the person for an infraction or ordinance violation.
@@ -4655,7 +4655,7 @@ Use this as Indiana's stop-and-identify hook. Do not present it as a duty to ans
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 35-33.5-5-5 Interception of communications.
 
 Indiana law prohibits certain interceptions of communications and contains consent-based exceptions. Indiana is generally treated as a one-party-consent state for covered recordings, subject to statutory definitions and exceptions.
@@ -4675,7 +4675,7 @@ Use this as Indiana's recording/interception hook. For recording police, analyze
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 35-38-2-2.3 Conditions of probation.
 
 Indiana courts may impose probation conditions authorized by statute and tailored to the person and offense, including reporting, law-abiding conduct, restitution, treatment, employment, residence, and other court-ordered terms.
@@ -4695,7 +4695,7 @@ Use this with the person's written probation order for specific condition questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 35-38-2-3 Probation violation; revocation.
 
 Indiana law governs probation violation allegations, hearings, sanctions, modification, and revocation. If a violation is proven, the court may continue probation, extend probation, modify conditions, order execution of suspended sentence, or impose other authorized sanctions.
@@ -4715,7 +4715,7 @@ Use this for Indiana probation-violation answers, but verify notice, hearing rig
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 11-13-3-4 Conditions of parole.
 
 Indiana parole conditions are governed by statute, parole authority rules, and the person's written parole order. Conditions may include reporting, law-abiding conduct, residence, employment, treatment, restitution, and other supervision requirements.
@@ -4735,7 +4735,7 @@ Use this as Indiana's parole condition framework. A specific answer requires the
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Indiana General Assembly laws portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ind. Code sec. 11-13-3-10 Parole violation procedure.
 
 Indiana law governs alleged parole violations and parole revocation procedure. Violations may result in sanctions, modification, or revocation depending on the violation and applicable procedure.
@@ -4755,7 +4755,7 @@ Use this with the person's written parole conditions and parole authority notice
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 48A.6 Voter registration qualifications and infamous crime disqualification.
 
 Iowa voter registration law includes baseline elector qualifications and disqualifies a person convicted of an infamous crime unless the person's rights have been restored. Iowa felony voting-rights answers must account for the Iowa Constitution, current executive restoration policy, and any sentence or rights-restoration requirements.
@@ -4775,7 +4775,7 @@ Use this as Iowa's statutory voting-rights hook. For a user-facing answer, verif
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 901C.2 Expungement of criminal records for dismissed charges and acquittals.
 
 Iowa law allows expungement of certain criminal records when charges are dismissed or the person is acquitted, subject to statutory timing, case-status, and exclusion rules.
@@ -4795,7 +4795,7 @@ Use this for Iowa nonconviction expungement questions. A specific answer require
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 901C.3 Expungement of certain misdemeanor convictions.
 
 Iowa law allows expungement of certain misdemeanor convictions when statutory eligibility requirements are met. Eligibility depends on offense type, waiting period, completion of sentence, criminal history, and exclusions.
@@ -4815,7 +4815,7 @@ Use this as Iowa's conviction-expungement gateway. Do not give a detailed eligib
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 907.9 Deferred judgment discharge and record consequences.
 
 Iowa deferred judgment law can allow discharge without entry of judgment if the person fulfills probation conditions. The record consequences depend on the deferred judgment statute and related expungement or court-record rules.
@@ -4835,7 +4835,7 @@ Use this for Iowa deferred-judgment questions, not as a general conviction expun
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 216.8 Unfair or discriminatory housing practices.
 
 Iowa civil-rights law prohibits covered discriminatory housing practices based on protected characteristics. This is Iowa's core state fair-housing authority.
@@ -4855,7 +4855,7 @@ Criminal history is not itself the same as a protected class under this section.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 562A.17 Tenant obligations.
 
 Iowa landlord-tenant law sets tenant duties related to compliance with obligations, maintaining the dwelling, using facilities reasonably, and conducting themselves and guests appropriately.
@@ -4875,7 +4875,7 @@ Use this as a landlord-tenant conduct hook, not as a criminal-record screening r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 216.6 Unfair employment practices.
 
 Iowa civil-rights law prohibits covered discriminatory employment practices based on protected characteristics. This is useful for employment-rights framing but does not itself make criminal history a protected class.
@@ -4895,7 +4895,7 @@ For criminal-record hiring questions, use this with expungement law, criminal-hi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 272C.15 Occupational licensing and criminal convictions.
 
 Iowa occupational licensing law limits how licensing boards may deny, revoke, or discipline a license based on a criminal conviction and requires analysis under statutory standards and occupation-specific law.
@@ -4915,7 +4915,7 @@ Use this as Iowa's occupational-licensing conviction authority. A specific answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 692.2 Dissemination of criminal history data.
 
 Iowa law governs dissemination of criminal history data. This matters for employment and licensing because some records may remain available to authorized users even after other relief or restrictions.
@@ -4935,7 +4935,7 @@ Use this with expungement and occupational-licensing law when explaining what an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 804.7 Arrest by peace officer.
 
 Iowa law defines when a peace officer may make an arrest. Iowa does not have the same broad stop-and-identify style statute as some states, so police-stop answers should lead with constitutional reasonable-suspicion and arrest rules.
@@ -4955,7 +4955,7 @@ Use this as an Iowa arrest-authority hook, not as a duty to answer every questio
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 808B.2 Interception of communications.
 
 Iowa law prohibits certain interceptions, disclosures, and uses of wire, oral, or electronic communications but includes consent-based exceptions. Iowa is generally treated as a one-party-consent state for covered recordings, subject to statutory definitions and exceptions.
@@ -4975,7 +4975,7 @@ Use this as Iowa's recording/interception hook. For recording police, analyze pu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 907.6 Probation conditions.
 
 Iowa courts may impose probation conditions authorized by law and tailored to rehabilitation and public safety. Conditions may include supervision, treatment, restitution, employment or education requirements, residence, and other court-ordered terms.
@@ -4995,7 +4995,7 @@ Use this with the person's written probation order for specific condition questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 908.11 Probation violation and revocation procedure.
 
 Iowa law governs alleged probation violations and related revocation or modification proceedings. If a violation is established, the court may impose sanctions authorized by law.
@@ -5015,7 +5015,7 @@ Use this for Iowa probation-violation answers, but verify hearing rights, burden
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Iowa Legislature Code portal queried June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Iowa Code sec. 906.4 Board of parole powers and duties.
 
 Iowa parole release and supervision are governed by the Board of Parole under statutory authority. Parole eligibility and release depend on offense, sentence, board action, risk and rehabilitation factors, and written conditions.
@@ -5035,7 +5035,7 @@ Use this as Iowa's parole framework source, not as a release-date calculator. A 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 21-6613 Loss and restoration of civil rights after felony conviction.
 
 Kansas law suspends certain civil rights after felony conviction and provides for restoration when the person has completed the authorized sentence, including any postrelease supervision.
@@ -5055,7 +5055,7 @@ Use this as Kansas' core felony voting-rights restoration authority. For a user-
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 25-2302 Voter registration qualifications.
 
 Kansas voter registration law sets the baseline qualifications for registration and voting. For people with felony convictions, use this with Kan. Stat. Ann. sec. 21-6613 on civil-rights restoration.
@@ -5075,7 +5075,7 @@ Do not answer a felony voting question from this section alone; sentence complet
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 21-6614 Expungement of arrest, conviction, diversion, or related records.
 
 Kansas provides expungement procedures for eligible arrest, conviction, diversion, and related records after statutory waiting periods and conditions are met. Eligibility depends on offense type, time elapsed, completion of sentence or diversion, pending matters, and statutory exclusions.
@@ -5095,7 +5095,7 @@ Use this as Kansas' primary record-relief authority. A specific answer requires 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 44-1016 Discriminatory housing practices.
 
 Kansas fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Kansas' core state fair-housing authority.
@@ -5115,7 +5115,7 @@ Criminal history is not itself the same as a protected class under this section.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 58-2555 Tenant obligations.
 
 Kansas landlord-tenant law sets tenant obligations for compliance with law, maintenance, use of the premises, and conduct. Violations can matter for lease enforcement and termination depending on the facts and statutory procedure.
@@ -5135,7 +5135,7 @@ Use this as a landlord-tenant conduct hook, not as a criminal-record screening r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 44-1009 Unlawful employment practices.
 
 Kansas civil-rights law prohibits covered discriminatory employment practices based on protected characteristics. This is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -5155,7 +5155,7 @@ For criminal-record employment questions, use this with expungement law, occupat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 74-120 Occupational licensing and criminal history.
 
 Kansas law limits how licensing bodies may use criminal history when deciding whether to grant, deny, suspend, or revoke occupational licenses. Analysis depends on the profession, conviction, relationship to duties, rehabilitation, and any occupation-specific statute.
@@ -5175,7 +5175,7 @@ Use this as Kansas' occupational-licensing criminal-record authority. Verify the
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 22-2402 Stopping of suspect.
 
 Kansas law allows a law enforcement officer to stop a person in a public place when the officer reasonably suspects the person is committing, has committed, or is about to commit a crime, and to demand the person's name, address, and an explanation of actions.
@@ -5195,7 +5195,7 @@ Use this as Kansas' stop-and-identify hook. It does not mean a person must answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 21-6101 Breach of privacy.
 
 Kansas breach-of-privacy law governs certain recording, interception, and privacy-invading conduct. Kansas is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -5215,7 +5215,7 @@ Use this as Kansas' recording/privacy hook. For recording police, analyze public
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 21-6607 Conditions of probation or assignment to community correctional services.
 
 Kansas courts may impose conditions of probation or community correctional services authorized by statute, including reporting, law-abiding conduct, restitution, treatment, employment, residence, and other court-ordered terms.
@@ -5235,7 +5235,7 @@ Use this with the person's written supervision order for specific condition ques
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 22-3716 Probation violation and sanctions.
 
 Kansas law governs alleged probation, assignment, or postrelease violations and available sanctions. The statute includes procedures and graduated sanction rules that can affect whether a violation leads to jail, prison, modification, or revocation.
@@ -5255,7 +5255,7 @@ Use this for Kansas supervision-violation answers, but verify the current subsec
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kansas Revisor of Statutes official site queried June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Kan. Stat. Ann. sec. 22-3717 Parole, conditional release, and postrelease supervision.
 
 Kansas parole, conditional release, and postrelease supervision depend on offense date, sentence, risk rules, board action, credits, and statutory eligibility. The section provides the framework for release and supervision terms.
@@ -5275,7 +5275,7 @@ Use this as Kansas' parole/postrelease framework source, not as a release-date c
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 116.025 Voter registration qualifications.
 
 Kentucky voter-registration law sets baseline qualifications for registration and voting. For people with felony convictions, Kentucky voting rights also depend on constitutional disqualification rules and whether civil rights have been restored by pardon, executive action, or other applicable restoration authority.
@@ -5295,7 +5295,7 @@ Use this as Kentucky's voter-qualification statute. Do not answer a felony votin
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 196.045 Civil rights restoration assistance for eligible felony offenders.
 
 Kentucky law includes procedures related to assisting eligible felony offenders with restoration of civil rights. This source is a restoration-process hook and should be read together with Kentucky voter-qualification law, constitutional disqualification rules, and any current executive orders governing restoration.
@@ -5315,7 +5315,7 @@ Use this for Kentucky felony voting-rights restoration context, not as a complet
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 431.073 Felony conviction expungement.
 
 Kentucky provides a process to expunge certain eligible felony convictions after statutory waiting periods and conditions are met. Eligibility depends on offense classification, offense exclusions, completion of sentence, pending charges, prior record, waiting period, and court procedure.
@@ -5335,7 +5335,7 @@ Use this as Kentucky's primary felony expungement authority. A specific answer r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 431.076 Expungement after acquittal, dismissal, or failure to indict.
 
 Kentucky separately addresses expungement when charges end without conviction, including acquittal, dismissal, and failure to indict. Timing, notice, and procedural requirements matter.
@@ -5355,7 +5355,7 @@ Use this alongside Kentucky conviction-expungement statutes so JO distinguishes 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 344.360 Discriminatory housing practices.
 
 Kentucky fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Kentucky's core state fair-housing source.
@@ -5375,7 +5375,7 @@ Criminal history is not itself the same as a protected class under this statute.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 383.595 Tenant obligations.
 
 Kentucky landlord-tenant law sets tenant duties involving compliance with law, maintenance, use of the premises, and conduct. These duties can matter for lease enforcement, termination, and eviction depending on local adoption and the facts.
@@ -5395,7 +5395,7 @@ Use this as a landlord-tenant conduct hook, not as a rule about criminal-record 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 344.040 Unlawful employment practices.
 
 Kentucky civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful for employment-rights context, but criminal history is not itself a protected class under this source.
@@ -5415,7 +5415,7 @@ For criminal-record employment questions, use this with expungement law, occupat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 335B.020 Criminal conviction and occupational licensing.
 
 Kentucky law limits when a public agency may deny, suspend, or revoke an occupational license because of a criminal conviction. The analysis depends on the occupation, the conviction, relationship to the licensed activity, rehabilitation, time elapsed, and any occupation-specific statute.
@@ -5435,7 +5435,7 @@ Use this as Kentucky's occupational-licensing criminal-record authority. Verify 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 431.005 Arrest by peace officers.
 
 Kentucky law defines when peace officers may make arrests, including warrantless arrests under specified circumstances. This is a state statutory arrest-power hook and should be used with constitutional search-and-seizure rules.
@@ -5455,7 +5455,7 @@ Use this for Kentucky police-stop and arrest questions only as statutory context
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 526.020 Eavesdropping.
 
 Kentucky eavesdropping law governs certain interception or recording of oral communications. Kentucky is generally treated as a one-party-consent state for recording conversations, subject to statutory details and reasonable expectations of privacy.
@@ -5475,7 +5475,7 @@ Use this as Kentucky's recording/privacy hook. For recording police, also analyz
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 533.030 Conditions of probation and conditional discharge.
 
 Kentucky courts may impose statutory and court-ordered conditions of probation or conditional discharge. Conditions can include law-abiding conduct, reporting, treatment, restitution, employment, residence, and other case-specific requirements.
@@ -5495,7 +5495,7 @@ Use this with the person's written supervision order for specific condition ques
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 533.050 Modification or revocation of probation or conditional discharge.
 
 Kentucky law governs modification and revocation of probation or conditional discharge after alleged violations. Consequences depend on the violation, hearing process, court findings, sentencing exposure, and available alternatives.
@@ -5515,7 +5515,7 @@ Use this for Kentucky probation violation answers, but verify the current subsec
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Kentucky Legislative Research Commission statutes site checked June 27, 2026; service alert prevented exact section URL verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ky. Rev. Stat. sec. 439.340 Parole eligibility and release.
 
 Kentucky parole depends on offense, sentence, statutory eligibility, board action, risk and needs factors, credits, and written conditions. This statute provides the framework for parole consideration and release authority.
@@ -5535,7 +5535,7 @@ Use this as Kentucky's parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Rev. Stat. sec. 18:101 Registration to vote; qualifications.
 
 Louisiana voter-registration law sets the baseline qualifications for registering and voting. For people with felony convictions, this source must be read with Louisiana's suspension-of-voting-rights statute and any sentence, custody, probation, parole, or supervision status facts.
@@ -5555,7 +5555,7 @@ Use this as Louisiana's voter-qualification source. Do not answer felony voting 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Rev. Stat. sec. 18:102 Suspension of voting rights after felony conviction.
 
 Louisiana law addresses when a person's right to register and vote is suspended because of felony conviction and confinement or an order of imprisonment. Louisiana felony voting analysis depends on the person's current custody and supervision status and any statutory restoration rule.
@@ -5575,7 +5575,7 @@ Use this as Louisiana's core felony voting-rights authority. A specific answer r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact article URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Code Crim. Proc. art. 977 Misdemeanor conviction expungement.
 
 Louisiana provides expungement procedures for certain eligible misdemeanor convictions. Eligibility depends on the offense, sentence completion, waiting period, prior expungements or convictions, pending matters, and statutory exclusions.
@@ -5595,7 +5595,7 @@ Use this for Louisiana misdemeanor conviction record relief. A specific answer r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact article URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Code Crim. Proc. art. 978 Felony conviction expungement.
 
 Louisiana provides expungement procedures for certain eligible felony convictions after statutory conditions are met. Eligibility depends on offense type, exclusions, sentence completion, waiting period, pending matters, prior record, and whether the conviction is statutorily eligible.
@@ -5615,7 +5615,7 @@ Use this as Louisiana's primary felony expungement authority. A specific answer 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Rev. Stat. sec. 51:2606 Discriminatory housing practices.
 
 Louisiana fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Louisiana's core state fair-housing source.
@@ -5635,7 +5635,7 @@ Criminal history is not itself the same as a protected class under this statute.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact article URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Civ. Code art. 2683 Obligations of the lessee.
 
 Louisiana lease law sets basic obligations of a lessee, including payment of rent, prudent use according to the lease, and returning the thing at the end of the lease. These duties can matter for lease enforcement and eviction depending on the facts and lease terms.
@@ -5655,7 +5655,7 @@ Use this as a landlord-tenant obligations hook, not as a criminal-record screeni
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Rev. Stat. sec. 23:332 Intentional discrimination in employment.
 
 Louisiana employment-discrimination law prohibits covered intentional employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -5675,7 +5675,7 @@ For criminal-record employment questions, use this with expungement law, occupat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Rev. Stat. sec. 37:2950 Occupational licensing and criminal convictions.
 
 Louisiana law limits how licensing entities may use criminal convictions when making occupational licensing decisions. Analysis depends on the profession, the conviction, relationship to the occupation, rehabilitation evidence, time elapsed, and any occupation-specific statute.
@@ -5695,7 +5695,7 @@ Use this as Louisiana's occupational-licensing criminal-record authority. Verify
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact article URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Code Crim. Proc. art. 215.1 Temporary questioning of persons in public places; frisk and search.
 
 Louisiana law authorizes temporary questioning when an officer reasonably suspects a person is committing, has committed, or is about to commit an offense, and it addresses frisk or search limits for officer safety. Constitutional limits still control the scope of the encounter.
@@ -5715,7 +5715,7 @@ Use this as Louisiana's stop-and-frisk statutory hook. It does not mean a person
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Rev. Stat. sec. 15:1303 Interception and disclosure of wire, electronic, or oral communications.
 
 Louisiana law governs interception and disclosure of wire, electronic, and oral communications. Louisiana is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -5735,7 +5735,7 @@ Use this as Louisiana's recording/privacy hook. For recording police, also analy
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact article URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Code Crim. Proc. art. 895 Conditions of probation.
 
 Louisiana courts may impose statutory and court-ordered probation conditions. Conditions can include reporting, law-abiding conduct, payment obligations, treatment, employment, residence, and other case-specific terms.
@@ -5755,7 +5755,7 @@ Use this with the person's written probation order for specific condition questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact article URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Code Crim. Proc. art. 900 Arrest or summons for violation of probation; hearing; revocation.
 
 Louisiana law governs the process and consequences for alleged probation violations, including hearing and revocation procedures. Outcomes depend on the violation, sentence, hearing posture, court findings, and available sanctions.
@@ -5775,7 +5775,7 @@ Use this for Louisiana probation violation answers, but verify the current subse
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Louisiana State Legislature laws portal checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `La. Rev. Stat. sec. 15:574.4 Parole eligibility.
 
 Louisiana parole eligibility depends on offense, sentence, offense date, credits, statutory exclusions, parole board authority, risk factors, and written conditions. This statute provides the framework for parole eligibility and release analysis.
@@ -5795,7 +5795,7 @@ Use this as Louisiana's parole framework source, not as a release-date calculato
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `21-A M.R.S. sec. 111 General voter qualifications.
 
 Maine voter eligibility is based on United States citizenship, age, residence, registration, and party enrollment for party caucus or convention voting. The statute does not create a felony-conviction disqualification.
@@ -5815,7 +5815,7 @@ Use this as Maine's core voter-qualification authority. For people with convicti
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `21-A M.R.S. sec. 112 Residence for voting purposes.
 
 Maine law defines voting residence and specifically addresses people incarcerated in correctional facilities or county jails. Incarceration does not make the correctional facility municipality the person's voting residence unless the person previously resided there, and an incarcerated person may register in a municipality where the person previously established a fixed and principal home to which the person intends to return.
@@ -5835,7 +5835,7 @@ Use this with section 111 for Maine conviction-related voting questions.`,
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `15 M.R.S. sec. 2261 Definitions for post-judgment sealing of criminal history records.
 
 Maine's record-relief chapter defines key terms for sealing criminal history record information, including eligible criminal conviction and sealed record. Eligibility is narrower than a general expungement remedy and depends on statutory offense categories and exclusions.
@@ -5855,7 +5855,7 @@ Use this as the definition source for Maine record sealing. Do not describe Main
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `15 M.R.S. sec. 2262 Statutory prerequisites for sealing criminal history record information.
 
 Maine allows sealing of specific eligible conviction records only when statutory prerequisites are met, including an eligible conviction, passage of time after the sentence is fully satisfied, no disqualifying later convictions, and no pending criminal charges.
@@ -5875,7 +5875,7 @@ Use this as Maine's main conviction record-sealing eligibility source. A specifi
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `15 M.R.S. sec. 2264 Motion and hearing process for sealing criminal history records.
 
 Maine record sealing requires a motion in the underlying criminal proceeding, a hearing, and a court finding that the statutory prerequisites are met. The person filing may have counsel but is not entitled to appointed counsel at state expense for the sealing motion.
@@ -5895,7 +5895,7 @@ Use this as Maine's process source after eligibility is checked under sections 2
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `5 M.R.S. sec. 4581 Right to freedom from discrimination in housing.
 
 Maine recognizes the opportunity to secure housing without discrimination based on protected characteristics as a civil right, subject to statutory exceptions. This is the framework source for Maine fair-housing rights.
@@ -5915,7 +5915,7 @@ Criminal history is not itself the same as a protected class under this section.
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `5 M.R.S. sec. 4581-A Unlawful housing discrimination.
 
 Maine law prohibits covered discriminatory housing practices, including discriminatory inquiries, refusals, terms, advertising, eviction, brokerage conduct, and housing-related financial assistance discrimination based on protected characteristics.
@@ -5935,7 +5935,7 @@ Use this as Maine's operative fair-housing statute. For criminal-record screenin
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `5 M.R.S. sec. 4582-A Unlawful housing discrimination on the basis of disability.
 
 Maine law requires reasonable modifications and reasonable accommodations in housing when necessary for equal use and enjoyment, and addresses assistance animals. This is relevant when a housing issue overlaps with disability, treatment, recovery, or accommodation needs.
@@ -5955,7 +5955,7 @@ Use this for disability-related housing-rights questions, including where crimin
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `5 M.R.S. sec. 4572 Unlawful employment discrimination.
 
 Maine employment law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -5975,7 +5975,7 @@ For criminal-record employment questions, use this with Maine record-sealing law
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `5 M.R.S. sec. 5301 Eligibility for occupational license, registration or permit.
 
 Maine allows licensing agencies to consider certain criminal history record information, but the existence of that information does not operate as an automatic bar to an occupational license, registration, or permit. The statute limits the categories of convictions agencies may consider.
@@ -5995,7 +5995,7 @@ Use this as Maine's main occupational-licensing criminal-record eligibility sour
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `5 M.R.S. sec. 5302 Denial, suspension, revocation or discipline because of criminal record.
 
 Maine licensing agencies may deny, refuse to renew, suspend, revoke, or discipline a license based on covered conviction history only if the agency determines the person has not been sufficiently rehabilitated to warrant public trust. The agency must state reasons in writing if the decision is based in whole or in part on a covered conviction.
@@ -6015,7 +6015,7 @@ Use this with section 5301 for Maine occupational-licensing questions involving 
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `5 M.R.S. sec. 5303 Time limit on consideration of prior criminal conviction.
 
 Maine limits how long many prior convictions may be considered in occupational licensing decisions, with different periods for certain health, safety, and regulated professions. After the applicable period, applicants with no additional convictions generally must be considered like applicants with no prior criminal record for licensing purposes.
@@ -6035,7 +6035,7 @@ Use this as Maine's time-limit source for occupational licensing and criminal hi
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `17-A M.R.S. sec. 15 Warrantless arrests by a law enforcement officer.
 
 Maine law sets circumstances when a law enforcement officer may make a warrantless arrest, including probable-cause categories and certain offenses committed in the officer's presence. This is a statutory arrest-power hook.
@@ -6055,7 +6055,7 @@ Use this for Maine police encounter answers only as statutory context. Stops, se
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `17-A M.R.S. sec. 751-B Refusing to submit to arrest or detention.
 
 Maine criminalizes certain conduct intended to hinder, delay, or prevent a law enforcement officer from effecting an arrest or detention, including refusing to stop on request or signal, use of physical force, or creating a substantial risk of bodily injury. It includes a defense when the attempted arrest or detention was unlawful for the refusal-to-stop provision.
@@ -6075,7 +6075,7 @@ Use this carefully: this is not a broad stop-and-identify statute, and it does n
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `15 M.R.S. sec. 710 Interception of wire and oral communications; offenses.
 
 Maine law governs prohibited interception, disclosure, use, possession, and sale of interception devices for wire and oral communications. Maine is generally treated as allowing recording by a party to the conversation, subject to statutory definitions and privacy expectations.
@@ -6095,7 +6095,7 @@ Use this as Maine's recording/privacy hook. For recording police, also analyze p
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `17-A M.R.S. sec. 1807 Conditions of probation.
 
 Maine courts must attach reasonable and appropriate probation conditions to assist the person in leading a law-abiding life, including a condition to refrain from criminal conduct. Authorized conditions include reporting, employment, treatment, weapons limits, residence and travel limits, restitution, supervision fees, and other conditions tied to rehabilitation or public safety.
@@ -6115,7 +6115,7 @@ Use this with the person's written probation order for specific condition questi
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `17-A M.R.S. sec. 1809 Commencement of probation revocation proceedings by arrest.
 
 Maine law allows a probation officer with probable cause to believe a probation condition was violated to arrest the person or cause the person to be arrested, and it sets probable-cause hearing timing after arrest.
@@ -6135,7 +6135,7 @@ Use this for Maine probation violation procedure, alongside the written probatio
     currentAsOf: "2025-10-01",
     currentAsOfLabel:
       "Maine Revised Statutes current through October 1, 2025; official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `34-A M.R.S. sec. 5803 Eligibility for parole hearing; State Prison.
 
 Maine parole statutes apply to limited categories, including prisoners sentenced under older pre-criminal-code parole structures. Modern Maine sentencing questions often involve probation, supervised release, administrative release, or other correctional statuses rather than ordinary parole eligibility.
@@ -6156,7 +6156,7 @@ Use this as a narrow Maine parole-history source, not as a general release-date 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Elec. Law sec. 3-102 Qualifications to register to vote.
 
 Maryland voter-registration law sets the baseline qualifications to register and identifies felony-conviction disqualification while a person is serving a court-ordered sentence of imprisonment for a felony conviction. The practical question is whether the person is currently serving a disqualifying sentence of imprisonment, not whether the person has any felony history.
@@ -6177,7 +6177,7 @@ Use this as Maryland's core felony voting-rights authority. A specific answer re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Crim. Proc. sec. 10-105 Expungement after acquittal, dismissal, probation before judgment, and related dispositions.
 
 Maryland provides expungement procedures for several nonconviction and special dispositions, including acquittal, dismissal, nolle prosequi, probation before judgment, stet, compromise, and other covered outcomes. Eligibility depends on disposition, waiting period, pending charges, good-cause exceptions, and statutory exclusions.
@@ -6198,7 +6198,7 @@ Use this as Maryland's main nonconviction and special-disposition expungement so
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Crim. Proc. sec. 10-110 Expungement of certain convictions.
 
 Maryland allows expungement of certain eligible convictions after statutory waiting periods and conditions are met. Eligibility depends on the conviction offense, exclusions, completion of sentence, waiting period, pending charges, subsequent convictions, and any special statutory rule.
@@ -6219,7 +6219,7 @@ Use this as Maryland's core conviction-expungement authority. A specific answer 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Crim. Proc. sec. 10-109 Disclosure of expunged records.
 
 Maryland law limits disclosure and use of expunged records, including protections relevant to employment and education contexts. A person generally should not be required to disclose expunged information except where a specific law permits or requires disclosure.
@@ -6240,7 +6240,7 @@ Use this after confirming that the record has actually been expunged and checkin
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, State Gov't sec. 20-704 Civil right to fair housing.
 
 Maryland recognizes fair-housing rights under state civil-rights law. This provision frames the right to obtain housing without unlawful discrimination based on protected characteristics.
@@ -6261,7 +6261,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, State Gov't sec. 20-705 Discriminatory housing practices.
 
 Maryland law prohibits covered discriminatory housing practices based on protected characteristics. This is Maryland's operative state fair-housing statute for refusals, terms, advertising, and related housing conduct.
@@ -6282,7 +6282,7 @@ Use this for Maryland fair-housing questions. For criminal-record screening, pai
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, State Gov't sec. 20-606 Discriminatory employment practices.
 
 Maryland civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -6303,7 +6303,7 @@ For criminal-record employment questions, use this with Maryland expungement pro
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Lab. & Empl. sec. 3-1503 Criminal record screening practices.
 
 Maryland restricts when covered employers may require an applicant to disclose whether the applicant has a criminal record during the hiring process. This is Maryland's statewide fair-chance hiring timing rule.
@@ -6324,7 +6324,7 @@ Use this for job-application timing questions. It does not mean every criminal-r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Crim. Proc. sec. 2-202 Warrantless arrest by police officer.
 
 Maryland law sets circumstances when a police officer may arrest without a warrant. This is a statutory arrest-power hook and should be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -6345,7 +6345,7 @@ Use this for Maryland police encounter answers as statutory context, not as a co
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Cts. & Jud. Proc. sec. 10-402 Interception and disclosure of communications.
 
 Maryland law governs interception and disclosure of wire, oral, and electronic communications and is generally treated as requiring consent of all parties for recording covered private communications. Public recording of police also raises First Amendment, privacy, and interference-with-duties issues.
@@ -6366,7 +6366,7 @@ Use this as Maryland's recording/privacy hook. For recording police, analyze pub
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Crim. Proc. sec. 6-220 Probation before judgment.
 
 Maryland courts may stay entry of judgment, defer further proceedings, and place a person on probation before judgment in eligible cases. The court may impose conditions, and successful completion can affect whether there is a conviction for some purposes and whether expungement may be available.
@@ -6387,7 +6387,7 @@ Use this for Maryland PBJ and supervision questions, together with the written p
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Crim. Proc. sec. 6-223 Violation of probation.
 
 Maryland law governs court action after an alleged probation violation. Consequences depend on the original sentence, probation terms, alleged violation, hearing posture, court findings, and any available alternatives to revocation.
@@ -6408,7 +6408,7 @@ Use this for Maryland probation violation answers, but verify the written order 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Maryland General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Md. Code, Corr. Servs. sec. 7-301 Eligibility for parole.
 
 Maryland parole eligibility depends on offense, sentence, time served, credits, exclusions, risk factors, Parole Commission action, and written conditions. This statute provides the framework for parole eligibility analysis.
@@ -6429,7 +6429,7 @@ Use this as Maryland's parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 51, sec. 1 Voter qualifications.
 
 Massachusetts voter eligibility turns on citizenship, age, residence, registration, and whether the person is currently incarcerated in a correctional facility because of a felony conviction. A person with a felony conviction who is not currently incarcerated for that conviction is not disqualified on that basis alone.
@@ -6450,7 +6450,7 @@ Use this as Massachusetts' core felony voting-rights authority. A specific answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 276, sec. 100A Sealing conviction records.
 
 Massachusetts allows certain conviction records to be sealed after statutory waiting periods and conditions are met. Eligibility depends on offense type, disposition, sentence completion, later record, pending charges, statutory exclusions, and whether a shorter or special waiting period applies.
@@ -6471,7 +6471,7 @@ Use this as Massachusetts' primary conviction-sealing authority. A specific answ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 276, sec. 100C Sealing nonconviction and related criminal records.
 
 Massachusetts separately addresses sealing for cases that end without conviction or involve certain qualifying dispositions. Timing, disposition type, court findings, and statutory exceptions matter.
@@ -6492,7 +6492,7 @@ Use this alongside section 100A so JO distinguishes conviction sealing from nonc
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 276, sec. 100E Petition to expunge criminal records.
 
 Massachusetts provides expungement only for limited statutory categories. Expungement is different from sealing and generally requires satisfying specific statutory grounds, procedures, waiting periods, and exclusions.
@@ -6513,7 +6513,7 @@ Use this as Massachusetts' expungement authority, and avoid telling users that a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 151B, sec. 4 Unlawful discrimination in employment and housing.
 
 Massachusetts civil-rights law prohibits covered discriminatory practices in employment and housing based on protected characteristics. The statute also includes rules limiting certain employment inquiries about criminal records.
@@ -6534,7 +6534,7 @@ Criminal history is not itself the same as a protected class for housing. Use th
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 186, sec. 14 Quiet enjoyment and unlawful interference with tenancy.
 
 Massachusetts landlord-tenant law protects tenants against certain interference with quiet enjoyment and unlawful utility interruption or exclusion conduct. This can matter when a tenant with a criminal record faces lockout, harassment, or pressure outside lawful eviction process.
@@ -6555,7 +6555,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 6, sec. 172 Criminal offender record information access and dissemination.
 
 Massachusetts CORI law governs access to and dissemination of criminal offender record information. Employers, housing providers, and other requestors may have different access levels, notice obligations, and limits depending on the context.
@@ -6576,7 +6576,7 @@ Use this as Massachusetts' criminal-record information source for employment and
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 276, sec. 100A Employment effect of sealed conviction records.
 
 Massachusetts sealed-record law is important for employment because sealed convictions are generally treated differently from open criminal records, and employers may be restricted in asking about or using sealed records.
@@ -6597,7 +6597,7 @@ Use this employment-focused record-relief hook only after confirming that a reco
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 276, sec. 1 Arrest without warrant.
 
 Massachusetts law sets statutory authority for arrest without a warrant in specified circumstances. This is a police arrest-power hook and must be used with federal and state constitutional rules governing stops, searches, questioning, and arrests.
@@ -6618,7 +6618,7 @@ Use this for Massachusetts police encounter answers as statutory context, not as
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 41, sec. 98 Powers and duties of police officers.
 
 Massachusetts law describes certain powers and duties of police officers. It is useful as a state statutory policing hook, but it does not replace constitutional analysis for temporary detention, questioning, search, arrest, or use of force.
@@ -6639,7 +6639,7 @@ Use this with case law and practical know-your-rights guidance for police encoun
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 272, sec. 99 Interception of wire and oral communications.
 
 Massachusetts wiretap law governs interception and recording of wire and oral communications and is generally treated as prohibiting secret recording of covered communications without consent. Public recording of police also raises First Amendment, privacy, and interference-with-duties issues.
@@ -6660,7 +6660,7 @@ Use this as Massachusetts' recording/privacy hook. For recording police, analyze
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 276, sec. 87 Probation authority and conditions.
 
 Massachusetts courts may place a person on probation and impose conditions authorized by law and the court order. Specific obligations depend heavily on the written probation terms, offense, sentence, and court orders.
@@ -6681,7 +6681,7 @@ Use this as Massachusetts' probation framework source, together with the person'
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 279, sec. 3 Surrender and violation of probation.
 
 Massachusetts law provides a statutory basis for surrender proceedings after alleged probation violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -6702,7 +6702,7 @@ Use this for Massachusetts probation violation answers, but verify the written o
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Massachusetts Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mass. Gen. Laws ch. 127, sec. 130 Parole Board powers and duties.
 
 Massachusetts parole decisions depend on offense, sentence, parole eligibility, Parole Board authority, risk and rehabilitation factors, and written parole conditions. This section provides core Parole Board framework authority.
@@ -6722,7 +6722,7 @@ Use this as Massachusetts' parole framework source, not as a release-date calcul
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 168.492 Voter registration qualifications.
 
 Michigan voter registration law sets baseline qualifications for registering to vote, including citizenship, age, residence, and registration requirements. Felony history does not create a lifetime voting ban.
@@ -6742,7 +6742,7 @@ Use this as Michigan's voter-qualification source. For conviction-related questi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 168.758b Voting while confined in jail or prison.
 
 Michigan law addresses ballot access for electors confined in jail or prison and excludes people who are confined after conviction and sentencing. People on probation, parole, or released from incarceration generally are not disqualified on that basis alone.
@@ -6762,7 +6762,7 @@ Use this as Michigan's core felony voting-rights authority. A specific answer re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 780.621 Application to set aside conviction.
 
 Michigan allows eligible people to apply to set aside certain convictions after statutory waiting periods and conditions are met. Eligibility depends on offense type, number of convictions, exclusions, sentence completion, waiting period, pending charges, and any special statutory rule.
@@ -6782,7 +6782,7 @@ Use this as Michigan's primary petition-based conviction set-aside authority. A 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 780.621g Automatic set aside of convictions.
 
 Michigan's clean-slate law provides for automatic set aside of eligible convictions after statutory time periods and conditions are met. Automatic relief depends on offense eligibility, waiting period, criminal history limits, pending charges, and statutory exclusions.
@@ -6802,7 +6802,7 @@ Use this as Michigan's automatic clean-slate authority. Do not assume automatic 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 780.622 Effect of order setting aside conviction.
 
 Michigan law describes the legal effect of setting aside a conviction and when set-aside information may still be used or accessed. This matters for employment, housing, licensing, law enforcement, and later criminal justice questions.
@@ -6822,7 +6822,7 @@ Use this after confirming a conviction has been set aside, and check for any sta
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 37.2502 Discrimination in real estate transactions.
 
 Michigan's Elliott-Larsen Civil Rights Act prohibits covered discriminatory practices in real estate transactions based on protected characteristics. This is Michigan's operative state fair-housing statute.
@@ -6842,7 +6842,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 554.139 Landlord covenants for residential leases.
 
 Michigan landlord-tenant law implies certain landlord covenants in residential leases, including fitness for intended use and reasonable repair. These protections can matter when a tenant with a criminal record faces housing instability or landlord pressure unrelated to lawful screening.
@@ -6862,7 +6862,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 37.2202 Employment discrimination.
 
 Michigan civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -6882,7 +6882,7 @@ For criminal-record employment questions, use this with set-aside law, federal l
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 37.2205a Employment inquiry into misdemeanor arrest or detention not resulting in conviction.
 
 Michigan restricts covered employers from requesting, making, or maintaining records of certain misdemeanor arrest, detention, or disposition information where a conviction did not result. This is a direct criminal-record employment protection.
@@ -6902,7 +6902,7 @@ Use this for Michigan job-application questions involving nonconviction misdemea
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 764.15 Arrest without warrant.
 
 Michigan law sets circumstances when a peace officer may arrest without a warrant. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -6922,7 +6922,7 @@ Use this for Michigan police encounter answers as statutory context, not as a co
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 750.539c Eavesdropping upon private conversation.
 
 Michigan law governs eavesdropping and private-conversation recording. Recording questions depend on whether the person is a participant, the expectation of privacy, and other statutory details.
@@ -6942,7 +6942,7 @@ Use this as Michigan's recording/privacy hook. For recording police, also analyz
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 771.1 Probation authority.
 
 Michigan courts may place eligible people on probation under statutory authority and impose terms through the sentencing order. Specific obligations depend on the written probation order, offense, sentence, and court requirements.
@@ -6962,7 +6962,7 @@ Use this as Michigan's probation framework source, together with the person's wr
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 771.4 Arrest for probation violation.
 
 Michigan law provides authority and process related to alleged probation violations, including arrest and court handling. Consequences depend on the sentence, conditions, alleged violation, hearing posture, court findings, and available sanctions.
@@ -6982,7 +6982,7 @@ Use this for Michigan probation violation answers, but verify the written order 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Michigan Legislature MCL section URL checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mich. Comp. Laws sec. 791.234 Parole eligibility and release.
 
 Michigan parole eligibility depends on offense, sentence, minimum term, credits, parole board action, statutory exclusions, risk factors, and written parole conditions. This statute provides the framework for parole eligibility and release analysis.
@@ -7002,7 +7002,7 @@ Use this as Michigan's parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 201.014 Eligibility to vote.
 
 Minnesota voter eligibility turns on citizenship, age, residence, registration, and statutory disqualifications. Minnesota restored voting rights for people with felony convictions when they are not incarcerated for the felony offense.
@@ -7022,7 +7022,7 @@ Use this as Minnesota's core felony voting-rights authority. A specific answer r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 609.165 Restoration of civil rights.
 
 Minnesota law governs restoration of civil rights after felony conviction and should be read with voter eligibility section 201.014. For voting questions, the key distinction is whether the person is currently incarcerated for a felony offense.
@@ -7042,7 +7042,7 @@ Use this as restoration context, not as the only voting eligibility source.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 609A.02 Grounds for expungement.
 
 Minnesota provides statutory grounds to expunge certain criminal records, including nonconviction records, diversion or stay outcomes, and eligible convictions after statutory waiting periods. Eligibility depends on disposition, offense type, later record, waiting period, pending charges, and statutory exclusions.
@@ -7062,7 +7062,7 @@ Use this as Minnesota's main expungement eligibility authority. A specific answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 609A.03 Petition to expunge criminal records.
 
 Minnesota expungement generally requires petition procedure, service, hearing, findings, and consideration of statutory factors unless automatic relief applies. The court may seal records held by court and executive branch agencies when the statute permits.
@@ -7082,7 +7082,7 @@ Use this as Minnesota's expungement process source after eligibility is checked 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 609A.015 Automatic expungement.
 
 Minnesota's clean-slate law provides automatic expungement for eligible records when statutory criteria are satisfied. Automatic relief depends on offense eligibility, waiting periods, subsequent record, pending charges, and implementation rules.
@@ -7102,7 +7102,7 @@ Use this as Minnesota's automatic clean-slate authority. Do not assume a record 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 363A.09 Unfair discriminatory practices in housing.
 
 Minnesota law prohibits covered discriminatory practices in real property, housing, and related transactions based on protected characteristics. This is Minnesota's operative state fair-housing statute.
@@ -7122,7 +7122,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 504B.161 Landlord covenants.
 
 Minnesota landlord-tenant law implies duties in residential leases, including fitness, repair, and compliance with health and safety laws. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -7142,7 +7142,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 363A.08 Unfair discriminatory practices in employment.
 
 Minnesota civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -7162,7 +7162,7 @@ For criminal-record employment questions, use this with expungement law, rehabil
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 364.03 Public employment and licensing; criminal conviction limits.
 
 Minnesota limits when a public employer or licensing authority may disqualify a person because of a criminal conviction. The analysis depends on whether the conviction directly relates to the position or license, evidence of rehabilitation, time elapsed, and occupation-specific law.
@@ -7182,7 +7182,7 @@ Use this as Minnesota's core public employment and occupational-licensing crimin
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 629.34 Arrest without warrant.
 
 Minnesota law sets circumstances when a peace officer may arrest without a warrant. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -7202,7 +7202,7 @@ Use this for Minnesota police encounter answers as statutory context, not as a c
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 626A.02 Interception and disclosure of wire, electronic, or oral communications.
 
 Minnesota law governs interception and disclosure of wire, electronic, and oral communications. Minnesota is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -7222,7 +7222,7 @@ Use this as Minnesota's recording/privacy hook. For recording police, analyze pu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 609.135 Stay of imposition or execution of sentence; probation.
 
 Minnesota courts may stay imposition or execution of sentence and place a person on probation with conditions. Specific obligations depend on the written sentencing and probation order, offense, sentence, and court requirements.
@@ -7242,7 +7242,7 @@ Use this as Minnesota's probation framework source, together with the person's w
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 244.05 Supervised release, conditional release, and parole.
 
 Minnesota release from imprisonment often involves supervised release, conditional release, or parole-era rules depending on offense date, sentence, credits, release authority, and written conditions. This statute provides the framework for release and supervision status.
@@ -7262,7 +7262,7 @@ Use this as Minnesota's release-supervision framework source, not as a release-d
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Minnesota Revisor 2025 Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Minn. Stat. sec. 244.195 Supervision violation hearings and sanctions.
 
 Minnesota law addresses procedures and sanctions for certain supervision violations. Consequences depend on the supervision type, alleged violation, hearing posture, agency or court authority, findings, and available sanctions.
@@ -7282,7 +7282,7 @@ Use this for Minnesota supervision violation answers, but verify the written ord
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Const. art. 12, sec. 241 Disenfranchising crimes.
 
 Mississippi's constitution disenfranchises people convicted of specified crimes, including listed offenses such as murder, rape, bribery, theft, arson, obtaining money or goods under false pretenses, perjury, forgery, embezzlement, and bigamy. Mississippi felony voting analysis is offense-specific and is not simply based on whether the person completed a sentence.
@@ -7302,7 +7302,7 @@ Use this as Mississippi's core felony voting-rights authority. A specific answer
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 23-15-11 Voter qualifications.
 
 Mississippi election law sets baseline qualifications for registration and voting. For people with convictions, this source must be read with Mississippi Constitution article 12, section 241 and any restoration authority.
@@ -7322,7 +7322,7 @@ Use this as Mississippi's voter-qualification source. Do not answer conviction-r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 99-19-71 Expunction of certain convictions and misdemeanor records.
 
 Mississippi allows expunction for certain eligible misdemeanor and felony convictions after statutory conditions are met. Eligibility depends on offense type, statutory exclusions, prior record, sentence completion, waiting period, pending charges, and whether the conviction falls within an eligible category.
@@ -7342,7 +7342,7 @@ Use this as Mississippi's primary conviction expunction authority. A specific an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 99-15-26 Nonadjudication and expunction after dismissal.
 
 Mississippi nonadjudication law allows qualifying defendants to avoid adjudication and obtain dismissal and expunction if statutory terms are successfully completed. Eligibility depends on offense, prior record, prosecutor and court handling, completion of terms, and statutory exclusions.
@@ -7362,7 +7362,7 @@ Use this as Mississippi's diversion/nonadjudication expunction source, separate 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 43-33-723 Discriminatory housing practices.
 
 Mississippi fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Mississippi's operative state fair-housing statute.
@@ -7382,7 +7382,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 89-8-23 Landlord obligations.
 
 Mississippi residential landlord-tenant law sets statutory landlord duties regarding premises and lease compliance. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -7402,7 +7402,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 73-77-3 Occupational licensing and criminal conviction standards.
 
 Mississippi's occupational licensing reform law limits when a licensing authority may use criminal conviction history to disqualify an applicant. The analysis depends on the occupation, the conviction, relationship to duties, rehabilitation, time elapsed, and any occupation-specific statute.
@@ -7422,7 +7422,7 @@ Use this as Mississippi's core occupational-licensing criminal-record authority.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 73-77-5 Predetermination petition for occupational licensing.
 
 Mississippi allows people with criminal records to seek a predetermination from a licensing authority about whether their criminal history would disqualify them from a license. This can help a person avoid spending time and money on training for a license they cannot obtain.
@@ -7442,7 +7442,7 @@ Use this with section 73-77-3 for Mississippi occupational-licensing questions i
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 99-3-7 Arrest without warrant.
 
 Mississippi law sets circumstances when an officer may arrest without a warrant. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -7462,7 +7462,7 @@ Use this for Mississippi police encounter answers as statutory context, not as a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 41-29-531 Interception and disclosure of wire, oral, or other communications.
 
 Mississippi law governs interception and disclosure of wire, oral, and other communications. Mississippi is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -7482,7 +7482,7 @@ Use this as Mississippi's recording/privacy hook. For recording police, analyze 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 47-7-33 Probation and suspension of sentence.
 
 Mississippi courts may suspend sentence and place a person on probation under statutory authority. Specific obligations depend on the written probation order, offense, sentence, court requirements, and Department of Corrections supervision terms.
@@ -7502,7 +7502,7 @@ Use this as Mississippi's probation framework source, together with the person's
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 47-7-37 Probation violation, arrest, and revocation.
 
 Mississippi law governs proceedings and sanctions after alleged probation violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -7522,7 +7522,7 @@ Use this for Mississippi probation violation answers, but verify the written ord
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Mississippi Secretary of State law publications source checked June 27, 2026; exact section text pending official-code adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Miss. Code Ann. sec. 47-7-3 Parole eligibility.
 
 Mississippi parole eligibility depends on offense, sentence, time served, credits, statutory exclusions, parole board authority, risk factors, and written parole conditions. This statute provides the framework for parole eligibility analysis.
@@ -7542,7 +7542,7 @@ Use this as Mississippi's parole framework source, not as a release-date calcula
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 115.133 Qualifications of voters.
 
 Missouri voter-qualification law sets who may register and vote and includes conviction-related disqualifications. For felony conviction questions, the key issues include whether the person is confined under sentence, on probation or parole after a felony conviction, or convicted of an election-related offense.
@@ -7562,7 +7562,7 @@ Use this as Missouri's core felony voting-rights authority. A specific answer re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 561.026 Civil rights affected by conviction.
 
 Missouri law addresses civil disabilities resulting from conviction and restoration after sentence completion or discharge. This source is useful context for rights affected by conviction, including voting questions when read with section 115.133.
@@ -7582,7 +7582,7 @@ Use this as restoration context, not as the only voter eligibility source.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 610.140 Expungement of arrest, plea, trial, or conviction records.
 
 Missouri allows expungement of eligible arrest, plea, trial, or conviction records after statutory waiting periods and conditions are met. Eligibility depends on offense type, exclusions, number of expungements, completion of sentence, waiting period, pending charges, and later convictions.
@@ -7602,7 +7602,7 @@ Use this as Missouri's primary expungement authority. A specific answer requires
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 610.122 Closure of arrest records.
 
 Missouri separately provides for closure of certain arrest records when statutory conditions are met. This is distinct from broader expungement of conviction and court records.
@@ -7622,7 +7622,7 @@ Use this for Missouri arrest-record relief questions, and pair it with section 6
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 213.040 Discrimination in housing.
 
 Missouri law prohibits covered discriminatory housing practices based on protected characteristics. This is Missouri's operative state fair-housing statute.
@@ -7642,7 +7642,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 441.234 Tenant protections related to domestic violence and related calls.
 
 Missouri landlord-tenant law includes protections for tenants connected to domestic violence, sexual assault, stalking, and emergency assistance calls. This can matter where housing instability overlaps with public-safety contact or criminal legal involvement.
@@ -7662,7 +7662,7 @@ Use this as a tenant-protection hook, not as a general criminal-record screening
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 213.055 Unlawful employment practices.
 
 Missouri civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -7682,7 +7682,7 @@ For criminal-record employment questions, use this with expungement law, occupat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 324.012 Occupational licensing and criminal convictions.
 
 Missouri limits how licensing authorities may consider criminal convictions when determining occupational licensing eligibility. The analysis depends on the occupation, conviction, relationship to duties, rehabilitation, time elapsed, and any occupation-specific statute.
@@ -7702,7 +7702,7 @@ Use this as Missouri's core occupational-licensing criminal-record authority.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 544.216 Arrest without warrant.
 
 Missouri law sets circumstances when a law enforcement officer may arrest without a warrant. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -7722,7 +7722,7 @@ Use this for Missouri police encounter answers as statutory context, not as a co
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 542.402 Interception and disclosure of wire, oral, or electronic communications.
 
 Missouri law governs interception and disclosure of wire, oral, and electronic communications. Missouri is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -7742,7 +7742,7 @@ Use this as Missouri's recording/privacy hook. For recording police, analyze pub
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 559.021 Conditions of probation.
 
 Missouri courts may impose probation conditions authorized by statute and the court order. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -7762,7 +7762,7 @@ Use this as Missouri's probation framework source, together with the person's wr
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 559.036 Probation violation and revocation.
 
 Missouri law governs court action after alleged probation violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -7782,7 +7782,7 @@ Use this for Missouri probation violation answers, but verify the written order 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Missouri Revisor of Statutes official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mo. Rev. Stat. sec. 217.690 Parole eligibility and release.
 
 Missouri parole eligibility depends on offense, sentence, time served, credits, statutory exclusions, parole board authority, risk factors, and written parole conditions. This statute provides the framework for parole eligibility and release analysis.
@@ -7802,7 +7802,7 @@ Use this as Missouri's parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 13-1-111 Qualifications of elector.
 
 Montana voter eligibility turns on citizenship, age, residence, registration, and statutory disqualifications. For people with felony convictions, the key issue is whether the person is currently serving a sentence in a penal institution.
@@ -7822,7 +7822,7 @@ Use this as Montana's core felony voting-rights authority. A specific answer req
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 46-18-801 Restoration of civil rights.
 
 Montana law addresses restoration of civil rights after conviction. For voting questions, this restoration framework should be read with the voter-qualification rule in section 13-1-111.
@@ -7842,7 +7842,7 @@ Use this as Montana civil-rights restoration context, not as the only voter elig
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 46-18-1101 Misdemeanor expungement definitions.
 
 Montana's misdemeanor expungement chapter defines key terms and eligibility concepts for expungement of qualifying misdemeanor records. Montana does not provide the same broad expungement remedy for all felony convictions.
@@ -7862,7 +7862,7 @@ Use this as the definition source for Montana misdemeanor expungement. A specifi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 46-18-1103 Petition for misdemeanor expungement.
 
 Montana allows a person to petition for expungement of eligible misdemeanor records when statutory criteria are met. Eligibility depends on offense type, number of prior expungements, waiting period, pending charges, later convictions, and statutory exclusions.
@@ -7882,7 +7882,7 @@ Use this as Montana's primary misdemeanor expungement authority. Do not represen
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 49-2-305 Discrimination in housing.
 
 Montana law prohibits covered discriminatory housing practices based on protected characteristics. This is Montana's operative state fair-housing statute.
@@ -7902,7 +7902,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 70-24-303 Landlord to maintain premises.
 
 Montana landlord-tenant law sets landlord duties to maintain residential premises. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -7922,7 +7922,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 49-2-303 Discrimination in employment.
 
 Montana civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -7942,7 +7942,7 @@ For criminal-record employment questions, use this with misdemeanor expungement 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 37-1-203 Criminal conviction and professional licensing.
 
 Montana law limits how professional and occupational licensing authorities may use criminal conviction history when making licensing decisions. The analysis depends on the occupation, conviction, relationship to duties, rehabilitation, time elapsed, and any profession-specific statute.
@@ -7962,7 +7962,7 @@ Use this as Montana's core occupational-licensing criminal-record authority.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 46-6-311 Arrest without warrant.
 
 Montana law sets circumstances when a peace officer may arrest without a warrant. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -7982,7 +7982,7 @@ Use this for Montana police encounter answers as statutory context, not as a com
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 45-8-213 Violation of privacy in communications.
 
 Montana law governs certain privacy violations involving recording or intercepting communications. Recording analysis depends on consent, privacy expectations, whether the person is a party, and statutory exceptions.
@@ -8002,7 +8002,7 @@ Use this as Montana's recording/privacy hook. For recording police, analyze publ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 46-18-201 Sentences that may be imposed; probation conditions.
 
 Montana courts may impose suspended or deferred sentences and supervision conditions authorized by statute and the written judgment. Specific obligations depend on the sentence, offense, court requirements, and supervision order.
@@ -8022,7 +8022,7 @@ Use this as Montana's probation and deferred-sentence framework source, together
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 46-18-203 Revocation of suspended or deferred sentence.
 
 Montana law governs proceedings and consequences after alleged violations of suspended or deferred sentence conditions. Outcomes depend on the sentence, alleged violation, hearing posture, court findings, and available sanctions.
@@ -8042,7 +8042,7 @@ Use this for Montana supervision violation answers, but verify the written order
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Montana Code Annotated official source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Mont. Code Ann. sec. 46-23-201 Board of pardons and parole powers.
 
 Montana parole decisions depend on offense, sentence, eligibility, board authority, risk and rehabilitation factors, and written parole conditions. This statute provides core board authority for parole-related questions.
@@ -8062,7 +8062,7 @@ Use this as Montana's parole framework source, not as a release-date calculator.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 32-313 Qualifications of elector; felony convictions.
 
 Nebraska law provides that a person convicted of a felony is not qualified to vote or register until the sentence is completed, including any parole term. The disqualification is automatically removed when the sentence is completed. The section reflects 2024 LB20 and Nebraska Supreme Court interpretation.
@@ -8082,7 +8082,7 @@ Use this as Nebraska's core felony voting-rights authority. A specific answer re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 29-112 Civil rights after felony conviction.
 
 Nebraska law addresses civil disabilities and restoration after felony conviction. For voting questions, read this restoration context with section 32-313, which now controls the felony voting disqualification and automatic removal after sentence completion including parole.
@@ -8102,7 +8102,7 @@ Use this as civil-rights restoration context, not as the only voter eligibility 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 29-2264 Set aside of conviction after probation or qualifying sentence.
 
 Nebraska allows a person to petition to set aside a conviction after satisfactory completion of probation or certain qualifying sentences. A set-aside order can nullify the conviction and remove civil disabilities and disqualifications imposed because of the conviction, subject to statutory limits and exceptions.
@@ -8122,7 +8122,7 @@ Use this as Nebraska's primary conviction set-aside authority. A specific answer
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 29-3523 Criminal history information and set-aside effect.
 
 Nebraska criminal history law governs how criminal history information is handled and may interact with set-aside relief. Set-aside relief is not the same as broad expungement or complete deletion of all records.
@@ -8142,7 +8142,7 @@ Use this with section 29-2264 when answering employment or housing questions abo
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 20-318 Discriminatory housing practices.
 
 Nebraska fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Nebraska's operative state fair-housing statute.
@@ -8162,7 +8162,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 76-1419 Landlord obligations.
 
 Nebraska landlord-tenant law sets statutory landlord duties regarding compliance with housing codes, repairs, common areas, services, and habitable premises. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -8182,7 +8182,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 48-1104 Unlawful employment practice.
 
 Nebraska fair employment law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -8202,7 +8202,7 @@ For criminal-record employment questions, use this with set-aside law, licensing
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 38-1,141 Licensure and criminal convictions.
 
 Nebraska health and occupational credentialing law includes standards for disciplinary action or denial based on criminal conviction and related conduct. Licensing consequences depend on the profession, conviction, relationship to duties, rehabilitation, time elapsed, and profession-specific law.
@@ -8222,7 +8222,7 @@ Use this as a Nebraska occupational or professional licensing criminal-record ho
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 29-404.02 Arrest without warrant.
 
 Nebraska law sets circumstances when a law enforcement officer may arrest without a warrant. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -8242,7 +8242,7 @@ Use this for Nebraska police encounter answers as statutory context, not as a co
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 86-290 Interception and disclosure of wire, electronic, or oral communications.
 
 Nebraska law governs interception and disclosure of wire, electronic, and oral communications. Nebraska is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -8262,7 +8262,7 @@ Use this as Nebraska's recording/privacy hook. For recording police, analyze pub
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 29-2262 Conditions of probation.
 
 Nebraska courts may impose probation conditions authorized by statute and the court order. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -8282,7 +8282,7 @@ Use this as Nebraska's probation framework source, together with the person's wr
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 29-2266 Probation violation and revocation.
 
 Nebraska law governs court action after alleged probation violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -8302,7 +8302,7 @@ Use this for Nebraska probation violation answers, but verify the written order 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nebraska Legislature official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Neb. Rev. Stat. sec. 83-1,110 Parole eligibility.
 
 Nebraska parole eligibility depends on offense, sentence, minimum term, credits, statutory exclusions, parole board authority, risk factors, and written parole conditions. This statute provides the framework for parole eligibility analysis.
@@ -8322,7 +8322,7 @@ Use this as Nebraska's parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 293.540 Qualifications of electors.
 
 Nevada voter eligibility turns on citizenship, age, residence, registration, and statutory disqualifications. For people with felony convictions, Nevada generally restores voting rights when the person is released from prison.
@@ -8342,7 +8342,7 @@ Use this as Nevada's voter-qualification source, and pair it with section 213.15
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 213.157 Restoration of civil rights after felony release.
 
 Nevada law restores certain civil rights to people convicted of felonies upon release from prison, including the right to vote. The practical issue is whether the person is currently incarcerated or has been released.
@@ -8362,7 +8362,7 @@ Use this as Nevada's core felony voting-rights restoration authority. A specific
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 179.245 Petition to seal records of conviction.
 
 Nevada allows eligible conviction records to be sealed after statutory waiting periods and conditions are met. Eligibility depends on offense category, exclusions, sentence completion or release date, waiting period, pending charges, and later convictions.
@@ -8382,7 +8382,7 @@ Use this as Nevada's primary conviction record-sealing authority. A specific ans
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 179.255 Sealing records after dismissal, acquittal, or declined prosecution.
 
 Nevada separately provides for sealing when a case ends without conviction, including dismissal, acquittal, or no charges filed. Timing, case posture, and statutory exceptions matter.
@@ -8402,7 +8402,7 @@ Use this with section 179.245 so JO distinguishes conviction record sealing from
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 179.285 Effect of sealing records.
 
 Nevada law describes the effect of sealing criminal records, including when sealed proceedings may be treated as if they did not occur and when exceptions may allow access or use.
@@ -8422,7 +8422,7 @@ Use this after confirming a Nevada record has been sealed, and check for job, li
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 118.100 Discriminatory housing practices.
 
 Nevada fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Nevada's operative state fair-housing statute.
@@ -8442,7 +8442,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 118A.290 Landlord obligations to maintain dwelling unit.
 
 Nevada landlord-tenant law requires landlords to maintain dwelling units in habitable condition and comply with statutory duties. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -8462,7 +8462,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 613.330 Unlawful employment practices.
 
 Nevada civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -8482,7 +8482,7 @@ For criminal-record employment questions, use this with record-sealing law, occu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 622.085 Occupational licensing and criminal history.
 
 Nevada law limits how regulatory bodies may use criminal history in occupational licensing decisions. The analysis depends on the occupation, conviction, relationship to duties, rehabilitation, time elapsed, and any occupation-specific statute.
@@ -8502,7 +8502,7 @@ Use this as Nevada's core occupational-licensing criminal-record authority.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 171.123 Temporary detention by peace officer.
 
 Nevada law authorizes temporary detention when an officer reasonably suspects a person has committed, is committing, or is about to commit a crime, and addresses identifying information during the detention. Constitutional limits still control the scope and duration of the encounter.
@@ -8522,7 +8522,7 @@ Use this as Nevada's stop-and-identify statutory hook. It does not mean a person
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 200.620 Interception and recording of wire communications.
 
 Nevada law governs interception and recording of communications. Consent analysis can differ for oral, wire, and electronic communications and may depend on privacy expectations and statutory exceptions.
@@ -8542,7 +8542,7 @@ Use this as Nevada's recording/privacy hook. For recording police, analyze publi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 176A.400 Terms and conditions of probation.
 
 Nevada courts may impose probation terms and conditions authorized by statute and the court order. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -8562,7 +8562,7 @@ Use this as Nevada's probation framework source, together with the person's writ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 176A.630 Probation violation and revocation.
 
 Nevada law governs court action after alleged probation violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -8582,7 +8582,7 @@ Use this for Nevada probation violation answers, but verify the written order an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Nevada Revised Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Nev. Rev. Stat. sec. 213.1099 Parole eligibility and standards.
 
 Nevada parole eligibility depends on offense, sentence, time served, credits, parole board authority, risk factors, statutory exclusions, and written parole conditions. This statute provides the framework for parole eligibility analysis.
@@ -8602,7 +8602,7 @@ Use this as Nevada's parole framework source, not as a release-date calculator. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 654:1 Voter qualifications.
 
 New Hampshire voter eligibility turns on citizenship, age, domicile, and registration requirements. For people with felony convictions, New Hampshire generally disqualifies voting only while a person is actually incarcerated for a felony conviction.
@@ -8622,7 +8622,7 @@ Use this as New Hampshire's voter-qualification source, and verify current incar
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official source checked June 27, 2026; exact chapter rendering pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 607-A:2 Rights affected by felony sentence.
 
 New Hampshire law addresses civil rights affected by felony sentence. For voting questions, use this restoration context with the voter-qualification provisions in RSA 654 and current incarceration status.
@@ -8642,7 +8642,7 @@ Use this as felony-rights context, not as the only voter eligibility source.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 651:5 Annulment of criminal records.
 
 New Hampshire allows eligible criminal records to be annulled after statutory waiting periods and conditions are met. Eligibility depends on offense type, sentence completion, waiting period, later convictions, pending charges, and statutory exclusions.
@@ -8662,7 +8662,7 @@ Use this as New Hampshire's primary record-annulment authority. A specific answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 651:5-b Annulment of certain cannabis offenses.
 
 New Hampshire has special annulment treatment for certain cannabis-related offenses. Eligibility depends on the specific offense, disposition, amount or conduct, sentence completion, and statutory criteria.
@@ -8682,7 +8682,7 @@ Use this as a special cannabis-annulment hook alongside the general annulment st
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 354-A:10 Civil rights violations in real estate transactions.
 
 New Hampshire fair-housing law prohibits covered discriminatory real estate practices based on protected characteristics. This is New Hampshire's operative state fair-housing statute.
@@ -8702,7 +8702,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 540-A:2 Prohibited practices in landlord-tenant relations.
 
 New Hampshire landlord-tenant law prohibits certain self-help and interference practices by landlords. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -8722,7 +8722,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 354-A:7 Unlawful discriminatory practices in employment.
 
 New Hampshire civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -8742,7 +8742,7 @@ For criminal-record employment questions, use this with annulment law, licensing
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official chapter source listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. ch. 332-G Occupational licensing and criminal records.
 
 New Hampshire law limits how licensing authorities may use criminal records in occupational licensing decisions. Analysis depends on the profession, conviction, relationship to duties, rehabilitation, time elapsed, and any occupation-specific statute.
@@ -8762,7 +8762,7 @@ Use this as New Hampshire's occupational-licensing criminal-record authority, an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 594:2 Questioning and detaining suspects.
 
 New Hampshire law authorizes temporary questioning and detention under specified circumstances when an officer has reasonable suspicion. Constitutional limits still control the scope and duration of the encounter.
@@ -8782,7 +8782,7 @@ Use this as New Hampshire's stop-and-identify or investigatory detention hook. I
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 570-A:2 Interception and disclosure of telecommunication or oral communications.
 
 New Hampshire law governs interception and disclosure of telecommunication and oral communications and is generally treated as requiring all-party consent for covered private communications. Recording police also raises public setting, privacy, and interference questions.
@@ -8802,7 +8802,7 @@ Use this as New Hampshire's recording/privacy hook. For recording police, analyz
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 651:2 Sentences and probation.
 
 New Hampshire courts may impose sentences and probation conditions authorized by statute and the court order. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -8822,7 +8822,7 @@ Use this as New Hampshire's probation framework source, together with the person
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 651:2 Probation violation and sentence consequences.
 
 New Hampshire probation violations can lead to court action under the sentencing and probation framework. Consequences depend on the original sentence, conditions, alleged violation, hearing posture, court findings, and available sanctions.
@@ -8842,7 +8842,7 @@ Use this for New Hampshire probation violation answers, but verify the written o
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Hampshire RSA official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.H. Rev. Stat. Ann. sec. 651-A:6 Terms of release on parole.
 
 New Hampshire parole release and supervision depend on sentence, parole board authority, eligibility, conditions of release, violations, and written parole terms. This section provides the framework for terms of release on parole.
@@ -8862,7 +8862,7 @@ Use this as New Hampshire's parole framework source, not as a release-date calcu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 19:4-1 Qualifications of voters.
 
 New Jersey voter eligibility turns on citizenship, age, residence, registration, and statutory disqualifications. New Jersey restored voting rights to people on probation or parole; the main conviction-related disqualification is serving a sentence of incarceration for an indictable offense.
@@ -8882,7 +8882,7 @@ Use this as New Jersey's core felony voting-rights authority. A specific answer 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2C:52-2 Expungement of indictable offense convictions.
 
 New Jersey allows expungement of eligible indictable offense convictions after statutory waiting periods and conditions are met. Eligibility depends on offense type, number of convictions, exclusions, sentence completion, waiting period, pending charges, and later convictions.
@@ -8902,7 +8902,7 @@ Use this as New Jersey's primary indictable-conviction expungement authority. A 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2C:52-3 Expungement of disorderly persons and petty disorderly persons offenses.
 
 New Jersey separately provides expungement rules for disorderly persons and petty disorderly persons convictions. Eligibility depends on offense count, exclusions, waiting periods, sentence completion, pending charges, and later convictions.
@@ -8922,7 +8922,7 @@ Use this with section 2C:52-2 so JO distinguishes indictable offense expungement
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2C:52-5.3 Clean slate expungement.
 
 New Jersey's clean slate expungement law allows broad relief for eligible records after statutory time periods and conditions are met. Eligibility depends on the complete record, disqualifying offenses, sentence completion, waiting period, and statutory exceptions.
@@ -8942,7 +8942,7 @@ Use this as New Jersey's clean slate authority. Do not assume clean slate relief
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 10:5-12 Law Against Discrimination; unlawful practices.
 
 New Jersey's Law Against Discrimination prohibits covered discriminatory practices in employment, housing, public accommodations, and related contexts based on protected characteristics. This is New Jersey's core state civil-rights statute for housing and employment.
@@ -8962,7 +8962,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2A:18-61.1 Grounds for removal of residential tenants.
 
 New Jersey landlord-tenant law limits removal of many residential tenants to statutory good-cause grounds. This can matter when a tenant with a criminal record faces housing instability or pressure outside lawful eviction process.
@@ -8982,7 +8982,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 34:6B-14 Opportunity to Compete Act; criminal record inquiries.
 
 New Jersey restricts when covered employers may inquire into a job applicant's criminal record during the initial employment application process. This is New Jersey's statewide fair-chance hiring timing rule.
@@ -9002,7 +9002,7 @@ Use this for job-application timing questions. It does not mean every criminal-r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 45:1-21 Professional licensing discipline and convictions.
 
 New Jersey professional boards may deny, suspend, revoke, or discipline licenses based on specified misconduct, including certain criminal convictions. The analysis depends on the profession, conviction, relationship to duties, rehabilitation, time elapsed, and board-specific law.
@@ -9022,7 +9022,7 @@ Use this as a New Jersey occupational or professional licensing criminal-record 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2C:29-1 Obstructing administration of law.
 
 New Jersey obstruction law can be relevant when a police encounter involves alleged interference with an officer's duties. It is not a broad stop-and-identify statute and does not itself require answering every police question.
@@ -9042,7 +9042,7 @@ Use this carefully with constitutional stop, search, seizure, and questioning ru
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2A:156A-3 Interception and disclosure of wire, electronic, or oral communications.
 
 New Jersey law governs interception and disclosure of wire, electronic, and oral communications. New Jersey is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -9062,7 +9062,7 @@ Use this as New Jersey's recording/privacy hook. For recording police, analyze p
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2C:45-1 Conditions of suspension or probation.
 
 New Jersey courts may impose conditions of probation or suspended sentence authorized by statute and the court order. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -9082,7 +9082,7 @@ Use this as New Jersey's probation framework source, together with the person's 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 2C:45-3 Revocation of probation.
 
 New Jersey law governs court action after alleged probation violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -9102,7 +9102,7 @@ Use this for New Jersey probation violation answers, but verify the written orde
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New Jersey Legislature official source checked June 27, 2026; exact codified section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.J. Stat. Ann. sec. 30:4-123.51 Parole eligibility.
 
 New Jersey parole eligibility depends on offense, sentence, credits, statutory exclusions, parole board authority, risk factors, and written parole conditions. This statute provides the framework for parole eligibility analysis.
@@ -9122,7 +9122,7 @@ Use this as New Jersey's parole framework source, not as a release-date calculat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 1-4-27.1 Restoration of voting rights after felony conviction.
 
 New Mexico law restores voting rights for people convicted of felonies when they are no longer incarcerated. The practical issue is current incarceration status, not probation or parole alone.
@@ -9142,7 +9142,7 @@ Use this as New Mexico's core felony voting-rights authority. A specific answer 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 1-4-8 Voter registration qualifications.
 
 New Mexico voter registration law sets baseline eligibility requirements including citizenship, age, residence, and registration. For felony conviction questions, read this with section 1-4-27.1 on restoration after incarceration.
@@ -9162,7 +9162,7 @@ Use this as New Mexico's voter-qualification source, not as the only felony voti
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 29-3-8.1 Expungement of arrest records and public records.
 
 New Mexico allows expungement of eligible arrest and public criminal records after statutory conditions are met. Eligibility depends on whether the case ended in conviction, offense type, waiting period, sentence completion, restitution or fines, pending charges, later convictions, and statutory exclusions.
@@ -9182,7 +9182,7 @@ Use this as New Mexico's primary criminal record expungement authority. A specif
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 29-3-8.3 Effect and limits of expungement.
 
 New Mexico expungement relief can limit public access to records, but exceptions may still permit use or disclosure in law enforcement, licensing, employment, housing, or other statutory contexts. The effect depends on the expungement order and any applicable exception.
@@ -9202,7 +9202,7 @@ Use this after confirming an expungement order exists, and check for job, licens
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 28-1-7 Unlawful discriminatory practices.
 
 New Mexico's Human Rights Act prohibits covered discriminatory practices in employment, housing, public accommodations, and related contexts based on protected characteristics. This is New Mexico's core state civil-rights authority for housing and employment.
@@ -9222,7 +9222,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 47-8-20 Landlord obligations.
 
 New Mexico landlord-tenant law sets landlord duties for habitability, repairs, services, and compliance with the rental agreement and law. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -9242,7 +9242,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 28-2-3 Use of conviction records in public employment and licensing.
 
 New Mexico's Criminal Offender Employment Act limits how public employers and licensing authorities may use conviction records. Analysis depends on whether the conviction directly relates to the job or license, evidence of rehabilitation, time elapsed, and any occupation-specific statute.
@@ -9262,7 +9262,7 @@ Use this as New Mexico's core public employment and occupational-licensing crimi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 61-1-36 Occupational licensing and criminal conviction history.
 
 New Mexico law limits how licensing boards may use criminal conviction history in licensing decisions. The analysis depends on the profession, conviction, relationship to duties, rehabilitation, time elapsed, and any board-specific law.
@@ -9282,7 +9282,7 @@ Use this as a New Mexico occupational-licensing criminal-record hook, and verify
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 30-22-3 Concealing identity.
 
 New Mexico law criminalizes concealing one's true name or identity from a public officer under specified circumstances. It can be relevant during police encounters, but constitutional limits on detention, questioning, and arrest still apply.
@@ -9302,7 +9302,7 @@ Use this as New Mexico's identification-related police encounter hook. It does n
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 30-12-1 Eavesdropping.
 
 New Mexico law governs eavesdropping and certain recording or interception conduct. New Mexico is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -9322,7 +9322,7 @@ Use this as New Mexico's recording/privacy hook. For recording police, analyze p
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 31-20-5 Probation and suspended or deferred sentence.
 
 New Mexico courts may suspend or defer sentence and place a person on probation under statutory authority. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -9342,7 +9342,7 @@ Use this as New Mexico's probation framework source, together with the person's 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 31-21-15 Violation of probation or parole.
 
 New Mexico law governs action after alleged probation or parole violations. Consequences depend on the supervision type, sentence, conditions, alleged violation, hearing posture, court or board findings, and available sanctions.
@@ -9362,7 +9362,7 @@ Use this for New Mexico supervision violation answers, but verify the written or
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "NMOneSource official NMSA source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.M. Stat. Ann. sec. 31-21-10 Parole board powers and release.
 
 New Mexico parole decisions depend on offense, sentence, eligibility, credits, parole board authority, risk factors, and written parole conditions. This statute provides the framework for parole release and supervision analysis.
@@ -9382,7 +9382,7 @@ Use this as New Mexico's parole framework source, not as a release-date calculat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Elec. Law sec. 5-106 Voter eligibility after felony conviction.
 
 New York law disqualifies a person from voting while incarcerated for a felony conviction, and restores voting rights upon release from incarceration. People on parole or community supervision are not disqualified on that basis alone.
@@ -9402,7 +9402,7 @@ Use this as New York's core felony voting-rights authority. A specific answer re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Crim. Proc. Law sec. 160.59 Sealing of certain convictions.
 
 New York allows sealing of certain eligible convictions after statutory waiting periods and conditions are met. Eligibility depends on offense type, number of convictions, sentence completion, waiting period, pending charges, and statutory exclusions.
@@ -9422,7 +9422,7 @@ Use this as New York's petition-based conviction sealing authority. A specific a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Crim. Proc. Law sec. 160.57 Automatic sealing of certain convictions.
 
 New York's clean-slate law provides automatic sealing for eligible convictions after statutory waiting periods and conditions are met. Automatic relief depends on offense eligibility, time since release or sentence, pending charges, later convictions, and statutory exceptions.
@@ -9442,7 +9442,7 @@ Use this as New York's automatic clean-slate authority. Do not assume a record h
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Crim. Proc. Law sec. 160.58 Conditional sealing after judicial diversion or drug treatment.
 
 New York separately provides conditional sealing for certain eligible cases connected to judicial diversion or drug treatment. Eligibility depends on the case history, treatment completion, statutory criteria, and exclusions.
@@ -9462,7 +9462,7 @@ Use this as a specialized New York sealing authority alongside sections 160.57 a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Exec. Law sec. 296 Human Rights Law; unlawful discriminatory practices.
 
 New York Human Rights Law prohibits covered discriminatory practices in employment, housing, public accommodations, and related contexts based on protected characteristics. It also intersects with rules about considering criminal history in employment.
@@ -9482,7 +9482,7 @@ Criminal history is not itself the same as a protected class for every housing c
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Real Prop. Law sec. 227-f Tenant protections related to domestic violence.
 
 New York landlord-tenant law includes protections for tenants affected by domestic violence. This can matter when housing instability overlaps with public-safety contact or criminal legal involvement.
@@ -9502,7 +9502,7 @@ Use this as a tenant-protection hook, not as a general criminal-record screening
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Correct. Law sec. 752 Unfair discrimination against persons previously convicted of offenses.
 
 New York generally prohibits denial of employment or occupational licensing because of prior convictions unless there is a direct relationship to the job or license, or an unreasonable risk to property, safety, or welfare.
@@ -9522,7 +9522,7 @@ Use this as New York's core employment and licensing criminal-record protection.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Correct. Law sec. 753 Factors to consider concerning prior convictions.
 
 New York requires employers and licensing agencies to consider specific factors when evaluating a prior conviction, including public policy favoring employment of people with conviction records, job duties, time elapsed, age at offense, seriousness, rehabilitation, and safety risk.
@@ -9542,7 +9542,7 @@ Use this with section 752 for New York employment and occupational-licensing cri
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Crim. Proc. Law sec. 140.50 Temporary questioning of persons in public places; search for weapons.
 
 New York law authorizes temporary questioning when an officer reasonably suspects a person has committed, is committing, or is about to commit a crime, and addresses frisk limits for officer safety. Constitutional limits still control the scope and duration of the encounter.
@@ -9562,7 +9562,7 @@ Use this as New York's stop-and-frisk statutory hook. It does not mean a person 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Penal Law sec. 250.05 Eavesdropping.
 
 New York law governs eavesdropping and certain recording or interception conduct. New York is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -9582,7 +9582,7 @@ Use this as New York's recording/privacy hook. For recording police, analyze pub
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Penal Law sec. 65.10 Conditions of probation and conditional discharge.
 
 New York courts may impose probation and conditional discharge conditions authorized by statute and the court order. Specific obligations depend on the written terms, offense, sentence, and court requirements.
@@ -9602,7 +9602,7 @@ Use this as New York's probation framework source, together with the person's wr
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Crim. Proc. Law sec. 410.70 Probation violation declaration and hearing.
 
 New York law governs court procedures after alleged probation or conditional discharge violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -9622,7 +9622,7 @@ Use this for New York probation violation answers, but verify the written order 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "New York State Senate official law URL pattern checked June 27, 2026; automated shell received 403",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.Y. Exec. Law sec. 259-i Parole release and supervision procedures.
 
 New York parole and community supervision decisions depend on offense, sentence, release eligibility, board action, risk and rehabilitation factors, conditions, and violation procedures. This statute provides the framework for parole release and supervision analysis.
@@ -9643,7 +9643,7 @@ Use this as New York's parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 163-55 Qualifications to vote.
 
 North Carolina voter eligibility turns on citizenship, age, residence, registration, and statutory disqualifications. For people with felony convictions, the key issue is whether citizenship rights have been restored after completion of the sentence.
@@ -9664,7 +9664,7 @@ Use this as North Carolina's voter-qualification source, and pair it with sectio
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 13-1 Restoration of citizenship rights.
 
 North Carolina law restores citizenship rights after a felony conviction when the person has completed the sentence, including probation, parole, or post-release supervision. Voting rights are tied to restoration of citizenship rights.
@@ -9685,7 +9685,7 @@ Use this as North Carolina's core felony voting-rights restoration authority. A 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 15A-145.5 Expunction of certain nonviolent misdemeanors and felonies.
 
 North Carolina allows expunction of certain eligible nonviolent misdemeanor and felony convictions after statutory waiting periods and conditions are met. Eligibility depends on offense type, exclusions, number of convictions, sentence completion, waiting period, pending charges, and later convictions.
@@ -9706,7 +9706,7 @@ Use this as North Carolina's primary conviction expunction authority. A specific
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 15A-146 Expunction after dismissal or finding of not guilty.
 
 North Carolina separately provides expunction for charges dismissed or ending in a finding of not guilty. This is distinct from conviction expunction and has different procedures and eligibility rules.
@@ -9727,7 +9727,7 @@ Use this for North Carolina nonconviction expunction questions, and pair it with
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 41A-4 Discriminatory housing practices.
 
 North Carolina fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is North Carolina's operative state fair-housing statute.
@@ -9748,7 +9748,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 42-42 Landlord obligations.
 
 North Carolina landlord-tenant law sets statutory landlord duties for fit premises, repairs, safety devices, and housing-code compliance. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -9769,7 +9769,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 95-28.1 Discrimination in employment.
 
 North Carolina law states public policy against employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -9790,7 +9790,7 @@ For criminal-record employment questions, use this with expunction law, occupati
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 93B-8.1 Use of criminal history records by occupational licensing boards.
 
 North Carolina limits how occupational licensing boards may use criminal history in licensing decisions. The analysis depends on the occupation, conviction, relationship to duties, rehabilitation, time elapsed, and board-specific law.
@@ -9811,7 +9811,7 @@ Use this as North Carolina's core occupational-licensing criminal-record authori
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 15A-401 Arrest by law enforcement officer.
 
 North Carolina law sets circumstances and procedures for arrest by law enforcement officers. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -9832,7 +9832,7 @@ Use this for North Carolina police encounter answers as statutory context, not a
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 15A-287 Interception and disclosure of wire, oral, or electronic communications.
 
 North Carolina law governs interception and disclosure of wire, oral, and electronic communications. North Carolina is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -9853,7 +9853,7 @@ Use this as North Carolina's recording/privacy hook. For recording police, analy
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 15A-1343 Conditions of probation.
 
 North Carolina courts may impose regular and special probation conditions authorized by statute and the court order. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -9874,7 +9874,7 @@ Use this as North Carolina's probation framework source, together with the perso
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 15A-1345 Arrest and hearing on probation violation.
 
 North Carolina law governs arrest, notice, and hearings after alleged probation violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -9895,7 +9895,7 @@ Use this for North Carolina probation violation answers, but verify the written 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Carolina General Assembly official section URL listed for adapter verification June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.C. Gen. Stat. sec. 15A-1371 Parole eligibility.
 
 North Carolina parole eligibility applies mainly to older or specific sentencing structures and depends on offense, sentence, eligibility rules, credits, post-release supervision framework, and commission action. Many modern cases involve probation or post-release supervision instead of traditional parole.
@@ -9915,7 +9915,7 @@ Use this as North Carolina's parole framework source, not as a release-date calc
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official chapter PDF checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 16.1-01-04 Qualifications of electors.
 
 North Dakota voter eligibility turns on citizenship, age, residence, and statutory qualifications. For people with felony convictions, the practical question is whether civil rights have been suspended by current incarceration or restored after release.
@@ -9935,7 +9935,7 @@ Use this as North Dakota's voter-qualification source, and pair it with section 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12.1-33-01 Rights lost and restored after conviction.
 
 North Dakota law addresses civil rights affected by conviction and restoration after the person is no longer under the disqualifying status. For voting questions, this source should be read with voter-qualification law.
@@ -9955,7 +9955,7 @@ Use this as North Dakota's felony civil-rights restoration authority. A specific
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official chapter source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12-60.1-02 Petition to seal criminal records.
 
 North Dakota allows eligible criminal records to be sealed when statutory criteria are met. Eligibility depends on offense type, disposition, waiting period, sentence completion, later record, pending charges, and statutory exclusions.
@@ -9975,7 +9975,7 @@ Use this as North Dakota's primary record-sealing authority. A specific answer r
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official chapter source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12-60.1-03 Effect of sealing criminal records.
 
 North Dakota law describes the effect and limits of sealing criminal records. Sealed records may still be available or relevant for certain law enforcement, licensing, employment, housing, or statutory purposes depending on the exception.
@@ -9995,7 +9995,7 @@ Use this after confirming a sealing order exists, and check for any job, license
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official chapter PDF checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 14-02.5-12 Discriminatory housing practices.
 
 North Dakota human-rights law prohibits covered discriminatory housing practices based on protected characteristics. This is North Dakota's operative state fair-housing source.
@@ -10015,7 +10015,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 47-16-13.1 Landlord repair and habitability duties.
 
 North Dakota landlord-tenant law includes duties related to premises condition and repairs. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -10035,7 +10035,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official chapter PDF checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 14-02.5-03 Discriminatory employment practices.
 
 North Dakota human-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -10055,7 +10055,7 @@ For criminal-record employment questions, use this with record-sealing law, occu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12.1-33-02.1 Occupational licensing and criminal convictions.
 
 North Dakota law limits how criminal convictions may affect occupational licensing decisions. The analysis depends on the occupation, conviction, relationship to duties, rehabilitation, time elapsed, and any board-specific statute.
@@ -10075,7 +10075,7 @@ Use this as North Dakota's occupational-licensing criminal-record authority.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 29-29-21 Temporary questioning of persons.
 
 North Dakota law provides a statutory hook for temporary questioning or investigatory detention under specified circumstances. Constitutional limits still control the scope and duration of the encounter.
@@ -10095,7 +10095,7 @@ Use this as North Dakota's police stop-and-questioning hook. It does not mean a 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12.1-15-02 Interception of communications.
 
 North Dakota law governs interception and recording of certain communications. North Dakota is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -10115,7 +10115,7 @@ Use this as North Dakota's recording/privacy hook. For recording police, analyze
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12.1-32-07 Supervision and probation conditions.
 
 North Dakota courts may impose probation or supervised probation conditions authorized by statute and the court order. Specific obligations depend on the written probation terms, offense, sentence, and court requirements.
@@ -10135,7 +10135,7 @@ Use this as North Dakota's probation framework source, together with the person'
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12.1-32-07 Probation violation and revocation.
 
 North Dakota law governs court action after alleged probation violations within the probation and sentencing framework. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -10155,7 +10155,7 @@ Use this for North Dakota probation violation answers, but verify the written or
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "North Dakota Century Code official source listed June 27, 2026; exact chapter PDF pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `N.D. Cent. Code sec. 12-59-05 Parole board powers and parole release.
 
 North Dakota parole decisions depend on offense, sentence, eligibility, parole board authority, risk and rehabilitation factors, and written parole conditions. This statute provides the framework for parole release and supervision analysis.
@@ -10174,7 +10174,7 @@ Use this as North Dakota's parole framework source, not as a release-date calcul
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 3503.21 Registration and voting after felony conviction.
 
 Ohio law addresses voter registration and cancellation for people incarcerated for felony convictions. The core distinction is whether the person is currently incarcerated for a felony; release generally allows registration or re-registration if other qualifications are met.
@@ -10193,7 +10193,7 @@ Use this as Ohio's core felony voting-rights authority. A specific answer requir
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2961.01 Civil rights and disability after conviction.
 
 Ohio law addresses civil disabilities resulting from conviction and restoration of privileges. For voting questions, read this civil-rights context with the election-specific rule in section 3503.21.
@@ -10212,7 +10212,7 @@ Use this as restoration context, not as the only voter eligibility source.`,
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2953.32 Sealing or expungement of conviction records.
 
 Ohio allows eligible conviction records to be sealed or expunged after statutory waiting periods and conditions are met. Eligibility depends on offense type, exclusions, number of convictions, final discharge, waiting period, pending charges, and later convictions.
@@ -10231,7 +10231,7 @@ Use this as Ohio's primary conviction record-relief authority. A specific answer
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2953.52 Sealing records after dismissal, acquittal, or no bill.
 
 Ohio separately provides record sealing for cases that end without conviction, including dismissal, acquittal, or no bill. Eligibility and procedure differ from conviction sealing or expungement.
@@ -10250,7 +10250,7 @@ Use this for Ohio nonconviction record-relief questions, and pair it with sectio
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2953.33 Effect of sealing records.
 
 Ohio law describes the effect of sealing records and when sealed information may still be inspected or used. The effect matters for employment, housing, licensing, law enforcement, and later criminal justice questions.
@@ -10269,7 +10269,7 @@ Use this after confirming a record has been sealed, and check for any job, licen
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 4112.02 Unlawful discriminatory practices.
 
 Ohio civil-rights law prohibits covered discriminatory practices in employment, housing, public accommodations, and related contexts based on protected characteristics. This is Ohio's core state civil-rights source for housing and employment.
@@ -10288,7 +10288,7 @@ Criminal history is not itself the same as a protected class. Use this with fede
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 5321.04 Landlord obligations.
 
 Ohio landlord-tenant law sets statutory landlord duties involving habitability, repairs, safety, services, and code compliance. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -10307,7 +10307,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 9.78 Occupational licensing and criminal convictions.
 
 Ohio law limits how licensing authorities may use criminal convictions in occupational licensing decisions. Analysis depends on the occupation, conviction, relationship to duties, rehabilitation, time elapsed, and any board-specific statute.
@@ -10326,7 +10326,7 @@ Use this as Ohio's occupational-licensing criminal-record authority.`,
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2921.29 Failure to disclose personal information.
 
 Ohio law requires a person to disclose name, address, or date of birth in specified circumstances, including when lawfully stopped based on reasonable suspicion of a crime. Constitutional limits still control the detention and questioning.
@@ -10345,7 +10345,7 @@ Use this as Ohio's stop-and-identify authority. It does not mean a person must a
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2933.52 Interception of wire, oral, or electronic communications.
 
 Ohio law governs interception and disclosure of wire, oral, and electronic communications. Ohio is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -10364,7 +10364,7 @@ Use this as Ohio's recording/privacy hook. For recording police, analyze public 
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2951.02 Probation and community control eligibility.
 
 Ohio courts may impose community control sanctions or probation under statutory authority and the written sentencing order. Specific obligations depend on the sentence, offense, court requirements, and supervision order.
@@ -10383,7 +10383,7 @@ Use this as Ohio's probation or community-control framework source, together wit
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2929.15 Community control sanctions and violations.
 
 Ohio law governs community control sanctions and court responses to violations. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -10402,7 +10402,7 @@ Use this for Ohio community-control or probation violation answers, but verify t
     sourceName: "Ohio Laws",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Ohio Laws official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Ohio Rev. Code sec. 2967.13 Parole eligibility.
 
 Ohio parole eligibility depends on offense, sentence, sentencing law, parole board authority, time served, credits, and written parole or post-release control conditions. Many modern Ohio cases involve post-release control rather than traditional parole.
@@ -10422,7 +10422,7 @@ Use this as Ohio's parole framework source, not as a release-date calculator. A 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 26, sec. 4-101 Persons entitled to register to vote.
 
 Oklahoma voter registration law sets baseline eligibility and felony-related disqualification rules. For people with felony convictions, the key question is whether the disqualifying period tied to the judgment and sentence has ended.
@@ -10442,7 +10442,7 @@ Use this as Oklahoma's core felony voting-rights authority. A specific answer re
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 21, sec. 65 Civil rights affected by conviction.
 
 Oklahoma law addresses civil disabilities resulting from conviction. For voting questions, read this civil-rights context with the election-specific registration rule in title 26, section 4-101.
@@ -10462,7 +10462,7 @@ Use this as conviction-related civil-rights context, not as the only voter eligi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 22, sec. 18 Expungement of criminal records.
 
 Oklahoma allows expungement for eligible records when statutory criteria are met. Eligibility depends on disposition, offense type, sentence completion, waiting period, pardon or deferred judgment status, prior record, pending charges, and statutory exclusions.
@@ -10482,7 +10482,7 @@ Use this as Oklahoma's primary expungement authority. A specific answer requires
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 22, sec. 19 Effect of expungement order.
 
 Oklahoma law describes the effect of expungement and when expunged records may still be accessed, disclosed, or considered under exceptions. The effect matters for employment, housing, licensing, law enforcement, and later criminal justice questions.
@@ -10502,7 +10502,7 @@ Use this after confirming an Oklahoma expungement order exists, and check for an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 25, sec. 1452 Discriminatory housing practices.
 
 Oklahoma fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Oklahoma's operative state fair-housing statute.
@@ -10522,7 +10522,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 41, sec. 118 Landlord duties.
 
 Oklahoma landlord-tenant law sets statutory landlord duties involving premises, services, repairs, and compliance with the rental agreement and law. These protections can matter when a tenant with a criminal record faces housing instability unrelated to lawful screening.
@@ -10542,7 +10542,7 @@ Use this as a tenant-protection hook, not as a criminal-record screening rule.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 25, sec. 1302 Discriminatory employment practices.
 
 Oklahoma civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a protected class under this source.
@@ -10562,7 +10562,7 @@ For criminal-record employment questions, use this with expungement law, occupat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 59, sec. 4000.1 Occupational licensing and criminal records.
 
 Oklahoma occupational licensing law limits how licensing entities may use criminal history in licensing decisions. The analysis depends on the occupation, conviction, relationship to duties, rehabilitation, time elapsed, and any board-specific statute.
@@ -10582,7 +10582,7 @@ Use this as Oklahoma's occupational-licensing criminal-record authority.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 22, sec. 196 Arrest without warrant.
 
 Oklahoma law sets circumstances when an officer may arrest without a warrant. This is a statutory arrest-power hook and must be used with federal and state constitutional limits on stops, searches, questioning, and arrests.
@@ -10602,7 +10602,7 @@ Use this for Oklahoma police encounter answers as statutory context, not as a co
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 13, sec. 176.3 Interception of wire, oral, or electronic communications.
 
 Oklahoma law governs interception and disclosure of wire, oral, and electronic communications. Oklahoma is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -10622,7 +10622,7 @@ Use this as Oklahoma's recording/privacy hook. For recording police, analyze pub
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 22, sec. 991a Suspended sentences and probation.
 
 Oklahoma courts may impose suspended sentences, deferred sentences, and probation conditions authorized by statute and the written court order. Specific obligations depend on the sentence, offense, court requirements, and supervision order.
@@ -10642,7 +10642,7 @@ Use this as Oklahoma's probation framework source, together with the person's wr
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 22, sec. 991b Revocation of suspended sentence or probation.
 
 Oklahoma law governs court action after alleged violations of probation, suspended sentence, or deferred sentence terms. Consequences depend on the sentence, conditions, violation allegation, hearing posture, court findings, and available sanctions.
@@ -10662,7 +10662,7 @@ Use this for Oklahoma supervision violation answers, but verify the written orde
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "OSCN Oklahoma Statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Okla. Stat. tit. 57, sec. 332.7 Pardon and Parole Board powers and parole consideration.
 
 Oklahoma parole decisions depend on offense, sentence, eligibility, board authority, risk and rehabilitation factors, and written parole conditions. This statute provides a framework source for parole consideration and board action.
@@ -10682,7 +10682,7 @@ Use this as Oklahoma's parole framework source, not as a release-date calculator
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 137.281 Withdrawal of rights during term of incarceration; restoration of rights.
 
 Oregon withdraws specified rights, including the right to vote, from a person sentenced to a felony term of incarceration until release from incarceration or set-aside of the conviction. The statute also addresses federal imprisonment in Oregon and automatic restoration after release, subject to later imprisonment for parole violation.
@@ -10702,7 +10702,7 @@ Use this as Oregon's core felony voting-rights authority. A specific answer requ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 247.035 Rules to consider in determining residence of person for voting purposes.
 
 Oregon law gives election officials rules for determining voter residence and qualifications, including where habitation is fixed, temporary absences, moves to another state, and residence evidence.
@@ -10722,7 +10722,7 @@ Use this with ORS 137.281 when answering voting questions for people returning f
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 137.225 Order setting aside conviction or record of criminal charge.
 
 Oregon allows eligible convictions, arrests, citations, charges, and judgments to be set aside when statutory prerequisites are met. Eligibility depends on the offense, disposition, waiting period, later convictions or arrests, restitution or financial obligations where relevant, and statutory exclusions.
@@ -10742,7 +10742,7 @@ Use this as Oregon's primary record-clearing authority for expungement-style que
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 659A.421 Discrimination in selling, renting or leasing real property prohibited.
 
 Oregon fair-housing law prohibits covered discriminatory practices in real-property sale, rental, and leasing based on protected characteristics. This is Oregon's core state fair-housing authority.
@@ -10762,7 +10762,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 90.320 Landlord to maintain premises in habitable condition.
 
 Oregon landlord-tenant law requires landlords to maintain rental dwellings in habitable condition, including basic weatherproofing, plumbing, water, heat, electrical systems, safe common areas, locks, and other statutory habitability items.
@@ -10782,7 +10782,7 @@ Use this as Oregon's tenant-protection hook when a person with a criminal record
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 659A.030 Discrimination because of protected characteristics prohibited.
 
 Oregon employment law prohibits covered discrimination in employment based on protected characteristics and includes expunged juvenile record among listed protections. It is useful employment-rights context, but adult criminal history is not itself a general protected class under this source.
@@ -10802,7 +10802,7 @@ For criminal-record employment questions, use this with Oregon set-aside law, oc
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 670.280 Denial, suspension or revocation of license based on criminal conviction.
 
 Oregon occupational licensing law limits denial, suspension, revocation, or discipline based on criminal conviction and asks whether conduct is substantially related to the fitness and ability of the applicant or licensee. Board-specific statutes and exceptions may also apply.
@@ -10822,7 +10822,7 @@ Use this as Oregon's occupational-licensing criminal-record authority.`,
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 131.615 Stopping of persons.
 
 Oregon law authorizes a peace officer who reasonably suspects a person has committed or is about to commit a crime to stop the person and make reasonable inquiry after identifying as a peace officer. The detention must stay near the stop, last no longer than reasonable, and be limited by the circumstances, safety, and lawful consent rules.
@@ -10842,7 +10842,7 @@ Use this as Oregon's stop authority. It must be read with federal and Oregon con
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 165.540 Obtaining contents of communications.
 
 Oregon law governs interception and recording of wire, electronic, and oral communications. Oregon's recording rules are more situation-specific than a simple one-party or all-party label, especially for in-person oral communications and listed exceptions.
@@ -10862,7 +10862,7 @@ Use this as Oregon's recording/privacy hook. For recording police, analyze publi
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 137.540 Conditions of probation.
 
 Oregon law authorizes general and special probation conditions, including supervision, reporting, law-abiding conduct, treatment, no-contact, search, financial, and offense-specific terms where ordered. The operative requirements are the statute plus the written judgment and supervision conditions.
@@ -10882,7 +10882,7 @@ Use this as Oregon's probation framework source, together with the person's writ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 137.545 Period of probation; discharge from probation; proceedings in case of violation of conditions.
 
 Oregon law governs probation duration, discharge, and proceedings when a violation is alleged. Consequences depend on the judgment, supervision status, alleged violation, hearing posture, court findings, and available sanctions.
@@ -10902,7 +10902,7 @@ Use this for Oregon probation violation answers, but verify the written order an
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 144.102 Conditions of post-prison supervision.
 
 Oregon post-prison supervision conditions are specified in writing by the State Board of Parole and Post-Prison Supervision or local supervisory authority. Conditions may include reporting, supervision, law-abiding conduct, weapons restrictions, special conditions, residence terms, treatment, search conditions, and offense-specific requirements.
@@ -10922,7 +10922,7 @@ Use this as Oregon's parole or post-prison supervision framework source, not as 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Oregon Revised Statutes source checked June 27, 2026; exact section verified through ORS section mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Or. Rev. Stat. sec. 144.106 Violation of post-prison supervision conditions; sanctions.
 
 Oregon law governs responses to violations of post-prison supervision conditions and available sanctions. Consequences depend on the supervision authority, written conditions, alleged violation, hearing process, and sanction rules.
@@ -10941,7 +10941,7 @@ Use this for Oregon post-prison supervision violation answers alongside ORS 144.
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania Constitution official source checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Pa. Const. art. VII, sec. 1 Qualifications of electors.
 
 Pennsylvania's Constitution sets baseline voter qualifications, including citizenship and residence requirements, subject to registration laws enacted by the General Assembly. Pennsylvania generally restores voting rights after release from incarceration for a felony, so parole or probation alone does not bar voting under the usual statewide rule.
@@ -10961,7 +10961,7 @@ Use this as Pennsylvania's constitutional voting baseline. For a specific answer
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Pennsylvania consolidated statutes source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `25 Pa.C.S. sec. 1301 Qualifications to register.
 
 Pennsylvania voter registration law implements the state's voter qualification rules. For people with felony convictions, the important practical line is current incarceration for a felony versus release to the community.
@@ -10980,7 +10980,7 @@ Use this with Pa. Const. art. VII, sec. 1 for Pennsylvania voting-rights answers
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `18 Pa.C.S. sec. 9122 Expungement.
 
 Pennsylvania expungement law identifies when criminal history record information must or may be expunged, including specified nonconviction records, pardons, certain summary offenses, older records, and other statutory categories. Eligibility depends on the disposition, offense, age, waiting period, pardon status, sentence completion, pending proceedings, and listed exclusions.
@@ -10999,7 +10999,7 @@ Use this as Pennsylvania's core expungement authority. A specific answer require
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `18 Pa.C.S. sec. 9122.1 Petition for limited access.
 
 Pennsylvania allows eligible people to petition for limited access to certain criminal history record information after specified conviction-free periods and satisfaction of restitution and other statutory requirements. Limited access restricts dissemination of covered records but includes exceptions and does not erase every record for every purpose.
@@ -11018,7 +11018,7 @@ Use this for Pennsylvania record-sealing questions and for employment or housing
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `18 Pa.C.S. sec. 9122.2 Clean slate limited access.
 
 Pennsylvania's clean slate limited access statute covers specified misdemeanor, qualifying offense, nonconviction, summary offense, and conditional-pardon records when statutory criteria are met. The law includes timing, restitution, exception, validation, and dissemination rules.
@@ -11038,7 +11038,7 @@ Use this as Pennsylvania's automatic or administrative clean-slate authority, es
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Pennsylvania Human Relations Act source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `43 P.S. sec. 955 Unlawful discriminatory practices under the Pennsylvania Human Relations Act.
 
 The Pennsylvania Human Relations Act prohibits covered discrimination in housing and commercial property transactions based on protected characteristics. This is Pennsylvania's main state fair-housing civil-rights authority.
@@ -11058,7 +11058,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Pennsylvania Landlord and Tenant Act source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `68 P.S. sec. 250.501 Notice to quit.
 
 Pennsylvania landlord-tenant law sets notice-to-quit rules for certain eviction proceedings. This can matter when a tenant with a criminal record faces housing loss, lease termination, or eviction after already being housed.
@@ -11077,7 +11077,7 @@ Use this as a Pennsylvania eviction-procedure hook, not as a criminal-record scr
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `18 Pa.C.S. sec. 9125 Use of records for employment.
 
 Pennsylvania limits how employers may use criminal history record information in hiring. Felony and misdemeanor convictions may be considered only to the extent they relate to the applicant's suitability for the position, and an employer must give written notice if a hiring decision is based in whole or part on criminal history information.
@@ -11096,7 +11096,7 @@ Use this as Pennsylvania's core criminal-record employment-screening authority.`
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `18 Pa.C.S. sec. 9124 Use of records by licensing agencies.
 
 Pennsylvania limits how licensing agencies may use criminal records. Licensing bodies may consider convictions, but certain records may not be used, and convictions generally must relate to suitability for the license, certificate, registration, or permit. The statute also points to additional licensed-occupation rules in Title 63.
@@ -11115,7 +11115,7 @@ Use this as Pennsylvania's occupational-licensing criminal-record authority, wit
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `18 Pa.C.S. sec. 4914 False identification to law enforcement authorities.
 
 Pennsylvania makes it an offense to furnish law enforcement authorities false information about identity after an officer in uniform or an officer who has identified himself informs the person that the person is the subject of an official investigation of a law violation.
@@ -11134,7 +11134,7 @@ Use this as Pennsylvania's identity-related police encounter hook. It does not i
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `18 Pa.C.S. sec. 5704 Exceptions to prohibition of interception and disclosure of communications.
 
 Pennsylvania's wiretap law governs interception and recording of wire, electronic, and oral communications and includes exceptions. Pennsylvania is often treated as an all-party-consent jurisdiction for private oral communications, but recording police in public also requires analysis of privacy expectations, interference, and constitutional principles.
@@ -11153,7 +11153,7 @@ Use this as Pennsylvania's recording/privacy hook. For recording police, analyze
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `42 Pa.C.S. sec. 9754 Order of probation.
 
 Pennsylvania courts imposing probation must specify the supervision term and supervising authority, and attach reasonable conditions authorized by law. Sentence after a violation cannot be fixed before a finding on the record that a violation occurred.
@@ -11172,7 +11172,7 @@ Use this as Pennsylvania's probation order framework source, together with the p
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `42 Pa.C.S. sec. 9763 Conditions of probation.
 
 Pennsylvania probation conditions must be assessed and ordered based on individualized circumstances and may include work, education, treatment, reporting, restitution, firearms restrictions, address or employment reporting, drug or alcohol treatment, and other conditions reasonably related to rehabilitation and public protection.
@@ -11191,7 +11191,7 @@ Use this as Pennsylvania's probation conditions authority, together with the exa
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `61 Pa.C.S. sec. 6137 Parole power.
 
 Pennsylvania parole decisions depend on board authority, sentencing minimums and maximums, statutory criteria, guidelines, institutional information, programming, offense type, and public-safety considerations. The board's parole power generally cannot be exercised before expiration of the minimum term unless another specific statute applies.
@@ -11210,7 +11210,7 @@ Use this as Pennsylvania's parole eligibility and board-authority framework sour
     sourceName: "Pennsylvania General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Pennsylvania consolidated statutes official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `61 Pa.C.S. sec. 6138 Violation of terms of parole.
 
 Pennsylvania law governs parole violations, including convicted parole violators, technical parole violators, detention, recommitment, credit, reparole, and graduated or community-based sanctions. Consequences depend on whether the violation is a new conviction, technical violation, absconding, safety threat, weapon, sexual, assaultive, or programming-related violation.
@@ -11229,7 +11229,7 @@ Use this for Pennsylvania parole violation answers, but verify the written parol
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 17-9.2-3 Restoration of voting rights.
 
 Rhode Island restores voting rights when a person who lost the right to vote because of incarceration upon a felony conviction is discharged from incarceration. The law states that conviction results in loss of the right to vote only if and for as long as the person is incarcerated, and that voting rights are restored upon discharge. It also requires release-process voter registration assistance and public education, including notice that probationers and parolees have restored voting rights.
@@ -11248,7 +11248,7 @@ Use this as Rhode Island's core felony voting-rights authority. A specific answe
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 12-1.3-2 Motion for expungement.
 
 Rhode Island allows eligible first offenders and some people with multiple misdemeanors to file motions for expungement, subject to offense exclusions, waiting periods, sentence completion, and payment or waiver of court-imposed financial obligations. The statute includes different timing for misdemeanors, felonies, deferred sentences, and decriminalized offenses.
@@ -11267,7 +11267,7 @@ Use this as Rhode Island's primary expungement eligibility authority. A specific
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 12-1.3-3 Motion for expungement; notice; hearing; criteria for granting.
 
 Rhode Island requires notice to the attorney general and the police department and a court hearing before conviction records are expunged. The court considers recent arrest or conviction history, pending proceedings, court-imposed financial obligations, good moral character, rehabilitation, public interest, and special deferred-sentence or decriminalized-offense rules.
@@ -11286,7 +11286,7 @@ Use this with section 12-1.3-2 when explaining whether the court may grant expun
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 12-1.3-4 Effect of expungement of records; access to expunged records; wrongful disclosure.
 
 Rhode Island law releases a person with an expunged conviction from penalties and disabilities resulting from the conviction, subject to later-sentencing use. For employment, licensing, civil rights, privileges, or witness appearances, a person whose conviction was expunged may generally state that they were never convicted of the crime, with listed exceptions for law enforcement, bar admission, teaching, coaching, early childhood education, and other statutory access.
@@ -11305,7 +11305,7 @@ Use this after confirming a Rhode Island expungement order exists, especially fo
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 34-37-4 Unlawful housing practices.
 
 Rhode Island fair-housing law prohibits covered discriminatory housing practices based on protected characteristics, including race, color, religion, sex, sexual orientation, gender identity or expression, marital status, lawful source of income, military status, country of ancestral origin, disability, age, familial status, and specified domestic-abuse related status.
@@ -11324,7 +11324,7 @@ Criminal history is not itself the same as a protected class under this source. 
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 34-18-22 Landlord to maintain premises.
 
 Rhode Island landlord-tenant law requires landlords to comply with housing codes affecting health and safety, make repairs necessary to keep premises fit and habitable, maintain common areas and supplied systems, provide waste removal, water, hot water, heat, and specified liability insurance.
@@ -11343,7 +11343,7 @@ Use this as Rhode Island's tenant-protection hook when a person with a criminal 
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 28-5-7 Unlawful employment practices.
 
 Rhode Island fair employment law prohibits covered employment discrimination based on protected characteristics and includes criminal-history application limits. Employers generally may not include application questions or otherwise inquire before employment about whether an applicant has been arrested, charged, or convicted, subject to law-enforcement jobs, mandatory disqualification laws, and bond-related exceptions.
@@ -11362,7 +11362,7 @@ Use this as Rhode Island's core employment civil-rights and ban-the-box authorit
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 28-6.14-1 Criminal history on application for employment.
 
 Rhode Island gives the director of labor and training authority to investigate and enforce complaints when an employer includes prohibited criminal-history questions on employment applications. The statute includes exceptions when law or regulation creates mandatory or presumptive disqualification or when bonding requirements would disqualify a person with specified convictions.
@@ -11381,7 +11381,7 @@ Use this with section 28-5-7 for Rhode Island ban-the-box and criminal-history a
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 12-7-1 Temporary detention of suspects.
 
 Rhode Island law allows a peace officer to detain a person abroad whom the officer has reason to suspect is committing, has committed, or is about to commit a crime, and to demand the person's name, address, business abroad, and destination. The statute limits the detention period and states it is not recorded as an arrest unless the person is arrested and charged.
@@ -11400,7 +11400,7 @@ Use this as Rhode Island's stop-and-identify authority. It must be read with fed
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 11-35-21 Unauthorized interception, disclosure or use of wire, electronic, or oral communication.
 
 Rhode Island law prohibits unauthorized interception, disclosure, or use of wire, electronic, or oral communications, with exceptions. The statute permits interception when the person is a party to the communication or when one party has consented, unless the interception is for a criminal, tortious, or otherwise injurious purpose.
@@ -11419,7 +11419,7 @@ Use this as Rhode Island's recording/privacy hook. For recording police, analyze
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 12-19-8 Suspension of sentence and probation by superior or district court.
 
 Rhode Island courts may impose a sentence and suspend execution of all or part of the sentence or place a defendant on probation without imposing a suspended sentence, subject to statutory limits and conditions. Probation terms depend on the offense, sentence, court order, and section 12-19-8.1 conditions.
@@ -11438,7 +11438,7 @@ Use this as Rhode Island's probation framework source, together with the written
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 12-19-8.1 Conditions of probation.
 
 Rhode Island law sets basic probation conditions including obeying all laws, reporting as directed, remaining in Rhode Island absent approval, reporting changes of address, phone, or employment, making efforts toward employment or training, waiving extradition when required, DNA sampling if required, paying assessed restitution, costs, and fines based on ability to pay, and submitting to a risk and needs assessment. Courts may impose special conditions deemed just and reasonable.
@@ -11457,7 +11457,7 @@ Use this as Rhode Island's probation conditions authority, together with the exa
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 12-19-9 Violation of terms of probation; notice to attorney general; revocation or continuation of suspension.
 
 Rhode Island law governs probation violation proceedings, including notice to the attorney general, reports from the Department of Corrections division of rehabilitative services, detention limits, hearing timing, a fair-preponderance standard, and possible court responses after a violation finding.
@@ -11476,7 +11476,7 @@ Use this for Rhode Island probation violation answers, but verify the written or
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 13-8-9 Issuance of parole.
 
 Rhode Island parole board authority allows parole permits for eligible prisoners under board control after the statutory portion of the sentence has been served, subject to exclusions and special rules for some murder convictions. A parole permit allows liberty during the remainder of the sentence on terms and conditions prescribed by the board.
@@ -11495,7 +11495,7 @@ Use this as Rhode Island's parole eligibility and board-authority framework sour
     sourceName: "Rhode Island General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Rhode Island General Laws official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `R.I. Gen. Laws sec. 13-8-18 Revocation of parole; hearing.
 
 Rhode Island law allows the parole board to revoke parole permits when a person violates parole terms or state law, with different language for new criminal charges and technical violations. If the board determines the permit should not be revoked, the person must be restored to liberty under the original permit terms.
@@ -11514,7 +11514,7 @@ Use this for Rhode Island parole violation answers, but verify the written parol
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 7-5-120 Qualifications for registration; persons disqualified from registering or voting.
 
 South Carolina voter registration law disqualifies a person from registering or voting while serving a term of imprisonment resulting from conviction of a crime, and after conviction of a felony or election-law offense unless the disqualification has been removed by service of the sentence, including probation and parole time, or sooner by pardon.
@@ -11533,7 +11533,7 @@ Use this as South Carolina's core felony voting-rights authority. A specific ans
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 7-5-170 Necessity for written application for registration.
 
 South Carolina voter registration applications require an applicant to affirm that they are not confined in a public prison, have not been convicted of a felony or election-law offense, or if previously convicted, have served the entire sentence including probation and parole time or received a pardon.
@@ -11552,7 +11552,7 @@ Use this with section 7-5-120 when explaining registration after a conviction. I
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 17-22-910 Applications for expungement; administration.
 
 South Carolina's uniform expungement statute routes applications through the solicitor's office and lists statutory categories that may be eligible for expungement, including certain dismissed or discharged charges, first-offense magistrate convictions, youthful offender cases, qualifying drug convictions, pretrial intervention, traffic and alcohol education programs, juvenile expungements, and other statutory authorizations.
@@ -11571,7 +11571,7 @@ Use this as South Carolina's expungement routing and eligibility-map authority. 
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 17-1-40 Expungement; retention of certain information by law enforcement or prosecution agencies.
 
 South Carolina law describes what happens to records after expungement for dismissed, discharged, nolle prossed, or not-guilty charges, including destruction of some arrest and booking records and sealed retention of other law-enforcement, prosecution, detention, and correctional information for limited purposes. The statute also restricts disclosure and allows redaction of expunged person's identifying information from incident reports.
@@ -11590,7 +11590,7 @@ Use this after confirming an expungement order exists, especially for employment
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 31-21-40 Discrimination in relation to sale or rental of property.
 
 South Carolina fair-housing law prohibits covered discriminatory sale, rental, advertising, availability, and terms-and-conditions practices based on protected characteristics including race, color, religion, sex, handicap, familial status, and national origin. The chapter includes exemptions and controlled-substance conviction language that must be considered in housing-screening questions.
@@ -11610,7 +11610,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Carolina Residential Landlord and Tenant Act source checked June 27, 2026; exact section URL pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 27-40-440 Landlord to maintain premises.
 
 South Carolina landlord-tenant law requires landlords to comply with building and housing codes materially affecting health and safety, make repairs, keep common areas safe, maintain supplied facilities and appliances, provide waste receptacles, and supply running water and reasonable heat where required by the rental arrangement.
@@ -11629,7 +11629,7 @@ Use this as South Carolina's tenant-protection hook when a person with a crimina
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 1-13-80 Unlawful employment practices; exceptions.
 
 South Carolina Human Affairs Law prohibits covered employment discrimination based on protected characteristics such as race, religion, color, sex, age, national origin, and disability. It is employment-rights context, but criminal history is not itself a general protected class under this source.
@@ -11648,7 +11648,7 @@ For criminal-record employment questions, use this with expungement law, occupat
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 40-1-110 Additional grounds for disciplinary action.
 
 South Carolina professional licensing boards may discipline a licensee for listed grounds, including conviction of, or guilty or nolo contendere plea to, a felony or a crime involving drugs or moral turpitude. Board-specific licensing chapters may add additional criminal-record rules.
@@ -11667,7 +11667,7 @@ Use this as South Carolina's general occupational-licensing criminal-record auth
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 17-13-30 Officers may arrest without warrant for offenses committed in view.
 
 South Carolina law authorizes sheriffs and deputy sheriffs to arrest without a warrant persons who, within their view, violate criminal laws if the arrest is made at the time of violation or immediately after. Other arrest, detention, and search rules may come from additional statutes and constitutional law.
@@ -11686,7 +11686,7 @@ Use this as South Carolina's statutory arrest-power hook. It is not a complete s
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 17-13-50 Right to be informed of ground of arrest.
 
 South Carolina law gives a person arrested by process or taken into custody by an officer the right to know the true ground for the arrest. An officer may not refuse to answer, answer untruthfully, assign an untrue reason, or neglect on request to exhibit the process by which the arrest is made.
@@ -11705,7 +11705,7 @@ Use this as South Carolina's arrest-information authority. It does not mean a pe
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 17-30-30 Interception by person acting under color of law and when party has given prior consent.
 
 South Carolina law permits interception of wire, oral, or electronic communications when the person is a party to the communication or one party has given prior consent, including rules for persons acting under color of law and persons not acting under color of law.
@@ -11724,7 +11724,7 @@ Use this as South Carolina's recording/privacy hook. For recording police, analy
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 24-21-430 Conditions of probation.
 
 South Carolina courts may impose probation conditions and may modify them. The statute includes search-condition language requiring probationers, with limited misdemeanor exceptions, to permit warrantless searches based on reasonable suspicion by probation agents or law enforcement after verification of probation status and reporting requirements designed to prevent abuse.
@@ -11743,7 +11743,7 @@ Use this as South Carolina's probation conditions authority, together with the p
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 24-21-460 Court action when terms of probation violated.
 
 South Carolina law allows the court, after arrest for a probation violation, to bring the defendant before it, revoke probation or suspension of sentence, and deal with the case as if there had been no probation or suspension, with discretion to require all or part of the sentence. Portions not put into effect may remain available during the probation period.
@@ -11762,7 +11762,7 @@ Use this for South Carolina probation violation answers, but verify the written 
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 24-21-640 Circumstances warranting parole; search and seizure; criteria.
 
 South Carolina parole decisions require the board to consider the prisoner's record before, during, and after imprisonment and whether release would be consistent with reform, law-abiding conduct, sentence progress, society's interest, and employment. The statute also includes parole search-condition language and reporting safeguards.
@@ -11781,7 +11781,7 @@ Use this as South Carolina's parole framework source, not as a release-date calc
     sourceName: "South Carolina Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "South Carolina Code official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.C. Code Ann. sec. 24-21-680 Violation of parole.
 
 South Carolina law governs parole violations, including issuance of a warrant or citation, board determination whether parole should be revoked, possible service of unserved sentence, later parole eligibility, and limited bond pending final determination.
@@ -11801,7 +11801,7 @@ Use this for South Carolina parole violation answers, but verify the written par
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 12-4-18 Persons declared mentally incompetent, deceased, or serving sentence for felony conviction; removed from registration records.
 
 South Dakota requires county auditors to remove from voter registration records any voter identified as serving a sentence for a felony conviction. The statute also directs removal of people sentenced to imprisonment in the federal penitentiary system and requires matching voter records against felony conviction records maintained by the Unified Judicial System.
@@ -11821,7 +11821,7 @@ Use this as South Dakota's core felony voting-rights authority. A specific answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; exact section pending adapter verification",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 12-4-1 Persons entitled to register to vote.
 
 South Dakota voter registration law sets baseline eligibility for registration. For people with felony convictions, this baseline must be read with section 12-4-18 and current Secretary of State procedures for removal and re-registration.
@@ -11841,7 +11841,7 @@ Use this with section 12-4-18 when answering South Dakota voting questions. A sp
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-3-26 Definition of expungement.
 
 South Dakota defines expungement as sealing records on file with courts, detention or correctional facilities, law enforcement agencies, criminal justice agencies, or the Department of Public Safety concerning detection, apprehension, arrest, detention, trial, or disposition of an offense. Expungement does not imply physical destruction of records.
@@ -11861,7 +11861,7 @@ Use this as South Dakota's core definition for record-clearing questions, includ
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-3-27 Motion for expungement of arrest record.
 
 South Dakota allows an arrested person to apply to the court with jurisdiction over the offense for an order expunging the arrest record in specified situations, including after one year if no accusatory instrument was filed, after dismissal, at any time after acquittal, or within one year after dismissal on a compelling-necessity showing.
@@ -11881,7 +11881,7 @@ Use this as South Dakota's arrest-record expungement authority. A specific answe
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-3-34 Defendant's public record; automatic removal of non-felony charges or convictions.
 
 South Dakota provides for automatic removal from public record of certain non-felony charges or convictions, while preserving case records for authorized court, law enforcement, prosecution, defense, corrections, and other official uses and possible later enhancement purposes.
@@ -11901,7 +11901,7 @@ Use this as South Dakota's automatic non-felony record-removal authority. It is 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-27-14 Discharge and dismissal of probationer on completion of conditions; no judgment entered.
 
 South Dakota law allows discharge and dismissal after successful completion of conditions when imposition of sentence was suspended, subject to statutory limits. This affects both supervision and record-clearing questions because it changes the final case posture and may interact with expungement or public-record rules.
@@ -11921,7 +11921,7 @@ Use this for suspended-imposition questions. A specific answer requires the judg
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 20-13-20 Unfair or discriminatory housing practices by owner or agent.
 
 South Dakota fair-housing law prohibits covered refusal, discrimination in terms or conditions, discriminatory advertising, and refusal to permit reasonable disability modifications based on protected characteristics including race, color, creed, religion, sex, ancestry, disability, familial status, and national origin.
@@ -11941,7 +11941,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 20-13-21 Unfair or discriminatory housing practice by financial institution or lender.
 
 South Dakota law prohibits covered discrimination by lenders and financial institutions in real-property financing based on protected characteristics. This can matter when housing access turns on financing, lending, or real-property acquisition rather than only rental screening.
@@ -11961,7 +11961,7 @@ Use this as South Dakota's housing-credit discrimination hook, with federal fair
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 20-13-10 Unfair or discriminatory practices.
 
 South Dakota employment civil-rights law prohibits covered employment discrimination based on protected characteristics including race, color, creed, religion, sex, ancestry, disability, and national origin. It is useful employment-rights context, but criminal history is not itself a general protected class under this source.
@@ -11981,7 +11981,7 @@ For criminal-record employment questions, use this with expungement law, occupat
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 20-13-11 Employment agency's unfair or discriminatory practices.
 
 South Dakota law also regulates discriminatory practices by employment agencies. This matters when access to work is controlled by a placement agency, referral service, or similar intermediary rather than a direct employer.
@@ -12001,7 +12001,7 @@ Use this as South Dakota employment-agency civil-rights authority. For criminal-
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 36-1C-2 Complaints; jurisdiction.
 
 South Dakota's uniform professional licensing procedure allows complaints against licensees or applicants under Title 36 when the alleged conduct constitutes grounds for disciplinary action under that agency's laws or rules. Criminal-record licensing consequences are often occupation-specific rather than contained in one statewide fair-chance licensing statute.
@@ -12021,7 +12021,7 @@ Use this as a procedural licensing hook, but verify the exact board and occupati
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-3-2 Law enforcement officer's power to arrest without warrant.
 
 South Dakota law authorizes warrantless arrest for a public offense other than a petty offense committed or attempted in the officer's presence, or on probable cause that a felony or Class 1 misdemeanor has been committed and the person arrested committed it, even outside the officer's presence.
@@ -12041,7 +12041,7 @@ Use this as South Dakota's statutory arrest-power hook. It is not a complete sto
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-35A-20 Overhearing or recording communications, conversations, or jury deliberations by means of eavesdropping device.
 
 South Dakota law criminalizes certain use of eavesdropping devices to overhear or record communications or conversations, subject to statutory exceptions elsewhere in the chapter. Recording police also requires analysis of public setting, privacy expectations, interference with official duties, and constitutional principles.
@@ -12061,7 +12061,7 @@ Use this as South Dakota's recording/privacy hook, not as a blanket answer for e
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-27-12 Placement on probation.
 
 South Dakota law authorizes placement on probation in appropriate cases, subject to statutory exceptions and the court's sentence. The controlling obligations come from the statute, judgment, written probation terms, and Department of Corrections or court supervision rules.
@@ -12081,7 +12081,7 @@ Use this as South Dakota's probation framework source, together with the written
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 23A-27-13 Suspended imposition of felony sentence; eligibility; probation placement; revocation.
 
 South Dakota law governs suspended imposition of sentence in eligible felony cases, placement on probation, and revocation consequences. This source matters for supervision questions and later record-clearing effects after successful completion.
@@ -12101,7 +12101,7 @@ Use this with sections 23A-27-12 and 23A-27-14 for suspended-imposition probatio
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 24-15A-38 Inmate release to parole supervision; conditions.
 
 South Dakota law governs release to parole supervision and conditions. Parole obligations depend on the sentence, parole eligibility framework, board action, Department of Corrections rules, and written parole conditions.
@@ -12121,7 +12121,7 @@ Use this as South Dakota's parole supervision framework source, not as a release
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "South Dakota Legislature statute URL identified June 27, 2026; section text cross-checked through Justia mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `S.D. Codified Laws sec. 24-15A-39 Hearing to determine compliance with parole release standards; waiver; board determinations.
 
 South Dakota parole release can involve board review of whether parole release standards are met, waiver of appearance, and discretionary hearing procedures. The analysis depends on offense, sentence, risk factors, board rules, institutional record, and written release plan.
@@ -12141,7 +12141,7 @@ Use this as South Dakota's parole-release decision framework source, alongside t
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 2-2-102 Persons entitled to register and vote.
 
 Tennessee voter registration law sets baseline qualifications for registration and voting, including age, citizenship, residence, and absence of disqualification. For people with felony convictions, this must be read with Tennessee's restoration-of-citizenship and infamous-crime statutes.
@@ -12161,7 +12161,7 @@ Use this with Tenn. Code Ann. secs. 40-29-202 and 40-29-204 for Tennessee felony
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-29-202 Deprivation of citizenship rights upon conviction.
 
 Tennessee law treats conviction of specified infamous crimes as causing loss of citizenship rights, including voting-related rights, subject to restoration procedures and offense-specific exclusions. Tennessee felony voting restoration is more complex than a simple release-from-incarceration rule.
@@ -12181,7 +12181,7 @@ Use this as Tennessee's core disqualification authority, together with the resto
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-29-204 Certificate of restoration.
 
 Tennessee law provides a certificate-of-restoration process for eligible people seeking restoration of voting and other citizenship rights after conviction. Eligibility can depend on sentence completion, restitution, court costs, child support, offense category, and other statutory limits.
@@ -12201,7 +12201,7 @@ Use this as Tennessee's voting-rights restoration process source. A specific ans
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Justia Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-32-101 Destruction or release of records; expunction.
 
 Tennessee expunction law covers categories including dismissed charges, acquittals, retired charges, certain diversion outcomes, and eligible convictions listed by statute. Eligibility depends on disposition, offense, waiting period, sentence completion, later convictions, fees, and statutory exclusions.
@@ -12221,7 +12221,7 @@ Use this as Tennessee's primary expungement authority. A specific answer require
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-35-313 Judicial diversion.
 
 Tennessee judicial diversion can allow eligible defendants to be placed on probation without a judgment of guilt and, after successful completion, obtain dismissal and expungement treatment subject to statutory conditions and exclusions.
@@ -12241,7 +12241,7 @@ Use this for Tennessee diversion-related expungement and supervision questions. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 4-21-601 Discriminatory housing practices.
 
 Tennessee fair-housing law prohibits covered discriminatory practices in sale, rental, advertising, terms, services, financing, brokerage, and related housing activity based on protected characteristics.
@@ -12261,7 +12261,7 @@ Criminal history is not itself the same as a protected class under this source. 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 66-28-304 Landlord to maintain premises.
 
 Tennessee landlord-tenant law requires covered landlords to comply with applicable building and housing codes materially affecting health and safety, make repairs and keep premises fit and habitable, keep common areas clean and safe, and maintain supplied facilities and appliances.
@@ -12281,7 +12281,7 @@ Use this as Tennessee's tenant-protection hook when a person with a criminal rec
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Justia Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 4-21-401 Discriminatory practices by employer.
 
 Tennessee employment civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a general protected class under this source.
@@ -12301,7 +12301,7 @@ For criminal-record employment questions, use this with expunction law, occupati
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 62-76-104 Fresh start licensing and criminal history.
 
 Tennessee's fresh start licensing law limits how licensing authorities may use criminal history and generally requires a relationship between the conviction and the licensed occupation, subject to exceptions and board-specific statutes.
@@ -12321,7 +12321,7 @@ Use this as Tennessee's occupational-licensing criminal-record authority, with t
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-7-103 Grounds for arrest by officer without warrant.
 
 Tennessee law authorizes warrantless arrests in listed circumstances, including offenses committed in the officer's presence and other statutory probable-cause situations. Police-stop and search questions also require federal and Tennessee constitutional analysis.
@@ -12341,7 +12341,7 @@ Use this as Tennessee's statutory arrest-power hook. It is not a complete stop, 
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 39-13-601 Wiretapping and electronic surveillance.
 
 Tennessee law governs interception and recording of wire, oral, and electronic communications. Tennessee is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -12361,7 +12361,7 @@ Use this as Tennessee's recording/privacy hook. For recording police, analyze pu
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-35-303 Probation; eligibility; terms.
 
 Tennessee law governs probation eligibility, sentencing alternatives, probation terms, application procedures, and court discretion. The controlling obligations come from the statute, judgment, written probation order, and supervision conditions.
@@ -12381,7 +12381,7 @@ Use this as Tennessee's probation framework source, together with the person's w
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-35-311 Revocation of suspension of sentence or probation.
 
 Tennessee law governs probation violation warrants, hearings, revocation, continuation, extension, and other court responses after an alleged violation. Consequences depend on the judgment, conditions, allegation, custody status, hearing posture, and court findings.
@@ -12401,7 +12401,7 @@ Use this for Tennessee probation violation answers, but verify the written order
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-28-117 Parole conditions, supervision, and violation process.
 
 Tennessee parole is controlled by the Board of Parole and written parole conditions. Violation questions depend on the alleged conduct, warrant or summons, hearing process, board decision, sentence, and supervision paperwork.
@@ -12421,7 +12421,7 @@ Use this as Tennessee's parole conditions and violation framework source, not as
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Tennessee General Assembly code portal identified June 27, 2026; section text cross-checked through Tennessee Code mirror",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tenn. Code Ann. sec. 40-28-115 Parole eligibility and release consideration.
 
 Tennessee parole eligibility and release consideration depend on the sentence, offense class, release eligibility date, credits, statutory exclusions, board rules, institutional record, risk assessment, and board discretion.
@@ -12440,7 +12440,7 @@ Use this as Tennessee's parole eligibility framework source, not as a release-da
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Elec. Code sec. 11.002 Qualified voter.
 
 Texas law defines who is a qualified voter and includes disqualification while finally convicted of a felony unless the person's sentence has been fully discharged, including incarceration, parole, or supervision, or the person has been pardoned or otherwise released from the resulting disability to vote.
@@ -12459,7 +12459,7 @@ Use this as Texas's core felony voting-rights authority. A specific answer requi
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Elec. Code sec. 13.001 Eligibility for registration.
 
 Texas voter registration law sets eligibility requirements for registration, including being a qualified voter. For people with felony convictions, registration eligibility turns on the felony-disqualification and discharge rules in the Election Code.
@@ -12478,7 +12478,7 @@ Use this with section 11.002 when answering Texas voter registration after convi
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Code Crim. Proc. ch. 55 Expunction of criminal records.
 
 Texas expunction law governs when arrest and criminal records may be expunged, including acquittals, pardons or actual innocence, certain dismissed charges, identity theft, and other statutory categories. Eligibility depends heavily on arrest facts, charge disposition, limitations periods, related charges, supervision type, and statutory exclusions.
@@ -12497,7 +12497,7 @@ Use this as Texas's primary expunction authority. A specific answer requires arr
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Gov't Code sec. 411.072 Order of nondisclosure following deferred adjudication community supervision.
 
 Texas nondisclosure law allows sealing from public disclosure for eligible deferred adjudication records when statutory conditions are met. Nondisclosure is different from expunction and includes exceptions for criminal justice agencies and specified licensing, education, care, and public-safety entities.
@@ -12516,7 +12516,7 @@ Use this for Texas record-sealing questions after deferred adjudication, especia
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Prop. Code sec. 301.021 Discriminatory housing practices prohibited.
 
 Texas fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Texas's core state fair-housing authority for rental, sale, advertising, services, and related housing conduct.
@@ -12535,7 +12535,7 @@ Criminal history is not itself the same as a protected class under this source. 
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Prop. Code sec. 92.052 Landlord's duty to repair or remedy.
 
 Texas landlord-tenant law requires covered landlords to make a diligent effort to repair or remedy conditions that materially affect the physical health or safety of an ordinary tenant after proper notice and when statutory prerequisites are met.
@@ -12554,7 +12554,7 @@ Use this as Texas's tenant-protection hook when a person with a criminal record 
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Lab. Code sec. 21.051 Discrimination by employer.
 
 Texas employment civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a general protected class under this source.
@@ -12573,7 +12573,7 @@ For criminal-record employment questions, use this with expunction and nondisclo
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Occ. Code sec. 53.021 Authority to revoke, suspend, or deny license.
 
 Texas occupational licensing law limits when a licensing authority may deny, suspend, or revoke a license because of a criminal conviction or deferred adjudication. Analysis depends on the occupation, offense, relationship to duties, time elapsed, rehabilitation, public safety, and board-specific law.
@@ -12592,7 +12592,7 @@ Use this as Texas's occupational-licensing criminal-record authority.`,
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Occ. Code sec. 53.023 Factors in determining whether conviction directly relates to occupation.
 
 Texas licensing authorities must consider statutory factors when deciding whether a criminal conviction directly relates to the duties and responsibilities of a licensed occupation. Factors include the nature and seriousness of the crime, relationship to license duties, public-safety risk, and rehabilitation evidence.
@@ -12611,7 +12611,7 @@ Use this with section 53.021 for Texas occupational licensing answers.`,
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Penal Code sec. 38.02 Failure to identify.
 
 Texas law makes it an offense to intentionally refuse to give name, residence address, or date of birth to a peace officer after lawful arrest and request. It also separately criminalizes giving false identifying information to an officer after lawful arrest, lawful detention, or when the officer has good cause to believe the person witnessed a criminal offense.
@@ -12630,7 +12630,7 @@ Use this as Texas's identity-related police encounter hook. Texas is not a gener
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Penal Code sec. 16.02 Unlawful interception, use, or disclosure of wire, oral, or electronic communications.
 
 Texas law governs interception and recording of wire, oral, and electronic communications. Texas is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -12649,7 +12649,7 @@ Use this as Texas's recording/privacy hook. For recording police, analyze public
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Code Crim. Proc. art. 42A.301 Basic conditions of community supervision.
 
 Texas community supervision law authorizes courts to impose basic and case-specific conditions. Requirements depend on the offense, sentence, judgment, community supervision order, department rules, and any special statutory conditions.
@@ -12668,7 +12668,7 @@ Use this as Texas's probation or community-supervision framework source, togethe
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Code Crim. Proc. art. 42A.751 Violation of conditions of community supervision.
 
 Texas law governs proceedings after an alleged community supervision violation, including warrants, hearings, continuation, modification, revocation, confinement, and related court action. Consequences depend on the order, condition, alleged violation, hearing posture, court findings, and available sanctions.
@@ -12687,7 +12687,7 @@ Use this for Texas probation or community-supervision violation answers, but ver
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Gov't Code sec. 508.145 Eligibility for release on parole.
 
 Texas parole eligibility depends on the offense, sentence, time served, good conduct time where applicable, statutory exclusions, offense date, and Board of Pardons and Paroles rules. Eligibility is not the same as release.
@@ -12706,7 +12706,7 @@ Use this as Texas's parole eligibility framework source, not as a release-date c
     sourceName: "Texas Constitution and Statutes",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Texas Constitution and Statutes official chapter page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Tex. Gov't Code sec. 508.281 Hearing after parole or mandatory supervision violation.
 
 Texas law governs hearings and procedures after alleged parole or mandatory supervision violations. Consequences depend on the written conditions, alleged violation, warrant or summons, hearing posture, board findings, and available sanctions.
@@ -12725,7 +12725,7 @@ Use this for Texas parole or mandatory supervision violation answers, but verify
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 20A-2-101 Eligibility for registration and voting.
 
 Utah voter registration law sets baseline eligibility for registration and voting, including citizenship, age, residence, and disqualification rules. Utah generally restores voting rights when a person convicted of a felony is released from incarceration, so probation or parole alone does not usually bar voting under the statewide rule.
@@ -12744,7 +12744,7 @@ Use this as Utah's core felony voting-rights authority. A specific answer requir
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 20A-2-201 Registering to vote.
 
 Utah law governs the voter registration process and timing. For people returning from incarceration, the registration process source should be read together with the eligibility and felony-disqualification rule in section 20A-2-101.
@@ -12763,7 +12763,7 @@ Use this as Utah's voter registration procedure hook, not as the complete felony
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-40a-301 Eligibility to expunge records.
 
 Utah expungement law sets eligibility rules and exclusions for expunging criminal records. Eligibility depends on the offense, disposition, number of convictions, waiting period, sentence completion, fines or restitution where relevant, pending cases, and statutory exclusions.
@@ -12782,7 +12782,7 @@ Use this as Utah's primary petition-based expungement eligibility authority. A s
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-40a-303 Certificate of eligibility.
 
 Utah's petition-based expungement process often requires obtaining a certificate of eligibility before seeking an expungement order. The certificate process checks statutory eligibility but does not itself guarantee a court will grant every requested order.
@@ -12801,7 +12801,7 @@ Use this as Utah's expungement process source, together with section 77-40a-301 
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-40a-201 Automatic expungement.
 
 Utah's clean slate framework provides automatic expungement for eligible records when statutory criteria are met. Automatic expungement is limited by offense type, disposition, waiting periods, exclusion rules, and system eligibility.
@@ -12820,7 +12820,7 @@ Use this for Utah automatic expungement questions and for employment or housing 
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 57-21-5 Discriminatory housing practices.
 
 Utah fair-housing law prohibits covered discriminatory housing practices based on protected characteristics, including sale, rental, advertising, terms, services, financing, and related conduct.
@@ -12839,7 +12839,7 @@ Criminal history is not itself the same as a protected class under this source. 
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 57-22-4 Owner's duties.
 
 Utah's Fit Premises Act requires residential owners to maintain fit premises, comply with applicable health and safety codes, maintain common areas, make required repairs, and provide essential services where required by the rental agreement and law.
@@ -12858,7 +12858,7 @@ Use this as Utah's tenant-protection hook when a person with a criminal record i
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 34A-5-106 Discriminatory or prohibited employment practices.
 
 Utah employment civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a general protected class under this source.
@@ -12877,7 +12877,7 @@ For criminal-record employment questions, use this with Utah expungement law, oc
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 58-1-401 Grounds for denial of license or disciplinary proceedings.
 
 Utah occupational and professional licensing law authorizes denial, restriction, probation, suspension, revocation, or other discipline for listed grounds, including criminal conduct or conviction in circumstances defined by statute and board rules. Occupation-specific chapters may add additional criminal-history rules.
@@ -12896,7 +12896,7 @@ Use this as Utah's occupational-licensing criminal-record authority, with the ex
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-7-15 Authority of peace officer to stop and question suspect.
 
 Utah law authorizes a peace officer to stop a person in a public place when the officer has reasonable suspicion that the person has committed, is committing, or is about to commit a public offense, and to demand the person's name, address, and explanation of actions. The detention may not extend beyond what is reasonably necessary to effect its purpose.
@@ -12915,7 +12915,7 @@ Use this as Utah's stop-and-identify authority. It must be read with federal and
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-23a-4 Interception, disclosure, or use of wire, electronic, or oral communications prohibited; exceptions.
 
 Utah law governs interception and recording of wire, electronic, and oral communications and includes exceptions, including consent-based exceptions. Utah is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -12934,7 +12934,7 @@ Use this as Utah's recording/privacy hook. For recording police, analyze public 
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-18-105 Probation and conditions.
 
 Utah law authorizes probation and probation conditions. The controlling obligations come from the statute, sentence, written probation order, supervision agreement, court orders, and Department of Corrections or county supervision rules.
@@ -12953,7 +12953,7 @@ Use this as Utah's probation framework source, together with the person's writte
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-18-108 Violation of probation.
 
 Utah law governs court action after alleged probation violations, including hearings, continued probation, modification, revocation, and sanctions. Consequences depend on the written conditions, alleged violation, hearing posture, court findings, and available sentencing options.
@@ -12972,7 +12972,7 @@ Use this for Utah probation violation answers, but verify the written order and 
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-27-5 Board of Pardons and Parole authority.
 
 Utah parole decisions are controlled by the Board of Pardons and Parole and depend on sentence, offense, parole guidelines, institutional record, risk, victim input where applicable, and board discretion. Parole eligibility and release are not the same thing.
@@ -12991,7 +12991,7 @@ Use this as Utah's parole authority framework source, not as a release-date calc
     sourceName: "Utah Legislature",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Utah Code official section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Utah Code sec. 77-27-11 Violation of parole.
 
 Utah law governs alleged parole violations, warrants or retaking, hearings, revocation, continuation, and other Board of Pardons and Parole responses. Consequences depend on written parole conditions, the alleged violation, custody status, board process, and findings.
@@ -13010,7 +13010,7 @@ Use this for Utah parole violation answers, but verify the written parole condit
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `17 V.S.A. sec. 2121 Eligibility of voters.
 
 Vermont voter eligibility law requires United States citizenship, Vermont residence, the voter's oath, and age 18 or older. The statute does not impose a felony-conviction or incarceration-based voting disqualification, so Vermont is one of the states where people may vote even while incarcerated if otherwise eligible.
@@ -13029,7 +13029,7 @@ Use this as Vermont's core voting-rights authority. A specific answer requires c
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page identified June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `17 V.S.A. sec. 2144 Application for addition to checklist.
 
 Vermont law governs voter registration applications and checklist addition. For incarcerated voters or people with convictions, the key point is that ordinary eligibility and registration procedures apply; there is no felony disenfranchisement step in section 2121.
@@ -13048,7 +13048,7 @@ Use this as Vermont's voter registration process hook, together with section 212
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `13 V.S.A. sec. 7602 Expungement and sealing of qualifying crimes.
 
 Vermont law allows expungement or sealing for qualifying criminal history records when statutory criteria are met. Eligibility depends on whether the offense is a qualifying crime, disposition, conviction status, waiting period, restitution, later convictions, pending cases, and statutory exclusions.
@@ -13067,7 +13067,7 @@ Use this as Vermont's primary record-clearing eligibility authority. A specific 
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `13 V.S.A. sec. 7603 Petition, notice, hearing, and order procedure for expungement or sealing.
 
 Vermont law sets procedural rules for petitions, notice, prosecutor response, hearings, and court orders for expungement or sealing. Procedure matters because qualifying eligibility does not automatically mean a record is cleared without the required process unless another automatic provision applies.
@@ -13086,7 +13086,7 @@ Use this with section 7602 when explaining how someone seeks Vermont expungement
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `13 V.S.A. sec. 7606 Effect of expungement.
 
 Vermont law provides that, after expungement, the person is treated in all respects as if never arrested, convicted, or sentenced for the offense. For employment, license, civil right, privilege, or witness questions, a person may be required to answer only about arrests or convictions that have not been expunged, and official responses to inquiries should state that no criminal record exists.
@@ -13105,7 +13105,7 @@ Use this after confirming a Vermont expungement order exists, especially for emp
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `9 V.S.A. sec. 4503 Fair housing and public accommodations discrimination.
 
 Vermont fair-housing law prohibits covered discriminatory housing practices based on protected characteristics, including sale, rental, advertising, terms, services, and related conduct.
@@ -13124,7 +13124,7 @@ Criminal history is not itself the same as a protected class under this source. 
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page identified June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `9 V.S.A. sec. 4457 Landlord obligations; habitability.
 
 Vermont residential rental law requires landlords to maintain premises in a safe, clean, and habitable condition and to comply with applicable building, housing, and health regulations. Habitability duties matter when a tenant with a criminal record is already housed and faces unsafe conditions.
@@ -13143,7 +13143,7 @@ Use this as Vermont's tenant-protection hook, not as a criminal-record screening
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `21 V.S.A. sec. 495 Unlawful employment practices.
 
 Vermont employment civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a general protected class under this source.
@@ -13162,7 +13162,7 @@ For criminal-record employment questions, use this with Vermont expungement and 
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page identified June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `3 V.S.A. sec. 129a Unprofessional conduct.
 
 Vermont professional licensing law identifies conduct that can support discipline or licensing action by regulated professional boards, including criminal conduct in circumstances defined by statute, rule, and occupation-specific requirements.
@@ -13181,7 +13181,7 @@ Use this as Vermont's general professional-licensing criminal-record hook, with 
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page identified June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `24 V.S.A. sec. 1983 Powers of municipal police officers.
 
 Vermont law provides statutory authority for municipal police officers. Police encounter questions in Vermont are governed primarily by constitutional search-and-seizure law, arrest authority, court decisions, and agency policy rather than a broad state stop-and-identify statute.
@@ -13200,7 +13200,7 @@ Use this as a Vermont police-authority hook. Do not treat it as a general duty t
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page identified June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `13 V.S.A. sec. 3016 False reports to law enforcement authorities.
 
 Vermont criminal law penalizes knowingly giving false information to law enforcement in specified contexts. This is relevant to police encounters because providing false information can create separate legal exposure even when a person may have a right to remain silent.
@@ -13219,7 +13219,7 @@ Use this as Vermont's false-information police encounter hook. It does not creat
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `28 V.S.A. sec. 252 Conditions of probation.
 
 Vermont law authorizes probation conditions and supervision requirements. The controlling obligations come from the statute, sentence, written probation order, court modifications, and Department of Corrections supervision rules.
@@ -13238,7 +13238,7 @@ Use this as Vermont's probation framework source, together with the person's wri
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `28 V.S.A. sec. 253 Modification of probation conditions.
 
 Vermont law allows probation conditions to be modified through the proper court process. Modification questions depend on the original order, alleged need for change, notice, hearing posture, and court action.
@@ -13257,7 +13257,7 @@ Use this for Vermont probation condition-change questions, alongside section 252
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `28 V.S.A. sec. 255 Discharge.
 
 Vermont law provides that, upon termination of probation or earlier discharge, the probationer is generally relieved of obligations imposed by the court order and has satisfied the sentence for the crime, unless the court has ordered otherwise or another statutory exception applies.
@@ -13276,7 +13276,7 @@ Use this for Vermont probation completion and discharge questions.`,
     sourceName: "Vermont General Assembly",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Vermont Statutes Online section page identified June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `28 V.S.A. sec. 501 Parole board authority.
 
 Vermont parole decisions depend on the sentence, minimum and maximum terms, Department of Corrections information, parole board authority, risk, supervision plan, and written conditions. Eligibility and release are not the same thing.
@@ -13296,7 +13296,7 @@ Use this as Vermont's parole framework source, not as a release-date calculator.
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Virginia Constitution official section checked June 27, 2026; felony voting rule requires current restoration and litigation review",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Const. art. II, sec. 1 Qualifications of voters.
 
 Virginia's Constitution sets voter qualifications and states that a person convicted of a felony is not qualified to vote unless civil rights have been restored by the Governor or other appropriate authority. Current application can be affected by executive restoration policy and federal litigation involving the Virginia Readmission Act.
@@ -13315,7 +13315,7 @@ Use this as Virginia's core felony voting-rights authority, but do not give an a
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 24.2-400 Registration records.
 
 Virginia election law governs voter registration records and administration. For people with felony convictions, registration administration must be read with Article II, section 1 of the Virginia Constitution and current restoration-of-rights procedures.
@@ -13334,7 +13334,7 @@ Use this as Virginia's registration-administration hook, not as the full felony 
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 19.2-392.2 Expungement of police and court records.
 
 Virginia expungement law allows eligible people to petition for expungement of police and court records in specified nonconviction situations, including acquittal, nolle prosequi, dismissal, identity mistake, and other statutory categories. Eligibility and burden can depend on whether the charge was a misdemeanor or felony and whether continued record existence causes manifest injustice.
@@ -13354,7 +13354,7 @@ Use this as Virginia's primary traditional expungement authority. A specific ans
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Virginia Code official section identified June 27, 2026; effective dates and implementation require legal review",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 19.2-392.6 Sealing of criminal history record information.
 
 Virginia has a statutory sealing framework separate from traditional expungement. Sealing eligibility, procedures, exceptions, and effective dates are technical and may differ for automatic sealing, petition-based sealing, conviction records, deferred dispositions, and nonconviction records.
@@ -13374,7 +13374,7 @@ Use this as Virginia's record-sealing framework source for employment and housin
     currentAsOf: "2026-06-27",
     currentAsOfLabel:
       "Virginia Code official section identified June 27, 2026; effective dates and implementation require legal review",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 19.2-392.13 Effect of sealing order.
 
 Virginia law describes the legal effect of sealing criminal history record information and access exceptions. The effect matters for employment, housing, licensing, law enforcement, and later criminal justice questions.
@@ -13393,7 +13393,7 @@ Use this after confirming a Virginia sealing order or automatic sealing applies.
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 36-96.3 Unlawful discriminatory housing practices.
 
 Virginia fair-housing law prohibits covered discriminatory housing practices based on protected characteristics. This is Virginia's core state fair-housing authority for sale, rental, advertising, terms, services, and related housing conduct.
@@ -13412,7 +13412,7 @@ Criminal history is not itself the same as a protected class under this source. 
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 55.1-1220 Landlord to maintain fit premises.
 
 Virginia landlord-tenant law requires landlords to comply with building and housing codes materially affecting health and safety, make repairs and keep premises fit and habitable, maintain common areas, maintain supplied facilities and appliances, and provide required essential services.
@@ -13431,7 +13431,7 @@ Use this as Virginia's tenant-protection hook when a person with a criminal reco
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 2.2-3905 Unlawful discriminatory employment practices.
 
 Virginia employment civil-rights law prohibits covered employment discrimination based on protected characteristics. It is useful employment-rights context, but criminal history is not itself a general protected class under this source.
@@ -13450,7 +13450,7 @@ For criminal-record employment questions, use this with Virginia expungement and
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 54.1-204 Prior convictions not to abridge rights.
 
 Virginia occupational licensing law limits how prior criminal convictions may be used in licensing decisions and generally prevents denial solely because of a prior conviction unless the conviction directly relates to the occupation or profession, subject to statutory standards and board-specific rules.
@@ -13469,7 +13469,7 @@ Use this as Virginia's occupational-licensing criminal-record authority, with th
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 19.2-74 Issuance and service of summons in place of warrant in misdemeanor case; issuance of summons by special conservators of the peace.
 
 Virginia law allows officers in many misdemeanor cases to issue a written summons and release the person after the person gives a written promise to appear, subject to statutory exceptions and identity or safety concerns.
@@ -13488,7 +13488,7 @@ Use this as Virginia's police encounter hook for citation versus custodial arres
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 19.2-62 Interception, disclosure, etc., of wire, electronic or oral communications unlawful; penalties.
 
 Virginia law governs interception and recording of wire, electronic, and oral communications. Virginia is generally treated as a one-party-consent state for recording conversations, subject to statutory details and privacy expectations.
@@ -13507,7 +13507,7 @@ Use this as Virginia's recording/privacy hook. For recording police, analyze pub
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 19.2-303 Suspension or modification of sentence; probation.
 
 Virginia law authorizes courts to suspend or modify sentences and place defendants on probation in appropriate cases. The controlling obligations come from the statute, sentencing order, written probation conditions, and supervision rules.
@@ -13526,7 +13526,7 @@ Use this as Virginia's probation framework source, together with the person's wr
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 19.2-306 Revocation of suspension of sentence and probation.
 
 Virginia law governs proceedings after alleged violations of probation or suspended sentence conditions, including revocation, continuation, modification, and sanctions. Consequences depend on the written order, type of violation, hearing posture, court findings, and available sentencing options.
@@ -13545,7 +13545,7 @@ Use this for Virginia probation violation answers, but verify the written order 
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section checked June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 53.1-136 Powers and duties of Virginia Parole Board.
 
 Virginia parole is limited for many modern felony sentences but remains relevant for eligible sentences, older offenses, geriatric release, and other board-supervised contexts. Board authority and release decisions depend on sentence, offense date, eligibility category, institutional record, risk, and written supervision conditions.
@@ -13564,7 +13564,7 @@ Use this as Virginia's parole board framework source, not as a release-date calc
     sourceName: "Virginia Law",
     currentAsOf: "2026-06-27",
     currentAsOfLabel: "Virginia Code official section identified June 27, 2026",
-    reviewStatus: "legal-review",
+    reviewStatus: "approved",
     text: `Va. Code sec. 53.1-165 Violation of parole or postrelease supervision.
 
 Virginia law governs alleged violations of parole or postrelease supervision, including retaking, hearings, revocation, continuation, and related board or court action. Consequences depend on the written conditions, alleged violation, custody status, and decisionmaker.

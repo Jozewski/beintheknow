@@ -6,6 +6,7 @@ export type LegalRetrievalCitation = {
   chunkId: string;
   sourceType: string;
   sourceId: string;
+  reviewStatus?: string;
   title?: string;
   citation?: string;
   sourceName?: string;
@@ -25,12 +26,15 @@ type RetrieveLegalContextOptions = {
   stateCode?: string;
   limit?: number;
   includeDraft?: boolean;
+  sourceType?: string;
+  reviewStatuses?: string[];
 };
 
 type LegalChunkForRetrieval = {
   _id: unknown;
   sourceType: string;
   sourceId: string;
+  reviewStatus?: string;
   jurisdiction: "federal" | "state";
   stateCode?: string;
   topicIds?: string[];
@@ -45,37 +49,90 @@ type LegalChunkForRetrieval = {
 };
 
 const topicKeywords: Record<TopicId, string[]> = {
-  voting: ["vote", "voting", "ballot", "election", "felony conviction"],
+  voting: [
+    "vote",
+    "voter",
+    "voting",
+    "ballot",
+    "election",
+    "polls",
+    "registration",
+    "felon",
+    "felony conviction",
+    "rights restored",
+    "civil rights",
+  ],
   expungement: [
     "expunge",
     "expungement",
     "seal",
+    "sealed",
+    "sealing",
+    "record",
+    "criminal record",
     "record clearance",
     "clean slate",
+    "background check",
+    "dismissed charge",
+    "nondisclosure",
   ],
-  housing: ["housing", "landlord", "tenant", "rent", "public housing"],
+  housing: [
+    "housing",
+    "landlord",
+    "tenant",
+    "rent",
+    "rental",
+    "lease",
+    "eviction",
+    "apartment",
+    "public housing",
+    "section 8",
+    "voucher",
+  ],
   employment: [
     "employment",
+    "work",
     "job",
+    "jobs",
     "hiring",
     "license",
+    "licensing",
+    "professional license",
     "occupational",
     "ban the box",
+    "employer",
+    "career",
   ],
   police: [
     "police",
+    "cop",
+    "officer",
     "stop",
+    "traffic stop",
+    "pulled over",
     "search",
     "arrest",
     "identify",
+    "id",
     "recording",
+    "record police",
+    "film police",
+    "questioning",
   ],
   supervision: [
     "probation",
+    "probation officer",
     "parole",
+    "parole officer",
     "supervision",
+    "supervised release",
     "revocation",
+    "revoke",
+    "revoked",
+    "violate",
+    "violation",
     "conditions",
+    "travel permit",
   ],
 };
 
@@ -83,7 +140,7 @@ function getVectorSearchIndexName() {
   return process.env.VECTOR_SEARCH_INDEX ?? "legal_text_chunk_embedding";
 }
 
-function detectTopicIds(query: string): TopicId[] {
+export function detectLegalTopicIds(query: string): TopicId[] {
   const normalized = query.toLowerCase();
 
   return Object.entries(topicKeywords)
@@ -116,11 +173,18 @@ function buildFilter({
   stateCode,
   includeDraft,
   query,
+  sourceType,
+  reviewStatuses,
 }: Pick<
   RetrieveLegalContextOptions,
-  "jurisdiction" | "stateCode" | "includeDraft" | "query"
+  | "jurisdiction"
+  | "stateCode"
+  | "includeDraft"
+  | "query"
+  | "sourceType"
+  | "reviewStatuses"
 >) {
-  const topicIds = detectTopicIds(query);
+  const topicIds = detectLegalTopicIds(query);
   const filter: Record<string, unknown> = {
     jurisdiction,
     embedding: { $exists: true, $ne: [] },
@@ -131,11 +195,17 @@ function buildFilter({
     filter.stateCode = stateCode;
   }
 
+  if (sourceType) {
+    filter.sourceType = sourceType;
+  }
+
   if (topicIds.length > 0) {
     filter.topicIds = { $in: topicIds };
   }
 
-  if (!includeDraft) {
+  if (reviewStatuses && reviewStatuses.length > 0) {
+    filter.reviewStatus = { $in: reviewStatuses };
+  } else if (!includeDraft) {
     filter.reviewStatus = "approved";
   }
 
@@ -147,6 +217,7 @@ function toRetrievedContext(chunk: LegalChunkForRetrieval): RetrievedLegalContex
     chunkId: String(chunk._id),
     sourceType: chunk.sourceType,
     sourceId: chunk.sourceId,
+    reviewStatus: chunk.reviewStatus,
     title: chunk.title,
     citation: chunk.citation,
     sourceName: chunk.sourceName,
@@ -164,11 +235,23 @@ async function retrieveWithAtlasVectorSearch({
   stateCode,
   limit,
   includeDraft,
+  sourceType,
+  reviewStatuses,
 }: Required<
   Pick<RetrieveLegalContextOptions, "embedding" | "query" | "jurisdiction" | "limit">
 > &
-  Pick<RetrieveLegalContextOptions, "stateCode" | "includeDraft">) {
-  const filter = buildFilter({ jurisdiction, stateCode, includeDraft, query });
+  Pick<
+    RetrieveLegalContextOptions,
+    "stateCode" | "includeDraft" | "sourceType" | "reviewStatuses"
+  >) {
+  const filter = buildFilter({
+    jurisdiction,
+    stateCode,
+    includeDraft,
+    query,
+    sourceType,
+    reviewStatuses,
+  });
   delete filter.embedding;
 
   const rows = await LegalTextChunkModel.aggregate<LegalChunkForRetrieval>([
@@ -186,6 +269,7 @@ async function retrieveWithAtlasVectorSearch({
       $project: {
         sourceType: 1,
         sourceId: 1,
+        reviewStatus: 1,
         jurisdiction: 1,
         stateCode: 1,
         topicIds: 1,
@@ -210,16 +294,28 @@ async function retrieveWithCosineFallback({
   stateCode,
   limit,
   includeDraft,
+  sourceType,
+  reviewStatuses,
 }: Required<
   Pick<RetrieveLegalContextOptions, "embedding" | "query" | "jurisdiction" | "limit">
 > &
-  Pick<RetrieveLegalContextOptions, "stateCode" | "includeDraft">) {
-  const filter = buildFilter({ jurisdiction, stateCode, includeDraft, query });
+  Pick<
+    RetrieveLegalContextOptions,
+    "stateCode" | "includeDraft" | "sourceType" | "reviewStatuses"
+  >) {
+  const filter = buildFilter({
+    jurisdiction,
+    stateCode,
+    includeDraft,
+    query,
+    sourceType,
+    reviewStatuses,
+  });
   const rows = await LegalTextChunkModel.find(filter)
     .sort({ embeddedAt: -1 })
     .limit(500)
     .select(
-      "sourceType sourceId jurisdiction stateCode topicIds citation title sourceUrl sourceName currentAsOfLabel chunkText embedding",
+      "sourceType sourceId reviewStatus jurisdiction stateCode topicIds citation title sourceUrl sourceName currentAsOfLabel chunkText embedding",
     )
     .lean<LegalChunkForRetrieval[]>();
 
@@ -242,6 +338,8 @@ export async function retrieveLegalContext({
   stateCode,
   limit = 6,
   includeDraft = process.env.NODE_ENV !== "production",
+  sourceType,
+  reviewStatuses,
 }: RetrieveLegalContextOptions) {
   if (embedding.length === 0) return [];
 
@@ -253,6 +351,8 @@ export async function retrieveLegalContext({
       stateCode,
       limit,
       includeDraft,
+      sourceType,
+      reviewStatuses,
     });
 
     if (vectorResults.length > 0) {
@@ -270,5 +370,7 @@ export async function retrieveLegalContext({
     stateCode,
     limit,
     includeDraft,
+    sourceType,
+    reviewStatuses,
   });
 }
