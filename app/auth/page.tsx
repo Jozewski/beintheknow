@@ -23,6 +23,10 @@ export default function AuthPage() {
   const [error, setError] = useState<string>();
   const [submitting, setSubmitting] = useState(false);
   const [signedInAs, setSignedInAs] = useState<string>();
+  const [showDelete, setShowDelete] = useState(false);
+  const [deletePassword, setDeletePassword] = useState("");
+  const [deleteError, setDeleteError] = useState<string>();
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     fetch("/api/auth/me")
@@ -38,6 +42,50 @@ export default function AuthPage() {
     await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
     setSignedInAs(undefined);
     router.refresh();
+  }
+
+  async function deleteAccount(event: React.FormEvent) {
+    event.preventDefault();
+    if (deleting) return;
+    if (
+      !window.confirm(
+        "This permanently deletes your account and every conversation saved to it. This cannot be undone. Delete your account?",
+      )
+    ) {
+      return;
+    }
+
+    setDeleteError(undefined);
+    setDeleting(true);
+    try {
+      const response = await fetch("/api/auth/account", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: deletePassword }),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setDeleteError(data.error ?? "Could not delete your account. Please try again.");
+        return;
+      }
+
+      // Also drop this device's guest continuity keys.
+      try {
+        window.localStorage.removeItem("jo:guestToken");
+        window.localStorage.removeItem("jo:sessionId");
+      } catch {}
+
+      setSignedInAs(undefined);
+      setShowDelete(false);
+      setDeletePassword("");
+      router.push("/");
+      router.refresh();
+    } catch {
+      setDeleteError("Could not delete your account. Please check your connection.");
+    } finally {
+      setDeleting(false);
+    }
   }
 
   async function submit(event: React.FormEvent) {
@@ -98,6 +146,59 @@ export default function AuthPage() {
             >
               Sign out
             </button>
+          </div>
+
+          <div className="mt-6 border-t border-gray-200 pt-4 text-left">
+            {!showDelete ? (
+              <button
+                type="button"
+                onClick={() => setShowDelete(true)}
+                className="text-[12px] font-semibold text-red-600 underline-offset-2 hover:underline"
+              >
+                Delete my account and conversations
+              </button>
+            ) : (
+              <form onSubmit={deleteAccount} className="space-y-2">
+                <p className="text-[12px] leading-4 text-gray-600">
+                  This permanently deletes your account and every conversation
+                  saved to it. Enter your password to confirm.
+                </p>
+                <input
+                  type="password"
+                  required
+                  autoComplete="current-password"
+                  placeholder="Your password"
+                  value={deletePassword}
+                  onChange={(event) => setDeletePassword(event.target.value)}
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-[13px] text-gray-900 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-200"
+                />
+                {deleteError ? (
+                  <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] leading-4 text-red-700">
+                    {deleteError}
+                  </p>
+                ) : null}
+                <div className="flex gap-2">
+                  <button
+                    type="submit"
+                    disabled={deleting || !deletePassword}
+                    className="rounded-lg bg-red-600 px-3 py-2 text-[12px] font-semibold text-white transition hover:bg-red-700 disabled:opacity-50"
+                  >
+                    {deleting ? "Deleting..." : "Permanently delete"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowDelete(false);
+                      setDeletePassword("");
+                      setDeleteError(undefined);
+                    }}
+                    className="rounded-lg border border-gray-300 px-3 py-2 text-[12px] font-semibold text-gray-600 hover:bg-gray-50"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>
@@ -172,6 +273,20 @@ export default function AuthPage() {
           {error ? (
             <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] leading-4 text-red-700">
               {error}
+            </p>
+          ) : null}
+
+          {mode === "register" ? (
+            <p className="text-[11px] leading-4 text-gray-500">
+              By creating an account, you agree to our{" "}
+              <Link href="/terms" className="font-semibold text-[#085041] underline-offset-2 hover:underline">
+                Terms of Use
+              </Link>{" "}
+              and{" "}
+              <Link href="/privacy" className="font-semibold text-[#085041] underline-offset-2 hover:underline">
+                Privacy Policy
+              </Link>
+              .
             </p>
           ) : null}
 
