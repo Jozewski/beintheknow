@@ -123,6 +123,8 @@ async function askChat(question, stateCode) {
       message: question,
       jurisdiction: "state",
       stateCode,
+      // Scripts use the single-JSON response instead of streaming.
+      stream: false,
     }),
   });
 

@@ -77,12 +77,26 @@ export function ChatPanel({
   );
   const [remaining, setRemaining] = useState<number>();
   const [quotaLimit, setQuotaLimit] = useState<number>();
+  const [accountEmail, setAccountEmail] = useState<string>();
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string>();
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const lastSeededTopic = useRef<string | undefined>(initialTopic);
   const historyLoaded = useRef(false);
+
+  // Check for a signed-in account once per page load.
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then(async (response) => {
+        if (!response.ok) return;
+        const data = (await response.json()) as { user?: { email: string } | null };
+        if (data.user?.email) setAccountEmail(data.user.email);
+      })
+      .catch(() => {
+        // Account state is a nicety; chat works without it.
+      });
+  }, []);
 
   // Restore the previous conversation once per page load.
   useEffect(() => {
@@ -176,33 +190,130 @@ export function ChatPanel({
         }),
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type") ?? "";
 
-      if (!response.ok) {
+      // Error and non-stream responses arrive as a single JSON body.
+      if (!response.ok || !contentType.includes("application/x-ndjson")) {
+        const data = await response.json();
+
+        if (!response.ok) {
+          if (data.quota) {
+            setQuotaLimit(data.quota.limit);
+            setRemaining(data.quota.remaining);
+          }
+          throw new Error(data.error ?? "JO could not answer right now.");
+        }
+
+        setSessionId(data.sessionId);
+        setGuestToken(data.guestToken);
+        if (data.sessionId) writeStoredValue(SESSION_ID_KEY, data.sessionId);
+        if (data.guestToken) writeStoredValue(GUEST_TOKEN_KEY, data.guestToken);
         if (data.quota) {
           setQuotaLimit(data.quota.limit);
           setRemaining(data.quota.remaining);
         }
-        throw new Error(data.error ?? "JO could not answer right now.");
+        setMessages((current) => [
+          ...current,
+          {
+            id: crypto.randomUUID(),
+            role: "assistant",
+            content: data.message.content,
+            citations: data.message.citations,
+          },
+        ]);
+        return;
       }
 
-      setSessionId(data.sessionId);
-      setGuestToken(data.guestToken);
-      if (data.sessionId) writeStoredValue(SESSION_ID_KEY, data.sessionId);
-      if (data.guestToken) writeStoredValue(GUEST_TOKEN_KEY, data.guestToken);
-      if (data.quota) {
-        setQuotaLimit(data.quota.limit);
-        setRemaining(data.quota.remaining);
+      // Streaming response: newline-delimited JSON events.
+      const assistantId = crypto.randomUUID();
+      let assistantCreated = false;
+
+      const applyAssistantUpdate = (
+        updater: (message: PanelMessage) => PanelMessage,
+      ) => {
+        setMessages((current) => {
+          if (!assistantCreated) return current;
+          return current.map((item) =>
+            item.id === assistantId ? updater(item) : item,
+          );
+        });
+      };
+
+      const handleEvent = (event: {
+        type: string;
+        value?: string;
+        content?: string;
+        sessionId?: string;
+        guestToken?: string;
+        quota?: { limit: number; remaining: number };
+        citations?: ChatCitation[];
+      }) => {
+        if (event.type === "meta") {
+          if (event.sessionId) {
+            setSessionId(event.sessionId);
+            writeStoredValue(SESSION_ID_KEY, event.sessionId);
+          }
+          if (event.guestToken) {
+            setGuestToken(event.guestToken);
+            writeStoredValue(GUEST_TOKEN_KEY, event.guestToken);
+          }
+          if (event.quota) {
+            setQuotaLimit(event.quota.limit);
+            setRemaining(event.quota.remaining);
+          }
+          setMessages((current) => [
+            ...current,
+            {
+              id: assistantId,
+              role: "assistant",
+              content: "",
+              citations: event.citations,
+            },
+          ]);
+          assistantCreated = true;
+          return;
+        }
+
+        if (event.type === "text" && typeof event.value === "string") {
+          applyAssistantUpdate((item) => ({
+            ...item,
+            content: item.content + event.value,
+          }));
+          return;
+        }
+
+        if (event.type === "final" && typeof event.content === "string") {
+          const content = event.content;
+          applyAssistantUpdate((item) => ({ ...item, content }));
+        }
+      };
+
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error("JO could not answer right now.");
+
+      const decoder = new TextDecoder();
+      let buffered = "";
+
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffered += decoder.decode(value, { stream: true });
+
+        let newlineIndex = buffered.indexOf("\n");
+        while (newlineIndex !== -1) {
+          const line = buffered.slice(0, newlineIndex).trim();
+          buffered = buffered.slice(newlineIndex + 1);
+          if (line) {
+            try {
+              handleEvent(JSON.parse(line));
+            } catch {
+              // Skip malformed event lines.
+            }
+          }
+          newlineIndex = buffered.indexOf("\n");
+        }
       }
-      setMessages((current) => [
-        ...current,
-        {
-          id: crypto.randomUUID(),
-          role: "assistant",
-          content: data.message.content,
-          citations: data.message.citations,
-        },
-      ]);
     } catch (sendError) {
       setError(
         sendError instanceof Error
@@ -241,13 +352,30 @@ export function ChatPanel({
       </div>
 
       <div className="border-b border-gray-200 bg-[#E1F5EE] px-4 py-3">
-        <p className="text-xs font-semibold text-[#085041]">Guest mode</p>
+        <p className="text-xs font-semibold text-[#085041]">
+          {accountEmail ? `Signed in as ${accountEmail}` : "Guest mode"}
+        </p>
         <p className="mt-1 text-[11px] leading-4 text-gray-600">
-          {typeof remaining === "number" && typeof quotaLimit === "number"
-            ? remaining > 0
-              ? `${remaining} of ${quotaLimit} free questions left today. Your conversation is saved on this device.`
-              : `You have used all ${quotaLimit} free questions for today. Come back tomorrow to ask more.`
-            : "Ask JO free educational questions. Your conversation is saved on this device."}
+          {typeof remaining === "number" && typeof quotaLimit === "number" ? (
+            remaining > 0 ? (
+              `${remaining} of ${quotaLimit} questions left today. ${accountEmail ? "Your conversations are saved to your account." : "Your conversation is saved on this device."}`
+            ) : (
+              `You have used all ${quotaLimit} questions for today. Come back tomorrow to ask more.`
+            )
+          ) : accountEmail ? (
+            "Ask JO free educational questions. Your conversations are saved to your account."
+          ) : (
+            <>
+              Ask JO free educational questions.{" "}
+              <a
+                href="/auth"
+                className="font-semibold text-[#085041] underline-offset-2 hover:underline"
+              >
+                Create a free account
+              </a>{" "}
+              to save your history and get a higher daily limit.
+            </>
+          )}
         </p>
       </div>
 
@@ -257,15 +385,21 @@ export function ChatPanel({
         role="log"
         aria-live="polite"
       >
-        {messages.map((message) => (
-          <ChatMessage
-            key={message.id}
-            role={message.role}
-            content={message.content}
-            citations={message.citations}
-          />
-        ))}
-        {isSending ? (
+        {messages
+          // Hide the assistant bubble until its first words arrive so the
+          // citations block never renders ahead of the answer text.
+          .filter((message) => message.role === "user" || message.content)
+          .map((message) => (
+            <ChatMessage
+              key={message.id}
+              role={message.role}
+              content={message.content}
+              citations={message.citations}
+            />
+          ))}
+        {isSending &&
+        (messages[messages.length - 1]?.role === "user" ||
+          !messages[messages.length - 1]?.content) ? (
           <ChatMessage role="assistant" content="JO is checking the source database..." />
         ) : null}
         {error ? (

@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+import { getAuthenticatedUser } from "@/lib/auth";
 import { connectDB } from "@/lib/mongodb";
 import { ChatMessageModel } from "@/models/ChatMessage";
 import { ChatSessionModel } from "@/models/ChatSession";
@@ -9,22 +10,23 @@ export const dynamic = "force-dynamic";
 /**
  * Returns the message history for a chat session.
  *
- * Ownership is proven by the guest token: the caller must present the same
- * guestToken stored on the session. Without it (or with a wrong one) the
+ * Ownership is proven either by the signed-in account (auth cookie) or by
+ * presenting the same guestToken stored on the session. Otherwise the
  * response is 404 - we do not reveal whether the session exists.
  */
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const sessionId = url.searchParams.get("sessionId");
   const guestToken = url.searchParams.get("guestToken");
+  const authUser = getAuthenticatedUser(request);
 
   if (
     !sessionId ||
-    !guestToken ||
-    !mongoose.Types.ObjectId.isValid(sessionId)
+    !mongoose.Types.ObjectId.isValid(sessionId) ||
+    (!guestToken && !authUser)
   ) {
     return Response.json(
-      { error: "sessionId and guestToken are required." },
+      { error: "sessionId plus guestToken or a signed-in account are required." },
       { status: 400 },
     );
   }
@@ -40,10 +42,15 @@ export async function GET(request: Request) {
   }
 
   const session = await ChatSessionModel.findById(sessionId)
-    .select("guestToken jurisdiction stateCode")
+    .select("guestToken userId jurisdiction stateCode")
     .lean();
 
-  if (!session || !session.guestToken || session.guestToken !== guestToken) {
+  const ownsByAccount =
+    authUser && session?.userId && String(session.userId) === authUser.userId;
+  const ownsByGuestToken =
+    guestToken && session?.guestToken && session.guestToken === guestToken;
+
+  if (!session || (!ownsByAccount && !ownsByGuestToken)) {
     return Response.json({ error: "Session not found." }, { status: 404 });
   }
 

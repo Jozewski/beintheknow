@@ -12,7 +12,9 @@
     "embeddings:stats": "node scripts/embedding-stats.mjs",
     "embeddings:local": "python scripts/local-embedding-server.py",
     "chunks:approve": "node scripts/approve-chunks.mjs",
-    "chat:smoke": "node scripts/chat-topic-smoke-test.mjs"
+    "chat:smoke": "node scripts/chat-topic-smoke-test.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.0",
@@ -45,6 +47,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }
