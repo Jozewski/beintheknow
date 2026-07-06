@@ -1,8 +1,30 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { JoLogo } from "@/components/layout/JoLogo";
 
 export function SiteHeader() {
+  const [accountEmail, setAccountEmail] = useState<string>();
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then(async (response) => {
+        if (response.ok) {
+          const data = (await response.json()) as {
+            user?: { email: string } | null;
+          };
+          if (data.user?.email) setAccountEmail(data.user.email);
+        }
+      })
+      .catch(() => {
+        // Treat as signed out.
+      })
+      .finally(() => setChecked(true));
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 h-[52px] border-b border-gray-200/80 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
@@ -31,18 +53,30 @@ export function SiteHeader() {
           >
             Find Legal Aid
           </a>
-          <Link
-            href="/auth"
-            className="hidden rounded-full border border-[#1D9E75] bg-transparent px-3.5 py-1.5 font-semibold text-[#1D9E75] transition hover:bg-[#E1F5EE] sm:inline"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/auth"
-            className="hidden rounded-full bg-[#1D9E75] px-4 py-1.5 font-semibold text-white transition duration-150 hover:scale-[1.02] hover:bg-[#0F6E56] sm:inline"
-          >
-            Sign up
-          </Link>
+          {!checked ? null : accountEmail ? (
+            <Link
+              href="/auth"
+              title={`Signed in as ${accountEmail}`}
+              className="hidden rounded-full border border-[#1D9E75] bg-transparent px-3.5 py-1.5 font-semibold text-[#1D9E75] transition hover:bg-[#E1F5EE] sm:inline"
+            >
+              My account
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/auth"
+                className="hidden rounded-full border border-[#1D9E75] bg-transparent px-3.5 py-1.5 font-semibold text-[#1D9E75] transition hover:bg-[#E1F5EE] sm:inline"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/auth"
+                className="hidden rounded-full bg-[#1D9E75] px-4 py-1.5 font-semibold text-white transition duration-150 hover:scale-[1.02] hover:bg-[#0F6E56] sm:inline"
+              >
+                Sign up
+              </Link>
+            </>
+          )}
         </nav>
       </div>
     </header>

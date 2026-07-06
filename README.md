@@ -161,7 +161,9 @@ VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768
 
 `CRON_SECRET` is required in production: cron routes reject any request without `Authorization: Bearer ${CRON_SECRET}`. Vercel sends this header automatically when the env var is set. See `docs/Embedding-Migration-Gemini.md` for the Gemini embedding setup.
 
-`GUEST_DAILY_LIMIT` (default 5) caps guest questions per day, enforced server-side per guest token and IP hash. `RETRIEVAL_MIN_SCORE` (default 0.62) sets the minimum similarity score for citing sources when a question matches no known topic keywords. `GET /api/health` reports database, corpus, and configuration readiness for deploy checks.
+`GUEST_DAILY_LIMIT` (default 5) caps guest questions per day, enforced server-side per guest token and IP hash. `REGISTERED_DAILY_LIMIT` (default 25) is the higher cap for signed-in accounts. `RETRIEVAL_MIN_SCORE` (default 0.62) sets the minimum similarity score for citing sources when a question matches no known topic keywords. `GET /api/health` reports database, corpus, and configuration readiness for deploy checks.
+
+Accounts: `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/logout`, `GET /api/auth/me` (JWT in an httpOnly cookie, signed with `JWT_SECRET`). Signing up or in adopts the device's guest sessions into the account. `GET /api/chat/sessions` lists the signed-in user's conversations; `GET /api/chat/history` accepts either the auth cookie or a guest token.
 
 `MONGODB_DIRECT_URI` is optional but useful locally when `mongodb+srv` DNS resolution is unreliable. `lib/mongodb.ts` prefers `MONGODB_DIRECT_URI` when present and falls back to `MONGODB_URI`.
 
@@ -289,14 +291,16 @@ Vercel cron configuration:
 {
   "crons": [
     {
-      "path": "/api/cron/legiscan-sync",
-      "schedule": "0 9 * * 1"
+      "path": "/api/cron/pipeline",
+      "schedule": "0 9 * * *"
     }
   ]
 }
 ```
 
-This runs the LegiScan monitoring sync every Monday at 9:00 UTC.
+`/api/cron/pipeline` runs daily at 9:00 UTC with two jobs. On Mondays it performs weekly change detection: LegiScan sync, bill text fetch, PDF extraction, statute-citation extraction, and a report of which of our authority records may be affected by legislative activity (the candidate queue). Every day it performs cheap corpus maintenance: re-chunking any authority records edited after review (hash-skipped when unchanged) and embedding anything newly chunked and approved. Add `?weekly=true` to force the Monday stages when running manually.
+
+The human stays in the loop by design: LegiScan is monitoring only. When the candidate queue flags one of our laws, a person reviews it, updates the `LegalAuthority` record, and approves (`npm run chunks:approve`); the daily stages then re-chunk and re-embed automatically. Automation never rewrites the source of truth, and unreviewed text can never enter JO's answers. `legiscan-cleanup` (destructive) also stays manual.
 
 ## Embeddings and Vector Search
 

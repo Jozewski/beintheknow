@@ -1,9 +1,15 @@
 import { createHash, randomUUID } from "node:crypto";
 
 import * as Sentry from "@sentry/nextjs";
-import { generateText } from "ai";
+import { generateText, smoothStream, streamText } from "ai";
 import mongoose from "mongoose";
 import { z } from "zod";
+
+import {
+  ensureCompleteAnswer,
+  isBrokenGeneratedAnswer,
+} from "@/lib/answerRepair";
+import { getAuthenticatedUser, type AuthenticatedUser } from "@/lib/auth";
 
 import {
   GEMINI_CHAT_MODEL,
@@ -30,6 +36,8 @@ const chatRequestSchema = z.object({
   guestToken: z.string().optional(),
   jurisdiction: z.enum(["federal", "state"]).default("federal"),
   stateCode: z.string().trim().toUpperCase().optional(),
+  // stream=false forces the classic single-JSON response (used by scripts).
+  stream: z.boolean().default(true),
 });
 
 type ChatResponseBody = {
@@ -52,6 +60,11 @@ function getGuestDailyLimit() {
   return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 5;
 }
 
+function getRegisteredDailyLimit() {
+  const parsed = Number(process.env.REGISTERED_DAILY_LIMIT ?? "25");
+  return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 25;
+}
+
 function getClientIpHash(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
   const ip = forwarded?.split(",")[0]?.trim();
@@ -70,13 +83,21 @@ function getClientIpHash(request: Request) {
 async function countQuestionsToday({
   guestToken,
   ipHash,
+  userId,
 }: {
   guestToken?: string;
   ipHash?: string;
+  userId?: string;
 }) {
   const sessionFilters: Record<string, unknown>[] = [];
-  if (guestToken) sessionFilters.push({ guestToken });
-  if (ipHash) sessionFilters.push({ ipHash });
+  // Registered users are counted by account only - their limit follows
+  // them across devices and is not shared with other people on their IP.
+  if (userId) {
+    sessionFilters.push({ userId });
+  } else {
+    if (guestToken) sessionFilters.push({ guestToken });
+    if (ipHash) sessionFilters.push({ ipHash });
+  }
   if (sessionFilters.length === 0) return 0;
 
   const sessions = await ChatSessionModel.find({ $or: sessionFilters })
@@ -101,67 +122,44 @@ function getConfidence(citationCount: number): "high" | "medium" | "low" {
   return "low";
 }
 
-function ensureCompleteAnswer(value: string) {
-  const trimmed = value.trim().replace(/\[(\d+(?:,\s*\d+)*)$/, "[$1]");
-  if (!trimmed) return trimmed;
-  // An answer ending in a citation bracket like "[1]" or "[1, 2]" is
-  // complete - do not bolt a canned closing sentence onto it.
-  if (/[.!?)\]"']$/.test(trimmed)) return trimmed;
-
-  const lastCompleteSentenceEnd = Math.max(
-    trimmed.lastIndexOf("."),
-    trimmed.lastIndexOf("!"),
-    trimmed.lastIndexOf("?"),
-  );
-  const trailingFragment =
-    lastCompleteSentenceEnd >= 0
-      ? trimmed.slice(lastCompleteSentenceEnd + 1).trim()
-      : "";
-
-  if (
-    lastCompleteSentenceEnd >= 0 &&
-    trailingFragment.split(/\s+/).filter(Boolean).length <= 8
-  ) {
-    return `${trimmed.slice(0, lastCompleteSentenceEnd + 1)} Check the cited source or ask legal aid before you rely on this.`;
-  }
-
-  return `${trimmed}. Check the cited source or ask legal aid before you rely on this.`;
-}
-
-function isBrokenGeneratedAnswer(value: string) {
-  const normalized = value.trim().replace(/\s+/g, " ");
-
-  return (
-    /\b(if|when|because|unless|that|and|or|but|to)\.\s*$/i.test(normalized) ||
-    /\b(if|when|because|unless|that|and|or|but|to)\.\s*Check the cited source/i.test(
-      normalized,
-    )
-  );
-}
-
 async function findOrCreateSession({
   sessionId,
   guestToken,
   jurisdiction,
   stateCode,
   ipHash,
-}: z.infer<typeof chatRequestSchema> & { ipHash?: string }) {
+  authUser,
+}: z.infer<typeof chatRequestSchema> & {
+  ipHash?: string;
+  authUser?: AuthenticatedUser | null;
+}) {
   if (sessionId && mongoose.Types.ObjectId.isValid(sessionId)) {
     const existingSession = await ChatSessionModel.findById(sessionId);
 
-    // Only reuse a session when the caller proves ownership with the same
-    // guest token. Otherwise a guessed/leaked sessionId would let a caller
+    // Only reuse a session when the caller proves ownership: either the
+    // signed-in account owns it, or the caller presents the same guest
+    // token. Otherwise a guessed/leaked sessionId would let a caller
     // append to (and read back into) someone else's conversation.
-    if (
-      existingSession &&
-      existingSession.guestToken &&
-      existingSession.guestToken === guestToken
-    ) {
+    const ownsByAccount =
+      authUser &&
+      existingSession?.userId &&
+      String(existingSession.userId) === authUser.userId;
+    const ownsByGuestToken =
+      existingSession?.guestToken &&
+      existingSession.guestToken === guestToken;
+
+    if (existingSession && (ownsByAccount || ownsByGuestToken)) {
+      // Attach a signed-in user to their previously-guest session.
+      if (authUser && !existingSession.userId) {
+        existingSession.userId = new mongoose.Types.ObjectId(authUser.userId);
+        await existingSession.save();
+      }
       return existingSession;
     }
   }
 
   return ChatSessionModel.create({
+    userId: authUser ? new mongoose.Types.ObjectId(authUser.userId) : undefined,
     guestToken: guestToken ?? randomUUID(),
     ipHash,
     jurisdiction,
@@ -190,7 +188,8 @@ export async function POST(request: Request) {
   }
 
   const startedAt = Date.now();
-  const { message, jurisdiction, stateCode } = parsed.data;
+  const { message, jurisdiction, stateCode, guestToken: requestGuestToken } =
+    parsed.data;
 
   if (jurisdiction === "state" && !stateCode) {
     return Response.json(
@@ -210,7 +209,8 @@ export async function POST(request: Request) {
     );
   }
 
-  // Guest daily quota - enforced BEFORE any storage or model spend.
+  // Daily quota - enforced BEFORE any storage or model spend. Signed-in
+  // users get a higher per-account limit; guests are limited per token/IP.
   // Internal test traffic (e.g., the chat smoke test) can bypass the quota
   // by presenting the CRON_SECRET - never possible for outside callers.
   const cronSecret = process.env.CRON_SECRET;
@@ -218,26 +218,30 @@ export async function POST(request: Request) {
     cronSecret &&
       request.headers.get("authorization") === `Bearer ${cronSecret}`,
   );
-  const limit = getGuestDailyLimit();
+  const authUser = getAuthenticatedUser(request);
+  const limit = authUser ? getRegisteredDailyLimit() : getGuestDailyLimit();
   const ipHash = getClientIpHash(request);
   const questionsToday = isInternalTest
     ? 0
     : await countQuestionsToday({
         guestToken: parsed.data.guestToken,
         ipHash,
+        userId: authUser?.userId,
       });
 
   if (questionsToday >= limit) {
     return Response.json(
       {
-        error: `You have used all ${limit} free questions for today. Please come back tomorrow, or contact legal aid if your question is urgent.`,
+        error: authUser
+          ? `You have used all ${limit} questions for today. Please come back tomorrow, or contact legal aid if your question is urgent.`
+          : `You have used all ${limit} free questions for today. Please come back tomorrow, create a free account for a higher daily limit, or contact legal aid if your question is urgent.`,
         quota: { limit, remaining: 0 },
       },
       { status: 429 },
     );
   }
 
-  const session = await findOrCreateSession({ ...parsed.data, ipHash });
+  const session = await findOrCreateSession({ ...parsed.data, ipHash, authUser });
 
   await ChatMessageModel.create({
     sessionId: session._id,
@@ -281,75 +285,173 @@ export async function POST(request: Request) {
   );
   let confidence = getConfidence(citations.length);
 
-  let content: string;
-
-  if (retrievedContext.length === 0) {
-    content = buildNoAuthorityResponse();
-  } else {
-    const googleProvider = getGoogleProvider();
-    const { instructions, prompt } = buildJoPrompt({
-      question: message,
-      jurisdiction,
-      stateCode,
-      retrievedContext,
-    });
-
-    try {
-      const result = await generateText({
-        model: googleProvider(GEMINI_CHAT_MODEL),
-        instructions,
-        prompt,
-        temperature: 0.4,
-        maxOutputTokens: 1500,
-      });
-
-      content = ensureCompleteAnswer(result.text);
-
-      if (isBrokenGeneratedAnswer(content)) {
-        content = buildSourceBasedFallbackResponse({
-          question: message,
-          jurisdiction,
-          stateCode,
-          retrievedContext,
-        });
-      }
-    } catch (error) {
-      Sentry.captureException(error, { tags: { component: "chat", stage: "generation" } });
-      console.error("JO chat generation failed", error);
-      if (retrievedContext.length > 0) {
-        confidence = getConfidence(citations.length);
-        content = buildSourceBasedFallbackResponse({
-          question: message,
-          jurisdiction,
-          stateCode,
-          retrievedContext,
-        });
-      } else {
-        confidence = "low";
-        content = buildGenerationFailureResponse();
-      }
-    }
-  }
-
-  await ChatMessageModel.create({
-    sessionId: session._id,
-    role: "assistant",
-    content,
-    citations,
-    confidence,
-    flagged: false,
-    responseTimeMs: Date.now() - startedAt,
-  });
-
-  return Response.json({
-    sessionId: session._id.toString(),
-    guestToken: session.guestToken ?? parsed.data.guestToken ?? "",
-    quota: { limit, remaining },
-    message: {
+  async function persistAssistantMessage(content: string) {
+    await ChatMessageModel.create({
+      sessionId: session._id,
       role: "assistant",
       content,
       citations,
       confidence,
+      flagged: false,
+      responseTimeMs: Date.now() - startedAt,
+    });
+  }
+
+  function buildJsonResponse(content: string) {
+    return Response.json({
+      sessionId: session._id.toString(),
+      guestToken: session.guestToken ?? requestGuestToken ?? "",
+      quota: { limit, remaining },
+      message: {
+        role: "assistant",
+        content,
+        citations,
+        confidence,
+      },
+    } satisfies ChatResponseBody);
+  }
+
+  // Repairs and guardrails applied to the fully generated text.
+  function finalizeGeneratedContent(rawText: string) {
+    const repaired = ensureCompleteAnswer(rawText);
+    if (isBrokenGeneratedAnswer(repaired)) {
+      return buildSourceBasedFallbackResponse({
+        question: message,
+        jurisdiction,
+        stateCode,
+        retrievedContext,
+      });
+    }
+    return repaired;
+  }
+
+  function buildErrorFallbackContent() {
+    if (retrievedContext.length > 0) {
+      return buildSourceBasedFallbackResponse({
+        question: message,
+        jurisdiction,
+        stateCode,
+        retrievedContext,
+      });
+    }
+    confidence = "low";
+    return buildGenerationFailureResponse();
+  }
+
+  // No approved sources: fixed response, no model call, no streaming needed.
+  if (retrievedContext.length === 0) {
+    const content = buildNoAuthorityResponse();
+    await persistAssistantMessage(content);
+    return buildJsonResponse(content);
+  }
+
+  const googleProvider = getGoogleProvider();
+  const model = googleProvider(GEMINI_CHAT_MODEL);
+  const { instructions, prompt } = buildJoPrompt({
+    question: message,
+    jurisdiction,
+    stateCode,
+    retrievedContext,
+  });
+
+  // Classic single-JSON path (scripts, tests, clients that opt out).
+  if (!parsed.data.stream) {
+    let content: string;
+    try {
+      const result = await generateText({
+        model,
+        instructions,
+        prompt,
+        temperature: 0.4,
+        maxOutputTokens: 1500,
+        // Skip Gemini's internal "thinking" phase: the legal context is
+        // already retrieved, and thinking adds seconds of dead air.
+        providerOptions: {
+          google: { thinkingConfig: { thinkingBudget: 0 } },
+        },
+      });
+      content = finalizeGeneratedContent(result.text);
+    } catch (error) {
+      Sentry.captureException(error, { tags: { component: "chat", stage: "generation" } });
+      console.error("JO chat generation failed", error);
+      content = buildErrorFallbackContent();
+    }
+
+    await persistAssistantMessage(content);
+    return buildJsonResponse(content);
+  }
+
+  // Streaming path: newline-delimited JSON events.
+  //   {type:"meta", ...}   -> session/quota/citations, sent first
+  //   {type:"text", value} -> incremental answer text
+  //   {type:"final", content} -> full replacement text if repairs changed it
+  //   {type:"done"}        -> stream complete
+  const encoder = new TextEncoder();
+  const responseMeta = {
+    type: "meta" as const,
+    sessionId: session._id.toString(),
+    guestToken: session.guestToken ?? requestGuestToken ?? "",
+    quota: { limit, remaining },
+    citations,
+    confidence,
+  };
+
+  const stream = new ReadableStream({
+    async start(controller) {
+      const send = (event: Record<string, unknown>) =>
+        controller.enqueue(encoder.encode(`${JSON.stringify(event)}\n`));
+
+      send(responseMeta);
+
+      let rawText = "";
+      try {
+        const result = streamText({
+          model,
+          instructions,
+          prompt,
+          temperature: 0.4,
+          maxOutputTokens: 1500,
+          // Skip Gemini's internal "thinking" phase so the first words
+          // arrive quickly instead of after seconds of silence.
+          providerOptions: {
+            google: { thinkingConfig: { thinkingBudget: 0 } },
+          },
+          // Deliver the stream in small word-level chunks so the answer
+          // types out naturally instead of arriving in large blocks.
+          experimental_transform: smoothStream({ delayInMs: 15 }),
+        });
+
+        for await (const chunk of result.textStream) {
+          rawText += chunk;
+          send({ type: "text", value: chunk });
+        }
+
+        const content = finalizeGeneratedContent(rawText);
+        if (content !== rawText) {
+          send({ type: "final", content });
+        }
+        await persistAssistantMessage(content);
+      } catch (error) {
+        Sentry.captureException(error, { tags: { component: "chat", stage: "generation" } });
+        console.error("JO chat generation failed", error);
+        const content = buildErrorFallbackContent();
+        send({ type: "final", content });
+        try {
+          await persistAssistantMessage(content);
+        } catch (persistError) {
+          console.error("JO chat: failed to persist fallback message", persistError);
+        }
+      }
+
+      send({ type: "done" });
+      controller.close();
     },
-  } satisfies ChatResponseBody);
+  });
+
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "application/x-ndjson; charset=utf-8",
+      "Cache-Control": "no-cache, no-transform",
+    },
+  });
 }
