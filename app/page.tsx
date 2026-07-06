@@ -180,7 +180,8 @@ export default function Home() {
   }
 
   function askHeroQuestion() {
-    openJo(heroQuestion.trim() || "Ask JO anything about your rights...");
+    // Open the panel either way; only seed a question if the user typed one.
+    openJo(heroQuestion.trim() || undefined);
   }
 
   function selectTopicChip(topicId: TopicId) {
@@ -322,7 +323,6 @@ export default function Home() {
         </main>
 
         <ChatPanel
-          key={initialTopic ?? "empty-chat"}
           isOpen={chatOpen}
           onClose={() => setChatOpen(false)}
           jurisdiction={jurisdiction}

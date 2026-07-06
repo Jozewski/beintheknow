@@ -147,12 +147,21 @@ CRON_SECRET=
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 GUEST_DAILY_LIMIT=5
 
-EMBEDDING_PROVIDER=local
-LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
-LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+EMBEDDING_PROVIDER=gemini
 GEMINI_EMBEDDING_MODEL=gemini-embedding-001
-VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_bge_small
+GEMINI_EMBEDDING_DIMENSIONS=768
+VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768
+
+# Optional local (dev-only) embedding path:
+# EMBEDDING_PROVIDER=local
+# LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
+# LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+# VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_bge_small
 ```
+
+`CRON_SECRET` is required in production: cron routes reject any request without `Authorization: Bearer ${CRON_SECRET}`. Vercel sends this header automatically when the env var is set. See `docs/Embedding-Migration-Gemini.md` for the Gemini embedding setup.
+
+`GUEST_DAILY_LIMIT` (default 5) caps guest questions per day, enforced server-side per guest token and IP hash. `RETRIEVAL_MIN_SCORE` (default 0.62) sets the minimum similarity score for citing sources when a question matches no known topic keywords. `GET /api/health` reports database, corpus, and configuration readiness for deploy checks.
 
 `MONGODB_DIRECT_URI` is optional but useful locally when `mongodb+srv` DNS resolution is unreliable. `lib/mongodb.ts` prefers `MONGODB_DIRECT_URI` when present and falls back to `MONGODB_URI`.
 
@@ -295,12 +304,14 @@ The app supports both Gemini embeddings and a local embedding pipeline. The acti
 
 Do not mix embedding providers for the same search path. Stored chunks include `embeddingModel`, and retrieval only searches chunks that match the active embedding model.
 
-For `BAAI/bge-small-en-v1.5`, create an Atlas Vector Search index with:
+For Gemini embeddings (the production default), create an Atlas Vector Search index with:
 
-- index name: `legal_text_chunk_embedding_bge_small`
+- index name: `legal_text_chunk_embedding_gemini_768`
 - vector path: `embedding`
-- dimensions: `384`
+- dimensions: `768`
 - similarity: `cosine`
+
+For the optional local `BAAI/bge-small-en-v1.5` path, the equivalent index is `legal_text_chunk_embedding_bge_small` with `384` dimensions.
 
 Recommended filter fields:
 
@@ -329,3 +340,4 @@ LegiScan is used to monitor legislative changes and identify candidate authority
 ## Legal Disclaimer
 
 Be In The Know and Just Ask JO provide general educational information. They are not a law firm, do not provide legal advice, and do not create an attorney-client relationship. Users who need help with their own situation should contact a qualified legal aid organization or attorney licensed in their jurisdiction.
+sdiction.

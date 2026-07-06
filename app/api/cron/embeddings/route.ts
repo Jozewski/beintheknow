@@ -1,3 +1,6 @@
+import * as Sentry from "@sentry/nextjs";
+
+import { isAuthorizedCronRequest } from "@/lib/cronAuth";
 import { connectDB } from "@/lib/mongodb";
 import { getActiveEmbeddingModel } from "@/lib/embeddings";
 import { embedLegalTextChunks } from "@/lib/embeddings";
@@ -43,23 +46,6 @@ function getApiErrorRetryDelay(error: unknown) {
   } catch {
     return undefined;
   }
-}
-
-function isAuthorizedCronRequest(request: Request) {
-  const userAgent = request.headers.get("user-agent") ?? "";
-  const schedule = request.headers.get("x-vercel-cron-schedule");
-  const cronSecret = process.env.CRON_SECRET;
-  const authorization = request.headers.get("authorization");
-
-  if (cronSecret && authorization === `Bearer ${cronSecret}`) {
-    return true;
-  }
-
-  if (userAgent.includes("vercel-cron/1.0") && schedule) {
-    return true;
-  }
-
-  return process.env.NODE_ENV !== "production";
 }
 
 function toReviewStatus(value: string | null) {
@@ -379,6 +365,18 @@ export async function GET(request: Request) {
       );
     }
 
-    throw error;
+    // Surface the real failure as JSON instead of an opaque 500 page so the
+    // batch script (and Vercel logs) show what actually went wrong.
+    Sentry.captureException(error, { tags: { component: "cron", job: "embeddings" } });
+    console.error("Embedding job failed", error);
+    return Response.json(
+      {
+        status: "failed",
+        syncRunId: syncRun?._id.toString(),
+        statusCode: statusCode ?? null,
+        error: message,
+      },
+      { status: 500 },
+    );
   }
 }

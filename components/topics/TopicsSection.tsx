@@ -69,7 +69,7 @@ export function TopicsSection({
         <TopicFilterChips activeTopicId={activeTopicId} onSelect={onTopicChipSelect} />
       </div>
 
-      <GuestBanner remaining={5} />
+      <GuestBanner />
 
       {error ? (
         <div className="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">

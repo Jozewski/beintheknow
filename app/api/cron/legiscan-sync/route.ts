@@ -1,3 +1,4 @@
+import { isAuthorizedCronRequest } from "@/lib/cronAuth";
 import { buildWeeklyLegiScanSyncPlan, ingestLegiScanBills } from "@/lib/legiscanSync";
 import { connectDB } from "@/lib/mongodb";
 import { LegiScanSyncRunModel } from "@/models/LegiScanSyncRun";
@@ -5,23 +6,6 @@ import type { TopicId } from "@/data/content-data";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
-
-function isAuthorizedCronRequest(request: Request) {
-  const userAgent = request.headers.get("user-agent") ?? "";
-  const schedule = request.headers.get("x-vercel-cron-schedule");
-  const cronSecret = process.env.CRON_SECRET;
-  const authorization = request.headers.get("authorization");
-
-  if (cronSecret && authorization === `Bearer ${cronSecret}`) {
-    return true;
-  }
-
-  if (userAgent.includes("vercel-cron/1.0") && schedule) {
-    return true;
-  }
-
-  return process.env.NODE_ENV !== "production";
-}
 
 export async function GET(request: Request) {
   if (!isAuthorizedCronRequest(request)) {

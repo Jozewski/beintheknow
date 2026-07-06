@@ -1,3 +1,4 @@
+import { isAuthorizedCronRequest } from "@/lib/cronAuth";
 import type { TopicId } from "@/data/content-data";
 import { ingestCleanSlateExpungementProfiles } from "@/lib/cleanSlateExpungementIngest";
 import { connectDB } from "@/lib/mongodb";
@@ -14,23 +15,6 @@ import { LegiScanSyncRunModel } from "@/models/LegiScanSyncRun";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
-
-function isAuthorizedCronRequest(request: Request) {
-  const userAgent = request.headers.get("user-agent") ?? "";
-  const schedule = request.headers.get("x-vercel-cron-schedule");
-  const cronSecret = process.env.CRON_SECRET;
-  const authorization = request.headers.get("authorization");
-
-  if (cronSecret && authorization === `Bearer ${cronSecret}`) {
-    return true;
-  }
-
-  if (userAgent.includes("vercel-cron/1.0") && schedule) {
-    return true;
-  }
-
-  return process.env.NODE_ENV !== "production";
-}
 
 function toTopicId(value: string | null): TopicId | undefined {
   if (

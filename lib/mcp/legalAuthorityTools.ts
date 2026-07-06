@@ -48,20 +48,28 @@ function isHighLevelQuestion(question: string): boolean {
  * Option 2: Prioritize source types based on question type
  * Option 3: Fallback to legal-content when no legal-authority exists
  */
+/**
+ * Minimum relevance score for chunks retrieved WITHOUT a topic-keyword match.
+ * Scores are on the Atlas normalized cosine scale (0..1, where 1 is
+ * identical). When no known topic is detected we rely purely on embedding
+ * similarity, so weak matches must be dropped rather than cited.
+ */
+function getMinRetrievalScore() {
+  const parsed = Number(process.env.RETRIEVAL_MIN_SCORE ?? "0.62");
+  return Number.isFinite(parsed) && parsed > 0 && parsed < 1 ? parsed : 0.62;
+}
+
 export async function retrieveLegalAuthority({
   question,
   jurisdiction,
   stateCode,
   limit = 6,
 }: RetrieveLegalAuthorityInput): Promise<RetrieveLegalAuthorityOutput> {
+  // Topic detection now only tunes retrieval (via the topicIds filter inside
+  // retrieveLegalContext) - it is no longer a hard gate. Questions phrased
+  // without a known keyword still get semantic retrieval; a score threshold
+  // below protects against citing irrelevant chunks.
   const topicIds = detectLegalTopicIds(question);
-  if (topicIds.length === 0) {
-    return {
-      toolName: "retrieve_legal_authority",
-      sourceType: "legal-authority",
-      context: [],
-    };
-  }
 
   const queryEmbedding = await embedText(question);
 
@@ -132,9 +140,18 @@ export async function retrieveLegalAuthority({
   }
 
   // Combine both sources and sort by relevance score
-  const combinedContext = [...authorityContext, ...contentContext]
+  let combinedContext = [...authorityContext, ...contentContext]
     .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
     .slice(0, limit);
+
+  // Without a topic-keyword match there is no metadata filter backing the
+  // results, so require a minimum semantic similarity before citing.
+  if (topicIds.length === 0) {
+    const minScore = getMinRetrievalScore();
+    combinedContext = combinedContext.filter(
+      (item) => (item.score ?? 0) >= minScore,
+    );
+  }
 
   return {
     toolName: "retrieve_legal_authority",

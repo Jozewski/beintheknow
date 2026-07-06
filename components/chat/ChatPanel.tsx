@@ -32,6 +32,27 @@ type ChatPanelProps = {
   initialTopic?: string;
 };
 
+const GUEST_TOKEN_KEY = "jo:guestToken";
+const SESSION_ID_KEY = "jo:sessionId";
+
+function readStoredValue(key: string) {
+  if (typeof window === "undefined") return undefined;
+  try {
+    return window.localStorage.getItem(key) ?? undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function writeStoredValue(key: string, value: string) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // Private browsing or storage disabled - session continuity degrades
+    // gracefully to in-memory only.
+  }
+}
+
 export function ChatPanel({
   isOpen,
   onClose,
@@ -48,18 +69,77 @@ export function ChatPanel({
         "Hi, I'm JO. Ask me a rights question and I'll keep it plain English, educational, and source-aware.",
     },
   ]);
-  const [sessionId, setSessionId] = useState<string>();
-  const [guestToken, setGuestToken] = useState<string>();
+  const [sessionId, setSessionId] = useState<string | undefined>(() =>
+    readStoredValue(SESSION_ID_KEY),
+  );
+  const [guestToken, setGuestToken] = useState<string | undefined>(() =>
+    readStoredValue(GUEST_TOKEN_KEY),
+  );
+  const [remaining, setRemaining] = useState<number>();
+  const [quotaLimit, setQuotaLimit] = useState<number>();
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string>();
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const lastSeededTopic = useRef<string | undefined>(initialTopic);
+  const historyLoaded = useRef(false);
+
+  // Restore the previous conversation once per page load.
+  useEffect(() => {
+    if (historyLoaded.current || !sessionId || !guestToken) return;
+    historyLoaded.current = true;
+
+    const params = new URLSearchParams({ sessionId, guestToken });
+    fetch(`/api/chat/history?${params.toString()}`)
+      .then(async (response) => {
+        if (!response.ok) {
+          // Stale or invalid session - start fresh next send.
+          if (response.status === 404) {
+            setSessionId(undefined);
+          }
+          return;
+        }
+
+        const data = (await response.json()) as {
+          messages: Array<{
+            id: string;
+            role: "user" | "assistant";
+            content: string;
+            citations?: ChatCitation[];
+          }>;
+        };
+
+        if (data.messages.length > 0) {
+          setMessages((current) => [
+            ...current.filter((message) => message.id === "welcome"),
+            ...data.messages.map((message) => ({
+              id: message.id,
+              role: message.role,
+              content: message.content,
+              citations: message.citations,
+            })),
+          ]);
+        }
+      })
+      .catch(() => {
+        // History is a convenience; chat still works without it.
+      });
+  }, [sessionId, guestToken]);
 
   useEffect(() => {
     if (!isOpen) return;
 
     window.setTimeout(() => inputRef.current?.focus(), 80);
   }, [isOpen]);
+
+  // Seed the draft when a new suggested question arrives, without remounting
+  // the panel (a remount would wipe the conversation and session).
+  useEffect(() => {
+    if (initialTopic && initialTopic !== lastSeededTopic.current) {
+      setDraft(initialTopic);
+    }
+    lastSeededTopic.current = initialTopic;
+  }, [initialTopic]);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({
@@ -99,11 +179,21 @@ export function ChatPanel({
       const data = await response.json();
 
       if (!response.ok) {
+        if (data.quota) {
+          setQuotaLimit(data.quota.limit);
+          setRemaining(data.quota.remaining);
+        }
         throw new Error(data.error ?? "JO could not answer right now.");
       }
 
       setSessionId(data.sessionId);
       setGuestToken(data.guestToken);
+      if (data.sessionId) writeStoredValue(SESSION_ID_KEY, data.sessionId);
+      if (data.guestToken) writeStoredValue(GUEST_TOKEN_KEY, data.guestToken);
+      if (data.quota) {
+        setQuotaLimit(data.quota.limit);
+        setRemaining(data.quota.remaining);
+      }
       setMessages((current) => [
         ...current,
         {
@@ -153,7 +243,11 @@ export function ChatPanel({
       <div className="border-b border-gray-200 bg-[#E1F5EE] px-4 py-3">
         <p className="text-xs font-semibold text-[#085041]">Guest mode</p>
         <p className="mt-1 text-[11px] leading-4 text-gray-600">
-          You have 5 educational questions available today. Create an account to keep your chat history.
+          {typeof remaining === "number" && typeof quotaLimit === "number"
+            ? remaining > 0
+              ? `${remaining} of ${quotaLimit} free questions left today. Your conversation is saved on this device.`
+              : `You have used all ${quotaLimit} free questions for today. Come back tomorrow to ask more.`
+            : "Ask JO free educational questions. Your conversation is saved on this device."}
         </p>
       </div>
 

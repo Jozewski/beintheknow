@@ -35,12 +35,32 @@ function getLocalEmbeddingUrl() {
   return process.env.LOCAL_EMBEDDING_URL ?? "http://127.0.0.1:5055";
 }
 
+/**
+ * Output dimensionality for Gemini embeddings. 768 balances quality, Atlas
+ * index size, and cost. Must match the Atlas Vector Search index dimensions.
+ */
+export function getGeminiEmbeddingDimensions() {
+  const parsed = Number(process.env.GEMINI_EMBEDDING_DIMENSIONS ?? "768");
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 768;
+}
+
 export function getActiveEmbeddingModel() {
   if (getEmbeddingProvider() === "local") {
     return process.env.LOCAL_EMBEDDING_MODEL ?? "BAAI/bge-small-en-v1.5";
   }
 
-  return GEMINI_EMBEDDING_MODEL;
+  // Include dimensions in the stored model label so chunks embedded at
+  // different dimensionalities are never mixed in the same search path.
+  return `${GEMINI_EMBEDDING_MODEL}@${getGeminiEmbeddingDimensions()}`;
+}
+
+function getGeminiProviderOptions(taskType: "RETRIEVAL_DOCUMENT" | "RETRIEVAL_QUERY") {
+  return {
+    google: {
+      outputDimensionality: getGeminiEmbeddingDimensions(),
+      taskType,
+    },
+  };
 }
 
 async function embedWithLocalServer(values: string[]) {
@@ -81,6 +101,7 @@ async function embedManyTexts(values: string[]) {
     values,
     maxParallelCalls: 1,
     maxRetries: 2,
+    providerOptions: getGeminiProviderOptions("RETRIEVAL_DOCUMENT"),
   });
 
   return result.embeddings;
@@ -136,6 +157,7 @@ export async function embedText(value: string) {
     model: google.embedding(GEMINI_EMBEDDING_MODEL),
     value,
     maxRetries: 2,
+    providerOptions: getGeminiProviderOptions("RETRIEVAL_QUERY"),
   });
 
   return result.embedding;
@@ -174,12 +196,20 @@ export async function embedLegalTextChunks({
     }
   }
 
-  const chunks = await LegalTextChunkModel.find(query as never)
+  const chunksQuery = LegalTextChunkModel.find(query as never)
     .sort({ updatedAt: 1 })
-    .hint(indexHint)
     .limit(Math.max(1, Math.min(limit, 100)))
-    .select("_id chunkText")
-    .lean();
+    .select("_id chunkText");
+
+  // Only apply a hint when we have one. Passing undefined to .hint() can
+  // make the driver send an invalid hint option and fail the query. The
+  // includeOtherModels path (used by the Gemini re-embed migration) has no
+  // matching index, so it runs unhinted.
+  if (indexHint) {
+    chunksQuery.hint(indexHint);
+  }
+
+  const chunks = await chunksQuery.lean();
 
   if (chunks.length === 0) {
     return {
