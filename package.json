@@ -11,11 +11,13 @@
     "embeddings:batch": "node scripts/run-embedding-batches.mjs",
     "embeddings:stats": "node scripts/embedding-stats.mjs",
     "embeddings:local": "python scripts/local-embedding-server.py",
+    "chunks:approve": "node scripts/approve-chunks.mjs",
     "chat:smoke": "node scripts/chat-topic-smoke-test.mjs"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.0",
     "@ai-sdk/react": "^4.0.0",
+    "@sentry/nextjs": "^10.63.0",
     "ai": "^7.0.0",
     "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",

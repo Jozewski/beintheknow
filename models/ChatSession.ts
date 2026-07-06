@@ -9,6 +9,14 @@ const chatSessionSchema = new Schema(
     guestToken: {
       type: String,
       trim: true,
+      index: true,
+    },
+    // SHA-256 of the caller's IP (peppered) - used only for daily guest
+    // quota enforcement so clearing the guest token does not reset limits.
+    ipHash: {
+      type: String,
+      trim: true,
+      index: true,
     },
     jurisdiction: {
       type: String,

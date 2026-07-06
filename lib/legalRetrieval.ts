@@ -1,3 +1,5 @@
+import { Types } from "mongoose";
+
 import type { TopicId } from "@/data/content-data";
 import { getActiveEmbeddingModel } from "@/lib/embeddings";
 import { LegalContentModel } from "@/models/LegalContent";
@@ -251,10 +253,15 @@ function toRetrievedContext(chunk: LegalChunkForRetrieval): RetrievedLegalContex
 async function enrichWithResources(
   contexts: RetrievedLegalContext[]
 ): Promise<RetrievedLegalContext[]> {
-  // Identify legal-content chunks that need resource enrichment
+  // Identify legal-content chunks that need resource enrichment.
+  // Only chunks whose sourceId is a real LegalContent ObjectId qualify -
+  // curated-summary chunks use "candidate:<id>" sourceIds that reference
+  // LegalAuthorityCandidate records instead, and passing those to an _id
+  // query throws a CastError that would fail the whole retrieval.
   const legalContentSourceIds = contexts
     .filter(ctx => ctx.sourceType === "legal-content")
-    .map(ctx => ctx.sourceId);
+    .map(ctx => ctx.sourceId)
+    .filter(sourceId => Types.ObjectId.isValid(sourceId));
 
   if (legalContentSourceIds.length === 0) {
     return contexts;
@@ -379,8 +386,10 @@ async function retrieveWithCosineFallback({
   const contexts = rows
     .map((row) => ({
       ...row,
+      // Normalize raw cosine (-1..1) to the Atlas $vectorSearch scale
+      // (0..1) so score thresholds behave identically on both paths.
       score: row.embedding
-        ? cosineSimilarity(embedding, row.embedding)
+        ? (1 + cosineSimilarity(embedding, row.embedding)) / 2
         : 0,
     }))
     .sort((left, right) => (right.score ?? 0) - (left.score ?? 0))
