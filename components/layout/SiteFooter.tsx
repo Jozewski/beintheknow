@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { JoLogo } from "@/components/layout/JoLogo";
 
 const topicLinks = [
@@ -64,7 +66,12 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto mt-8 flex max-w-7xl flex-col gap-2 border-t border-white/10 pt-4 text-[11px] text-gray-500 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Be In The Know · Just Ask JO · Joanne Liszewski</p>
-        <p>Not legal advice · Educational purposes only</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <Link href="/about" className="hover:text-white">About</Link>
+          <Link href="/terms" className="hover:text-white">Terms of Use</Link>
+          <Link href="/privacy" className="hover:text-white">Privacy</Link>
+          <span>Not legal advice · Educational purposes only</span>
+        </div>
       </div>
     </footer>
   );

@@ -1,0 +1,40 @@
+name: Weekly smoke test
+
+# Runs the multi-state chat smoke test against the deployed app every
+# Tuesday (the day after the Monday pipeline run), and on demand.
+#
+# Required repository secrets:
+#   SMOKE_BASE_URL - deployed app URL, e.g. https://beintheknow.vercel.app
+#   MONGODB_URI    - read access for the coverage portion of the script
+#   CRON_SECRET    - lets the script bypass the guest question quota
+
+on:
+  schedule:
+    - cron: "0 12 * * 2"
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        state: [AZ, TX, CA, NY, FL, IL]
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Smoke test ${{ matrix.state }}
+        run: npm run chat:smoke -- --state=${{ matrix.state }} --baseUrl=${{ secrets.SMOKE_BASE_URL }}
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          EMBEDDING_PROVIDER: gemini
+          GEMINI_EMBEDDING_DIMENSIONS: "768"

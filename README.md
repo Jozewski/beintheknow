@@ -165,6 +165,8 @@ VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768
 
 Accounts: `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/logout`, `GET /api/auth/me` (JWT in an httpOnly cookie, signed with `JWT_SECRET`). Signing up or in adopts the device's guest sessions into the account. `GET /api/chat/sessions` lists the signed-in user's conversations; `GET /api/chat/history` accepts either the auth cookie or a guest token.
 
+Content operations: `/admin` is the operator dashboard - per-state/topic corpus coverage (approved chunks, embedded share, thin-content counts) and the law-change review queue fed by the weekly pipeline. Access requires a signed-in account whose email is listed in `ADMIN_EMAILS` (comma-separated). The underlying endpoints are `GET /api/admin/coverage` and `GET/POST /api/admin/candidates` (also accessible to scripts via the `CRON_SECRET` bearer token). A weekly GitHub Actions smoke test (`.github/workflows/smoke.yml`) exercises chat across six states against the deployed app.
+
 `MONGODB_DIRECT_URI` is optional but useful locally when `mongodb+srv` DNS resolution is unreliable. `lib/mongodb.ts` prefers `MONGODB_DIRECT_URI` when present and falls back to `MONGODB_URI`.
 
 Optional integrations:
