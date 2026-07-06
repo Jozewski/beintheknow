@@ -56,11 +56,11 @@ export default function PrivacyPage() {
 
         <Section title="2. How your questions are processed">
           <p>
-            JO's answers are generated with Google's Gemini AI service. When
-            you ask a question, the text of your question and the legal source
-            passages we retrieve are sent to Google for processing, subject to
-            Google's API terms. We do not send your email address or account
-            details with your questions.
+            JO&apos;s answers are generated with Google&apos;s Gemini AI
+            service. When you ask a question, the text of your question and
+            the legal source passages we retrieve are sent to Google for
+            processing, subject to Google&apos;s API terms. We do not send
+            your email address or account details with your questions.
           </p>
         </Section>
 
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
             If you sign in, we set one cookie that keeps you signed in. It is
             httpOnly (not readable by scripts) and expires after 30 days. For
             guests, we store a random token and your conversation reference in
-            your browser's local storage so your chat survives a page refresh.
+            your browser&apos;s local storage so your chat survives a page refresh.
             We use no advertising or tracking cookies.
           </p>
         </Section>
