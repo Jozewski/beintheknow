@@ -87,6 +87,16 @@ Note: your local `CRON_SECRET` is currently empty — set it in `.env.local` too
 
 `gemini-embedding-001` pricing is per input token; the corpus (~29k lines of source data producing the chunk set) is a one-time re-embed, and each chat question is a single short embed call. At current Gemini embedding pricing this is negligible relative to chat generation.
 
-## Rolling back
+## Migration status: complete (July 2026)
 
-Set `EMBEDDING_PROVIDER=local`, `VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_bge_small`, and run the local server (`npm run embeddings:local`). Old bge-small vectors remain on chunks until overwritten, so rollback is instant while both indexes exist.
+This migration finished successfully: the full corpus (680 legal-authority +
+5,373 legal-content chunks) is embedded with `gemini-embedding-001@768` and
+verified by the multi-state chat smoke test. The rollback path described in
+earlier versions of this document no longer exists - the local embedding
+server, its `embeddings:local` script, and the old
+`legal_text_chunk_embedding_bge_small` Atlas index have all been removed.
+Gemini is the sole embedding provider. This document is retained as the
+runbook template for any future embedding-model migration (the steps -
+create new index, re-embed with `--includeOtherModels=true`, verify with
+stats and smoke test, then delete the old index - apply to any provider
+change).
