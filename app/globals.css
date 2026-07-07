@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-/* tw-animate-css comes from shadcn init. I remove this line if I drop tw-animate-css. */
 
 @custom-variant dark (&:is(.dark *));
 

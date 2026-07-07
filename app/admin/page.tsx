@@ -3,6 +3,10 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 
+import { PageHero } from "@/components/layout/PageHero";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+
 type TopicCell = { total: number; embedded: number; thin: number };
 type CoverageRow = {
   state: string;
@@ -99,7 +103,7 @@ export default function AdminPage() {
 
   if (authState === "checking") {
     return (
-      <div className="flex min-h-screen items-center justify-center text-sm text-gray-500">
+      <div className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,#060C18_0%,#085041_100%)] text-sm text-white/70">
         Checking access...
       </div>
     );
@@ -107,15 +111,20 @@ export default function AdminPage() {
 
   if (authState === "unauthorized") {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center gap-3 px-4 text-center">
-        <h1 className="text-lg font-bold text-[#085041]">Admin access required</h1>
-        <p className="max-w-sm text-sm text-gray-600">
-          Sign in with an account listed in <code>ADMIN_EMAILS</code> to view
-          the content operations dashboard.
-        </p>
-        <Link href="/auth" className="rounded-lg bg-[#1D9E75] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0F6E56]">
-          Go to sign in
-        </Link>
+      <div className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,#060C18_0%,#085041_100%)] px-4">
+        <div className="w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-2xl">
+          <h1 className="text-lg font-bold text-[#085041]">Admin access required</h1>
+          <p className="mt-2 text-sm leading-5 text-gray-600">
+            Sign in with an account listed in <code>ADMIN_EMAILS</code> to view
+            the content operations dashboard.
+          </p>
+          <Link
+            href="/auth"
+            className="mt-4 inline-block w-full rounded-lg bg-[#1D9E75] py-2.5 text-sm font-semibold text-white transition hover:bg-[#0F6E56]"
+          >
+            Go to sign in
+          </Link>
+        </div>
       </div>
     );
   }
@@ -125,19 +134,14 @@ export default function AdminPage() {
     : 0;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-xl font-bold text-[#085041]">Content Operations</h1>
-          <p className="text-xs text-gray-500">
-            Corpus health and law-change review queue
-          </p>
-        </div>
-        <Link href="/" className="text-sm font-semibold text-[#085041] hover:underline">
-          Back to site
-        </Link>
-      </div>
-
+    <div className="min-h-screen bg-white">
+      <SiteHeader />
+      <PageHero
+        eyebrow="Admin"
+        title="Content Operations"
+        description="Corpus health across all fifty states, and the law-change review queue."
+      />
+      <main className="mx-auto max-w-6xl px-4 py-8">
       {error ? (
         <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>
       ) : null}
@@ -145,27 +149,27 @@ export default function AdminPage() {
       {coverage ? (
         <>
           <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="rounded-lg border border-gray-200 p-3">
-              <p className="text-[11px] uppercase tracking-wide text-gray-500">Approved chunks</p>
-              <p className="text-xl font-bold text-gray-900">{coverage.totals.total.toLocaleString()}</p>
+            <div className="rounded-lg border border-[#9FE1CB] bg-[#E1F5EE]/50 p-3">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#0F6E56]">Approved chunks</p>
+              <p className="text-xl font-bold text-[#085041]">{coverage.totals.total.toLocaleString()}</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-3">
-              <p className="text-[11px] uppercase tracking-wide text-gray-500">Embedded (searchable)</p>
-              <p className="text-xl font-bold text-gray-900">{embeddedPct}%</p>
+            <div className="rounded-lg border border-[#9FE1CB] bg-[#E1F5EE]/50 p-3">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#0F6E56]">Embedded (searchable)</p>
+              <p className="text-xl font-bold text-[#085041]">{embeddedPct}%</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-3">
-              <p className="text-[11px] uppercase tracking-wide text-gray-500">Thin chunks (&lt;120 chars)</p>
-              <p className="text-xl font-bold text-gray-900">{coverage.totals.thin.toLocaleString()}</p>
+            <div className="rounded-lg border border-[#9FE1CB] bg-[#E1F5EE]/50 p-3">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#0F6E56]">Thin chunks (&lt;120 chars)</p>
+              <p className="text-xl font-bold text-[#085041]">{coverage.totals.thin.toLocaleString()}</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-3">
-              <p className="text-[11px] uppercase tracking-wide text-gray-500">States missing a topic</p>
-              <p className="text-xl font-bold text-gray-900">{coverage.statesMissingTopics.length}</p>
+            <div className="rounded-lg border border-[#9FE1CB] bg-[#E1F5EE]/50 p-3">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#0F6E56]">States missing a topic</p>
+              <p className="text-xl font-bold text-[#085041]">{coverage.statesMissingTopics.length}</p>
             </div>
           </div>
 
           <div className="mb-8 overflow-x-auto rounded-lg border border-gray-200">
             <table className="w-full text-left text-[12px]">
-              <thead className="bg-gray-50 text-[11px] uppercase tracking-wide text-gray-500">
+              <thead className="bg-[#085041] text-[11px] uppercase tracking-wide text-white">
                 <tr>
                   <th className="px-3 py-2">State</th>
                   {coverage.topics.map((topic) => (
@@ -296,6 +300,8 @@ export default function AdminPage() {
         <code>npm run chunks:approve</code>, and mark the item Handled. The
         daily pipeline re-chunks and re-embeds approved updates automatically.
       </p>
+      </main>
+      <SiteFooter />
     </div>
   );
 }

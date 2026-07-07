@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { PageHero } from "@/components/layout/PageHero";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
@@ -22,11 +23,13 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
+      <PageHero
+        eyebrow="Legal"
+        title="Privacy Policy"
+        description="Effective date: July 2026 - what we collect, how it is used, and your choices."
+      />
       <main className="mx-auto max-w-3xl px-4 py-10 text-[14px] leading-6 text-gray-700">
-        <h1 className="text-2xl font-bold text-[#085041]">Privacy Policy</h1>
-        <p className="mt-2 text-[12px] text-gray-500">Effective date: July 2026</p>
-
-        <p className="mt-4">
+        <p>
           We built Be In The Know for people in a vulnerable moment, so we
           collect as little as we can and we say plainly what happens with it.
         </p>

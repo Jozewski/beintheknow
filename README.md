@@ -151,12 +151,6 @@ EMBEDDING_PROVIDER=gemini
 GEMINI_EMBEDDING_MODEL=gemini-embedding-001
 GEMINI_EMBEDDING_DIMENSIONS=768
 VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768
-
-# Optional local (dev-only) embedding path:
-# EMBEDDING_PROVIDER=local
-# LOCAL_EMBEDDING_URL=http://127.0.0.1:5055
-# LOCAL_EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
-# VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_bge_small
 ```
 
 `CRON_SECRET` is required in production: cron routes reject any request without `Authorization: Bearer ${CRON_SECRET}`. Vercel sends this header automatically when the env var is set. See `docs/Embedding-Migration-Gemini.md` for the Gemini embedding setup.
@@ -215,12 +209,6 @@ npm run seed:sample
 ```
 
 Seeds sample development records into MongoDB.
-
-```bash
-npm run embeddings:local -- --model BAAI/bge-small-en-v1.5
-```
-
-Starts the local embedding server.
 
 ```bash
 npm run embeddings:batch -- --limit=100 --batches=20 --waitMs=500
