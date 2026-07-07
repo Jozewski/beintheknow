@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { PageHero } from "@/components/layout/PageHero";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
@@ -14,10 +15,13 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
+      <PageHero
+        eyebrow="Our Mission"
+        title="About Be In The Know"
+        description="Why this platform exists, how JO answers questions, and what we are - and are not."
+      />
       <main className="mx-auto max-w-3xl px-4 py-10 text-[14px] leading-6 text-gray-700">
-        <h1 className="text-2xl font-bold text-[#085041]">About Be In The Know</h1>
-
-        <p className="mt-4">
+        <p>
           Every year, hundreds of thousands of people come home from prison and
           jail. From day one, they face rules about voting, jobs, housing,
           record clearing, and supervision. Those rules exist in writing - but

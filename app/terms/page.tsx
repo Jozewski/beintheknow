@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { PageHero } from "@/components/layout/PageHero";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
@@ -22,11 +23,13 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
+      <PageHero
+        eyebrow="Legal"
+        title="Terms of Use"
+        description="Effective date: July 2026 - written in plain language, because that is what this project is about."
+      />
       <main className="mx-auto max-w-3xl px-4 py-10 text-[14px] leading-6 text-gray-700">
-        <h1 className="text-2xl font-bold text-[#085041]">Terms of Use</h1>
-        <p className="mt-2 text-[12px] text-gray-500">Effective date: July 2026</p>
-
-        <p className="mt-4">
+        <p>
           Welcome to Be In The Know (&quot;the Service&quot;), including our
           assistant, JO. By using the Service - with or without an account -
           you agree to

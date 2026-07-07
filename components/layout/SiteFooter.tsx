@@ -43,9 +43,9 @@ export function SiteFooter() {
           <ul className="space-y-2 text-xs">
             {topicLinks.map((topic) => (
               <li key={topic}>
-                <a href="#topics" className="text-gray-400 hover:text-white">
+                <Link href="/#topics" className="text-gray-400 hover:text-white">
                   {topic}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

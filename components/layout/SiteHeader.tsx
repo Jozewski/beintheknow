@@ -41,10 +41,13 @@ export function SiteHeader() {
         </Link>
 
         <nav className="flex items-center gap-1.5 text-[11px] sm:gap-3 sm:text-[12px]">
-          <Link href="#topics" className="hidden text-gray-500 hover:text-gray-900 sm:inline">
+          <Link href="/#topics" className="hidden text-gray-500 hover:text-gray-900 sm:inline">
             Topics
           </Link>
-          <Link href="#disclaimer" className="hidden text-gray-500 hover:text-gray-900 sm:inline">
+          <Link href="/about" className="hidden text-gray-500 hover:text-gray-900 sm:inline">
+            About
+          </Link>
+          <Link href="/#disclaimer" className="hidden text-gray-500 hover:text-gray-900 sm:inline">
             Disclaimer
           </Link>
           <a
