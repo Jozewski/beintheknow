@@ -35,11 +35,8 @@ On the `legaltextchunks` collection, create a Vector Search index:
 
 This single index covers BOTH source types (`legal-authority` statutes and `legal-content` curated summaries) — they share the `legaltextchunks` collection, and retrieval filters by the `sourceType` field at query time. You do not need a separate index per source type.
 
-Keep the old `legal_text_chunk_embedding_bge_small` index until migration is verified, then delete it.
-
+The old `legal_text_chunk_embedding_bge_small` was deleted after migration was verified, then it was deleted.
 ### 2. Re-embed the corpus with Gemini
-
-Start the dev server (`npm run dev`) and wait for it to report ready, then re-embed everything previously embedded with bge-small:
 
 ```bash
 npm run embeddings:batch -- --limit=50 --batches=40 --waitMs=1000 --sourceType=legal-authority --reviewStatus=approved --includeOtherModels=true
@@ -81,7 +78,6 @@ GUEST_DAILY_LIMIT=5
 NEXT_PUBLIC_APP_URL=https://<your-domain>
 ```
 
-Note: your local `CRON_SECRET` is currently empty — set it in `.env.local` too if you want to test the auth path locally.
 
 ## Cost note
 

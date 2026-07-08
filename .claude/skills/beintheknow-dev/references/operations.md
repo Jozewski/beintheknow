@@ -69,5 +69,4 @@ If noise: Dismiss.
   WHY each subsystem exists.
 - docs/Embedding-Migration-Gemini.md - the local->Gemini embedding migration
   runbook with troubleshooting (404/401/429 cases).
-- Be-In-The-Know-Product-Proposal.docx - the evidence-based proposal with
-  cited statistics about the reentry audience.
+

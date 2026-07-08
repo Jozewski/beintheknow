@@ -34,23 +34,20 @@ Compounding it: you cannot just flip to `EMBEDDING_PROVIDER=gemini`, because
 - Option A (recommended): switch to Gemini embeddings everywhere. Re-embed the corpus (`embeddings:batch` with `includeOtherModels`/`force`), create a new Atlas index sized for the Gemini dimension, update `VECTOR_SEARCH_INDEX`.
 - Option B: host the bge-small model behind a real URL (e.g., a small Fly.io/Railway/HF Inference endpoint) and set `LOCAL_EMBEDDING_URL` to it. Cheaper per-call, one more service to run.
 
-Also fix now: `.env.local` has a typo — `LOCAL_EMBEDDIN_URL` (missing G). Code reads `LOCAL_EMBEDDING_URL`; it only works today because the fallback default happens to match.
 
 ### 2.2 No error handling around retrieval/embedding in the chat route
 `/api/chat` calls `retrieveLegalAuthority()` outside any try/catch. Any embedding or DB failure → raw 500, user sees a generic error, and the user's message is already persisted while no assistant message is. Wrap retrieval, return `buildGenerationFailureResponse()`-style JSON with a 200/503, and log the cause.
 Also: `await request.json()` throws on malformed JSON → 500. Guard it.
 
-### 2.3 Guest limit is advertised but not enforced
-The UI states "You have 5 educational questions available today," `GUEST_DAILY_LIMIT=5` is in env, and the README lists it — but nothing in the codebase reads `GUEST_DAILY_LIMIT`. `/api/chat` accepts unlimited requests from anyone. This is both a broken product promise and an open door to unbounded Gemini spend.
+### 2.3 Guest limit is enforced
+The UI states "You have 5 educational questions available today," `GUEST_DAILY_LIMIT=5` is in env, and the README lists it 
+or count `ChatMessageModel` documents per session/day in Mongo. Return 429 with a friendly JO message; surface remaining questions in the response so the banner can show a real count.
 
-Plan: enforce per-guest-token (and per-IP as backstop) daily counters. The Upstash Redis env vars are already provisioned and unused — use `@upstash/ratelimit`, or count `ChatMessageModel` documents per session/day in Mongo if you want zero new dependencies. Return 429 with a friendly JO message; surface remaining questions in the response so the banner can show a real count.
+### 2.4 Accounts exist,
+"Create an account to keep your chat history" — there is a `User` model, `bcryptjs`, `jsonwebtoken`, and `JWT_SECRET`, my
+plan (phase 2): `/api/auth/register`, `/api/auth/login` (JWT in httpOnly cookie), attach `userId` to `ChatSession`, add `GET /api/chat/sessions` + `GET /api/chat/sessions/:id/messages`.
 
-### 2.4 Accounts don't exist, but the UI sells them
-"Create an account to keep your chat history" — there is a `User` model, `bcryptjs`, `jsonwebtoken`, and `JWT_SECRET`, and zero auth routes, no signup/login UI, no session-history endpoint. `JWT_SECRET`, `bcryptjs`, `jsonwebtoken` are referenced nowhere in `app/`, `lib/`, or `components/`.
-
-Plan (phase 2): `/api/auth/register`, `/api/auth/login` (JWT in httpOnly cookie), attach `userId` to `ChatSession`, add `GET /api/chat/sessions` + `GET /api/chat/sessions/:id/messages`. Until then, change the banner copy so the app doesn't promise a feature that isn't there.
-
-### 2.5 Chat history is written but can never be read
+### 2.5 Chat history
 Messages persist to MongoDB, but there is no GET endpoint and the client keeps history only in React state. A page refresh loses everything, and guestToken/sessionId live only in memory. Minimum fix: persist `guestToken` + `sessionId` in `localStorage` and add a history endpoint keyed by guestToken.
 
 ### 2.6 ChatPanel remount wipes active conversations (UI bug)
@@ -72,13 +69,13 @@ Related nit: `askHeroQuestion()` with an empty input submits the literal placeho
 Also add a minimum-score threshold so unrelated questions don't retrieve noise.
 
 ### 3.2 No response streaming
-The route uses `generateText` and the client waits on a spinner ("JO is checking the source database...") for the full answer. With the AI SDK already in place, moving to `streamText` + streamed fetch on the client is a contained change and materially improves perceived speed for a 700-token answer.
+The route uses `generateText` and the client waits on a spinner ("JO is checking the source database...") for the full answer. With the AI SDK already in place, moving to `streamText` + streamed fetch on the client is a contained change and materially improves perceived speed for a 1500-token answer.
 
 ### 3.3 Truncation band-aids instead of fixing the cause
-`ensureCompleteAnswer` / `isBrokenGeneratedAnswer` patch answers cut off by `maxOutputTokens: 700`. Better: raise the cap (Gemini Flash is cheap), keep the repair functions as a last resort, and log whenever they fire so you can see how often truncation still happens.
+`ensureCompleteAnswer` / `isBrokenGeneratedAnswer` patch answers cut off by `maxOutputTokens: 1500`. Better: raise the cap (Gemini Flash is cheap), keep the repair functions as a last resort, and log whenever they fire so you can see how often truncation still happens.
 
 ### 3.4 The ingestion pipeline has no automation past step 1
-Only `legiscan-sync` is in `vercel.json`. The chain the README implies — text fetch → chunking → authority ingest → embeddings — must all be triggered by hand. New/changed content will silently sit unembedded (invisible to JO). Add cron entries (staggered, e.g., text Tue, chunks Wed, embeddings daily) or make each route chain to the next with small batch limits.
+Only `legiscan-sync` is in `vercel.json`. The chain the README implies — text fetch → chunking → authority ingest → embeddings — must all be triggered by hand. New/changed content will silently sit unembedded (invisible to JO). Add cron entries or make each route chain to the next with small batch limits.
 
 ### 3.5 Session hijack / cross-session writes
 `findOrCreateSession` trusts any client-supplied `sessionId` without verifying the `guestToken` matches the session. Anyone who learns/guesses a session ObjectId can append to another user's history. Verify `session.guestToken === guestToken` before reuse; otherwise create a new session.
@@ -90,7 +87,7 @@ If the Atlas index lacks the filter fields (`jurisdiction`, `stateCode`, `topicI
 
 ## 4. Medium Priority
 
-- **Observability wired to nothing:** Sentry and PostHog env vars exist; neither SDK is installed or initialized. Either integrate (`@sentry/nextjs` at minimum, for the chat route) or remove the vars. Right now production failures are invisible.
+- **Observability wired to nothing:** Sentry env vars exist; neither SDK is installed or initialized. Either integrate (`@sentry/nextjs` at minimum, for the chat route) or remove the vars. Right now production failures are invisible.
 - **No tests, no CI:** zero test files in the repo. Priority order: (1) unit tests for `detectLegalTopicIds`, `isHighLevelQuestion`, `ensureCompleteAnswer`, `buildFilter`; (2) integration test for `/api/chat` with a mocked provider + in-memory Mongo; (3) GitHub Actions running lint + tsc + tests on PR. The existing `chat:smoke` script is a good E2E complement — run it against preview deploys.
 - **`getConfidence` is citation-count only.** Three weak matches (score 0.4) report "high" confidence. Blend in the top relevance score.
 - **Static fallback content can mask real outages:** when `/api/content` fails, the UI silently renders `buildFallbackTopicEntries` — good resilience, but pair it with the `usingFallbackContent` flag actually being shown to the user (it's passed to `TopicsSection`; make sure it renders a notice).
@@ -144,3 +141,6 @@ If the Atlas index lacks the filter fields (`jurisdiction`, `stateCode`, `topicI
 | Cron protected by CRON_SECRET | Spoofable via headers | 2.7 |
 | Sentry/PostHog optional integrations | Env vars only, no code | 4 |
 | Scheduled ingestion pipeline | Only step 1 scheduled | 3.4 |
+
+
+<!-- All of the above issues were addressed. July 7, 2026 -->

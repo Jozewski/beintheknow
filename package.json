@@ -12,6 +12,8 @@
     "embeddings:stats": "node scripts/embedding-stats.mjs",
     "chunks:approve": "node scripts/approve-chunks.mjs",
     "chat:smoke": "node scripts/chat-topic-smoke-test.mjs",
+    "chat:redteam": "node scripts/prompt-injection-redteam.mjs",
+    "chat:wipe": "node scripts/wipe-chat-data.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },

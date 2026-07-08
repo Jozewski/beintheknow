@@ -8,6 +8,7 @@ import { z } from "zod";
 import {
   ensureCompleteAnswer,
   isBrokenGeneratedAnswer,
+  isSuspiciousUserMessage,
 } from "@/lib/answerRepair";
 import { getAuthenticatedUser, type AuthenticatedUser } from "@/lib/auth";
 
@@ -144,7 +145,16 @@ async function findOrCreateSession({
       authUser &&
       existingSession?.userId &&
       String(existingSession.userId) === authUser.userId;
+    // A session already claimed by a DIFFERENT account must never be reused,
+    // even if the guest token matches - otherwise a caller could append to
+    // (and read) another account's conversation. This also correctly forces
+    // a fresh session when someone signs into a new account on a device that
+    // still holds an old session id in local storage.
+    const ownedByOtherAccount =
+      existingSession?.userId &&
+      (!authUser || String(existingSession.userId) !== authUser.userId);
     const ownsByGuestToken =
+      !ownedByOtherAccount &&
       existingSession?.guestToken &&
       existingSession.guestToken === guestToken;
 
@@ -243,13 +253,28 @@ export async function POST(request: Request) {
 
   const session = await findOrCreateSession({ ...parsed.data, ipHash, authUser });
 
+  // Claim any earlier guest conversations on this device for the account.
+  // Cheap idempotent updateMany; keeps account history complete even if the
+  // conversation started before sign-in.
+  if (authUser && requestGuestToken) {
+    await ChatSessionModel.updateMany(
+      { guestToken: requestGuestToken, userId: { $exists: false } },
+      { $set: { userId: authUser.userId } },
+    ).catch((error) => {
+      console.error("JO chat: guest session adoption failed", error);
+    });
+  }
+
+  // Flag likely prompt-injection / rule-breaking attempts. Flagged messages
+  // are still answered normally (the layered prompt + output guards handle
+  // the content) - the flag lets an admin review manipulation later.
   await ChatMessageModel.create({
     sessionId: session._id,
     role: "user",
     content: message,
     citations: [],
     confidence: "high",
-    flagged: false,
+    flagged: isSuspiciousUserMessage(message),
   });
 
   const remaining = Math.max(0, limit - questionsToday - 1);
@@ -314,7 +339,18 @@ export async function POST(request: Request) {
   // Repairs and guardrails applied to the fully generated text.
   function finalizeGeneratedContent(rawText: string) {
     const repaired = ensureCompleteAnswer(rawText);
-    if (isBrokenGeneratedAnswer(repaired)) {
+
+    // Output guard: sources were retrieved, yet a SUBSTANTIVE answer cites
+    // none of them. That is the signature of a model steered off its
+    // context (prompt injection) or drifting to memory. Serve the
+    // source-grounded fallback instead of ungrounded text. Short replies
+    // are exempt - brief refusals and redirects legitimately cite nothing.
+    const lacksCitations =
+      retrievedContext.length > 0 &&
+      repaired.length > 240 &&
+      !/\[\d/.test(repaired);
+
+    if (lacksCitations || isBrokenGeneratedAnswer(repaired)) {
       return buildSourceBasedFallbackResponse({
         question: message,
         jurisdiction,
@@ -418,7 +454,7 @@ export async function POST(request: Request) {
           },
           // Deliver the stream in small word-level chunks so the answer
           // types out naturally instead of arriving in large blocks.
-          experimental_transform: smoothStream({ delayInMs: 15 }),
+          experimental_transform: smoothStream({ delayInMs: 30 }),
         });
 
         for await (const chunk of result.textStream) {

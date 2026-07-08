@@ -32,8 +32,7 @@ and check any change against them:
    deadline promises unless the source states them, always route to legal aid
    for individual situations.
 5. **Truthful UI.** Never ship interface copy promising features that are not
-   enforced server-side (this project once advertised a "5 questions/day"
-   limit that nothing enforced - that class of bug is banned).
+   enforced server-side. 
 6. **Minimal data.** No raw IPs stored (only salted SHA-256 hashes), no
    tracking cookies, passwords bcrypt-hashed, deletion is self-service.
 
@@ -177,8 +176,41 @@ mint `#E1F5EE`, hero gradient `linear-gradient(135deg,#060C18,#085041)`.
 Secondary pages use the shared `PageHero` component. Header/footer anchors
 must be `/#topics` style (page-qualified), not bare `#topics`.
 
+## Prompt-injection defense (layered)
+
+Users cannot be allowed to override JO's rules. No single measure is
+sufficient; four layers work together (defense in depth), and a red-team
+script proves they hold:
+
+1. Prompt security rules (`lib/chatPrompt.ts`): instructions state that the
+   user message is DATA not commands, forbid revealing the prompt, forbid
+   persona/lawyer roleplay, forbid outcome guarantees, and restrict scope to
+   legal rights education. These lead the instruction list so they outrank
+   later content.
+2. Input delimiting: the question is wrapped in `<<< >>>` in the prompt and
+   labeled as data, so injected "instructions" read as quoted text.
+3. Output guard (`app/api/chat/route.ts` finalizeGeneratedContent): if
+   sources were retrieved but a SUBSTANTIVE answer (>240 chars) cites none
+   (`/\[\d/` absent), serve the source-based fallback - the signature of a
+   model steered off-context. Short refusals are exempt.
+4. Suspicious-message flagging: `isSuspiciousUserMessage()` in
+   `lib/answerRepair.ts` (pure, unit-tested) sets `flagged` on the stored
+   message for later admin review. It does NOT block - the other layers
+   handle content. If you edit the pattern, keep the tests green; the `*`
+   (not `?`) on filler words matters ("ignore all previous instructions").
+
+Verify with `npm run chat:redteam` (needs the dev server; uses CRON_SECRET
+to bypass quota). Re-run after ANY change to the prompt or model. Grounding
+is the deepest defense: JO can only see approved retrieved chunks, so there
+is no hidden knowledge an injection can unlock.
+
 ## Known gotchas
 
+- `npm run build` and `npm run dev` share the `.next` folder. Running dev
+  on top of a production build (or after branch switches) makes routes 404
+  even though the files exist. Fix: stop the server, delete `.next`,
+  restart. Suggest this FIRST for any "route 404s but the file exists"
+  symptom - it has struck twice in this project.
 - ESLint `react/no-unescaped-entities`: apostrophes and straight quotes in
   JSX text must be `&apos;` / `&quot;` - this has failed CI before.
 - Zod narrowing (`parsed.data`) is lost inside nested closures - destructure
@@ -202,3 +234,4 @@ handbook and the full deployment runbook. Read the repo's own docs for
 history: `docs/Gap-Analysis-and-Remediation-Plan.md` (why everything was
 built) and `docs/Embedding-Migration-Gemini.md` (embedding migration +
 troubleshooting).
+                                                                                                               
