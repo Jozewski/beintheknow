@@ -49,11 +49,29 @@ export function ensureCompleteAnswer(value: string) {
  * output guards handle the actual content) - it flags the message so an
  * admin can review manipulation patterns later. Kept here as a pure,
  * unit-tested function so the pattern cannot silently regress.
+ *
+ * Built from a pattern list rather than one long literal so it stays easy
+ * to read and edit. The apostrophe in "you're" is written as `you.?re`
+ * (matches with or without the apostrophe) to avoid quoting pitfalls.
  */
+const SUSPICIOUS_PATTERNS = [
+  "ignore (all |your |the |previous |above |prior )*(instructions|rules|guidelines|prompt)",
+  "disregard (your|the|all)",
+  "system prompt",
+  "reveal your (rules|instructions|prompt)",
+  "pretend (you.?re|you are|to be)",
+  "act as (a |my |an )?(lawyer|attorney|judge)",
+  "you are now",
+  "jailbreak",
+  "developer mode",
+  "new directive",
+  "override",
+];
+
+const SUSPICIOUS_REGEX = new RegExp(SUSPICIOUS_PATTERNS.join("|"), "i");
+
 export function isSuspiciousUserMessage(message: string) {
-  return /ignore (all |your |the |previous |above |prior )*(instructions|rules|guidelines|prompt)|disregard (your|the|all)|system prompt|reveal your (rules|instructions|prompt)|pretend (you're|you are|to be)|act as (a |my |an )?(lawyer|attorney|judge)|you are now|jailbreak|developer mode|new directive|override/i.test(
-    message,
-  );
+  return SUSPICIOUS_REGEX.test(message);
 }
 
 /**
