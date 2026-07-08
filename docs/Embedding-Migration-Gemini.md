@@ -35,7 +35,7 @@ On the `legaltextchunks` collection, create a Vector Search index:
 
 This single index covers BOTH source types (`legal-authority` statutes and `legal-content` curated summaries) — they share the `legaltextchunks` collection, and retrieval filters by the `sourceType` field at query time. You do not need a separate index per source type.
 
-The old `legal_text_chunk_embedding_bge_small` was deleted after migration was verified, then it was deleted.
+The old `legal_text_chunk_embedding_bge_small` index was deleted after migration was verified.
 ### 2. Re-embed the corpus with Gemini
 
 ```bash
