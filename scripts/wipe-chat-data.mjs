@@ -12,13 +12,15 @@ import mongoose from "mongoose";
 
 const apply = process.argv.includes("--apply");
 
-for (const line of fs.readFileSync(".env.local", "utf8").split(/\r?\n/)) {
-  if (!line || line.trim().startsWith("#")) continue;
-  const i = line.indexOf("=");
-  if (i === -1) continue;
-  const k = line.slice(0, i).trim();
-  const v = line.slice(i + 1).trim();
-  if (!process.env[k]) process.env[k] = v;
+if (fs.existsSync(".env.local")) {
+  for (const line of fs.readFileSync(".env.local", "utf8").split(/\r?\n/)) {
+    if (!line || line.trim().startsWith("#")) continue;
+    const i = line.indexOf("=");
+    if (i === -1) continue;
+    const k = line.slice(0, i).trim();
+    const v = line.slice(i + 1).trim();
+    if (!process.env[k]) process.env[k] = v;
+  }
 }
 
 const uri = process.env.MONGODB_DIRECT_URI ?? process.env.MONGODB_URI;
