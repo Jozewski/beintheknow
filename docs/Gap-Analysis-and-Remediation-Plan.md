@@ -40,8 +40,7 @@ Compounding it: you cannot just flip to `EMBEDDING_PROVIDER=gemini`, because
 Also: `await request.json()` throws on malformed JSON → 500. Guard it.
 
 ### 2.3 Guest limit is enforced
-The UI states "You have 5 educational questions available today," `GUEST_DAILY_LIMIT=5` is in env, and the README lists it 
-or count `ChatMessageModel` documents per session/day in Mongo. Return 429 with a friendly JO message; surface remaining questions in the response so the banner can show a real count.
+The UI states "You have 5 educational questions available today," `GUEST_DAILY_LIMIT=5` is in env, and the README lists it. The server now enforces this limit and returns 429 with a friendly message when exceeded.
 
 ### 2.4 Accounts exist,
 "Create an account to keep your chat history" — there is a `User` model, `bcryptjs`, `jsonwebtoken`, and `JWT_SECRET`, my
