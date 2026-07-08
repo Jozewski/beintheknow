@@ -294,7 +294,7 @@ export default function AccountPage() {
                                     key={`${label}-${index}`}
                                     href={citation.sourceUrl}
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="block truncate text-[10px] font-semibold text-[#085041] underline-offset-2 hover:underline"
                                   >
                                     {label}

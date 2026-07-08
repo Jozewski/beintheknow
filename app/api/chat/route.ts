@@ -454,7 +454,7 @@ export async function POST(request: Request) {
           },
           // Deliver the stream in small word-level chunks so the answer
           // types out naturally instead of arriving in large blocks.
-          experimental_transform: smoothStream({ delayInMs: 30 }),
+          experimental_transform: smoothStream({ delayInMs: 15 }),
         });
 
         for await (const chunk of result.textStream) {

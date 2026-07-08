@@ -68,10 +68,8 @@ const SUSPICIOUS_PATTERNS = [
   "override",
 ];
 
-const SUSPICIOUS_REGEX = new RegExp(SUSPICIOUS_PATTERNS.join("|"), "i");
-
 export function isSuspiciousUserMessage(message: string) {
-  return SUSPICIOUS_REGEX.test(message);
+  return new RegExp(SUSPICIOUS_PATTERNS.join("|"), "i").test(message);
 }
 
 /**
