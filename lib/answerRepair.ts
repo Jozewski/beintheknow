@@ -50,8 +50,7 @@ export function ensureCompleteAnswer(value: string) {
  * admin can review manipulation patterns later. Kept here as a pure,
  * unit-tested function so the pattern cannot silently regress.
  */
-export function isSuspiciousUserMessage(message: string) {
-  return /ignore (all |your |the |previous |above |prior )*(instructions|rules|guidelines|prompt)|disregard (your|the|all)|system prompt|reveal your (rules|instructions|prompt)|pretend (you're|you are|to be)|act as (a |my |an )?(lawyer|attorney|judge)|you are now|jailbreak|developer mode|new directive|override/i.test(
+  return /ignore (all |your |the |of |previous |above |prior )*(instructions|rules|guidelines|prompt)|disregard (your|the|all)|system prompt|reveal your (rules|instructions|prompt)|pretend (you're|you are|to be)|act as (a |my |an )?(lawyer|attorney|judge)|you are now|jailbreak|developer mode|new directive|override/i.test(
     message,
   );
 }
