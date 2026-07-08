@@ -181,6 +181,9 @@ export function ChatPanel({
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        // Ensure the auth cookie is sent so a signed-in user's chats are
+        // saved to their account, not stored as guest conversations.
+        credentials: "same-origin",
         body: JSON.stringify({
           message,
           sessionId,

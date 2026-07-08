@@ -105,7 +105,7 @@ export default function PrivacyPage() {
             <Link href="/auth" className="font-semibold text-[#085041] underline-offset-2 hover:underline">
               account page
             </Link>
-            . You can also email joanneliszewski@gmail.com from the address on
+            . You can also email beintheknowjustaskjo@gmail.com from the address on
             the account and we will remove it for you.
           </p>
         </Section>
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="9. Contact">
-          <p>Privacy questions: joanneliszewski@gmail.com</p>
+          <p>Privacy questions: beintheknowjustaskjo@gmail.com</p>
         </Section>
 
         <p className="mt-8 text-[12px] text-gray-500">

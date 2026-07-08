@@ -58,7 +58,7 @@ export function SiteHeader() {
           </a>
           {!checked ? null : accountEmail ? (
             <Link
-              href="/auth"
+              href="/account"
               title={`Signed in as ${accountEmail}`}
               className="hidden rounded-full border border-[#1D9E75] bg-transparent px-3.5 py-1.5 font-semibold text-[#1D9E75] transition hover:bg-[#E1F5EE] sm:inline"
             >

@@ -49,7 +49,7 @@ Be In The Know is not a generic chatbot placed on top of legal content. The syst
 - UI: React, Tailwind CSS, Lucide React, Motion
 - Database: MongoDB Atlas with Mongoose
 - AI: Gemini through the Vercel AI SDK
-- Embeddings: Gemini or local embedding server
+- Embeddings: Gemini 
 - Vector search: MongoDB Atlas Vector Search
 - Scheduled jobs: Vercel Cron
 - Legislative monitoring: LegiScan Public API
@@ -166,12 +166,10 @@ Content operations: `/admin` is the operator dashboard - per-state/topic corpus 
 Optional integrations:
 
 ```bash
-UPSTASH_REDIS_REST_URL=
-UPSTASH_REDIS_REST_TOKEN=
+
 SENTRY_AUTH_TOKEN=
 NEXT_PUBLIC_SENTRY_DSN=
-NEXT_PUBLIC_POSTHOG_KEY=
-NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
+
 ```
 
 ## Local Development
@@ -305,8 +303,6 @@ For Gemini embeddings (the production default), create an Atlas Vector Search in
 - dimensions: `768`
 - similarity: `cosine`
 
-For the optional local `BAAI/bge-small-en-v1.5` path, the equivalent index is `legal_text_chunk_embedding_bge_small` with `384` dimensions.
-
 Recommended filter fields:
 
 - `jurisdiction`
@@ -334,4 +330,3 @@ LegiScan is used to monitor legislative changes and identify candidate authority
 ## Legal Disclaimer
 
 Be In The Know and Just Ask JO provide general educational information. They are not a law firm, do not provide legal advice, and do not create an attorney-client relationship. Users who need help with their own situation should contact a qualified legal aid organization or attorney licensed in their jurisdiction.
-sdiction.

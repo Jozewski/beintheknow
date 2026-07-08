@@ -124,9 +124,7 @@ export default function TermsPage() {
         </Section>
 
         <Section title="9. Contact">
-          <p>
-            Questions about these terms: joanneliszewski@gmail.com
-          </p>
+          <p>Questions about these terms: beintheknowjustaskjo@gmail.com</p>
         </Section>
 
         <p className="mt-8 text-[12px] text-gray-500">

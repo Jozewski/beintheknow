@@ -82,9 +82,9 @@ export default function AboutPage() {
 
         <h2 className="mt-8 text-lg font-bold text-[#085041]">Who built this</h2>
         <p className="mt-3">
-          Be In The Know was created by Joanne Liszewski, built on a simple
-          principle: people should not have to read legal code alone to
-          understand the rights that shape their future.
+          Be In The Know was created by Jozewski Enterprises, built on a
+          simple principle: people should not have to read legal code alone
+          to understand the rights that shape their future.
         </p>
 
         <p className="mt-8 text-[12px] text-gray-500">

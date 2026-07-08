@@ -35,7 +35,7 @@ export function SiteFooter() {
           <p className="max-w-sm text-xs leading-5 text-gray-400">
             Plain-language rights education for people rebuilding their lives and looking for trustworthy next steps.
           </p>
-          <p className="mt-4 text-xs text-gray-500">Built by Joanne Liszewski</p>
+          <p className="mt-4 text-xs text-gray-500">Built by Jozewski Enterprises</p>
         </div>
 
         <div>
@@ -65,7 +65,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto mt-8 flex max-w-7xl flex-col gap-2 border-t border-white/10 pt-4 text-[11px] text-gray-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Be In The Know · Just Ask JO · Joanne Liszewski</p>
+        <p>© 2026 Be In The Know · Just Ask JO · Jozewski Enterprises</p>
         <div className="flex flex-wrap items-center gap-3">
           <Link href="/about" className="hover:text-white">About</Link>
           <Link href="/terms" className="hover:text-white">Terms of Use</Link>

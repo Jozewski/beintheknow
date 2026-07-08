@@ -44,6 +44,35 @@ export function ensureCompleteAnswer(value: string) {
 }
 
 /**
+ * Heuristic detector for prompt-injection / rule-breaking attempts in a
+ * user message. A match does NOT block the message (the layered prompt and
+ * output guards handle the actual content) - it flags the message so an
+ * admin can review manipulation patterns later. Kept here as a pure,
+ * unit-tested function so the pattern cannot silently regress.
+ *
+ * Built from a pattern list rather than one long literal so it stays easy
+ * to read and edit. The apostrophe in "you're" is written as `you.?re`
+ * (matches with or without the apostrophe) to avoid quoting pitfalls.
+ */
+const SUSPICIOUS_PATTERNS = [
+  "ignore (all |your |the |previous |above |prior )*(instructions|rules|guidelines|prompt)",
+  "disregard (your|the|all)",
+  "system prompt",
+  "reveal your (rules|instructions|prompt)",
+  "pretend (you.?re|you are|to be)",
+  "act as (a |my |an )?(lawyer|attorney|judge)",
+  "you are now",
+  "jailbreak",
+  "developer mode",
+  "new directive",
+  "override",
+];
+
+export function isSuspiciousUserMessage(message: string) {
+  return new RegExp(SUSPICIOUS_PATTERNS.join("|"), "i").test(message);
+}
+
+/**
  * Detects answers that were cut off mid-thought (ending on a conjunction
  * or preposition followed by a period), which read as broken and should be
  * replaced with the source-based fallback response.
