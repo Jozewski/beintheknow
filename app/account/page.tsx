@@ -2,11 +2,13 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { ChevronDown, MessageCircle, ShieldAlert } from "lucide-react";
 
 import { PageHero } from "@/components/layout/PageHero";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { clearStoredChatState } from "@/lib/chatClientStorage";
+import { cn } from "@/lib/utils";
 
 type SessionPreview = {
   id: string;
@@ -44,7 +46,6 @@ function formatDate(value?: string) {
 }
 
 export default function AccountPage() {
-  const router = useRouter();
   const [authState, setAuthState] = useState<"checking" | "signed-out" | "ok">("checking");
   const [email, setEmail] = useState<string>();
   const [sessions, setSessions] = useState<SessionPreview[]>();
@@ -70,20 +71,11 @@ export default function AccountPage() {
         setEmail(me.user.email);
         setAuthState("ok");
 
-        // Claim any guest conversations saved on this device before listing,
-        // so history created before sign-in shows up under the account.
-        try {
-          const guestToken = window.localStorage.getItem("jo:guestToken");
-          if (guestToken) {
-            await fetch("/api/chat/adopt", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ guestToken }),
-            });
-          }
-        } catch {
-          // Adoption is best-effort; listing still proceeds.
-        }
+        // Deliberately NO guest-conversation adoption here: on shared
+        // computers (halfway houses, reentry centers, libraries) the
+        // device's guest chat may belong to the previous person at the
+        // machine. Accounts only ever list conversations they created
+        // while signed in.
 
         const sessionsResponse = await fetch("/api/chat/sessions");
         if (sessionsResponse.ok) {
@@ -127,8 +119,11 @@ export default function AccountPage() {
 
   async function signOut() {
     await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
-    router.push("/");
-    router.refresh();
+    // Shared computers: signing out means walking away from this device.
+    // Clear stored chat continuity keys and do a full navigation so no
+    // conversation state survives for the next person at the machine.
+    clearStoredChatState();
+    window.location.assign("/");
   }
 
   async function deleteAccount(event: React.FormEvent) {
@@ -154,12 +149,8 @@ export default function AccountPage() {
         setDeleteError(data.error ?? "Could not delete your account. Please try again.");
         return;
       }
-      try {
-        window.localStorage.removeItem("jo:guestToken");
-        window.localStorage.removeItem("jo:sessionId");
-      } catch {}
-      router.push("/");
-      router.refresh();
+      clearStoredChatState();
+      window.location.assign("/");
     } catch {
       setDeleteError("Could not delete your account. Please check your connection.");
     } finally {
@@ -204,68 +195,101 @@ export default function AccountPage() {
         description="Everything you have asked, saved to your account and private to you."
       />
       <main className="mx-auto max-w-3xl px-4 py-8">
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-[#9FE1CB] bg-[#E1F5EE]/50 px-4 py-3">
-          <p className="text-[13px] text-[#085041]">
-            Signed in as <span className="font-semibold">{email}</span>
-          </p>
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#9FE1CB] bg-gradient-to-r from-[#E1F5EE] to-white px-5 py-4 shadow-sm">
+          <div className="flex min-w-0 items-center gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#085041,#1D9E75)] text-sm font-bold text-white shadow-sm">
+              {(email ?? "?").charAt(0).toUpperCase()}
+            </span>
+            <span className="min-w-0">
+              <span className="block truncate text-[13px] font-semibold text-[#085041]">{email}</span>
+              <span className="text-[11px] text-[#0F6E56]">Signed in</span>
+            </span>
+          </div>
           <div className="flex gap-2">
             <Link
               href="/"
-              className="rounded-md bg-[#1D9E75] px-3 py-1.5 text-[12px] font-semibold text-white hover:bg-[#0F6E56]"
+              className="rounded-full bg-[#1D9E75] px-4 py-2 text-[12px] font-semibold text-white shadow-sm transition hover:bg-[#0F6E56]"
             >
               Ask JO a question
             </Link>
             <button
               type="button"
               onClick={signOut}
-              className="rounded-md border border-gray-300 px-3 py-1.5 text-[12px] font-semibold text-gray-600 hover:bg-gray-50"
+              className="rounded-full border border-gray-300 bg-white px-4 py-2 text-[12px] font-semibold text-gray-600 transition hover:border-gray-400 hover:bg-gray-50"
             >
               Sign out
             </button>
           </div>
         </div>
 
-        <h2 className="mb-3 text-base font-bold text-[#085041]">Past conversations</h2>
+        <div className="mb-4 flex items-center gap-2">
+          <h2 className="text-base font-bold text-[#085041]">Past conversations</h2>
+          {sessions && sessions.length > 0 ? (
+            <span className="rounded-full bg-[#E1F5EE] px-2 py-0.5 text-[11px] font-semibold text-[#085041]">
+              {sessions.length}
+            </span>
+          ) : null}
+        </div>
 
         {sessions === undefined ? (
           <p className="text-sm text-gray-500">Loading conversations...</p>
         ) : sessions.length === 0 ? (
-          <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-8 text-center">
+          <div className="rounded-2xl border border-dashed border-[#9FE1CB] bg-[#E1F5EE]/30 px-4 py-10 text-center">
+            <span className="mx-auto mb-3 flex size-12 items-center justify-center rounded-full bg-white shadow-sm">
+              <MessageCircle className="size-5 text-[#1D9E75]" aria-hidden="true" />
+            </span>
             <p className="text-sm text-gray-600">You have not asked JO anything yet.</p>
             <Link
               href="/"
-              className="mt-3 inline-block rounded-md bg-[#1D9E75] px-4 py-2 text-[13px] font-semibold text-white hover:bg-[#0F6E56]"
+              className="mt-4 inline-block rounded-full bg-[#1D9E75] px-5 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:bg-[#0F6E56]"
             >
               Start a conversation
             </Link>
           </div>
         ) : (
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {sessions.map((session) => (
-              <li key={session.id} className="rounded-lg border border-gray-200">
+              <li
+                key={session.id}
+                className={cn(
+                  "overflow-hidden rounded-2xl border bg-white shadow-sm transition",
+                  openId === session.id
+                    ? "border-[#9FE1CB] shadow-md"
+                    : "border-gray-200 hover:border-[#9FE1CB]",
+                )}
+              >
                 <button
                   type="button"
                   onClick={() => openConversation(session.id)}
-                  className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left hover:bg-gray-50"
+                  className="flex w-full items-center gap-3 px-4 py-3.5 text-left transition hover:bg-[#E1F5EE]/30"
                 >
-                  <span className="min-w-0">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#E1F5EE]">
+                    <MessageCircle className="size-4 text-[#085041]" aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 flex-1">
                     <span className="block truncate text-[13px] font-medium text-gray-900">
                       {session.preview}
                     </span>
-                    <span className="text-[11px] text-gray-500">
-                      {session.jurisdiction === "state" && session.stateCode
-                        ? `${session.stateCode} rights`
-                        : "Federal rights"}
-                      {session.updatedAt ? ` · ${formatDate(session.updatedAt)}` : ""}
+                    <span className="mt-0.5 flex items-center gap-2 text-[11px] text-gray-500">
+                      <span className="rounded-full bg-[#E1F5EE] px-2 py-px font-semibold text-[#085041]">
+                        {session.jurisdiction === "state" && session.stateCode
+                          ? `${session.stateCode} rights`
+                          : "Federal rights"}
+                      </span>
+                      {session.updatedAt ? <span>{formatDate(session.updatedAt)}</span> : null}
                     </span>
                   </span>
-                  <span className="shrink-0 text-[11px] font-semibold text-[#085041]">
-                    {openId === session.id ? "Hide" : "View"}
-                  </span>
+                  <ChevronDown
+                    className={cn(
+                      "size-4 shrink-0 text-[#085041] transition-transform",
+                      openId === session.id && "rotate-180",
+                    )}
+                    aria-hidden="true"
+                  />
                 </button>
 
                 {openId === session.id ? (
-                  <div className="space-y-3 border-t border-gray-100 px-4 py-3">
+                  <div className="space-y-3 border-t border-[#E1F5EE] bg-[#FAFCFB] px-4 py-4">
                     {transcriptLoading ? (
                       <p className="text-[12px] text-gray-500">Loading...</p>
                     ) : transcript && transcript.length > 0 ? (
@@ -274,40 +298,45 @@ export default function AccountPage() {
                           key={message.id}
                           className={
                             message.role === "user"
-                              ? "ml-auto max-w-[85%] rounded-lg bg-[#1D9E75] px-3 py-2 text-[12px] leading-5 text-white"
-                              : "max-w-[85%] rounded-lg bg-gray-100 px-3 py-2 text-[12px] leading-5 text-gray-700"
+                              ? "ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-[linear-gradient(135deg,#13835F,#0F6E56)] px-3.5 py-2.5 text-[12px] leading-5 text-white shadow-sm"
+                              : "max-w-[85%] rounded-2xl rounded-bl-md border border-gray-200 bg-white px-3.5 py-2.5 text-[12px] leading-5 text-gray-700 shadow-sm"
                           }
                         >
                           <p className="whitespace-pre-wrap">{message.content}</p>
                           {message.role === "assistant" &&
                           message.citations &&
                           message.citations.length > 0 ? (
-                            <div className="mt-2 space-y-1 border-t border-gray-200 pt-2">
-                              {message.citations.slice(0, 4).map((citation, index) => {
-                                const label =
-                                  citation.citation ??
-                                  citation.title ??
-                                  citation.sourceName ??
-                                  `Source ${index + 1}`;
-                                return citation.sourceUrl ? (
-                                  <a
-                                    key={`${label}-${index}`}
-                                    href={citation.sourceUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block truncate text-[10px] font-semibold text-[#085041] underline-offset-2 hover:underline"
-                                  >
-                                    {label}
-                                  </a>
-                                ) : (
-                                  <p
-                                    key={`${label}-${index}`}
-                                    className="truncate text-[10px] font-semibold text-[#085041]"
-                                  >
-                                    {label}
-                                  </p>
-                                );
-                              })}
+                            <div className="mt-2.5 border-t border-gray-100 pt-2">
+                              <p className="mb-1.5 text-[9px] font-semibold uppercase tracking-wider text-gray-500">
+                                Sources
+                              </p>
+                              <div className="flex flex-wrap gap-1.5">
+                                {message.citations.slice(0, 4).map((citation, index) => {
+                                  const label =
+                                    citation.citation ??
+                                    citation.title ??
+                                    citation.sourceName ??
+                                    `Source ${index + 1}`;
+                                  return citation.sourceUrl ? (
+                                    <a
+                                      key={`${label}-${index}`}
+                                      href={citation.sourceUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="max-w-full truncate rounded-full border border-[#9FE1CB] bg-[#E1F5EE]/60 px-2.5 py-1 text-[10px] font-semibold text-[#085041] transition hover:bg-[#E1F5EE]"
+                                    >
+                                      {label}
+                                    </a>
+                                  ) : (
+                                    <span
+                                      key={`${label}-${index}`}
+                                      className="max-w-full truncate rounded-full border border-[#9FE1CB] bg-[#E1F5EE]/60 px-2.5 py-1 text-[10px] font-semibold text-[#085041]"
+                                    >
+                                      {label}
+                                    </span>
+                                  );
+                                })}
+                              </div>
                             </div>
                           ) : null}
                         </div>
@@ -324,15 +353,24 @@ export default function AccountPage() {
           </ul>
         )}
 
-        <div className="mt-10 border-t border-gray-200 pt-5">
+        <div className="mt-12 rounded-2xl border border-red-100 bg-red-50/40 p-5">
+          <div className="mb-2 flex items-center gap-2">
+            <ShieldAlert className="size-4 text-red-500" aria-hidden="true" />
+            <h3 className="text-[13px] font-bold text-red-700">Danger zone</h3>
+          </div>
           {!showDelete ? (
-            <button
-              type="button"
-              onClick={() => setShowDelete(true)}
-              className="text-[12px] font-semibold text-red-600 underline-offset-2 hover:underline"
-            >
-              Delete my account and conversations
-            </button>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="text-[12px] leading-4 text-gray-600">
+                Permanently delete your account and every conversation saved to it.
+              </p>
+              <button
+                type="button"
+                onClick={() => setShowDelete(true)}
+                className="rounded-full border border-red-200 bg-white px-4 py-1.5 text-[12px] font-semibold text-red-600 transition hover:bg-red-50"
+              >
+                Delete my account
+              </button>
+            </div>
           ) : (
             <form onSubmit={deleteAccount} className="max-w-sm space-y-2">
               <p className="text-[12px] leading-4 text-gray-600">
@@ -346,7 +384,7 @@ export default function AccountPage() {
                 placeholder="Your password"
                 value={deletePassword}
                 onChange={(event) => setDeletePassword(event.target.value)}
-                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-[13px] text-gray-900 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-200"
+                className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-[13px] text-gray-900 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-200"
               />
               {deleteError ? (
                 <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] leading-4 text-red-700">
@@ -357,7 +395,7 @@ export default function AccountPage() {
                 <button
                   type="submit"
                   disabled={deleting || !deletePassword}
-                  className="rounded-lg bg-red-600 px-3 py-2 text-[12px] font-semibold text-white transition hover:bg-red-700 disabled:opacity-50"
+                  className="rounded-full bg-red-600 px-4 py-2 text-[12px] font-semibold text-white transition hover:bg-red-700 disabled:opacity-50"
                 >
                   {deleting ? "Deleting..." : "Permanently delete"}
                 </button>
@@ -368,7 +406,7 @@ export default function AccountPage() {
                     setDeletePassword("");
                     setDeleteError(undefined);
                   }}
-                  className="rounded-lg border border-gray-300 px-3 py-2 text-[12px] font-semibold text-gray-600 hover:bg-gray-50"
+                  className="rounded-full border border-gray-300 bg-white px-4 py-2 text-[12px] font-semibold text-gray-600 transition hover:bg-gray-50"
                 >
                   Cancel
                 </button>

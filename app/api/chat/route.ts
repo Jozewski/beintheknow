@@ -131,32 +131,25 @@ async function findOrCreateSession({
     const existingSession = await ChatSessionModel.findById(sessionId);
 
     // Only reuse a session when the caller proves ownership: either the
-    // signed-in account owns it, or the caller presents the same guest
-    // token. Otherwise a guessed/leaked sessionId would let a caller
+    // signed-in account owns it, or an anonymous caller presents the same
+    // guest token. Otherwise a guessed/leaked sessionId would let a caller
     // append to (and read back into) someone else's conversation.
     const ownsByAccount =
       authUser &&
       existingSession?.userId &&
       String(existingSession.userId) === authUser.userId;
-    // A session already claimed by a DIFFERENT account must never be reused,
-    // even if the guest token matches - otherwise a caller could append to
-    // (and read) another account's conversation. This also correctly forces
-    // a fresh session when someone signs into a new account on a device that
-    // still holds an old session id in local storage.
-    const ownedByOtherAccount =
-      existingSession?.userId &&
-      (!authUser || String(existingSession.userId) !== authUser.userId);
+    // Guest-token reuse applies to ANONYMOUS callers only, and never to a
+    // session any account has claimed. Signed-in users never attach
+    // themselves to guest sessions: on shared computers (halfway houses,
+    // reentry centers, libraries) the device's guest chat may belong to
+    // the previous person at the machine, so each sign-in starts fresh.
     const ownsByGuestToken =
-      !ownedByOtherAccount &&
+      !authUser &&
+      !existingSession?.userId &&
       existingSession?.guestToken &&
       existingSession.guestToken === guestToken;
 
     if (existingSession && (ownsByAccount || ownsByGuestToken)) {
-      // Attach a signed-in user to their previously-guest session.
-      if (authUser && !existingSession.userId) {
-        existingSession.userId = new mongoose.Types.ObjectId(authUser.userId);
-        await existingSession.save();
-      }
       return existingSession;
     }
   }
@@ -246,17 +239,10 @@ export async function POST(request: Request) {
 
   const session = await findOrCreateSession({ ...parsed.data, ipHash, authUser });
 
-  // Claim any earlier guest conversations on this device for the account.
-  // Cheap idempotent updateMany; keeps account history complete even if the
-  // conversation started before sign-in.
-  if (authUser && requestGuestToken) {
-    await ChatSessionModel.updateMany(
-      { guestToken: requestGuestToken, userId: { $exists: false } },
-      { $set: { userId: authUser.userId } },
-    ).catch((error) => {
-      console.error("JO chat: guest session adoption failed", error);
-    });
-  }
+  // Deliberately NO guest-conversation adoption for signed-in users: on
+  // shared computers the device's lingering guest token may belong to the
+  // previous person at the machine, and adopting it would move their
+  // conversation into this account permanently.
 
   // Flag likely prompt-injection / rule-breaking attempts. Flagged messages
   // are still answered normally (the layered prompt + output guards handle

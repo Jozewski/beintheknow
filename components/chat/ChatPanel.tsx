@@ -8,6 +8,10 @@ import { ChatMessage } from "@/components/chat/ChatMessage";
 import { ChatSuggestions } from "@/components/chat/ChatSuggestions";
 import { JoLogo } from "@/components/layout/JoLogo";
 import type { Jurisdiction } from "@/data/content-data";
+import {
+  CHAT_GUEST_TOKEN_KEY,
+  CHAT_SESSION_ID_KEY,
+} from "@/lib/chatClientStorage";
 
 type ChatCitation = {
   sourceName?: string;
@@ -35,8 +39,8 @@ type ChatPanelProps = {
   initialTopic?: string;
 };
 
-const GUEST_TOKEN_KEY = "jo:guestToken";
-const SESSION_ID_KEY = "jo:sessionId";
+const GUEST_TOKEN_KEY = CHAT_GUEST_TOKEN_KEY;
+const SESSION_ID_KEY = CHAT_SESSION_ID_KEY;
 
 function readStoredValue(key: string) {
   if (typeof window === "undefined") return undefined;
@@ -87,6 +91,13 @@ export function ChatPanel({
   const scrollRef = useRef<HTMLDivElement>(null);
   const lastSeededTopic = useRef<string | undefined>(initialTopic);
   const historyLoaded = useRef(false);
+  // Scroll intent for the next render: "bottom" after the user sends (show
+  // their message and the typing dots), or an anchor id when the answer
+  // starts streaming (pin the question to the top so the reply is read from
+  // its first line - never auto-scroll DURING streaming, which would pull
+  // the text away faster than anyone can read it).
+  const scrollToBottomNext = useRef(false);
+  const anchorMessageId = useRef<string | undefined>(undefined);
 
   // Check for a signed-in account once per page load.
   useEffect(() => {
@@ -128,6 +139,7 @@ export function ChatPanel({
         };
 
         if (data.messages.length > 0) {
+          scrollToBottomNext.current = true;
           setMessages((current) => [
             ...current.filter((message) => message.id === "welcome"),
             ...data.messages.map((message) => ({
@@ -162,10 +174,32 @@ export function ChatPanel({
   }, [initialTopic]);
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({
-      top: scrollRef.current.scrollHeight,
-      behavior: "smooth",
-    });
+    const container = scrollRef.current;
+    if (!container) return;
+
+    if (scrollToBottomNext.current) {
+      scrollToBottomNext.current = false;
+      container.scrollTo({ top: container.scrollHeight, behavior: "smooth" });
+      return;
+    }
+
+    // The moment the answer starts arriving, pin the user's question to the
+    // top of the viewport once, then hands off scrolling to the reader while
+    // the rest of the answer streams in below.
+    const lastMessage = messages[messages.length - 1];
+    if (
+      anchorMessageId.current &&
+      lastMessage?.role === "assistant" &&
+      lastMessage.content
+    ) {
+      const anchorEl = container.querySelector<HTMLElement>(
+        `[data-message-id="${anchorMessageId.current}"]`,
+      );
+      anchorMessageId.current = undefined;
+      if (anchorEl) {
+        container.scrollTo({ top: anchorEl.offsetTop - 12, behavior: "smooth" });
+      }
+    }
   }, [messages, isSending]);
 
   async function sendMessage() {
@@ -182,6 +216,8 @@ export function ChatPanel({
     setDraft("");
     setError(undefined);
     setIsSending(true);
+    scrollToBottomNext.current = true;
+    anchorMessageId.current = userMessage.id;
 
     try {
       const response = await fetch("/api/chat", {
@@ -334,6 +370,9 @@ export function ChatPanel({
         }
       }
     } catch (sendError) {
+      // Show the error where the user is looking.
+      anchorMessageId.current = undefined;
+      scrollToBottomNext.current = true;
       setError(
         sendError instanceof Error
           ? sendError.message
@@ -377,7 +416,10 @@ export function ChatPanel({
   if (!isOpen) return null;
 
   return (
-    <aside className="fixed inset-x-0 bottom-0 z-40 flex h-[calc(100vh-52px)] flex-col border-l border-gray-200 bg-white shadow-2xl shadow-gray-900/10 lg:sticky lg:top-[52px] lg:h-[calc(100vh-52px)] lg:w-[320px] lg:shrink-0 lg:shadow-none xl:w-[360px]">
+    <aside
+      aria-label="Just Ask JO chat"
+      className="fixed inset-x-0 bottom-0 z-40 flex h-[calc(100dvh-52px)] flex-col border-l border-gray-200 bg-white shadow-2xl shadow-gray-900/10 lg:sticky lg:top-[52px] lg:h-[calc(100dvh-52px)] lg:w-1/3 lg:min-w-[320px] lg:shrink-0 lg:shadow-none"
+    >
       <div className="flex items-center justify-between bg-gray-900 px-4 py-3 text-white">
         <div className="flex items-center gap-2.5">
           <JoLogo />
@@ -430,7 +472,7 @@ export function ChatPanel({
 
       <div
         ref={scrollRef}
-        className="flex-1 space-y-3 overflow-auto px-4 py-4"
+        className="relative flex-1 space-y-3 overflow-auto bg-[#FAFCFB] px-4 py-4"
         role="log"
         aria-live="polite"
       >
@@ -439,20 +481,36 @@ export function ChatPanel({
           // citations block never renders ahead of the answer text.
           .filter((message) => message.role === "user" || message.content)
           .map((message) => (
-            <ChatMessage
-              key={message.id}
-              role={message.role}
-              content={message.content}
-              citations={message.citations}
-              messageId={message.dbId}
-              feedbackRating={message.feedbackRating}
-              onFeedback={sendFeedback}
-            />
+            <div key={message.id} data-message-id={message.id}>
+              <ChatMessage
+                role={message.role}
+                content={message.content}
+                citations={message.citations}
+                messageId={message.dbId}
+                feedbackRating={message.feedbackRating}
+                onFeedback={sendFeedback}
+              />
+            </div>
           ))}
         {isSending &&
         (messages[messages.length - 1]?.role === "user" ||
           !messages[messages.length - 1]?.content) ? (
-          <ChatMessage role="assistant" content="JO is checking the source database..." />
+          <div className="flex items-end gap-2">
+            <span
+              className="mb-0.5 flex size-7 shrink-0 select-none items-center justify-center rounded-full bg-[linear-gradient(135deg,#085041,#1D9E75)] text-[9px] font-bold text-white shadow-sm"
+              aria-hidden="true"
+            >
+              JO
+            </span>
+            <div
+              className="flex items-center gap-1.5 rounded-2xl rounded-bl-md border border-gray-200 bg-white px-4 py-3 shadow-sm"
+              aria-label="JO is checking the source database"
+            >
+              <span className="size-1.5 animate-bounce rounded-full bg-[#1D9E75] motion-reduce:animate-pulse" />
+              <span className="size-1.5 animate-bounce rounded-full bg-[#1D9E75] [animation-delay:150ms] motion-reduce:animate-pulse" />
+              <span className="size-1.5 animate-bounce rounded-full bg-[#1D9E75] [animation-delay:300ms] motion-reduce:animate-pulse" />
+            </div>
+          </div>
         ) : null}
         {error ? (
           <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[11px] leading-4 text-red-700">

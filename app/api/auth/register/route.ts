@@ -6,7 +6,6 @@ import {
   signAuthToken,
 } from "@/lib/auth";
 import { connectDB } from "@/lib/mongodb";
-import { ChatSessionModel } from "@/models/ChatSession";
 import { UserModel } from "@/models/User";
 
 export const dynamic = "force-dynamic";
@@ -17,8 +16,6 @@ const registerSchema = z.object({
     .string()
     .min(8, "Password must be at least 8 characters.")
     .max(200),
-  // Optional: adopt this guest's existing chat sessions into the account.
-  guestToken: z.string().optional(),
 });
 
 export async function POST(request: Request) {
@@ -41,7 +38,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const { email, password, guestToken } = parsed.data;
+  const { email, password } = parsed.data;
 
   try {
     await connectDB();
@@ -67,13 +64,10 @@ export async function POST(request: Request) {
     plan: "registered",
   });
 
-  // Adopt the guest's existing conversations into the new account.
-  if (guestToken) {
-    await ChatSessionModel.updateMany(
-      { guestToken, userId: { $exists: false } },
-      { $set: { userId: user._id } },
-    );
-  }
+  // Deliberately NO guest-conversation adoption: on shared computers
+  // (halfway houses, reentry centers, libraries) the device's guest chat
+  // may belong to the previous person at the machine. Every sign-up starts
+  // with a clean slate.
 
   const token = signAuthToken({
     userId: user._id.toString(),

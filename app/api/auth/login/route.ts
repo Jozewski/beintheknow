@@ -6,7 +6,6 @@ import {
   verifyPassword,
 } from "@/lib/auth";
 import { connectDB } from "@/lib/mongodb";
-import { ChatSessionModel } from "@/models/ChatSession";
 import { UserModel } from "@/models/User";
 
 export const dynamic = "force-dynamic";
@@ -14,7 +13,6 @@ export const dynamic = "force-dynamic";
 const loginSchema = z.object({
   email: z.string().trim().toLowerCase().email().max(320),
   password: z.string().min(1).max(200),
-  guestToken: z.string().optional(),
 });
 
 export async function POST(request: Request) {
@@ -36,7 +34,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const { email, password, guestToken } = parsed.data;
+  const { email, password } = parsed.data;
 
   try {
     await connectDB();
@@ -58,12 +56,9 @@ export async function POST(request: Request) {
     );
   }
 
-  if (guestToken) {
-    await ChatSessionModel.updateMany(
-      { guestToken, userId: { $exists: false } },
-      { $set: { userId: user._id } },
-    );
-  }
+  // Deliberately NO guest-conversation adoption: on shared computers the
+  // device's guest chat may belong to the previous person at the machine.
+  // Every sign-in starts with a clean slate.
 
   const token = signAuthToken({
     userId: user._id.toString(),

@@ -47,8 +47,18 @@ export async function GET(request: Request) {
 
   const ownsByAccount =
     authUser && session?.userId && String(session.userId) === authUser.userId;
+  // A session claimed by an account may NEVER be read back with just the
+  // guest token. Shared computers (halfway houses, reentry centers,
+  // libraries) keep the same localStorage guest token across people; without
+  // this guard, the next person at the machine could reload the previous
+  // person's account conversation after they signed out.
+  const ownedByOtherAccount =
+    session?.userId && (!authUser || String(session.userId) !== authUser.userId);
   const ownsByGuestToken =
-    guestToken && session?.guestToken && session.guestToken === guestToken;
+    !ownedByOtherAccount &&
+    guestToken &&
+    session?.guestToken &&
+    session.guestToken === guestToken;
 
   if (!session || (!ownsByAccount && !ownsByGuestToken)) {
     return Response.json({ error: "Session not found." }, { status: 404 });

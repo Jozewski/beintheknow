@@ -2,21 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
-const GUEST_TOKEN_KEY = "jo:guestToken";
-
-function readGuestToken() {
-  if (typeof window === "undefined") return undefined;
-  try {
-    return window.localStorage.getItem(GUEST_TOKEN_KEY) ?? undefined;
-  } catch {
-    return undefined;
-  }
-}
+import { clearStoredChatState } from "@/lib/chatClientStorage";
 
 export default function AuthPage() {
-  const router = useRouter();
   const [mode, setMode] = useState<"login" | "register">("register");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,8 +29,13 @@ export default function AuthPage() {
 
   async function signOut() {
     await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
+    // Shared computers (halfway houses, reentry centers, libraries): signing
+    // out means walking away from this device. Clear the stored chat
+    // continuity keys and do a full navigation so no conversation state -
+    // in memory or in localStorage - survives for the next person.
+    clearStoredChatState();
     setSignedInAs(undefined);
-    router.refresh();
+    window.location.assign("/");
   }
 
   async function deleteAccount(event: React.FormEvent) {
@@ -70,17 +64,13 @@ export default function AuthPage() {
         return;
       }
 
-      // Also drop this device's guest continuity keys.
-      try {
-        window.localStorage.removeItem("jo:guestToken");
-        window.localStorage.removeItem("jo:sessionId");
-      } catch {}
+      // Also drop this device's chat continuity keys.
+      clearStoredChatState();
 
       setSignedInAs(undefined);
       setShowDelete(false);
       setDeletePassword("");
-      router.push("/");
-      router.refresh();
+      window.location.assign("/");
     } catch {
       setDeleteError("Could not delete your account. Please check your connection.");
     } finally {
@@ -99,12 +89,7 @@ export default function AuthPage() {
       const response = await fetch(`/api/auth/${mode}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          password,
-          // Adopt this device's guest conversations into the account.
-          guestToken: readGuestToken(),
-        }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
@@ -114,8 +99,11 @@ export default function AuthPage() {
         return;
       }
 
-      router.push("/");
-      router.refresh();
+      // Every sign-in and sign-up starts with a blank chat. On shared
+      // computers the device's stored guest conversation may belong to the
+      // previous person at the machine, so it must never carry over.
+      clearStoredChatState();
+      window.location.assign("/");
     } catch {
       setError("Something went wrong. Please check your connection and try again.");
     } finally {

@@ -18,7 +18,7 @@ export function ChatInput({
 }: ChatInputProps) {
   return (
     <form
-      className="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 p-1.5"
+      className="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 p-1.5 transition focus-within:border-[#1D9E75] focus-within:ring-2 focus-within:ring-[#9FE1CB]"
       onSubmit={(event) => {
         event.preventDefault();
         onSubmit();
@@ -30,8 +30,9 @@ export function ChatInput({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder="Ask JO anything about your rights..."
+        aria-label="Ask JO a question about your rights"
         disabled={disabled}
-        className="min-w-0 flex-1 bg-transparent text-[13px] outline-none placeholder:text-gray-400"
+        className="min-w-0 flex-1 bg-transparent text-[16px] outline-none placeholder:text-gray-500 lg:text-[13px]"
       />
       <button
         type="submit"
