@@ -24,39 +24,39 @@ export const stateTopicResourceEntries = [
     "summary": "Federal law does not automatically restore voting rights after a felony conviction. Rights depend on your state. Understanding the federal framework is the first step to knowing when and how you can vote again.",
     "resources": [
       {
-        "label": "DOJ Voting Rights — U.S. Department of Justice",
-        "url": "https://www.justice.gov/voting-rights"
+        "label": "Voting Rights — U.S. Department of Justice",
+        "url": "https://www.justice.gov/voting/voting-rights"
       },
       {
-        "label": "Voting Rights — USAGov",
-        "url": "https://www.usa.gov/voting-rights"
+        "label": "Who Can and Cannot Vote — USAGov",
+        "url": "https://www.usa.gov/who-can-vote"
       },
       {
         "label": "Voting Rights Restoration — Brennan Center for Justice",
         "url": "https://www.brennancenter.org/issues/ensure-every-american-can-vote/voting-rights-restoration"
       }
     ],
-    "learnMoreUrl": "https://www.justice.gov/voting-rights",
+    "learnMoreUrl": "https://www.justice.gov/voting/voting-rights",
     "reviewStatus": "reviewed"
   },
   {
     "jurisdiction": "federal",
     "topicId": "expungement",
     "label": "Federal Law",
-    "keywords": "expungement record sealing federal conviction clear criminal history",
-    "summary": "Federal expungement options are limited compared to state law. Understanding what federal records can and cannot be cleared — and what alternatives exist — is critical to protecting your future opportunities.",
+    "keywords": "expungement record sealing federal conviction clear criminal history pardon clemency",
+    "summary": "Federal expungement options are limited compared to state law. Understanding what federal records can and cannot be cleared — and what alternatives exist, like a presidential pardon or correcting your FBI record — is critical to protecting your future opportunities.",
     "resources": [
       {
-        "label": "Federal Expungement & Record Sealing — CCRC",
+        "label": "Federal Restoration of Rights, Pardon, Expungement & Sealing — CCRC",
         "url": "https://ccresourcecenter.org/state-restoration-profiles/federalrestoration-of-rights-pardon-expungement-sealing/"
       },
       {
-        "label": "Federal Sentencing Guidelines — U.S. Sentencing Commission",
-        "url": "https://www.ussc.gov/guidelines/2025-guidelines-manual"
+        "label": "Apply for Clemency — DOJ Office of the Pardon Attorney",
+        "url": "https://www.justice.gov/pardon"
       },
       {
-        "label": "Clemency and Pardons — ACLU",
-        "url": "https://www.aclu.org/issues/smart-justice/parole-and-release/clemency-and-pardons"
+        "label": "Challenge or Correct Your FBI Record — FBI Identity History Summary",
+        "url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks/identity-history-summary-checks-faqs"
       }
     ],
     "learnMoreUrl": "https://www.justice.gov/pardon",
@@ -66,66 +66,66 @@ export const stateTopicResourceEntries = [
     "jurisdiction": "federal",
     "topicId": "housing",
     "label": "Federal Law",
-    "keywords": "housing rights fair housing act discrimination HUD rental felony",
-    "summary": "The Fair Housing Act protects you from some forms of housing discrimination. HUD guidance limits blanket bans on renting to people with criminal records. Know your rights before you apply.",
+    "keywords": "housing rights public housing voucher section 8 HUD rental screening felony",
+    "summary": "Federal law limits when public housing agencies can deny you for a criminal record, and you have the right to see and dispute the record they use. Know your rights before you apply.",
     "resources": [
       {
-        "label": "Fair Housing Rights — HUD",
-        "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp/fair_housing_rights_and_obligations"
+        "label": "Housing Choice Vouchers for Tenants — HUD",
+        "url": "https://www.hud.gov/helping-americans/housing-choice-vouchers-tenants"
       },
       {
-        "label": "HUD removes Fair Housing Guidance Documents — NLIHC",
-        "url": "https://nlihc.org/resource/hud-publishes-notice-removing-fair-housing-guidance-documents"
+        "label": "Housing Choice Voucher Program (Section 8) — HUD",
+        "url": "https://www.hud.gov/topics/housing_choice_voucher_program_section_8"
       },
       {
-        "label": "Ensure Fair Screening Practices for Tenants with Conviction Histories — NLIHC",
-        "url": "https://nlihc.org/resource/ensure-fair-screening-practices-tenants-conviction-histories"
+        "label": "Public Housing Eligibility & Denial of Assistance Guidebook — HUD",
+        "url": "https://www.hud.gov/sites/dfiles/PIH/documents/PHOG_Eligibility_Det_Denial_Assistance.pdf"
       }
     ],
-    "learnMoreUrl": "https://www.hud.gov/hud-partners#FairHousing",
+    "learnMoreUrl": "https://www.hud.gov/helping-americans/housing-choice-vouchers",
     "reviewStatus": "reviewed"
   },
   {
     "jurisdiction": "federal",
     "topicId": "employment",
     "label": "Federal Law",
-    "keywords": "employment rights job work EEOC ban the box discrimination hiring felony",
-    "summary": "Federal law through the EEOC limits how employers can use criminal records in hiring decisions. Title VII protections apply. Learn what employers can ask, when they can ask it, and what your options are if you are denied a job.",
+    "keywords": "employment rights job work EEOC ban the box background check discrimination hiring felony",
+    "summary": "Federal law through the EEOC limits how employers can use criminal records in hiring decisions, and the Fair Credit Reporting Act gives you rights when a background check is run. Learn what employers can ask, when they can ask it, and what your options are if you are denied a job.",
     "resources": [
       {
-        "label": "EEOC Guidance on Criminal Records — EEOC",
-        "url": "https://www.eeoc.gov/laws/guidance/questions-and-answers-clarify-and-provide-common-interpretation-uniform-guidelines"
+        "label": "Arrest and Conviction Records: Resources for Job Seekers — EEOC",
+        "url": "https://www.eeoc.gov/pre-employment-inquiries-and-arrest-conviction"
       },
       {
-        "label": "Reentry Employment Resources — U.S. Dept. of Labor",
-        "url": "https://www.dol.gov/agencies/eta/reentry"
+        "label": "Employer Background Checks and Your Rights — FTC",
+        "url": "https://consumer.ftc.gov/articles/employer-background-checks-and-your-rights"
       },
       {
-        "label": "Ban the Box and Fair Chance Laws — ADP Research Institute",
-        "url": "https://sbshrs.adpinfo.com/blog/top-faqs-on-criminal-history-inquiries-ban-the-box-and-fair-chance-laws"
+        "label": "Reentry Employment Resources — U.S. Department of Labor",
+        "url": "https://www.dol.gov/agencies/eta/reentry/resources"
       }
     ],
-    "learnMoreUrl": "https://www.eeoc.gov",
+    "learnMoreUrl": "https://www.eeoc.gov/pre-employment-inquiries-and-arrest-conviction",
     "reviewStatus": "reviewed"
   },
   {
     "jurisdiction": "federal",
     "topicId": "police",
     "label": "Federal Law",
-    "keywords": "police interactions fourth amendment search seizure miranda rights arrest stop",
+    "keywords": "police interactions fourth amendment search seizure miranda rights arrest stop civil rights",
     "summary": "The Fourth and Fifth Amendments protect you during police interactions. You have the right to remain silent. You have the right to refuse searches in certain situations. Knowing these rights before an encounter can protect you.",
     "resources": [
       {
-        "label": "Stopped by Police — Your Rights (ACLU)",
+        "label": "Stopped by Police — Know Your Rights (ACLU)",
         "url": "https://www.aclu.org/know-your-rights/stopped-by-police"
       },
       {
-        "label": "Police Misconduct Laws — DOJ Civil Rights Division",
-        "url": "https://www.justice.gov/crt/addressing-police-misconduct-laws-enforced-department-justice"
+        "label": "Report a Civil Rights Violation — DOJ Civil Rights Division",
+        "url": "https://civilrights.justice.gov/report/"
       },
       {
-        "label": "Fourth Amendment — U.S. Constitution (Congress.gov)",
-        "url": "https://constitution.congress.gov/constitution/amendment-4/"
+        "label": "The Bill of Rights (Amendments IV and V) — National Archives",
+        "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript"
       }
     ],
     "learnMoreUrl": "https://www.aclu.org/know-your-rights/stopped-by-police",
@@ -133,48 +133,25 @@ export const stateTopicResourceEntries = [
   },
   {
     "jurisdiction": "federal",
-    "topicId": "parole",
-    "label": "Supervision-Specific",
-    "keywords": "parole federal supervised release conditions search officer rights fourth amendment",
-    "summary": "Federal parole was abolished in 1987. Most federal releases are now called supervised release. Understanding your conditions, what officers can search, and what triggers a violation can help you complete supervision successfully.",
+    "topicId": "supervision",
+    "label": "Federal Law",
+    "keywords": "supervision probation parole supervised release conditions violation early termination officer",
+    "summary": "Federal parole was abolished in 1987; most people are now on supervised release or probation, overseen by U.S. Probation Officers with conditions set by the court. Understanding your written conditions, and the possibility of early termination after one year of good conduct, can help you finish supervision successfully.",
     "resources": [
       {
-        "label": "Federal Supervised Release Toolkit — U.S. Sentencing Commission",
-        "url": "https://www.ussc.gov/education/supervised-release-toolkit"
+        "label": "Probation and Pretrial Services — U.S. Courts",
+        "url": "https://www.uscourts.gov/about-federal-courts/probation-and-pretrial-services"
       },
       {
-        "label": "Supervised Release Conditions — Federal Defenders",
-        "url": "https://www.ussc.gov/topic/supervised-release"
+        "label": "Overview of Probation and Supervised Release Conditions — U.S. Courts",
+        "url": "https://www.uscourts.gov/about-federal-courts/probation-and-pretrial-services/post-conviction-supervision/overview-probation-and-supervised-release-conditions"
       },
       {
-        "label": "U.S. Parole Commission — DOJ",
-        "url": "https://www.justice.gov/uspc"
+        "label": "Supervised Release Primer — U.S. Sentencing Commission",
+        "url": "https://www.ussc.gov/guidelines/primers/supervised-release"
       }
     ],
-    "learnMoreUrl": "https://www.uscourts.gov/services-forms/probation-and-pretrial-services",
-    "reviewStatus": "reviewed"
-  },
-  {
-    "jurisdiction": "federal",
-    "topicId": "probation",
-    "label": "Supervision-Specific",
-    "keywords": "probation federal conditions violation search officer rights reporting",
-    "summary": "Federal probation is supervised directly by U.S. Probation Officers. Your conditions are set by the court. Learn what conditions are standard, what your search rights are, what employment reporting means, and what can trigger a revocation hearing.",
-    "resources": [
-      {
-        "label": "Federal Probation Services — U.S. Courts",
-        "url": "https://www.uscourts.gov/services-forms/probation-and-pretrial-services"
-      },
-      {
-        "label": "Probation Conditions — Federal Probation Officers Association",
-        "url": "https://www.law.cornell.edu/uscode/text/18/3563"
-      },
-      {
-        "label": "Probation & Parole Rights — ACLU",
-        "url": "https://www.aclu.org/know-your-rights/probation-and-parole"
-      }
-    ],
-    "learnMoreUrl": "https://www.uscourts.gov/services-forms/probation-and-pretrial-services",
+    "learnMoreUrl": "https://www.uscourts.gov/about-federal-courts/probation-and-pretrial-services",
     "reviewStatus": "reviewed"
   },
   {
