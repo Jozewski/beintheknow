@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -36,7 +37,10 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${dmSerif.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
