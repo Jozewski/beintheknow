@@ -342,7 +342,7 @@ export default function AdminPage() {
         <a
           href="https://legiscan.com"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="underline-offset-2 hover:underline"
         >
           LegiScan
@@ -351,7 +351,7 @@ export default function AdminPage() {
         <a
           href="https://creativecommons.org/licenses/by/4.0/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="underline-offset-2 hover:underline"
         >
           Creative Commons Attribution 4.0
