@@ -1,3 +1,5 @@
+import { ThumbsDown, ThumbsUp } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 
 type ChatMessageProps = {
@@ -10,9 +12,22 @@ type ChatMessageProps = {
     title?: string;
     currentAsOfLabel?: string;
   }>;
+  /** Stored message id - present once the answer is persisted. */
+  messageId?: string;
+  /** The user's existing rating for this answer, if any. */
+  feedbackRating?: "up" | "down";
+  /** When provided (with messageId), renders the feedback buttons. */
+  onFeedback?: (messageId: string, rating: "up" | "down") => void;
 };
 
-export function ChatMessage({ role, content, citations = [] }: ChatMessageProps) {
+export function ChatMessage({
+  role,
+  content,
+  citations = [],
+  messageId,
+  feedbackRating,
+  onFeedback,
+}: ChatMessageProps) {
   const isUser = role === "user";
 
   return (
@@ -33,7 +48,12 @@ export function ChatMessage({ role, content, citations = [] }: ChatMessageProps)
             // the bracket numbers aligned with JO's inline citations.
             const groups = new Map<
               string,
-              { label: string; url?: string; indices: number[] }
+              {
+                label: string;
+                url?: string;
+                currentAsOfLabel?: string;
+                indices: number[];
+              }
             >();
 
             citations.forEach((citation, index) => {
@@ -46,6 +66,7 @@ export function ChatMessage({ role, content, citations = [] }: ChatMessageProps)
               const group = groups.get(key) ?? {
                 label,
                 url: citation.sourceUrl,
+                currentAsOfLabel: citation.currentAsOfLabel,
                 indices: [],
               };
               group.indices.push(index + 1);
@@ -54,6 +75,11 @@ export function ChatMessage({ role, content, citations = [] }: ChatMessageProps)
 
             return [...groups.values()].slice(0, 4).map((group) => {
               const prefix = `[${group.indices.join(", ")}]`;
+              // Freshness transparency: users should see how current the
+              // law text behind each citation is.
+              const suffix = group.currentAsOfLabel
+                ? ` - current as of ${group.currentAsOfLabel}`
+                : "";
 
               return group.url ? (
                 <a
@@ -64,6 +90,7 @@ export function ChatMessage({ role, content, citations = [] }: ChatMessageProps)
                   className="block truncate text-[10px] font-semibold text-[#085041] underline-offset-2 hover:underline"
                 >
                   {prefix} {group.label}
+                  {suffix}
                 </a>
               ) : (
                 <p
@@ -71,10 +98,40 @@ export function ChatMessage({ role, content, citations = [] }: ChatMessageProps)
                   className="truncate text-[10px] font-semibold text-[#085041]"
                 >
                   {prefix} {group.label}
+                  {suffix}
                 </p>
               );
             });
           })()}
+        </div>
+      ) : null}
+      {!isUser && messageId && onFeedback ? (
+        <div className="mt-2 flex items-center gap-1.5 border-t border-gray-200 pt-2">
+          <span className="text-[10px] text-gray-400">
+            {feedbackRating ? "Thanks for the feedback." : "Was this helpful?"}
+          </span>
+          <button
+            type="button"
+            aria-label="This answer was helpful"
+            onClick={() => onFeedback(messageId, "up")}
+            className={cn(
+              "rounded p-1 hover:bg-gray-200",
+              feedbackRating === "up" ? "text-[#1D9E75]" : "text-gray-400",
+            )}
+          >
+            <ThumbsUp className="size-3" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            aria-label="This answer was not helpful"
+            onClick={() => onFeedback(messageId, "down")}
+            className={cn(
+              "rounded p-1 hover:bg-gray-200",
+              feedbackRating === "down" ? "text-red-500" : "text-gray-400",
+            )}
+          >
+            <ThumbsDown className="size-3" aria-hidden="true" />
+          </button>
         </div>
       ) : null}
     </div>

@@ -1,332 +1,341 @@
-<p align="center">
-  <img src="public/jo-logo.svg" alt="JO shield logo" width="96" height="96" />
-</p>
+<a id="readme-top"></a>
 
-# Be In The Know - Just Ask JO
+<!-- PROJECT SHIELDS -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![AGPL-3.0 License][license-shield]][license-url]
 
-Be In The Know is a legal rights education platform built to make complex federal and state rights information easier to understand, verify, and act on. Its assistant, JO, translates approved legal source material into plain-English guidance for people navigating reentry, supervision, housing, employment, voting rights, record clearing, and police interactions.
 
-The project is designed around a simple principle: people should not have to read legal code alone to understand the basic rights and barriers that may affect their future. JO gives users a more approachable starting point while keeping citations, source boundaries, and legal disclaimers visible.
 
-## Product Purpose
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Jozewski/beintheknow">
+    <img src="public/jo-logo.svg" alt="JO shield logo" width="96" height="96">
+  </a>
 
-Be In The Know focuses on the gap between raw legal information and real user comprehension. Statutes, agency pages, and public resources are often scattered across different websites, written at a high reading level, and difficult to compare across states. This app brings that information into a structured experience where users can:
+  <h3 align="center">Be In The Know &middot; Just Ask JO</h3>
 
-- choose federal or state-specific rights information,
-- browse topic cards with state-relevant resources,
-- ask JO plain-language questions,
-- receive cited educational answers, and
-- verify answers against official source links.
+  <p align="center">
+    Plain-English legal rights education for people navigating reentry - grounded in cited, human-reviewed sources.
+    <br />
+    <strong>Built by Jozewski Enterprises</strong>
+    <br />
+    <br />
+    <a href="https://github.com/Jozewski/beintheknow/issues/new?labels=bug">Report Bug</a>
+    &middot;
+    <a href="https://github.com/Jozewski/beintheknow/issues/new?labels=enhancement">Request Feature</a>
+  </p>
+</div>
 
-JO is intentionally conservative. It answers from approved legal authority records, returns citations with each response, and avoids guessing when source text is missing. The primary answer corpus is official statute and authority text that has been normalized, chunked, embedded, and marked approved. Legislative tracking data from LegiScan is maintained separately as supplemental change-monitoring data.
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#how-jo-answers">How JO Answers</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#content-operations">Content Operations</a></li>
+    <li><a href="#privacy-and-safety">Privacy and Safety</a></li>
+    <li><a href="#testing">Testing</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Be In The Know is a legal rights education platform for people navigating reentry. Its assistant, JO, translates approved legal source material into plain-English guidance across six topics - voting rights, expungement and record clearing, housing, employment, police interactions, and probation/parole/supervision - for all fifty states plus federal law.
+
+The project is built on a simple principle: people should not have to read legal code alone to understand the rights and barriers that affect their future. JO gives them an approachable starting point while keeping citations, source boundaries, and legal disclaimers visible.
+
+What makes it different:
+
+* **Source discipline.** JO answers only from human-approved legal source chunks, cites every answer, and declines when no approved source exists. It never answers from model memory.
+* **Human review gate.** New content enters as a draft and is invisible to JO until a person reviews and approves it. Automation detects, fetches, and embeds - it never approves.
+* **State-aware.** Topic cards and retrieval respond to the user's selected state, and every source carries a current-as-of date shown with its citation.
+* **Plain language.** Answers target a sixth-grade reading level, short sentences, no jargon.
+* **Education, not advice.** Disclaimers throughout; individual situations are routed to legal aid.
 
 JO is an educational tool only. It does not provide legal advice, does not predict outcomes, and does not create an attorney-client relationship.
 
-## What Makes It Different
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Be In The Know is not a generic chatbot placed on top of legal content. The system is built around source discipline, jurisdiction awareness, and plain-language delivery.
+### How JO Answers
 
-- Source-grounded answers: JO retrieves both approved legal authorities (official statutes) and curated summaries (plain-English guidance with resource links) before answering. All responses include citations users can inspect.
-- Intelligent retrieval: Question type detection adapts retrieval strategy—"What is expungement?" gets more summaries, while "Can I vote in Texas?" gets more statutes.
-- State-aware experience: topic cards and chat retrieval respond to the state selected by the user.
-- Separate monitoring layer: LegiScan data helps track legal changes without being treated as final authority.
-- Plain-language guardrails: JO is prompted to explain rights at about a sixth-grade reading level and avoid unsupported promises.
-- Operational transparency: source type, review status, current-as-of labels, embedding model, and citation metadata are preserved with the corpus.
+JO uses a retrieval-first workflow - the model never decides on its own what the law is:
 
-## Core Topics
+1. The user asks a question with a jurisdiction and optional state.
+2. The question is embedded (Gemini, 768 dimensions) and MongoDB Atlas Vector Search retrieves approved chunks: official statutes (`legal-authority`) and curated plain-English summaries (`legal-content`). Definitional questions weight summaries; specific questions weight statutes.
+3. The prompt is built from the retrieved sources plus layered security and plain-language rules; user input is delimited as data, never instructions.
+4. Gemini streams a cited answer. An output guard replaces any substantive answer that cites none of its sources with a source-grounded fallback, and if generation fails entirely JO falls back to quoting the sources directly.
+5. If no approved source exists, JO says so and points to legal aid - no guessing.
 
-- Voting rights restoration
-- Expungement, sealing, set-aside, and record clearing
-- Housing rights
-- Employment and occupational licensing
-- Police interactions
-- Probation, parole, and supervision
+A separate monitoring layer (LegiScan) watches legislative activity and flags laws that may need review. Bill text is never used as an answer source.
 
-## Tech Stack
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Framework: Next.js 16 App Router
-- Language: TypeScript
-- UI: React, Tailwind CSS, Lucide React, Motion
-- Database: MongoDB Atlas with Mongoose
-- AI: Gemini through the Vercel AI SDK
-- Embeddings: Gemini 
-- Vector search: MongoDB Atlas Vector Search
-- Scheduled jobs: Vercel Cron
-- Legislative monitoring: LegiScan Public API
+### Built With
 
-## Application Structure
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![TypeScript][TypeScript]][TypeScript-url]
+* [![TailwindCSS][TailwindCSS]][Tailwind-url]
+* [![MongoDB][MongoDB]][MongoDB-url]
+* [![Google Gemini][Gemini]][Gemini-url]
+* [![Vercel][Vercel]][Vercel-url]
 
-```text
-app/                  Next.js app routes, API routes, layout, and generated icon
-app/api/chat/         JO chat endpoint
-app/api/content/      Topic-card content endpoint
-app/api/cron/         Scheduled and manual ingestion/maintenance endpoints
-components/           UI components grouped by feature
-data/                 Typed topic, state, legal source, and resource data
-docs/                 Project reference documentation
-lib/                  Server/client helpers, retrieval, prompt, ingestion, and embedding logic
-models/               Mongoose models
-scripts/              Local utility scripts
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+* Node.js 22+ and npm
+* A MongoDB Atlas cluster (vector search requires Atlas)
+* A Google AI Studio API key (Gemini)
+* A LegiScan API key (only needed for the legislative monitoring pipeline)
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Jozewski/beintheknow.git
+   cd beintheknow
+   ```
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+3. Create `.env.local` in the project root
+   ```sh
+   MONGODB_URI=            # Atlas connection string
+   JWT_SECRET=             # long random string; signs auth cookies and peppers IP hashes
+   GEMINI_API_KEY=
+   LEGISCAN_API_KEY=
+   CRON_SECRET=            # required in production; protects /api/cron/* and /api/admin/*
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   GUEST_DAILY_LIMIT=5
+   GUEST_RETENTION_DAYS=90
+   GEMINI_EMBEDDING_MODEL=gemini-embedding-001
+   GEMINI_EMBEDDING_DIMENSIONS=768
+   VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768
+   ADMIN_EMAILS=you@example.com
+   ```
+4. Create the Atlas Vector Search index on the `legaltextchunks` collection
+   * name: `legal_text_chunk_embedding_gemini_768`
+   * vector path: `embedding`, dimensions: `768`, similarity: `cosine`
+   * filter fields: `jurisdiction`, `stateCode`, `topicIds`, `reviewStatus`, `sourceType`, `embeddingModel`
+5. Run the dev server
+   ```sh
+   npm run dev
+   ```
+
+Optional: `MONGODB_DIRECT_URI` (when `mongodb+srv` DNS is unreliable), `NEXT_PUBLIC_SENTRY_DSN` and `SENTRY_AUTH_TOKEN` (error tracking), `REGISTERED_DAILY_LIMIT` (default 25), `RETRIEVAL_MIN_SCORE` (default 0.62).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE -->
+## Usage
+
+Open `http://localhost:3000`, pick federal or a state, and ask JO a question - or call the API directly:
+
+```sh
+curl -X POST http://localhost:3000/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message":"What is expungement?","jurisdiction":"state","stateCode":"AZ","stream":false}'
 ```
 
-Reference documentation:
+Useful commands:
 
-- `docs/LegiScan-Query-Reference-Guide.md`
-
-## Data Architecture
-
-The application uses a layered legal information architecture so user-facing answers remain grounded in approved authority rather than raw legislative noise.
-
-Primary answer corpus:
-
-- `LegalAuthority` - Official statutes, regulations, and enacted bills
-- `LegalContent` - Curated plain-English summaries with resource links
-- `LegalTextChunk` with `sourceType: "legal-authority"` OR `"legal-content"`
-- `reviewStatus: "approved"`
-- active embedding model metadata
-- official source URL, citation, jurisdiction, state code, topic IDs, and current-as-of metadata
-
-Supplemental monitoring data:
-
-- `LegiScanBill`
-- `LegiScanBillText`
-- `LegalAuthorityCandidate`
-- `LegiScanSyncRun`
-
-JO's chat retrieval uses both legal-authority (official statutes) and legal-content (curated summaries) chunks. The retrieval strategy adapts based on question type: high-level definitional questions prioritize plain-English summaries, while specific factual questions prioritize statute text. LegiScan bill text is not used as the primary answer source.
-
-This separation matters. Legislative bills can signal what may be changing, but enacted statutes and official authority records are the stronger foundation for user-facing education. Be In The Know treats LegiScan as a monitoring layer and official authority as the answer layer.
-
-## Chat Flow
-
-JO uses a retrieval-first workflow. The model does not independently decide what the law is, search the database directly, or cite sources that were not retrieved.
-
-1. The user submits a question with jurisdiction and optional state code.
-2. The chat route detects the supported legal topic.
-3. The retrieval tool embeds the question using the active embedding provider.
-4. MongoDB Atlas Vector Search retrieves approved chunks from both legal-authority (statutes) and legal-content (summaries) sources. High-level questions prioritize summaries; specific questions prioritize statutes. Falls back to any approved content if primary sources are missing.
-5. Legal-content chunks are enriched with their resource links (LawHelp.org, state agencies, etc.).
-6. `lib/chatPrompt.ts` builds JO's prompt with source context, resources, and safety rules.
-7. Gemini writes a plain-English response with citations and resource recommendations.
-8. The app stores the user and assistant messages in MongoDB.
-
-If Gemini generation fails but approved source context exists, JO returns a source-based fallback response grounded in the retrieved citations.
-
-The prompt is tuned for plain language. JO is instructed to write at about a sixth-grade reading level, use short sentences, explain legal terms when needed, and avoid making eligibility or deadline promises unless the retrieved source text supports them.
-
-## Retrieval Strategy
-
-JO uses an intelligent multi-source retrieval strategy to balance authoritative legal citations with accessible plain-English guidance.
-
-**Question Type Detection:**
-
-- **High-level questions** ("What is expungement?", "Explain voting rights"): Retrieves 3 statute chunks + 5 curated summary chunks
-- **Specific questions** ("Can I vote in Texas?", "How do I seal my record?"): Retrieves 5 statute chunks + 2 curated summary chunks
-
-**Three-Tier Fallback:**
-
-1. If no legal-authority chunks exist but legal-content chunks are found, retrieve up to 6 legal-content chunks
-2. If neither source has content, remove sourceType filter and retrieve any approved chunks
-3. Otherwise, combine and sort both sources by relevance score
-
-**Resource Enrichment:**
-
-Legal-content chunks automatically include their resource links (e.g., LawHelp.org, state legal aid, government agencies). JO can reference these in responses to help users find additional support.
-
-## Environment Variables
-
-Create `.env.local` in the project root.
-
-```bash
-MONGODB_URI=
-MONGODB_DIRECT_URI=
-JWT_SECRET=
-GEMINI_API_KEY=
-LEGISCAN_API_KEY=
-CRON_SECRET=
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-GUEST_DAILY_LIMIT=5
-
-EMBEDDING_PROVIDER=gemini
-GEMINI_EMBEDDING_MODEL=gemini-embedding-001
-GEMINI_EMBEDDING_DIMENSIONS=768
-VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768
-```
-
-`CRON_SECRET` is required in production: cron routes reject any request without `Authorization: Bearer ${CRON_SECRET}`. Vercel sends this header automatically when the env var is set. See `docs/Embedding-Migration-Gemini.md` for the Gemini embedding setup.
-
-`GUEST_DAILY_LIMIT` (default 5) caps guest questions per day, enforced server-side per guest token and IP hash. `REGISTERED_DAILY_LIMIT` (default 25) is the higher cap for signed-in accounts. `RETRIEVAL_MIN_SCORE` (default 0.62) sets the minimum similarity score for citing sources when a question matches no known topic keywords. `GET /api/health` reports database, corpus, and configuration readiness for deploy checks.
-
-Accounts: `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/logout`, `GET /api/auth/me` (JWT in an httpOnly cookie, signed with `JWT_SECRET`). Signing up or in adopts the device's guest sessions into the account. `GET /api/chat/sessions` lists the signed-in user's conversations; `GET /api/chat/history` accepts either the auth cookie or a guest token.
-
-Content operations: `/admin` is the operator dashboard - per-state/topic corpus coverage (approved chunks, embedded share, thin-content counts) and the law-change review queue fed by the weekly pipeline. Access requires a signed-in account whose email is listed in `ADMIN_EMAILS` (comma-separated). The underlying endpoints are `GET /api/admin/coverage` and `GET/POST /api/admin/candidates` (also accessible to scripts via the `CRON_SECRET` bearer token). A weekly GitHub Actions smoke test (`.github/workflows/smoke.yml`) exercises chat across six states against the deployed app.
-
-`MONGODB_DIRECT_URI` is optional but useful locally when `mongodb+srv` DNS resolution is unreliable. `lib/mongodb.ts` prefers `MONGODB_DIRECT_URI` when present and falls back to `MONGODB_URI`.
-
-Optional integrations:
-
-```bash
-
-SENTRY_AUTH_TOKEN=
-NEXT_PUBLIC_SENTRY_DSN=
-
-```
-
-## Local Development
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open:
-
-```text
-http://localhost:3000
-```
-
-Run validation:
-
-```bash
-npm run lint
-npx tsc --noEmit
-npm run build
-```
-
-## Scripts
-
-```bash
-npm run seed:sample
-```
-
-Seeds sample development records into MongoDB.
-
-```bash
-npm run embeddings:batch -- --limit=100 --batches=20 --waitMs=500
-```
-
-Runs embedding batches against the configured embedding provider.
-
-```bash
+```sh
+npm run dev                 # dev server
+npm run lint                # eslint
+npx tsc --noEmit            # typecheck
+npm test                    # unit tests (vitest)
+npm run build               # production build
+npm run seed:sample         # seed sample development records
+npm run chat:smoke -- --state=AZ        # end-to-end chat smoke test
+npm run chat:redteam        # prompt-injection guardrail battery
+npm run chunks:approve -- --sourceType=legal-content          # dry run
+npm run chunks:approve -- --sourceType=legal-content --apply  # promote to approved
 npm run embeddings:stats -- --sourceType=legal-authority --reviewStatus=approved
+npm run embeddings:batch -- --limit=50
 ```
 
-Reports embedding coverage for matching chunks.
+`GET /api/health` reports database, corpus, and configuration readiness for deploy checks.
 
-```bash
-npm run chat:smoke -- --state=AZ
+_For the full admin handbook and review workflow, see [docs/Onboarding-Guide.md](docs/Onboarding-Guide.md) and [docs/Content-Review-Checklist.md](docs/Content-Review-Checklist.md)._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTENT OPERATIONS -->
+## Content Operations
+
+A single Vercel cron entry runs `/api/cron/pipeline` daily at 9:00 UTC:
+
+* **Mondays (weekly change detection):** LegiScan sync → bill text fetch → PDF extraction → statute-citation extraction → a report of which of our laws may be affected (the candidate queue).
+* **Every day:** re-chunk authority records edited after review, embed anything newly approved, and purge guest conversations past the retention window.
+
+The human stays in the loop by design. When the pipeline flags a law, a person reviews it at `/admin`, updates the `LegalAuthority` record if the law changed, and approves with `npm run chunks:approve`. Automation never rewrites the source of truth, and unreviewed text can never enter JO's answers.
+
+The `/admin` dashboard (access via `ADMIN_EMAILS`) shows per-state corpus coverage, the law-change review queue, and the message review queue (flagged prompt-injection attempts and user feedback on answers).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- PRIVACY AND SAFETY -->
+## Privacy and Safety
+
+Built for a vulnerable population, so data collection is minimal by design:
+
+* No raw IP addresses stored - only salted SHA-256 hashes for quota enforcement. No tracking cookies or analytics.
+* The stored copy of every user message is PII-redacted (SSNs, phone numbers, emails, street addresses) before it touches the database.
+* Guest conversations auto-purge after `GUEST_RETENTION_DAYS` (default 90) of inactivity. Account holders get self-service deletion of their account and all conversations.
+* Server-enforced daily question quotas (guests 5, accounts 25) are checked before any model spend.
+* Layered prompt security, suspicious-message flagging with admin review, an uncited-answer output guard, and a repeatable red-team battery protect against prompt injection.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- TESTING -->
+## Testing
+
+CI (GitHub Actions) runs lint → typecheck → unit tests → build on every push. A second workflow smoke-tests chat across six states against the deployed app every Tuesday. Run everything locally with:
+
+```sh
+npm run lint && npx tsc --noEmit && npm test && npm run build
 ```
 
-Checks approved legal-authority and legal-content coverage for a selected state and runs core chat questions through the local API to verify multi-source retrieval.
+After any prompt or model change, re-run `npm run chat:redteam` and confirm every guardrail holds.
 
-## API Routes
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```text
-POST /api/chat
-```
 
-Runs JO chat retrieval, prompt construction, Gemini response generation, message persistence, and citation return.
 
-Example body:
+<!-- ROADMAP -->
+## Roadmap
 
-```json
-{
-  "message": "What is expungement?",
-  "jurisdiction": "state",
-  "stateCode": "AZ"
-}
-```
+- [x] Retrieval-first chat with citations and output guards
+- [x] Weekly LegiScan monitoring with human review queue
+- [x] Admin dashboard: coverage, law-change queue, message review
+- [x] PII redaction, guest retention auto-purge, feedback on answers
+- [ ] Periodic per-state answer audits
+- [ ] User acceptance testing with reentry users
+- [ ] Second reviewer for high-impact states
+- [ ] Expanded red-team attack patterns
 
-```text
-GET /api/content
-```
+See the [open issues](https://github.com/Jozewski/beintheknow/issues) for a full list of proposed features and known issues.
 
-Returns approved topic-card content for federal or state mode.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Example:
 
-```text
-/api/content?jurisdiction=state&stateCode=TX
-```
 
-The response merges approved content, official legal authority links, and curated state resource links from `data/state-topic-resources.ts`.
+<!-- CONTRIBUTING -->
+## Contributing
 
-## Cron and Maintenance Routes
+Contributions are welcome, with one non-negotiable rule: nothing may weaken JO's source discipline or the human review gate. Read [docs/Content-Review-Checklist.md](docs/Content-Review-Checklist.md) before touching content, and run the full validation suite before opening a pull request. By contributing, you agree that your contributions are licensed under the AGPL-3.0 like the rest of the project.
 
-Cron routes live under `app/api/cron/`. They can be called manually in development and protected with `CRON_SECRET` in deployed environments.
+1. Fork the project
+2. Create your feature branch (`git checkout -b feat/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feat/amazing-feature`)
+5. Open a pull request
 
-Key routes:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- `/api/cron/legiscan-sync`
-- `/api/cron/legiscan-text`
-- `/api/cron/legiscan-pdf-text`
-- `/api/cron/legal-chunks`
-- `/api/cron/legal-authorities`
-- `/api/cron/statute-candidates`
-- `/api/cron/embeddings`
-- `/api/cron/legiscan-cleanup`
 
-Vercel cron configuration:
 
-```json
-{
-  "crons": [
-    {
-      "path": "/api/cron/pipeline",
-      "schedule": "0 9 * * *"
-    }
-  ]
-}
-```
+<!-- LICENSE -->
+## License
 
-`/api/cron/pipeline` runs daily at 9:00 UTC with two jobs. On Mondays it performs weekly change detection: LegiScan sync, bill text fetch, PDF extraction, statute-citation extraction, and a report of which of our authority records may be affected by legislative activity (the candidate queue). Every day it performs cheap corpus maintenance: re-chunking any authority records edited after review (hash-skipped when unchanged) and embedding anything newly chunked and approved. Add `?weekly=true` to force the Monday stages when running manually.
+Distributed under the GNU Affero General Public License v3.0. See `LICENSE.txt` for the full text.
 
-The human stays in the loop by design: LegiScan is monitoring only. When the candidate queue flags one of our laws, a person reviews it, updates the `LegalAuthority` record, and approves (`npm run chunks:approve`); the daily stages then re-chunk and re-embed automatically. Automation never rewrites the source of truth, and unreviewed text can never enter JO's answers. `legiscan-cleanup` (destructive) also stays manual.
+In short: you are free to use, study, modify, and share this code - but if you run a modified version as a network service, you must make your modified source code available to its users under the same license. Copyright (C) 2026 Joanne Liszewski / Jozewski Enterprises. The Be In The Know and Just Ask JO names and logo are not licensed for use in derived projects.
 
-## Embeddings and Vector Search
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The app supports both Gemini embeddings and a local embedding pipeline. The active provider is controlled by `EMBEDDING_PROVIDER`.
 
-Do not mix embedding providers for the same search path. Stored chunks include `embeddingModel`, and retrieval only searches chunks that match the active embedding model.
 
-For Gemini embeddings (the production default), create an Atlas Vector Search index with:
+<!-- CONTACT -->
+## Contact
 
-- index name: `legal_text_chunk_embedding_gemini_768`
-- vector path: `embedding`
-- dimensions: `768`
-- similarity: `cosine`
+Joanne Liszewski - beintheknowjustaskjo@gmail.com
 
-Recommended filter fields:
+Project link: [https://github.com/Jozewski/beintheknow](https://github.com/Jozewski/beintheknow)
 
-- `jurisdiction`
-- `stateCode`
-- `topicIds`
-- `reviewStatus`
-- `sourceType`
-- `embeddingModel`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Source Policy
 
-JO's primary answers should be grounded in approved legal authority records. Each chunk should include:
 
-- jurisdiction
-- state code when applicable
-- topic ID
-- citation
-- official source URL
-- current-as-of metadata
-- review status
-- embedding model
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-LegiScan is used to monitor legislative changes and identify candidate authority updates. It is not treated as final legal authority for user-facing answers.
+* [LegiScan](https://legiscan.com) - legislative monitoring API
+* [LawHelp.org](https://www.lawhelp.org) and state legal aid organizations
+* [Img Shields](https://shields.io)
 
-## Legal Disclaimer
+**Legal disclaimer:** Be In The Know and Just Ask JO provide general educational information. They are not a law firm, do not provide legal advice, and do not create an attorney-client relationship. For help with your own situation, contact a qualified legal aid organization or an attorney licensed in your jurisdiction.
 
-Be In The Know and Just Ask JO provide general educational information. They are not a law firm, do not provide legal advice, and do not create an attorney-client relationship. Users who need help with their own situation should contact a qualified legal aid organization or attorney licensed in their jurisdiction.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/Jozewski/beintheknow.svg?style=for-the-badge
+[contributors-url]: https://github.com/Jozewski/beintheknow/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Jozewski/beintheknow.svg?style=for-the-badge
+[forks-url]: https://github.com/Jozewski/beintheknow/network/members
+[stars-shield]: https://img.shields.io/github/stars/Jozewski/beintheknow.svg?style=for-the-badge
+[stars-url]: https://github.com/Jozewski/beintheknow/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Jozewski/beintheknow.svg?style=for-the-badge
+[issues-url]: https://github.com/Jozewski/beintheknow/issues
+[license-shield]: https://img.shields.io/badge/License-AGPL--3.0-blue.svg?style=for-the-badge
+[license-url]: https://github.com/Jozewski/beintheknow/blob/main/LICENSE.txt
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[TailwindCSS]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
+[MongoDB]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB-url]: https://www.mongodb.com/atlas
+[Gemini]: https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white
+[Gemini-url]: https://ai.google.dev/
+[Vercel]: https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com/

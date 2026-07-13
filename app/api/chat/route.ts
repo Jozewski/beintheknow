@@ -25,6 +25,8 @@ import {
 import type { LegalRetrievalCitation } from "@/lib/legalRetrieval";
 import { retrieveLegalAuthority } from "@/lib/mcp/legalAuthorityTools";
 import { connectDB } from "@/lib/mongodb";
+import { redactPii } from "@/lib/piiRedaction";
+import { getGuestDailyLimit, getRegisteredDailyLimit } from "@/lib/quota";
 import { ChatMessageModel } from "@/models/ChatMessage";
 import { ChatSessionModel } from "@/models/ChatSession";
 
@@ -49,22 +51,13 @@ type ChatResponseBody = {
     remaining: number;
   };
   message: {
+    id?: string;
     role: "assistant";
     content: string;
     citations: LegalRetrievalCitation[];
     confidence: "high" | "medium" | "low";
   };
 };
-
-function getGuestDailyLimit() {
-  const parsed = Number(process.env.GUEST_DAILY_LIMIT ?? "5");
-  return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 5;
-}
-
-function getRegisteredDailyLimit() {
-  const parsed = Number(process.env.REGISTERED_DAILY_LIMIT ?? "25");
-  return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 25;
-}
 
 function getClientIpHash(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
@@ -268,10 +261,13 @@ export async function POST(request: Request) {
   // Flag likely prompt-injection / rule-breaking attempts. Flagged messages
   // are still answered normally (the layered prompt + output guards handle
   // the content) - the flag lets an admin review manipulation later.
+  // The STORED copy is PII-redacted (SSNs, phones, emails, addresses) so a
+  // later breach or subpoena of chat history exposes as little identifying
+  // detail as possible. JO still answers the original, unredacted message.
   await ChatMessageModel.create({
     sessionId: session._id,
     role: "user",
-    content: message,
+    content: redactPii(message),
     citations: [],
     confidence: "high",
     flagged: isSuspiciousUserMessage(message),
@@ -310,8 +306,9 @@ export async function POST(request: Request) {
   );
   let confidence = getConfidence(citations.length);
 
+  // Returns the stored message id so clients can attach feedback to it.
   async function persistAssistantMessage(content: string) {
-    await ChatMessageModel.create({
+    const created = await ChatMessageModel.create({
       sessionId: session._id,
       role: "assistant",
       content,
@@ -320,14 +317,16 @@ export async function POST(request: Request) {
       flagged: false,
       responseTimeMs: Date.now() - startedAt,
     });
+    return created._id.toString();
   }
 
-  function buildJsonResponse(content: string) {
+  function buildJsonResponse(content: string, messageId?: string) {
     return Response.json({
       sessionId: session._id.toString(),
       guestToken: session.guestToken ?? requestGuestToken ?? "",
       quota: { limit, remaining },
       message: {
+        id: messageId,
         role: "assistant",
         content,
         citations,
@@ -377,8 +376,8 @@ export async function POST(request: Request) {
   // No approved sources: fixed response, no model call, no streaming needed.
   if (retrievedContext.length === 0) {
     const content = buildNoAuthorityResponse();
-    await persistAssistantMessage(content);
-    return buildJsonResponse(content);
+    const messageId = await persistAssistantMessage(content);
+    return buildJsonResponse(content, messageId);
   }
 
   const googleProvider = getGoogleProvider();
@@ -413,8 +412,8 @@ export async function POST(request: Request) {
       content = buildErrorFallbackContent();
     }
 
-    await persistAssistantMessage(content);
-    return buildJsonResponse(content);
+    const messageId = await persistAssistantMessage(content);
+    return buildJsonResponse(content, messageId);
   }
 
   // Streaming path: newline-delimited JSON events.
@@ -440,6 +439,7 @@ export async function POST(request: Request) {
       send(responseMeta);
 
       let rawText = "";
+      let messageId: string | undefined;
       try {
         const result = streamText({
           model,
@@ -466,20 +466,21 @@ export async function POST(request: Request) {
         if (content !== rawText) {
           send({ type: "final", content });
         }
-        await persistAssistantMessage(content);
+        messageId = await persistAssistantMessage(content);
       } catch (error) {
         Sentry.captureException(error, { tags: { component: "chat", stage: "generation" } });
         console.error("JO chat generation failed", error);
         const content = buildErrorFallbackContent();
         send({ type: "final", content });
         try {
-          await persistAssistantMessage(content);
+          messageId = await persistAssistantMessage(content);
         } catch (persistError) {
           console.error("JO chat: failed to persist fallback message", persistError);
         }
       }
 
-      send({ type: "done" });
+      // messageId lets the client attach feedback to the stored answer.
+      send({ type: "done", messageId });
       controller.close();
     },
   });

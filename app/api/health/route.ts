@@ -15,8 +15,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const activeEmbeddingModel = getActiveEmbeddingModel();
   const config = {
-    embeddingProvider:
-      process.env.EMBEDDING_PROVIDER === "local" ? "local" : "gemini",
+    embeddingProvider: "gemini",
     activeEmbeddingModel,
     vectorSearchIndex:
       process.env.VECTOR_SEARCH_INDEX ?? "legal_text_chunk_embedding",
