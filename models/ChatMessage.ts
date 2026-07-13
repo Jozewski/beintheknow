@@ -29,6 +29,29 @@ const chatMessageSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    // User feedback on assistant answers ("was this helpful?"). Minimal by
+    // design: a rating plus an optional short comment - no extra identity.
+    feedback: {
+      type: new Schema(
+        {
+          rating: {
+            type: String,
+            enum: ["up", "down"],
+            required: true,
+          },
+          comment: {
+            type: String,
+            trim: true,
+            maxlength: 500,
+          },
+          createdAt: {
+            type: Date,
+            default: Date.now,
+          },
+        },
+        { _id: false },
+      ),
+    },
     responseTimeMs: {
       type: Number,
     },

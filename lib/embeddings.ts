@@ -6,7 +6,6 @@ import {
 } from "@/lib/ai/google";
 import { LegalTextChunkModel } from "@/models/LegalTextChunk";
 
-type EmbeddingProvider = "gemini" | "local";
 type EmbeddingIndexHint = Record<string, 1 | -1>;
 
 export type EmbedLegalTextChunksOptions = {
@@ -27,14 +26,6 @@ export type EmbedLegalTextChunksResult = {
   indexHint?: string | EmbeddingIndexHint;
 };
 
-function getEmbeddingProvider(): EmbeddingProvider {
-  return process.env.EMBEDDING_PROVIDER === "local" ? "local" : "gemini";
-}
-
-function getLocalEmbeddingUrl() {
-  return process.env.LOCAL_EMBEDDING_URL ?? "http://127.0.0.1:5055";
-}
-
 /**
  * Output dimensionality for Gemini embeddings. 768 balances quality, Atlas
  * index size, and cost. Must match the Atlas Vector Search index dimensions.
@@ -45,10 +36,6 @@ export function getGeminiEmbeddingDimensions() {
 }
 
 export function getActiveEmbeddingModel() {
-  if (getEmbeddingProvider() === "local") {
-    return process.env.LOCAL_EMBEDDING_MODEL ?? "BAAI/bge-small-en-v1.5";
-  }
-
   // Include dimensions in the stored model label so chunks embedded at
   // different dimensionalities are never mixed in the same search path.
   return `${GEMINI_EMBEDDING_MODEL}@${getGeminiEmbeddingDimensions()}`;
@@ -63,38 +50,7 @@ function getGeminiProviderOptions(taskType: "RETRIEVAL_DOCUMENT" | "RETRIEVAL_QU
   };
 }
 
-async function embedWithLocalServer(values: string[]) {
-  const response = await fetch(`${getLocalEmbeddingUrl()}/embed`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ texts: values }),
-  });
-
-  if (!response.ok) {
-    const body = await response.text();
-    throw new Error(
-      `Local embedding server failed with ${response.status}: ${body}`,
-    );
-  }
-
-  const payload = (await response.json()) as {
-    model?: string;
-    dimensions?: number;
-    embeddings?: number[][];
-  };
-
-  if (!Array.isArray(payload.embeddings)) {
-    throw new Error("Local embedding server did not return embeddings.");
-  }
-
-  return payload.embeddings;
-}
-
 async function embedManyTexts(values: string[]) {
-  if (getEmbeddingProvider() === "local") {
-    return embedWithLocalServer(values);
-  }
-
   const google = getGoogleProvider();
   const result = await embedMany({
     model: google.embedding(GEMINI_EMBEDDING_MODEL),
@@ -147,11 +103,6 @@ function getEmbeddingWorkerHint({
 }
 
 export async function embedText(value: string) {
-  if (getEmbeddingProvider() === "local") {
-    const [embedding] = await embedWithLocalServer([value]);
-    return embedding ?? [];
-  }
-
   const google = getGoogleProvider();
   const result = await embed({
     model: google.embedding(GEMINI_EMBEDDING_MODEL),

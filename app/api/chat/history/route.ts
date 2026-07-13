@@ -57,7 +57,7 @@ export async function GET(request: Request) {
   const messages = await ChatMessageModel.find({ sessionId })
     .sort({ createdAt: 1 })
     .limit(200)
-    .select("role content citations createdAt")
+    .select("role content citations createdAt feedback")
     .lean<
       {
         _id: unknown;
@@ -65,6 +65,7 @@ export async function GET(request: Request) {
         content: string;
         citations?: unknown[];
         createdAt?: Date;
+        feedback?: { rating: "up" | "down" };
       }[]
     >();
 
@@ -78,6 +79,7 @@ export async function GET(request: Request) {
       content: message.content,
       citations: message.citations ?? [],
       createdAt: message.createdAt,
+      feedbackRating: message.feedback?.rating,
     })),
   });
 }

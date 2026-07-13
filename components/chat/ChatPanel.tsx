@@ -22,6 +22,9 @@ type PanelMessage = {
   role: "user" | "assistant";
   content: string;
   citations?: ChatCitation[];
+  /** Stored (database) message id - required to attach feedback. */
+  dbId?: string;
+  feedbackRating?: "up" | "down";
 };
 
 type ChatPanelProps = {
@@ -120,6 +123,7 @@ export function ChatPanel({
             role: "user" | "assistant";
             content: string;
             citations?: ChatCitation[];
+            feedbackRating?: "up" | "down";
           }>;
         };
 
@@ -131,6 +135,8 @@ export function ChatPanel({
               role: message.role,
               content: message.content,
               citations: message.citations,
+              dbId: message.id,
+              feedbackRating: message.feedbackRating,
             })),
           ]);
         }
@@ -222,6 +228,7 @@ export function ChatPanel({
             role: "assistant",
             content: data.message.content,
             citations: data.message.citations,
+            dbId: data.message.id,
           },
         ]);
         return;
@@ -250,6 +257,7 @@ export function ChatPanel({
         guestToken?: string;
         quota?: { limit: number; remaining: number };
         citations?: ChatCitation[];
+        messageId?: string;
       }) => {
         if (event.type === "meta") {
           if (event.sessionId) {
@@ -288,6 +296,14 @@ export function ChatPanel({
         if (event.type === "final" && typeof event.content === "string") {
           const content = event.content;
           applyAssistantUpdate((item) => ({ ...item, content }));
+          return;
+        }
+
+        // The stored message id arrives with "done" so feedback buttons can
+        // attach a rating to the persisted answer.
+        if (event.type === "done" && typeof event.messageId === "string") {
+          const dbId = event.messageId;
+          applyAssistantUpdate((item) => ({ ...item, dbId }));
         }
       };
 
@@ -325,6 +341,36 @@ export function ChatPanel({
       );
     } finally {
       setIsSending(false);
+    }
+  }
+
+  async function sendFeedback(messageId: string, rating: "up" | "down") {
+    if (!sessionId) return;
+
+    // Optimistic update; feedback is best-effort and silently reverts on
+    // failure rather than interrupting the conversation with an error.
+    setMessages((current) =>
+      current.map((item) =>
+        item.dbId === messageId ? { ...item, feedbackRating: rating } : item,
+      ),
+    );
+
+    try {
+      const response = await fetch("/api/chat/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        body: JSON.stringify({ sessionId, guestToken, messageId, rating }),
+      });
+      if (!response.ok) throw new Error("feedback failed");
+    } catch {
+      setMessages((current) =>
+        current.map((item) =>
+          item.dbId === messageId
+            ? { ...item, feedbackRating: undefined }
+            : item,
+        ),
+      );
     }
   }
 
@@ -398,6 +444,9 @@ export function ChatPanel({
               role={message.role}
               content={message.content}
               citations={message.citations}
+              messageId={message.dbId}
+              feedbackRating={message.feedbackRating}
+              onFeedback={sendFeedback}
             />
           ))}
         {isSending &&
@@ -418,6 +467,8 @@ export function ChatPanel({
       <div className="border-t border-gray-200 p-3">
         <p className="mb-2 text-[10px] leading-4 text-gray-500">
           Educational information only. JO is not a lawyer and does not provide legal advice.
+          To protect your privacy, please do not share personal details like your full name,
+          case number, address, or Social Security number.
         </p>
         <ChatInput
           value={draft}

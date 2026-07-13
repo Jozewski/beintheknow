@@ -28,17 +28,14 @@ loadEnvFile(".env.local");
 const baseUrl = args.get("baseUrl") ?? "http://localhost:3000";
 const selectedState = (args.get("state") ?? "AZ").toUpperCase();
 const mongoUri = process.env.MONGODB_DIRECT_URI ?? process.env.MONGODB_URI;
-// Mirrors getActiveEmbeddingModel() in lib/embeddings.ts: respects the
-// EMBEDDING_PROVIDER switch and includes the Gemini dimension suffix.
+// Mirrors getActiveEmbeddingModel() in lib/embeddings.ts: Gemini only,
+// including the dimension suffix in the stored model label.
 const geminiDimensionsRaw = Number(process.env.GEMINI_EMBEDDING_DIMENSIONS ?? "768");
 const geminiDimensions =
   Number.isFinite(geminiDimensionsRaw) && geminiDimensionsRaw > 0
     ? geminiDimensionsRaw
     : 768;
-const activeEmbeddingModel =
-  process.env.EMBEDDING_PROVIDER === "local"
-    ? process.env.LOCAL_EMBEDDING_MODEL ?? "BAAI/bge-small-en-v1.5"
-    : `${process.env.GEMINI_EMBEDDING_MODEL ?? "gemini-embedding-001"}@${geminiDimensions}`;
+const activeEmbeddingModel = `${process.env.GEMINI_EMBEDDING_MODEL ?? "gemini-embedding-001"}@${geminiDimensions}`;
 
 const topicOrder = [
   "voting",

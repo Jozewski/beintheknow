@@ -40,6 +40,28 @@ type CandidateQueue = {
   candidates: Candidate[];
 };
 
+type ReviewMessage = {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  flagged: boolean;
+  feedback?: { rating: "up" | "down"; comment?: string; createdAt?: string };
+  jurisdiction?: string;
+  stateCode?: string;
+  createdAt?: string;
+};
+type MessageReview = {
+  filter: string;
+  counts: { flagged: number; feedbackDown: number };
+  messages: ReviewMessage[];
+};
+
+const MESSAGE_FILTERS = [
+  { id: "flagged", label: "flagged" },
+  { id: "feedback-down", label: "negative feedback" },
+  { id: "feedback", label: "all feedback" },
+] as const;
+
 function cellTone(cell?: TopicCell) {
   if (!cell || cell.total === 0) return "bg-red-50 text-red-700";
   if (cell.embedded < cell.total) return "bg-amber-50 text-amber-700";
@@ -54,9 +76,17 @@ export default function AdminPage() {
   const [acting, setActing] = useState<string>();
   const [error, setError] = useState<string>();
 
+  const [messageReview, setMessageReview] = useState<MessageReview>();
+  const [messageFilter, setMessageFilter] = useState("flagged");
+
   const loadQueue = useCallback(async (status: string) => {
     const response = await fetch(`/api/admin/candidates?status=${status}`);
     if (response.ok) setQueue(await response.json());
+  }, []);
+
+  const loadMessages = useCallback(async (filter: string) => {
+    const response = await fetch(`/api/admin/messages?filter=${filter}`);
+    if (response.ok) setMessageReview(await response.json());
   }, []);
 
   useEffect(() => {
@@ -75,12 +105,18 @@ export default function AdminPage() {
         setCoverage(await coverageResponse.json());
         setAuthState("ok");
         await loadQueue("needs-review");
+        await loadMessages("flagged");
       } catch {
         setError("Could not load the dashboard. Is the database reachable?");
         setAuthState("ok");
       }
     })();
-  }, [loadQueue]);
+  }, [loadQueue, loadMessages]);
+
+  async function switchMessageFilter(filter: string) {
+    setMessageFilter(filter);
+    await loadMessages(filter);
+  }
 
   async function act(id: string, action: "verify" | "reject" | "reopen") {
     setActing(id);
@@ -299,6 +335,68 @@ export default function AdminPage() {
         update the LegalAuthority record if the law changed, run{" "}
         <code>npm run chunks:approve</code>, and mark the item Handled. The
         daily pipeline re-chunks and re-embeds approved updates automatically.
+      </p>
+
+      <div className="mt-10 mb-3 flex items-center justify-between">
+        <h2 className="text-base font-bold text-[#085041]">Message review</h2>
+        <div className="flex gap-1 text-[11px] font-semibold">
+          {MESSAGE_FILTERS.map((filter) => (
+            <button
+              key={filter.id}
+              type="button"
+              onClick={() => switchMessageFilter(filter.id)}
+              className={`rounded-full px-3 py-1 ${
+                messageFilter === filter.id
+                  ? "bg-[#1D9E75] text-white"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
+            >
+              {filter.label}
+              {filter.id === "flagged" && messageReview
+                ? ` (${messageReview.counts.flagged})`
+                : ""}
+              {filter.id === "feedback-down" && messageReview
+                ? ` (${messageReview.counts.feedbackDown})`
+                : ""}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {messageReview && messageReview.messages.length === 0 ? (
+        <p className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-6 text-center text-sm text-gray-500">
+          Nothing to review. Flagged messages are likely prompt-injection
+          attempts; feedback items are answers users rated.
+        </p>
+      ) : null}
+
+      <div className="space-y-2">
+        {messageReview?.messages.map((message) => (
+          <div key={message.id} className="rounded-lg border border-gray-200 p-3">
+            <p className="text-[11px] text-gray-500">
+              {message.flagged ? "FLAGGED · " : ""}
+              {message.feedback ? `rated ${message.feedback.rating} · ` : ""}
+              {message.role} · {message.stateCode ?? message.jurisdiction ?? "unknown"} ·{" "}
+              {message.createdAt
+                ? new Date(message.createdAt).toLocaleString()
+                : "no date"}
+            </p>
+            <p className="mt-1 whitespace-pre-wrap rounded bg-gray-50 px-3 py-2 text-[12px] leading-4 text-gray-700">
+              {message.content}
+            </p>
+            {message.feedback?.comment ? (
+              <p className="mt-1 text-[11px] italic text-gray-500">
+                User comment: {message.feedback.comment}
+              </p>
+            ) : null}
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-6 text-[11px] leading-4 text-gray-400">
+        Review flagged messages weekly. A flagged message that produced an
+        uncited or off-rule answer means a guardrail needs attention - re-run{" "}
+        <code>npm run chat:redteam</code> after any prompt or model change.
       </p>
       </main>
       <SiteFooter />

@@ -39,6 +39,9 @@ export default function PrivacyPage() {
             <strong>Questions and conversations.</strong> The questions you ask
             JO and the answers you receive are stored so your conversation can
             continue and, if you have an account, follow you across devices.
+            Before a question is stored, we automatically remove things that
+            look like Social Security numbers, phone numbers, email addresses,
+            and street addresses.
           </p>
           <p>
             <strong>Account information.</strong> If you create an account, we
@@ -99,7 +102,8 @@ export default function PrivacyPage() {
         <Section title="6. Retention and deletion">
           <p>
             Conversations and account data are kept while your account is
-            active or, for guests, while needed to operate the Service. You can
+            active. Guest conversations are automatically and permanently
+            deleted after about 90 days of inactivity. You can
             permanently delete your account and every conversation saved to it
             yourself at any time from your{" "}
             <Link href="/auth" className="font-semibold text-[#085041] underline-offset-2 hover:underline">

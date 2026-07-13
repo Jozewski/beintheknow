@@ -89,6 +89,9 @@ export async function GET(request: Request) {
       path: "/api/cron/legal-chunks?run=authorities&limit=100",
     },
     { name: "embeddings", path: "/api/cron/embeddings?limit=50" },
+    // Privacy: purge guest conversations inactive past GUEST_RETENTION_DAYS
+    // (account-owned sessions are never touched - see lib/chatRetention.ts).
+    { name: "chat-retention", path: "/api/cron/chat-retention?apply=true" },
   ];
 
   const results: StageResult[] = [];
