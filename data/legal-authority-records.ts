@@ -13571,4 +13571,464 @@ Virginia law governs alleged violations of parole or postrelease supervision, in
 
 Use this for Virginia parole or postrelease supervision violation answers, but verify the written conditions and current board or court status.`,
   },
+  // -------------------------------------------------------------------------
+  // FEDERAL AUTHORITIES
+  //
+  // Text copied verbatim from the official sources cited (Office of the Law
+  // Revision Counsel U.S. Code, eCFR, National Archives). Entries marked
+  // "(Excerpt)" include only the topic-relevant subsections; subsection
+  // labels are preserved so the omissions are visible. All enter at draft
+  // for human review per the content governance rules.
+  // -------------------------------------------------------------------------
+  {
+    id: "federal-usc-52-20507-voter-registration-removal",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["voting"],
+    citation: "52 U.S.C. § 20507(a)(3), (g)",
+    title:
+      "National Voter Registration Act — Removal from voter rolls; notice of federal felony conviction (Excerpt)",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20507&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-06-06",
+    currentAsOfLabel: "U.S. Code text in effect as of June 6, 2026",
+    reviewStatus: "approved",
+    text: `52 U.S.C. § 20507 Requirements with respect to administration of voter registration (Excerpt: subsections (a)(3) and (g))
+
+(a) In general. In the administration of voter registration for elections for Federal office, each State shall—
+
+(3) provide that the name of a registrant may not be removed from the official list of eligible voters except—
+
+(A) at the request of the registrant;
+
+(B) as provided by State law, by reason of criminal conviction or mental incapacity; or
+
+(C) as provided under paragraph (4);
+
+(g) Conviction in Federal court
+
+(1) On the conviction of a person of a felony in a district court of the United States, the United States attorney shall give written notice of the conviction to the chief State election official designated under section 20509 of this title of the State of the person's residence.
+
+(2) A notice given pursuant to paragraph (1) shall include—
+
+(A) the name of the offender;
+
+(B) the offender's age and residence address;
+
+(C) the date of entry of the judgment;
+
+(D) a description of the offenses of which the offender was convicted; and
+
+(E) the sentence imposed by the court.
+
+(3) On request of the chief State election official of a State or other State official with responsibility for determining the effect that a conviction may have on an offender's qualification to vote, the United States attorney shall provide such additional information as the United States attorney may have concerning the offender and the offense of which the offender was convicted.
+
+(4) If a conviction of which notice was given pursuant to paragraph (1) is overturned, the United States attorney shall give the official to whom the notice was given written notice of the vacation of the judgment.
+
+(5) The chief State election official shall notify the voter registration officials of the local jurisdiction in which an offender resides of the information received under this subsection.`,
+  },
+  {
+    id: "federal-usc-18-3607-drug-possession-expungement",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["expungement"],
+    citation: "18 U.S.C. § 3607",
+    title:
+      "Special probation and expungement procedures for drug possessors",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section3607&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-06-09",
+    currentAsOfLabel: "U.S. Code text in effect as of June 9, 2026",
+    reviewStatus: "approved",
+    text: `18 U.S.C. § 3607 Special probation and expungement procedures for drug possessors
+
+(a) Pre-judgment Probation.—If a person found guilty of an offense described in section 404 of the Controlled Substances Act (21 U.S.C. 844)—
+
+(1) has not, prior to the commission of such offense, been convicted of violating a Federal or State law relating to controlled substances; and
+
+(2) has not previously been the subject of a disposition under this subsection;
+
+the court may, with the consent of such person, place him on probation for a term of not more than one year without entering a judgment of conviction. At any time before the expiration of the term of probation, if the person has not violated a condition of his probation, the court may, without entering a judgment of conviction, dismiss the proceedings against the person and discharge him from probation. At the expiration of the term of probation, if the person has not violated a condition of his probation, the court shall, without entering a judgment of conviction, dismiss the proceedings against the person and discharge him from probation. If the person violates a condition of his probation, the court shall proceed in accordance with the provisions of section 3565.
+
+(b) Record of Disposition.—A nonpublic record of a disposition under subsection (a), or a conviction that is the subject of an expungement order under subsection (c), shall be retained by the Department of Justice solely for the purpose of use by the courts in determining in any subsequent proceeding whether a person qualifies for the disposition provided in subsection (a) or the expungement provided in subsection (c). A disposition under subsection (a), or a conviction that is the subject of an expungement order under subsection (c), shall not be considered a conviction for the purpose of a disqualification or a disability imposed by law upon conviction of a crime, or for any other purpose.
+
+(c) Expungement of Record of Disposition.—If the case against a person found guilty of an offense under section 404 of the Controlled Substances Act (21 U.S.C. 844) is the subject of a disposition under subsection (a), and the person was less than twenty-one years old at the time of the offense, the court shall enter an expungement order upon the application of such person. The expungement order shall direct that there be expunged from all official records, except the nonpublic records referred to in subsection (b), all references to his arrest for the offense, the institution of criminal proceedings against him, and the results thereof. The effect of the order shall be to restore such person, in the contemplation of the law, to the status he occupied before such arrest or institution of criminal proceedings. A person concerning whom such an order has been entered shall not be held thereafter under any provision of law to be guilty of perjury, false swearing, or making a false statement by reason of his failure to recite or acknowledge such arrests or institution of criminal proceedings, or the results thereof, in response to an inquiry made of him for any purpose.`,
+  },
+  {
+    id: "federal-cfr-28-16-34-fbi-record-correction",
+    authorityType: "regulation",
+    jurisdiction: "federal",
+    topicIds: ["expungement"],
+    citation: "28 C.F.R. § 16.34",
+    title:
+      "Procedure to obtain change, correction or updating of FBI identification records",
+    officialUrl:
+      "https://www.ecfr.gov/current/title-28/chapter-I/part-16/subpart-C/section-16.34",
+    sourceName: "Electronic Code of Federal Regulations (eCFR)",
+    currentAsOf: "2026-07-09",
+    currentAsOfLabel: "eCFR text up to date as of July 9, 2026",
+    reviewStatus: "approved",
+    text: `28 C.F.R. § 16.34 Procedure to obtain change, correction or updating of identification records.
+
+If, after reviewing his/her identification record, the subject thereof believes that it is incorrect or incomplete in any respect and wishes changes, corrections or updating of the alleged deficiency, he/she should make application directly to the agency which contributed the questioned information. The subject of a record may also direct his/her challenge as to the accuracy or completeness of any entry on his/her record to the FBI, Criminal Justice Information Services (CJIS) Division, ATTN: SCU, Mod. D-2, 1000 Custer Hollow Road, Clarksburg, WV 26306. The FBI will then forward the challenge to the agency which submitted the data requesting that agency to verify or correct the challenged entry. Upon the receipt of an official communication directly from the agency which contributed the original information, the FBI CJIS Division will make any changes necessary in accordance with the information supplied by that agency.`,
+  },
+  {
+    id: "federal-usc-42-13661-assisted-housing-screening",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["housing"],
+    citation: "42 U.S.C. § 13661",
+    title: "Screening of applicants for federally assisted housing",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section13661&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-07-12",
+    currentAsOfLabel: "U.S. Code text in effect as of July 12, 2026",
+    reviewStatus: "approved",
+    text: `42 U.S.C. § 13661 Screening of applicants for federally assisted housing
+
+(a) Ineligibility because of eviction for drug crimes
+
+Any tenant evicted from federally assisted housing by reason of drug-related criminal activity (as such term is defined in section 1437a(b) of this title) shall not be eligible for federally assisted housing during the 3-year period beginning on the date of such eviction, unless the evicted tenant successfully completes a rehabilitation program approved by the public housing agency (which shall include a waiver of this subsection if the circumstances leading to eviction no longer exist).
+
+(b) Ineligibility of illegal drug users and alcohol abusers
+
+(1) In general
+
+Notwithstanding any other provision of law, a public housing agency or an owner of federally assisted housing, as determined by the Secretary, shall establish standards that prohibit admission to the program or admission to federally assisted housing for any household with a member—
+
+(A) who the public housing agency or owner determines is illegally using a controlled substance; or
+
+(B) with respect to whom the public housing agency or owner determines that it has reasonable cause to believe that such household member's illegal use (or pattern of illegal use) of a controlled substance, or abuse (or pattern of abuse) of alcohol, may interfere with the health, safety, or right to peaceful enjoyment of the premises by other residents.
+
+(2) Consideration of rehabilitation
+
+In determining whether, pursuant to paragraph (1)(B), to deny admission to the program or federally assisted housing to any household based on a pattern of illegal use of a controlled substance or a pattern of abuse of alcohol by a household member, a public housing agency or an owner may consider whether such household member—
+
+(A) has successfully completed a supervised drug or alcohol rehabilitation program (as applicable) and is no longer engaging in the illegal use of a controlled substance or abuse of alcohol (as applicable);
+
+(B) has otherwise been rehabilitated successfully and is no longer engaging in the illegal use of a controlled substance or abuse of alcohol (as applicable); or
+
+(C) is participating in a supervised drug or alcohol rehabilitation program (as applicable) and is no longer engaging in the illegal use of a controlled substance or abuse of alcohol (as applicable).
+
+(c) Authority to deny admission to criminal offenders
+
+Except as provided in subsections (a) and (b) of this section and in addition to any other authority to screen applicants, in selecting among applicants for admission to the program or to federally assisted housing, if the public housing agency or owner of such housing (as applicable) determines that an applicant or any member of the applicant's household is or was, during a reasonable time preceding the date when the applicant household would otherwise be selected for admission, engaged in any drug-related or violent criminal activity or other criminal activity which would adversely affect the health, safety, or right to peaceful enjoyment of the premises by other residents, the owner, or public housing agency employees, the public housing agency or owner may—
+
+(1) deny such applicant admission to the program or to federally assisted housing; and
+
+(2) after the expiration of the reasonable period beginning upon such activity, require the applicant, as a condition of admission to the program or to federally assisted housing, to submit to the public housing agency or owner evidence sufficient (as the Secretary shall by regulation provide) to ensure that the individual or individuals in the applicant's household who engaged in criminal activity for which denial was made under paragraph (1) have not engaged in any criminal activity during such reasonable period.`,
+  },
+  {
+    id: "federal-usc-42-13663-sex-offender-housing-ineligibility",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["housing"],
+    citation: "42 U.S.C. § 13663",
+    title:
+      "Ineligibility of dangerous sex offenders for admission to public housing (Excerpt)",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section13663&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-07-12",
+    currentAsOfLabel: "U.S. Code text in effect as of July 12, 2026",
+    reviewStatus: "approved",
+    text: `42 U.S.C. § 13663 Ineligibility of dangerous sex offenders for admission to public housing (Excerpt: subsections (a), (b), and (d))
+
+(a) In general
+
+Notwithstanding any other provision of law, an owner of federally assisted housing shall prohibit admission to such housing for any household that includes any individual who is subject to a lifetime registration requirement under a State sex offender registration program.
+
+(b) Obtaining information
+
+As provided in regulations issued by the Secretary to carry out this section—
+
+(1) a public housing agency shall carry out criminal history background checks on applicants for federally assisted housing and make further inquiry with State and local agencies as necessary to determine whether an applicant for federally assisted housing is subject to a lifetime registration requirement under a State sex offender registration program; and
+
+(2) State and local agencies responsible for the collection or maintenance of criminal history record information or information on persons required to register as sex offenders shall comply with requests of public housing agencies for information pursuant to this section.
+
+(d) Opportunity to dispute
+
+Before an adverse action is taken with respect to an applicant for federally assisted housing on the basis that an individual is subject to a lifetime registration requirement under a State sex offender registration program, the public housing agency obtaining the record shall provide the tenant or applicant with a copy of the registration information and an opportunity to dispute the accuracy and relevance of that information.`,
+  },
+  {
+    id: "federal-cfr-24-982-553-voucher-criminal-screening",
+    authorityType: "regulation",
+    jurisdiction: "federal",
+    topicIds: ["housing"],
+    citation: "24 C.F.R. § 982.553",
+    title:
+      "Housing Choice Voucher program — Denial of admission and termination of assistance for criminal activity (Excerpt)",
+    officialUrl:
+      "https://www.ecfr.gov/current/title-24/subtitle-B/chapter-IX/part-982/subpart-L/section-982.553",
+    sourceName: "Electronic Code of Federal Regulations (eCFR)",
+    currentAsOf: "2026-07-09",
+    currentAsOfLabel: "eCFR text up to date as of July 9, 2026",
+    reviewStatus: "approved",
+    text: `24 C.F.R. § 982.553 Denial of admission and termination of assistance for criminals and alcohol abusers (Excerpt: paragraphs (a), (c), and (d))
+
+(a) Denial of admission—
+
+(1) Prohibiting admission of drug criminals.
+
+(i) The PHA must prohibit admission to the program of an applicant for three years from the date of eviction if a household member has been evicted from federally assisted housing for drug-related criminal activity. However, the PHA may admit the household if the PHA determines:
+
+(A) That the evicted household member who engaged in drug-related criminal activity has successfully completed a supervised drug rehabilitation program approved by the PHA; or
+
+(B) That the circumstances leading to eviction no longer exist (for example, the criminal household member has died or is imprisoned).
+
+(ii) The PHA must establish standards that prohibit admission if:
+
+(A) The PHA determines that any household member is currently engaging in illegal use of a drug;
+
+(B) The PHA determines that it has reasonable cause to believe that a household member's illegal drug use or a pattern of illegal drug use may threaten the health, safety, or right to peaceful enjoyment of the premises by other residents; or
+
+(C) Any household member has ever been convicted of drug-related criminal activity for manufacture or production of methamphetamine on the premises of federally assisted housing.
+
+(2) Prohibiting admission of other criminals—
+
+(i) Mandatory prohibition. The PHA must establish standards that prohibit admission to the program if any member of the household is subject to a lifetime registration requirement under a State sex offender registration program. In this screening of applicants, the PHA must perform criminal history background checks necessary to determine whether any household member is subject to a lifetime sex offender registration requirement in the State where the housing is located and in other States where the household members are known to have resided.
+
+(ii) Permissive prohibitions.
+
+(A) The PHA may prohibit admission of a household to the program if the PHA determines that any household member is currently engaged in, or has engaged in during a reasonable time before the admission:
+
+(1) Drug-related criminal activity;
+
+(2) Violent criminal activity;
+
+(3) Other criminal activity which may threaten the health, safety, or right to peaceful enjoyment of the premises by other residents or persons residing in the immediate vicinity; or
+
+(4) Other criminal activity which may threaten the health or safety of the owner, property management staff, or persons performing a contract administration function or responsibility on behalf of the PHA (including a PHA employee or a PHA contractor, subcontractor or agent).
+
+(B) The PHA may establish a period before the admission decision during which an applicant must not have engaged in the activities specified in paragraph (a)(2)(i) of this section ("reasonable time").
+
+(C) If the PHA previously denied admission to an applicant because a member of the household engaged in criminal activity, the PHA may reconsider the applicant if the PHA has sufficient evidence that the members of the household are not currently engaged in, and have not engaged in, such criminal activity during a reasonable period, as determined by the PHA, before the admission decision.
+
+(c) Evidence of criminal activity. The PHA may terminate assistance for criminal activity by a household member as authorized in this section if the PHA determines, based on a preponderance of the evidence, that the household member has engaged in the activity, regardless of whether the household member has been arrested or convicted for such activity.
+
+(d) Use of criminal record—
+
+(1) Denial. If a PHA proposes to deny admission for criminal activity as shown by a criminal record, the PHA must provide the subject of the record and the applicant with a copy of the criminal record. The PHA must give the family an opportunity to dispute the accuracy and relevance of that record, in the informal review process in accordance with § 982.554.
+
+(2) Termination of assistance. If a PHA proposes to terminate assistance for criminal activity as shown by a criminal record, the PHA must notify the household of the proposed action to be based on the information and must provide the subject of the record and the tenant with a copy of the criminal record. The PHA must give the family an opportunity to dispute the accuracy and relevance of that record in accordance with § 982.555.
+
+(3) Cost of obtaining criminal record. The PHA may not pass along to the tenant the costs of a criminal records check.`,
+  },
+  {
+    id: "federal-usc-5-9202-fair-chance-act",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["employment"],
+    citation: "5 U.S.C. § 9202",
+    title:
+      "Fair Chance Act — Limitations on requests for criminal history record information (Excerpt)",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section9202&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-07-12",
+    currentAsOfLabel: "U.S. Code text in effect as of July 12, 2026",
+    reviewStatus: "approved",
+    text: `5 U.S.C. § 9202 Limitations on requests for criminal history record information (Excerpt: subsections (a), (b), and (c)(1))
+
+(a) Inquiries Prior to Conditional Offer.—Except as provided in subsections (b) and (c), an employee of an agency may not request, in oral or written form (including through the Declaration for Federal Employment (Office of Personnel Management Optional Form 306) or any similar successor form, the USAJOBS internet website, or any other electronic means) that an applicant for an appointment to a position in the civil service disclose criminal history record information regarding the applicant before the appointing authority extends a conditional offer to the applicant.
+
+(b) Otherwise Required by Law.—The prohibition under subsection (a) shall not apply with respect to an applicant for a position in the civil service if consideration of criminal history record information prior to a conditional offer with respect to the position is otherwise required by law.
+
+(c) Exception for Certain Positions.—
+
+(1) In general.—The prohibition under subsection (a) shall not apply with respect to an applicant for an appointment to a position—
+
+(A) that requires a determination of eligibility described in clause (i), (ii), or (iii) of section 9101(b)(1)(A);
+
+(B) as a Federal law enforcement officer (as defined in section 115(c) of title 18); or
+
+(C) identified by the Director of the Office of Personnel Management in the regulations issued under paragraph (2).`,
+  },
+  {
+    id: "federal-usc-15-1681c-consumer-report-limits",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["employment", "housing"],
+    citation: "15 U.S.C. § 1681c(a), (b)",
+    title:
+      "Fair Credit Reporting Act — Time limits on reporting arrests and other adverse information (Excerpt)",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-05-28",
+    currentAsOfLabel: "U.S. Code text in effect as of May 28, 2026",
+    reviewStatus: "approved",
+    text: `15 U.S.C. § 1681c Requirements relating to information contained in consumer reports (Excerpt: subsections (a)(2), (a)(5), and (b)(3))
+
+(a) Information excluded from consumer reports
+
+Except as authorized under subsection (b), no consumer reporting agency may make any consumer report containing any of the following items of information:
+
+(2) Civil suits, civil judgments, and records of arrest that, from date of entry, antedate the report by more than seven years or until the governing statute of limitations has expired, whichever is the longer period.
+
+(5) Any other adverse item of information, other than records of convictions of crimes which antedates the report by more than seven years.
+
+(b) Exempted cases
+
+The provisions of paragraphs (1) through (5) of subsection (a) are not applicable in the case of any consumer credit report to be used in connection with—
+
+(3) the employment of any individual at an annual salary which equals, or which may reasonably be expected to equal $75,000, or more.`,
+  },
+  {
+    id: "federal-usc-15-1681b-employment-background-checks",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["employment"],
+    citation: "15 U.S.C. § 1681b(b)",
+    title:
+      "Fair Credit Reporting Act — Consent and adverse-action rights for employment background checks (Excerpt)",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-05-24",
+    currentAsOfLabel: "U.S. Code text in effect as of May 24, 2026",
+    reviewStatus: "approved",
+    text: `15 U.S.C. § 1681b Permissible purposes of consumer reports (Excerpt: subsections (b)(1)(A)(ii), (b)(2)(A), and (b)(3)(A))
+
+(b) Conditions for furnishing and using consumer reports for employment purposes
+
+(1) Certification from user
+
+A consumer reporting agency may furnish a consumer report for employment purposes only if—
+
+(A) the person who obtains such report from the agency certifies to the agency that—
+
+(ii) information from the consumer report will not be used in violation of any applicable Federal or State equal employment opportunity law or regulation;
+
+(2) Disclosure to consumer
+
+(A) In general
+
+Except as provided in subparagraph (B), a person may not procure a consumer report, or cause a consumer report to be procured, for employment purposes with respect to any consumer, unless—
+
+(i) a clear and conspicuous disclosure has been made in writing to the consumer at any time before the report is procured or caused to be procured, in a document that consists solely of the disclosure, that a consumer report may be obtained for employment purposes; and
+
+(ii) the consumer has authorized in writing (which authorization may be made on the document referred to in clause (i)) the procurement of the report by that person.
+
+(3) Conditions on use for adverse actions
+
+(A) In general
+
+Except as provided in subparagraph (B), in using a consumer report for employment purposes, before taking any adverse action based in whole or in part on the report, the person intending to take such adverse action shall provide to the consumer to whom the report relates—
+
+(i) a copy of the report; and
+
+(ii) a description in writing of the rights of the consumer under this subchapter, as prescribed by the Bureau under section 1681g(c)(3) of this title.`,
+  },
+  {
+    id: "federal-const-amend-4-searches-seizures",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["police"],
+    citation: "U.S. Const. amend. IV",
+    title: "Fourth Amendment — Searches and seizures",
+    officialUrl: "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+    sourceName: "U.S. National Archives",
+    currentAsOf: "2026-07-13",
+    currentAsOfLabel: "Ratified December 15, 1791; text unchanged",
+    reviewStatus: "approved",
+    text: `Constitution of the United States, Amendment IV
+
+The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.`,
+  },
+  {
+    id: "federal-const-amend-5-self-incrimination",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["police"],
+    citation: "U.S. Const. amend. V",
+    title: "Fifth Amendment — Self-incrimination and due process",
+    officialUrl: "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+    sourceName: "U.S. National Archives",
+    currentAsOf: "2026-07-13",
+    currentAsOfLabel: "Ratified December 15, 1791; text unchanged",
+    reviewStatus: "approved",
+    text: `Constitution of the United States, Amendment V
+
+No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.`,
+  },
+  {
+    id: "federal-usc-42-1983-civil-action-deprivation-rights",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["police"],
+    citation: "42 U.S.C. § 1983",
+    title: "Civil action for deprivation of rights",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1983&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-05-06",
+    currentAsOfLabel: "U.S. Code text in effect as of May 6, 2026",
+    reviewStatus: "approved",
+    text: `42 U.S.C. § 1983 Civil action for deprivation of rights
+
+Every person who, under color of any statute, ordinance, regulation, custom, or usage, of any State or Territory or the District of Columbia, subjects, or causes to be subjected, any citizen of the United States or other person within the jurisdiction thereof to the deprivation of any rights, privileges, or immunities secured by the Constitution and laws, shall be liable to the party injured in an action at law, suit in equity, or other proper proceeding for redress, except that in any action brought against a judicial officer for an act or omission taken in such officer's judicial capacity, injunctive relief shall not be granted unless a declaratory decree was violated or declaratory relief was unavailable. For the purposes of this section, any Act of Congress applicable exclusively to the District of Columbia shall be considered to be a statute of the District of Columbia.`,
+  },
+  {
+    id: "federal-usc-18-3583-supervised-release",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["supervision"],
+    citation: "18 U.S.C. § 3583(a), (b), (e)(1)-(2), (f)",
+    title:
+      "Federal supervised release — Terms, early termination, and written conditions (Excerpt)",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section3583&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-06-01",
+    currentAsOfLabel: "U.S. Code text in effect as of June 1, 2026",
+    reviewStatus: "approved",
+    text: `18 U.S.C. § 3583 Inclusion of a term of supervised release after imprisonment (Excerpt: subsections (a), (b), (e)(1), (e)(2), and (f))
+
+(a) In General.—The court, in imposing a sentence to a term of imprisonment for a felony or a misdemeanor, may include as a part of the sentence a requirement that the defendant be placed on a term of supervised release after imprisonment, except that the court shall include as a part of the sentence a requirement that the defendant be placed on a term of supervised release if such a term is required by statute or if the defendant has been convicted for the first time of a domestic violence crime as defined in section 3561(b).
+
+(b) Authorized Terms of Supervised Release.—Except as otherwise provided, the authorized terms of supervised release are—
+
+(1) for a Class A or Class B felony, not more than five years;
+
+(2) for a Class C or Class D felony, not more than three years; and
+
+(3) for a Class E felony, or for a misdemeanor (other than a petty offense), not more than one year.
+
+(e) Modification of Conditions or Revocation.—The court may, after considering the factors set forth in section 3553(a)(1), (a)(2)(B), (a)(2)(C), (a)(2)(D), (a)(4), (a)(5), (a)(6), and (a)(7)—
+
+(1) terminate a term of supervised release and discharge the defendant released at any time after the expiration of one year of supervised release, pursuant to the provisions of the Federal Rules of Criminal Procedure relating to the modification of probation, if it is satisfied that such action is warranted by the conduct of the defendant released and the interest of justice;
+
+(2) extend a term of supervised release if less than the maximum authorized term was previously imposed, and may modify, reduce, or enlarge the conditions of supervised release, at any time prior to the expiration or termination of the term of supervised release, pursuant to the provisions of the Federal Rules of Criminal Procedure relating to the modification of probation and the provisions applicable to the initial setting of the terms and conditions of post-release supervision;
+
+(f) Written Statement of Conditions.—The court shall direct that the probation officer provide the defendant with a written statement that sets forth all the conditions to which the term of supervised release is subject, and that is sufficiently clear and specific to serve as a guide for the defendant's conduct and for such supervision as is required.`,
+  },
+  {
+    id: "federal-usc-18-3564-probation-early-termination",
+    authorityType: "statute",
+    jurisdiction: "federal",
+    topicIds: ["supervision"],
+    citation: "18 U.S.C. § 3564",
+    title: "Running of a term of federal probation; early termination",
+    officialUrl:
+      "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section3564&num=0&edition=prelim",
+    sourceName: "Office of the Law Revision Counsel, United States Code",
+    currentAsOf: "2026-07-12",
+    currentAsOfLabel: "U.S. Code text in effect as of July 12, 2026",
+    reviewStatus: "approved",
+    text: `18 U.S.C. § 3564 Running of a term of probation
+
+(a) Commencement.—A term of probation commences on the day that the sentence of probation is imposed, unless otherwise ordered by the court.
+
+(b) Concurrence With Other Sentences.—Multiple terms of probation, whether imposed at the same time or at different times, run concurrently with each other. A term of probation runs concurrently with any Federal, State, or local term of probation, supervised release, or parole for another offense to which the defendant is subject or becomes subject during the term of probation. A term of probation does not run while the defendant is imprisoned in connection with a conviction for a Federal, State, or local crime unless the imprisonment is for a period of less than thirty consecutive days.
+
+(c) Early Termination.—The court, after considering the factors set forth in section 3553(a) to the extent that they are applicable, may, pursuant to the provisions of the Federal Rules of Criminal Procedure relating to the modification of probation, terminate a term of probation previously ordered and discharge the defendant at any time in the case of a misdemeanor or an infraction or at any time after the expiration of one year of probation in the case of a felony, if it is satisfied that such action is warranted by the conduct of the defendant and the interest of justice.
+
+(d) Extension.—The court may, after a hearing, extend a term of probation, if less than the maximum authorized term was previously imposed, at any time prior to the expiration or termination of the term of probation, pursuant to the provisions applicable to the initial setting of the term of probation.
+
+(e) Subject to Revocation.—A sentence of probation remains conditional and subject to revocation until its expiration or termination.`,
+  },
 ];
