@@ -337,6 +337,28 @@ export default function AdminPage() {
         daily pipeline re-chunks and re-embeds approved updates automatically.
       </p>
 
+      <p className="mt-2 text-[11px] leading-4 text-gray-400">
+        Legislative data provided by{" "}
+        <a
+          href="https://legiscan.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline-offset-2 hover:underline"
+        >
+          LegiScan
+        </a>{" "}
+        under{" "}
+        <a
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline-offset-2 hover:underline"
+        >
+          Creative Commons Attribution 4.0
+        </a>
+        .
+      </p>
+
       <div className="mt-10 mb-3 flex items-center justify-between">
         <h2 className="text-base font-bold text-[#085041]">Message review</h2>
         <div className="flex gap-1 text-[11px] font-semibold">

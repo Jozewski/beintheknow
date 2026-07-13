@@ -304,7 +304,7 @@ Project link: [https://github.com/Jozewski/beintheknow](https://github.com/Jozew
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [LegiScan](https://legiscan.com) - legislative monitoring API
+* [LegiScan](https://legiscan.com) - legislative data provided by LegiScan under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
 * [LawHelp.org](https://www.lawhelp.org) and state legal aid organizations
 * [Img Shields](https://shields.io)
 
