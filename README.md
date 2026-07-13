@@ -234,7 +234,7 @@ Built for a vulnerable population, so data collection is minimal by design:
 <!-- TESTING -->
 ## Testing
 
-CI (GitHub Actions) runs lint → typecheck → unit tests → build on every push. A second workflow smoke-tests chat across six states against the deployed app every Tuesday. Run everything locally with:
+CI (GitHub Actions) runs lint → typecheck → unit tests → build on every push. A second workflow smoke-tests chat across six states against the deployed app; until deployment it is manual-dispatch only (Actions → "Smoke test"), and its weekly Tuesday schedule gets re-enabled at deployment (instructions are in the workflow file). Run everything locally with:
 
 ```sh
 npm run lint && npx tsc --noEmit && npm test && npm run build
