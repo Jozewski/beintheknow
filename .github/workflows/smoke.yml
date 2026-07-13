@@ -1,38 +1,59 @@
-# # Runs the multi-state chat smoke test against the deployed app every
-# # Tuesday (the day after the Monday pipeline run), and on demand.
-# #
-# # Required repository secrets:
-# #   SMOKE_BASE_URL - deployed app URL, e.g. https://beintheknow.vercel.app
-# #   MONGODB_URI    - read access for the coverage portion of the script
-# #   CRON_SECRET    - lets the script bypass the guest question quota
-# name: Weekly smoke test
-
-# on:
+# Multi-state chat smoke test against the deployed app. Manual dispatch
+# only until the app is deployed - run it from the Actions tab.
+#
+# AT DEPLOYMENT: restore the weekly schedule by adding under `on:`:
 #   schedule:
-#     - cron: "0 12 * * 2"
-#   workflow_dispatch:
+#     - cron: "0 12 * * 2"   # Tuesdays, the day after the Monday pipeline
+#
+# Required repository secrets:
+#   SMOKE_BASE_URL - deployed app URL, e.g. https://beintheknow.vercel.app
+#   MONGODB_URI    - read access for the coverage portion of the script
+#   CRON_SECRET    - lets the script bypass the guest question quota
+#
+# If SMOKE_BASE_URL is not set, the job exits early with a notice instead
+# of failing.
+name: Smoke test (manual until deployed)
 
-# jobs:
-#   smoke:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       fail-fast: false
-#       matrix:
-#         state: [AZ, TX, CA, NY, FL, IL]
-#     steps:
-#       - uses: actions/checkout@v5
+on:
+  workflow_dispatch:
 
-#       - uses: actions/setup-node@v5
-#         with:
-#           node-version: 22
-#           cache: npm
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        state: [AZ, TX, CA, NY, FL, IL]
+    env:
+      SMOKE_BASE_URL: ${{ secrets.SMOKE_BASE_URL }}
+    steps:
+      - name: Check deployment target configured
+        id: guard
+        run: |
+          if [ -z "$SMOKE_BASE_URL" ]; then
+            echo "SMOKE_BASE_URL secret is not set - app not deployed yet. Skipping smoke test."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
 
-#       - name: Install dependencies
-#         run: npm ci
+      - uses: actions/checkout@v5
+        if: steps.guard.outputs.configured == 'true'
 
-#       - name: Smoke test ${{ matrix.state }}
-#         run: npm run chat:smoke -- --state=${{ matrix.state }} --baseUrl=${{ secrets.SMOKE_BASE_URL }}
-#         env:
-#           MONGODB_URI: ${{ secrets.MONGODB_URI }}
-#           CRON_SECRET: ${{ secrets.CRON_SECRET }}
-#           GEMINI_EMBEDDING_DIMENSIONS: "768"
+      - uses: actions/setup-node@v5
+        if: steps.guard.outputs.configured == 'true'
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.guard.outputs.configured == 'true'
+        run: npm ci
+
+      - name: Smoke test ${{ matrix.state }}
+        if: steps.guard.outputs.configured == 'true'
+        run: npm run chat:smoke -- --state=${{ matrix.state }} --baseUrl=$SMOKE_BASE_URL
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          GEMINI_EMBEDDING_DIMENSIONS: "768"

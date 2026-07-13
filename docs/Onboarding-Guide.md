@@ -36,9 +36,11 @@ Read these, in order:
    review the Message review section (flagged messages = likely
    prompt-injection attempts; negative feedback = answers users said were
    wrong or unhelpful).
-2. **Check the weekly smoke test** (GitHub Actions "Weekly smoke test",
-   Tuesdays): six states are tested against production. Investigate any
-   failure before touching anything else.
+2. **Check the smoke test** (GitHub Actions "Smoke test"): six states are
+   tested against production. Until the app is deployed the workflow is
+   manual-dispatch only; at deployment, re-enable its weekly Tuesday
+   schedule (instructions are in .github/workflows/smoke.yml) and treat
+   any failure as the first thing to investigate.
 3. **Glance at Sentry** for new errors, and the Vercel/Atlas/Google AI
    consoles for quota or billing anomalies.
 
