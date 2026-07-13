@@ -54,12 +54,6 @@ Observability:
 - [ ] `NEXT_PUBLIC_SENTRY_DSN` - Sentry only reports when
       NODE_ENV=production, so dev sessions stay silent.
 
-Do NOT set:
-
-- `EMBEDDING_PROVIDER` - obsolete; no code reads it since the legacy local
-  embedding provider was removed. Also delete it from `.env.local`.
-- `LOCAL_EMBEDDING_URL` / `LOCAL_EMBEDDING_MODEL` - same reason.
-
 ## 3. Deploy and verify
 
 - [ ] Deploy `main` on Vercel; build completes.
