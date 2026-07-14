@@ -140,17 +140,30 @@ export function ChatPanel({
 
         if (data.messages.length > 0) {
           scrollToBottomNext.current = true;
-          setMessages((current) => [
-            ...current.filter((message) => message.id === "welcome"),
-            ...data.messages.map((message) => ({
-              id: message.id,
-              role: message.role,
-              content: message.content,
-              citations: message.citations,
-              dbId: message.id,
-              feedbackRating: message.feedbackRating,
-            })),
-          ]);
+          setMessages((current) => {
+            // If a conversation started while history was in flight, keep
+            // it untouched. Replacing the list wholesale used to delete
+            // the streaming assistant bubble mid-answer (the reply never
+            // displayed until a refresh), and merging risks duplicates
+            // because the response may already contain the just-sent
+            // question. The skipped history reappears on the next load.
+            const conversationStarted = current.some(
+              (message) => message.id !== "welcome",
+            );
+            if (conversationStarted) return current;
+
+            return [
+              ...current,
+              ...data.messages.map((message) => ({
+                id: message.id,
+                role: message.role,
+                content: message.content,
+                citations: message.citations,
+                dbId: message.id,
+                feedbackRating: message.feedbackRating,
+              })),
+            ];
+          });
         }
       })
       .catch(() => {
@@ -205,6 +218,13 @@ export function ChatPanel({
   async function sendMessage() {
     const message = draft.trim();
     if (!message || isSending) return;
+
+    // The conversation has started, so history restore must never run after
+    // this point. Without this guard, a first question with no stored
+    // session raced the history effect: the stream's meta event set the new
+    // sessionId, the effect fired mid-stream, and its setMessages wiped the
+    // streaming assistant bubble - the answer only appeared after a refresh.
+    historyLoaded.current = true;
 
     const userMessage: PanelMessage = {
       id: crypto.randomUUID(),
