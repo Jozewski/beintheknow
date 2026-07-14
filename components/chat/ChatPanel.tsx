@@ -150,6 +150,11 @@ export function ChatPanel({
               dbId: message.id,
               feedbackRating: message.feedbackRating,
             })),
+            // Keep any conversation that started while history was loading.
+            // Replacing the list wholesale used to delete the streaming
+            // assistant bubble mid-answer, so JO's reply never displayed
+            // until a refresh.
+            ...current.filter((message) => message.id !== "welcome"),
           ]);
         }
       })
@@ -205,6 +210,13 @@ export function ChatPanel({
   async function sendMessage() {
     const message = draft.trim();
     if (!message || isSending) return;
+
+    // The conversation has started, so history restore must never run after
+    // this point. Without this guard, a first question with no stored
+    // session raced the history effect: the stream's meta event set the new
+    // sessionId, the effect fired mid-stream, and its setMessages wiped the
+    // streaming assistant bubble - the answer only appeared after a refresh.
+    historyLoaded.current = true;
 
     const userMessage: PanelMessage = {
       id: crypto.randomUUID(),

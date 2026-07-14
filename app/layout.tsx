@@ -23,8 +23,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  // Absolute base for social share images (og:image must be a full URL).
+  metadataBase: new URL("https://beintheknow.vercel.app"),
   title: "Be In The Know: Just Ask JO",
   description: "Plain-language legal rights information, state by state.",
+  openGraph: {
+    title: "Be In The Know: Just Ask JO",
+    description:
+      "Free plain-English rights education for voting, expungement, housing, employment, police interactions, and supervision - state by state.",
+    url: "/",
+    siteName: "Be In The Know",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Be In The Know: Just Ask JO",
+    description:
+      "Free plain-English rights education, state by state. Just Ask JO.",
+  },
 };
 
 export default function RootLayout({
