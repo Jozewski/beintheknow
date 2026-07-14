@@ -24,7 +24,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   // Absolute base for social share images (og:image must be a full URL).
-  metadataBase: new URL("https://beintheknow.vercel.app"),
+  // NEXT_PUBLIC_APP_URL is the per-environment URL (see Deployment
+  // Checklist); the production domain is the fallback.
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL ?? "https://beintheknow.vercel.app",
+  ),
   title: "Be In The Know: Just Ask JO",
   description: "Plain-language legal rights information, state by state.",
   openGraph: {

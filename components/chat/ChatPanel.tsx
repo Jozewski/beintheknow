@@ -140,22 +140,30 @@ export function ChatPanel({
 
         if (data.messages.length > 0) {
           scrollToBottomNext.current = true;
-          setMessages((current) => [
-            ...current.filter((message) => message.id === "welcome"),
-            ...data.messages.map((message) => ({
-              id: message.id,
-              role: message.role,
-              content: message.content,
-              citations: message.citations,
-              dbId: message.id,
-              feedbackRating: message.feedbackRating,
-            })),
-            // Keep any conversation that started while history was loading.
-            // Replacing the list wholesale used to delete the streaming
-            // assistant bubble mid-answer, so JO's reply never displayed
-            // until a refresh.
-            ...current.filter((message) => message.id !== "welcome"),
-          ]);
+          setMessages((current) => {
+            // If a conversation started while history was in flight, keep
+            // it untouched. Replacing the list wholesale used to delete
+            // the streaming assistant bubble mid-answer (the reply never
+            // displayed until a refresh), and merging risks duplicates
+            // because the response may already contain the just-sent
+            // question. The skipped history reappears on the next load.
+            const conversationStarted = current.some(
+              (message) => message.id !== "welcome",
+            );
+            if (conversationStarted) return current;
+
+            return [
+              ...current,
+              ...data.messages.map((message) => ({
+                id: message.id,
+                role: message.role,
+                content: message.content,
+                citations: message.citations,
+                dbId: message.id,
+                feedbackRating: message.feedbackRating,
+              })),
+            ];
+          });
         }
       })
       .catch(() => {
