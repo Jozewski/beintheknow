@@ -26,12 +26,15 @@ export default function Image() {
           color: "#FFFFFF",
         }}
       >
-        {/* JO shield mark (mirrors public/jo-logo.svg) */}
+        {/* JO shield mark (mirrors public/jo-logo.svg). The "JO" label is
+            an HTML layer because the OG renderer (Satori) does not support
+            SVG <text> nodes. */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            position: "relative",
             width: 148,
             height: 148,
             borderRadius: 36,
@@ -54,18 +57,25 @@ export default function Image() {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-            <text
-              x="48"
-              y="52"
-              fill="#FFFFFF"
-              fontFamily="sans-serif"
-              fontSize="18"
-              fontWeight="800"
-              textAnchor="middle"
-            >
-              JO
-            </text>
           </svg>
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: 148,
+              height: 148,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingBottom: 10,
+              fontSize: 26,
+              fontWeight: 700,
+              color: "#FFFFFF",
+            }}
+          >
+            JO
+          </div>
         </div>
 
         <div
