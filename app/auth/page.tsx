@@ -1,16 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 import { clearStoredChatState } from "@/lib/chatClientStorage";
 
-export default function AuthPage() {
-  const [mode, setMode] = useState<"login" | "register">("register");
+function AuthPageInner() {
+  // Support deep links like /auth?mode=login (the reset-success page uses this).
+  const requestedMode = useSearchParams().get("mode");
+  const [mode, setMode] = useState<"login" | "register" | "forgot">(
+    requestedMode === "login" || requestedMode === "forgot"
+      ? requestedMode
+      : "register",
+  );
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string>();
   const [submitting, setSubmitting] = useState(false);
+  const [forgotSent, setForgotSent] = useState(false);
   const [signedInAs, setSignedInAs] = useState<string>();
   const [showDelete, setShowDelete] = useState(false);
   const [deletePassword, setDeletePassword] = useState("");
@@ -26,6 +34,13 @@ export default function AuthPage() {
       })
       .catch(() => {});
   }, []);
+
+  function switchMode(next: "login" | "register" | "forgot") {
+    setMode(next);
+    setError(undefined);
+    setForgotSent(false);
+    setPassword("");
+  }
 
   async function signOut() {
     await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
@@ -89,13 +104,18 @@ export default function AuthPage() {
       const response = await fetch(`/api/auth/${mode}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify(mode === "forgot" ? { email } : { email, password }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
         setError(data.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+
+      if (mode === "forgot") {
+        setForgotSent(true);
         return;
       }
 
@@ -198,19 +218,25 @@ export default function AuthPage() {
       <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-2xl">
         <div className="mb-5 text-center">
           <h1 className="text-xl font-bold text-[#085041]">
-            {mode === "register" ? "Create your free account" : "Welcome back"}
+            {mode === "register"
+              ? "Create your free account"
+              : mode === "login"
+                ? "Welcome back"
+                : "Reset your password"}
           </h1>
           <p className="mt-1 text-[12px] leading-5 text-gray-600">
             {mode === "register"
               ? "Keep your conversations with JO, pick up where you left off on any device, and get a higher daily question limit."
-              : "Sign in to see your saved conversations with JO."}
+              : mode === "login"
+                ? "Sign in to see your saved conversations with JO."
+                : "Enter your email and we will send you a link to pick a new password."}
           </p>
         </div>
 
         <div className="mb-5 grid grid-cols-2 rounded-lg bg-gray-100 p-1 text-[12px] font-semibold">
           <button
             type="button"
-            onClick={() => setMode("register")}
+            onClick={() => switchMode("register")}
             className={`rounded-md py-1.5 transition ${
               mode === "register" ? "bg-white text-[#085041] shadow" : "text-gray-500"
             }`}
@@ -219,7 +245,7 @@ export default function AuthPage() {
           </button>
           <button
             type="button"
-            onClick={() => setMode("login")}
+            onClick={() => switchMode("login")}
             className={`rounded-md py-1.5 transition ${
               mode === "login" ? "bg-white text-[#085041] shadow" : "text-gray-500"
             }`}
@@ -228,6 +254,23 @@ export default function AuthPage() {
           </button>
         </div>
 
+        {mode === "forgot" && forgotSent ? (
+          <div className="space-y-4">
+            <p className="rounded-lg border border-[#9FE1CB] bg-[#E1F5EE] px-3 py-3 text-[12px] leading-5 text-[#085041]">
+              Check your email. If <span className="font-semibold">{email}</span>{" "}
+              has an account, we just sent it a link to pick a new password.
+              The link works for 45 minutes. If you do not see the email,
+              check your spam folder.
+            </p>
+            <button
+              type="button"
+              onClick={() => switchMode("login")}
+              className="w-full rounded-lg bg-[#1D9E75] py-2.5 text-[13px] font-semibold text-white transition hover:bg-[#0F6E56]"
+            >
+              Back to sign in
+            </button>
+          </div>
+        ) : (
         <form onSubmit={submit} className="space-y-3">
           <label className="block">
             <span className="mb-1 block text-[11px] font-semibold uppercase tracking-wide text-gray-500">
@@ -243,20 +286,34 @@ export default function AuthPage() {
             />
           </label>
 
-          <label className="block">
-            <span className="mb-1 block text-[11px] font-semibold uppercase tracking-wide text-gray-500">
-              Password {mode === "register" ? "(at least 8 characters)" : ""}
-            </span>
-            <input
-              type="password"
-              required
-              minLength={mode === "register" ? 8 : 1}
-              autoComplete={mode === "register" ? "new-password" : "current-password"}
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-[13px] text-gray-900 outline-none focus:border-[#1D9E75] focus:ring-2 focus:ring-[#1D9E75]/30"
-            />
-          </label>
+          {mode !== "forgot" ? (
+            <label className="block">
+              <span className="mb-1 block text-[11px] font-semibold uppercase tracking-wide text-gray-500">
+                Password {mode === "register" ? "(at least 8 characters)" : ""}
+              </span>
+              <input
+                type="password"
+                required
+                minLength={mode === "register" ? 8 : 1}
+                autoComplete={mode === "register" ? "new-password" : "current-password"}
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-[13px] text-gray-900 outline-none focus:border-[#1D9E75] focus:ring-2 focus:ring-[#1D9E75]/30"
+              />
+            </label>
+          ) : null}
+
+          {mode === "login" ? (
+            <p className="text-right">
+              <button
+                type="button"
+                onClick={() => switchMode("forgot")}
+                className="text-[12px] font-semibold text-[#085041] underline-offset-2 hover:underline"
+              >
+                Forgot your password?
+              </button>
+            </p>
+          ) : null}
 
           {error ? (
             <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] leading-4 text-red-700">
@@ -287,9 +344,24 @@ export default function AuthPage() {
               ? "One moment..."
               : mode === "register"
                 ? "Create account"
-                : "Sign in"}
+                : mode === "login"
+                  ? "Sign in"
+                  : "Email me a reset link"}
           </button>
+
+          {mode === "forgot" ? (
+            <p className="text-center">
+              <button
+                type="button"
+                onClick={() => switchMode("login")}
+                className="text-[12px] font-semibold text-[#085041] underline-offset-2 hover:underline"
+              >
+                Back to sign in
+              </button>
+            </p>
+          ) : null}
         </form>
+        )}
 
         <p className="mt-4 text-center text-[11px] leading-4 text-gray-500">
           Educational information only. Be In The Know is not a law firm and
@@ -303,5 +375,14 @@ export default function AuthPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function AuthPage() {
+  // useSearchParams requires a Suspense boundary during prerender.
+  return (
+    <Suspense fallback={null}>
+      <AuthPageInner />
+    </Suspense>
   );
 }

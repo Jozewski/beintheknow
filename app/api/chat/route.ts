@@ -1,4 +1,4 @@
-import { createHash, randomUUID } from "node:crypto";
+import { randomUUID } from "node:crypto";
 
 import * as Sentry from "@sentry/nextjs";
 import { generateText, smoothStream, streamText } from "ai";
@@ -11,6 +11,7 @@ import {
   isSuspiciousUserMessage,
 } from "@/lib/answerRepair";
 import { getAuthenticatedUser, type AuthenticatedUser } from "@/lib/auth";
+import { getClientIpHash } from "@/lib/ipHash";
 
 import {
   GEMINI_CHAT_MODEL,
@@ -58,16 +59,6 @@ type ChatResponseBody = {
     confidence: "high" | "medium" | "low";
   };
 };
-
-function getClientIpHash(request: Request) {
-  const forwarded = request.headers.get("x-forwarded-for");
-  const ip = forwarded?.split(",")[0]?.trim();
-  if (!ip) return undefined;
-
-  // Peppered hash: never store raw IPs.
-  const pepper = process.env.JWT_SECRET ?? "beintheknow";
-  return createHash("sha256").update(`${ip}:${pepper}`).digest("hex");
-}
 
 /**
  * Counts guest questions asked today (UTC) across every session tied to

@@ -148,6 +148,8 @@ To get a local copy up and running, follow these steps.
    GEMINI_EMBEDDING_DIMENSIONS=768
    VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768
    ADMIN_EMAILS=you@example.com
+   RESEND_API_KEY=          # optional in dev: without it, reset emails print to the console
+   EMAIL_FROM=              # verified Resend sender, e.g. "Be In The Know <no-reply@yourdomain.org>"
    ```
 4. Create the Atlas Vector Search index on the `legaltextchunks` collection
    * name: `legal_text_chunk_embedding_gemini_768`
