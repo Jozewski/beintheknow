@@ -46,7 +46,9 @@ export default function PrivacyPage() {
           <p>
             <strong>Account information.</strong> If you create an account, we
             store your email address and a securely hashed version of your
-            password. We never store your password itself.
+            password. We never store your password itself. We use your email
+            address only when you ask us to - for example, to send a
+            password-reset link you requested. We never send marketing email.
           </p>
           <p>
             <strong>Usage safeguards.</strong> To enforce fair daily question
