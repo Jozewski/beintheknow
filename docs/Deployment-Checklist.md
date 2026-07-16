@@ -42,8 +42,9 @@ Required:
 - [ ] `VECTOR_SEARCH_INDEX=legal_text_chunk_embedding_gemini_768`
 - [ ] `ADMIN_EMAILS` - comma-separated admin account emails
 - [ ] `RESEND_API_KEY` - Resend API key; sends password-reset emails.
-      Without it (and `EMAIL_FROM`) the forgot-password endpoint errors in
-      production instead of silently dropping mail.
+      Without it (and `EMAIL_FROM`) `sendEmail()` throws in production; the
+      forgot-password endpoint still returns its generic success response
+      (no account enumeration), but the failure shows up in logs/Sentry.
 - [ ] `EMAIL_FROM` - verified sender on the Resend domain, e.g.
       `Be In The Know <no-reply@yourdomain.org>`
 
