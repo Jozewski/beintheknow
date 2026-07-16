@@ -58,11 +58,17 @@ export async function POST(request: Request) {
 
   const { token, password } = parsed.data;
 
-  const resetToken = await PasswordResetTokenModel.findOne({
-    tokenHash: hashResetToken(token),
-    usedAt: null,
-    expiresAt: { $gt: new Date() },
-  });
+  // Atomically claim the token: the same query that finds it also marks it
+  // used, so two concurrent requests can never both pass the usedAt check.
+  const resetToken = await PasswordResetTokenModel.findOneAndUpdate(
+    {
+      tokenHash: hashResetToken(token),
+      usedAt: null,
+      expiresAt: { $gt: new Date() },
+    },
+    { $set: { usedAt: new Date() } },
+    { new: true },
+  );
   if (!resetToken) {
     return Response.json({ error: INVALID_LINK_ERROR }, { status: 400 });
   }
@@ -78,13 +84,13 @@ export async function POST(request: Request) {
     { passwordHash: await hashPassword(password) },
   );
 
-  // Burn this token and every other outstanding reset link for the account.
-  resetToken.usedAt = new Date();
-  await resetToken.save();
-  await PasswordResetTokenModel.deleteMany({
-    userId: user._id,
-    _id: { $ne: resetToken._id },
-  });
+  // Burn every other outstanding reset link for the account. Mark them used
+  // instead of deleting so the forgot endpoint's per-hour rate limit can
+  // still count them; the TTL index cleans them up later.
+  await PasswordResetTokenModel.updateMany(
+    { userId: user._id, _id: { $ne: resetToken._id }, usedAt: null },
+    { $set: { usedAt: new Date() } },
+  );
 
   return Response.json({ ok: true });
 }

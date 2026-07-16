@@ -1,0 +1,26 @@
+fix: harden password reset per PR 26 review findings
+
+Address the three valid Copilot review comments on the merged password
+reset PR, plus its docs-accuracy note. Verified end-to-end: two
+concurrent resets with the same token now yield exactly one success,
+and burned tokens remain countable for rate limiting.
+
+Security
+- claim the reset token atomically with findOneAndUpdate so two
+  concurrent requests can never both pass the usedAt check; previously
+  findOne-then-save left a race window
+- mark other outstanding tokens used instead of deleting them, so the
+  forgot endpoint's per-hour rate limit still counts them until the TTL
+  index cleans them up; deleteMany let a user reset and immediately
+  request fresh links past the limit
+- fail loudly in production when JWT_SECRET is missing instead of
+  silently peppering IP hashes with a public constant, which would make
+  them brute-forceable; the dev fallback stays so local runs work
+
+Docs
+- Deployment-Checklist now describes the real missing-email-config
+  behavior: sendEmail throws in production but the forgot endpoint
+  still returns its generic success response (no enumeration), with
+  the failure surfacing in logs/Sentry
+
+Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>

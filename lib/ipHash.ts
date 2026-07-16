@@ -10,6 +10,13 @@ export function getClientIpHash(request: Request) {
   const ip = forwarded?.split(",")[0]?.trim();
   if (!ip) return undefined;
 
-  const pepper = process.env.JWT_SECRET ?? "beintheknow";
-  return createHash("sha256").update(`${ip}:${pepper}`).digest("hex");
+  const pepper = process.env.JWT_SECRET;
+  if (!pepper && process.env.NODE_ENV === "production") {
+    // A public constant pepper would make IP hashes brute-forceable,
+    // breaking the "no raw IPs" privacy promise - fail loudly instead.
+    throw new Error("Missing JWT_SECRET; it is required to pepper IP hashes.");
+  }
+  return createHash("sha256")
+    .update(`${ip}:${pepper ?? "beintheknow"}`)
+    .digest("hex");
 }
