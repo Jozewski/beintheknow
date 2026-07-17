@@ -26,6 +26,10 @@ export async function GET() {
       process.env.MONGODB_URI ?? process.env.MONGODB_DIRECT_URI,
     ),
     hasCronSecret: Boolean(process.env.CRON_SECRET),
+    // Chat and forgot-password fail fast in production without JWT_SECRET
+    // (it signs auth cookies and peppers IP hashes), so a deploy missing it
+    // must report unhealthy - not just log 500s while health says 200.
+    hasJwtSecret: Boolean(process.env.JWT_SECRET),
   };
 
   try {
@@ -52,7 +56,7 @@ export async function GET() {
   ]);
 
   const corpusReady = approvedAuthorityChunks + approvedContentChunks > 0;
-  const healthy = corpusReady && config.hasGeminiApiKey;
+  const healthy = corpusReady && config.hasGeminiApiKey && config.hasJwtSecret;
 
   return Response.json(
     {
